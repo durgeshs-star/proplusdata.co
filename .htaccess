@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # --- Redirect HTTP to HTTPS ---
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # --- Redirect Japanese domain to /JP ---
+  RewriteCond %{HTTP_HOST} ^(www\.)?proplusdata\.jp$ [NC]
+  RewriteRule ^$ /JP [L,R=301]
+
+  # 🔥 Redirect index.html to root
+  RewriteCond %{THE_REQUEST} \s/index\.html [NC]
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  # --- React SPA Routing ---
+  RewriteBase /
+
+  # If file or directory does not exist → send to index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # --- Redirect HTTP to HTTPS ---
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Redirect root of proplusdata.jp to /JP
+  RewriteCond %{HTTP_HOST} ^(www\.)?proplusdata\.jp$ [NC]
+  RewriteRule ^$ /JP [L,R=301]
+
+  # React routing: redirect all non-file/directory requests to index.html
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

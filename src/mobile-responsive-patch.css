@@ -1,0 +1,723 @@
+/* ============================================================
+   ProPlus Data — Mobile Responsive Patch
+   Add this file AFTER your main style.css import.
+   Covers: xs (≤480px), sm (≤600px), md (≤768px), lg (≤992px)
+   ============================================================ */
+
+/* ──────────────────────────────────────────
+   1. BASE / GLOBAL RESETS
+────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ──────────────────────────────────────────
+   2. SLIDERS — reduce fixed heights on mobile
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .slider1, .slider2, .slider3, .slider4,
+  .slider5, .slider6, .slider7, .slider8,
+  .slider9, .slider10 {
+    height: auto !important;
+    min-height: 480px;
+    padding: 80px 0 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider1, .slider2, .slider3, .slider4,
+  .slider5, .slider6, .slider7, .slider8,
+  .slider9, .slider10 {
+    min-height: 380px;
+    padding: 70px 0 50px;
+  }
+}
+
+/* ──────────────────────────────────────────
+   3. NAVIGATION / HEADER
+────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .techno_nav_manu,
+  .techno_nav_manu.transparent_menu,
+  .style-two.techno_nav_manu {
+    margin-bottom: 0 !important;
+    padding: 10px 0;
+  }
+
+  .techno_menu,
+  .techno_menu ul {
+    text-align: left;
+  }
+
+  /* Ensure logo doesn't overflow */
+  .logo img,
+  .techno_nav_manu .logo img {
+    max-height: 50px;
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header bar: stack or space items */
+  .header_top_menu_address_inner ul li,
+  .header_top_menu_icon_inner ul li {
+    display: block;
+    text-align: center;
+    padding: 4px 0;
+  }
+
+  /* Donate / CTA button in nav */
+  .donate-btn-header,
+  .style-two .donate-btn-header,
+  .upper.style-two .donate-btn-header {
+    margin-left: 0;
+    margin-top: 8px;
+    display: block;
+    text-align: center;
+  }
+
+  /* Nexora button repositioning */
+  .nexora-btn {
+    position: static !important;
+    width: auto !important;
+    top: auto !important;
+    height: 44px;
+  }
+
+  .get-started {
+    position: static !important;
+    right: auto !important;
+    top: auto !important;
+    margin-left: 0;
+  }
+
+  /* Conference strip */
+  .conference-strip {
+    top: 0;
+    position: relative;
+  }
+}
+
+/* ──────────────────────────────────────────
+   4. HERO / BANNER SECTION
+────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .slider_text_inner h1,
+  .slider_text_inner h2 {
+    font-size: 38px !important;
+    line-height: 1.2 !important;
+  }
+
+  .slider_text_inner p {
+    font-size: 16px !important;
+  }
+
+  .single_banner_thumb_inner {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider_text_inner h1,
+  .slider_text_inner h2 {
+    font-size: 30px !important;
+    line-height: 1.25 !important;
+  }
+
+  .slider_text_inner h1 span,
+  .slider_text_inner h2 span {
+    font-size: inherit !important;
+  }
+
+  .slider_text_inner p {
+    font-size: 15px !important;
+  }
+
+  /* Hero buttons — stack on small screens */
+  .hero-button,
+  .slider_btn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  .hero-button a,
+  .slider_btn a {
+    margin: 0 !important;
+  }
+
+  /* Video button */
+  .slider-video {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider_text_inner h1,
+  .slider_text_inner h2 {
+    font-size: 24px !important;
+  }
+
+  .slider_text_inner p {
+    font-size: 14px !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   5. NEXORA BANNER
+────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .nexora-banner h2 {
+    font-size: 52px !important;
+    line-height: 1.1 !important;
+  }
+
+  .fraunces-text {
+    font-size: 42px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .nexora-banner h2 {
+    font-size: 36px !important;
+  }
+
+  .nexora-banner img {
+    width: 40px !important;
+    height: 40px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .fraunces-text {
+    font-size: 30px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nexora-banner h2 {
+    font-size: 28px !important;
+  }
+
+  .fraunces-text {
+    font-size: 24px !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   6. SECTION TITLES
+────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .section_main_title h1,
+  .section_main_title h2 {
+    font-size: 34px !important;
+    line-height: 1.2 !important;
+  }
+
+  .section_sub_title h5,
+  .section_sub_title h6 {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section_main_title h1,
+  .section_main_title h2 {
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section_main_title h1,
+  .section_main_title h2 {
+    font-size: 22px !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   7. ABOUT / FEATURE SECTIONS
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .about_area {
+    padding: 50px 0 !important;
+  }
+
+  .about_skill_thumb img,
+  .experience_thumb img,
+  .single_choose_us_thumb img {
+    margin-bottom: 30px;
+  }
+
+  /* Stack two-column layouts */
+  .singel_about_left_inner {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+}
+
+/* ──────────────────────────────────────────
+   8. SERVICE / FEATURE CARDS
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .em-service-single-box,
+  .em-service-single-box1,
+  .em-feature-single-box,
+  .feature_style_four,
+  .feature_style_five,
+  .service_style_four,
+  .service_style_five,
+  .single_service_inner {
+    margin-bottom: 25px;
+  }
+
+  /* Flipbox: disable 3D on mobile (touch-unfriendly) */
+  .techno_flipbox {
+    transform-style: flat !important;
+  }
+
+  .techno_flipbox .techno_flipbox_back {
+    position: relative !important;
+    transform: none !important;
+    display: none;
+  }
+
+  .techno_flipbox:hover .techno_flipbox_back {
+    display: block;
+  }
+}
+
+/* ──────────────────────────────────────────
+   9. PRICING SECTION
+────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .pricing-title h1 {
+    font-size: 42px !important;
+    margin-top: 80px !important;
+    line-height: 1.1 !important;
+  }
+
+  .pricing-title h1 span {
+    font-size: 52px !important;
+  }
+
+  .pricing-title p {
+    font-size: 18px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-title h1 {
+    font-size: 32px !important;
+    margin-top: 40px !important;
+  }
+
+  .pricing-title h1 span {
+    font-size: 38px !important;
+  }
+
+  .pricing-title p {
+    font-size: 16px !important;
+  }
+
+  .pricing-card {
+    padding: 40px 24px !important;
+    margin-bottom: 20px;
+  }
+
+  .pricing_button_three a {
+    font-size: 16px !important;
+    padding: 12px 30px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-title h1 {
+    font-size: 26px !important;
+  }
+
+  .pricing-title h1 span {
+    font-size: 30px !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   10. BLOG / PORTFOLIO SECTIONS
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .blog_dtl_thumb img,
+  .single_blog_thumb img,
+  .single_case_study_thumb img,
+  .single_portfolio_thumb img {
+    margin-bottom: 20px;
+  }
+
+  /* Blog detail */
+  #blog p, #blog ul li {
+    font-size: 17px !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   11. TEAM SECTION
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .single_team_thumb,
+  .single_team_thumb1,
+  .single_team_style_three_thumb {
+    margin-bottom: 25px;
+  }
+
+  .single_team_thumb img,
+  .single_team_thumb1 img {
+    max-width: 80%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* ──────────────────────────────────────────
+   12. TESTIMONIALS
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .single_testimonial_content_title h4 {
+    font-size: 18px !important;
+  }
+
+  .em-testimonial-text p {
+    font-size: 15px !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   13. COUNTER SECTION
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .countr_text h1 {
+    font-size: 36px !important;
+  }
+
+  .counter_desc h5 {
+    font-size: 15px !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   14. BRAND / LOGO STRIP
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .brand_list {
+    gap: 18px !important;
+  }
+
+  .single_brand_thumb img {
+    height: 80px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .single_brand_thumb img {
+    height: 55px !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   15. AWS / CASE STUDY SECTIONS
+────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .aws-section span {
+    font-size: 52px !important;
+  }
+
+  .siemens-section {
+    font-size: 32px !important;
+  }
+
+  .siemens-case-study {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .aws-case img {
+    width: 100% !important;
+  }
+
+  .aws-challenge p,
+  .aws-solution p,
+  .voice-outreach p,
+  .cloud-content p,
+  .translated-gtm,
+  .accross-market,
+  .quantum-page ul li,
+  .timeline ul li {
+    font-size: 16px !important;
+  }
+
+  .aws-section span {
+    font-size: 38px !important;
+  }
+
+  .aws-case {
+    margin-top: 30px !important;
+  }
+
+  .siemens-section {
+    font-size: 26px !important;
+  }
+
+  .siemens-case-study {
+    font-size: 16px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   16. FORRESTER / CONFERENCE STRIP
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .forrester-summit {
+    height: auto !important;
+    min-height: 80px;
+  }
+
+  .conference-strip img {
+    height: auto !important;
+    object-fit: contain;
+  }
+}
+
+/* ──────────────────────────────────────────
+   17. CONTACT FORM
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .contact .contact-form .btn-submit {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+/* ──────────────────────────────────────────
+   18. FOOTER
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer_bottom_menu_inner ul li {
+    display: block !important;
+    text-align: center;
+    padding: 4px 0;
+  }
+
+  .footer-bottom-right-text {
+    text-align: center !important;
+    margin-top: 10px;
+  }
+
+  .follow-company,
+  .follow-company-icon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+/* ──────────────────────────────────────────
+   19. FLOATING BUTTONS (GTM Tool, Playbook)
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .gtm-tool-btn {
+    bottom: 140px !important;
+  }
+
+  .gtm-tool-btn a {
+    width: 200px !important;
+    padding: 14px 16px !important;
+  }
+
+  .gtm-tool-btn i {
+    font-size: 18px !important;
+  }
+
+  .btnplaybook-sm {
+    bottom: 120px !important;
+    right: -10px !important;
+  }
+
+  .playbook-icon {
+    width: 140px !important;
+    height: 140px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .gtm-tool-btn a {
+    width: 170px !important;
+  }
+
+  .playbook-icon {
+    width: 110px !important;
+    height: 110px !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   20. LANGUAGE DROPDOWN
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .language-dropdown {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    text-align: right;
+    padding: 4px 10px;
+  }
+
+  .lang-btn {
+    padding: 6px 16px !important;
+    font-size: 13px !important;
+  }
+
+  .lang-menu {
+    right: 0;
+    left: auto;
+  }
+}
+
+/* ──────────────────────────────────────────
+   21. BREADCRUMB
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .breatcome_content ul li {
+    display: inline-block;
+    font-size: 14px;
+  }
+}
+
+/* ──────────────────────────────────────────
+   22. BG SECTION (abstract background)
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .bg-section {
+    padding: 40px 0 !important;
+    background-size: cover;
+  }
+}
+
+/* ──────────────────────────────────────────
+   23. GENERAL COLUMN & SPACING HELPERS
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Bootstrap column fix — full width on mobile */
+  [class*="col-md-"],
+  [class*="col-lg-"],
+  [class*="col-xl-"] {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Tighten section padding */
+  section,
+  .section_padding,
+  .section-padding {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  /* Prevent any element from overflowing viewport */
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section,
+  .section_padding,
+  .section-padding {
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   24. PAGE NUMBERS / PAGINATION
+────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .page-numbers li {
+    display: inline-block;
+    margin: 2px;
+  }
+}
+
+/* ──────────────────────────────────────────
+   25. PROCESS / HOW IT WORKS
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .single_it_work_content_list {
+    width: 100% !important;
+    display: block !important;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .single_process_number {
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+}
+
+/* ──────────────────────────────────────────
+   26. TABS
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  ul.tabs li {
+    display: block !important;
+    width: 100%;
+    margin-bottom: 6px;
+  }
+
+  .tabs_item {
+    display: block !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   27. RENEWALS / QUANTUM PAGE TEXT
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .renewals-arr h1 {
+    font-size: 26px !important;
+  }
+
+  .quantum-page1 {
+    font-size: 15px !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   28. TOP BAR SOCIAL LINK SIZE
+────────────────────────────────────────── */
+@media (min-width: 769px) {
+  .top-bar a {
+    font-size: 22px !important; /* slightly smaller on desktop too */
+  }
+}
+
+/* ──────────────────────────────────────────
+   END OF MOBILE RESPONSIVE PATCH
+   ============================================================ */
