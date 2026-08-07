@@ -72,7 +72,7 @@ export default function Home() {
 
       {/* Playbook Button */}
 
-      <div className="btnplaybook-sm">
+      {/* <div className="btnplaybook-sm">
         <a
           href="https://7772074d.flowpaper.com/ThePrecisionABMPlaybookbyProPlusData/"
           target="_blank"
@@ -84,7 +84,7 @@ export default function Home() {
             className="playbook-icon"
           />
         </a>
-      </div>
+      </div> */}
 
       {/* WhatsApp Button */}
 

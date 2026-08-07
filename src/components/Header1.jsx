@@ -169,7 +169,7 @@ export default function Header1() {
                 Resources <FontAwesomeIcon icon={faCaretDown} />
               </a>
               <ul className="dropdown-menu">
-                <li><Link to="/playbook">Playbook</Link></li>
+                {/* <li><Link to="/playbook">Playbook</Link></li> */}
                 <li><Link to="/blogs">Blogs</Link></li>
                 <li><Link to="/conferences">Conferences</Link></li>
                 <li><Link to="/see-your-gtm-truth-in-60-sec">GTM Assessment Tool</Link></li>

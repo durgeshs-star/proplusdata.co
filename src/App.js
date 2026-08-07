@@ -31,7 +31,7 @@ import Blog4Details from './pages/Blog4Details';
 import Blog5Details from './pages/Blog5Details';
 import BookMeeting from './pages/BookMeeting';
 import ScrollToSection from './components/ScrollToSection';
-import PlayBook from './pages/PlayBook';
+// import PlayBook from './pages/PlayBook';
 import FlipbookViewers from './pages/FlipbookViewers';
 import FlipbookPage from './pages/FlipbookPage';
 import PlaybookIcon from './components/PlaybookIcon';
@@ -129,7 +129,7 @@ function App() {
        <Route path ="/admin-executive" element = {<AdminExecutive/>} />
        <Route path ="/executive-assistant" element = {<ExecutiveAssistant/>} />
        <Route path='/book-meeting' element = {<BookMeeting/>}/>
-      <Route path='/playbook' element = {<PlayBook/>}/>
+      {/* <Route path='/playbook' element = {<PlayBook/>}/> */}
       <Route path='/flipbook-viewers' element = {<FlipbookViewers/>}/>
       <Route path='/flipbook-page' element = {<FlipbookPage/>}/>
       <Route path='/playbook-icon' element = {<PlaybookIcon/>}/>

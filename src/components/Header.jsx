@@ -125,7 +125,7 @@ export default function Header() {
                 Resources <FontAwesomeIcon icon={faCaretDown} />
               </a>
               <ul className="dropdown-menu">
-                 <li><Link to="/playbook" onClick={closeMenu}>Playbook</Link></li>
+                 {/* <li><Link to="/playbook" onClick={closeMenu}>Playbook</Link></li> */}
                 <li><Link to="/blogs" onClick={closeMenu}>Blogs</Link></li>
                 <li><Link to="/conferences" onClick={closeMenu}>Conferences</Link></li>
                
