@@ -193,14 +193,7 @@ export default function Header1() {
 
 
              <li className="dropdown">
-              <a href="#" onClick={(e) => e.preventDefault()}>
-                GTM-AI <FontAwesomeIcon icon={faCaretDown} />
-              </a>
-              <ul className="dropdown-menu">
-                <li><Link to="https://nexora.proplusdata.co/">Nexora</Link></li>
-                {/* <li><Link to="/nexora-pricing">Pricing</Link></li> */}
-               
-              </ul>
+                <Link to="https://nexora.proplusdata.co/">RevenueGTM</Link>
             </li> 
            
 
