@@ -1,48 +1,108 @@
-import React from "react";
-
+import React, { useEffect, useRef, useState } from "react";
+import "./CtaAbout.css";
 
 const CtaAbout = () => {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    if (!("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return undefined;
+    }
+
+    let hasRevealed = false;
+    let observer;
+    const revealWhenVisible = () => {
+      if (hasRevealed) return;
+      const bounds = section.getBoundingClientRect();
+      if (bounds.top < window.innerHeight && bounds.bottom > 0) {
+        hasRevealed = true;
+        setIsVisible(true);
+        observer?.disconnect();
+        window.removeEventListener("scroll", revealWhenVisible);
+        window.removeEventListener("resize", revealWhenVisible);
+      }
+    };
+
+    observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) revealWhenVisible();
+      },
+      { threshold: 0.12 }
+    );
+
+    observer.observe(section);
+    window.addEventListener("scroll", revealWhenVisible, { passive: true });
+    window.addEventListener("resize", revealWhenVisible);
+    revealWhenVisible();
+
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener("scroll", revealWhenVisible);
+      window.removeEventListener("resize", revealWhenVisible);
+    };
+  }, []);
+
   return (
-    <div
-      className="call_do_action bg_color2 pt-5 pb-70"
-      style={{ backgroundImage: 'url(assets/images/glob-bg.png)' }}
+    <section
+      ref={sectionRef}
+      className={`ppd-cta-section${isVisible ? " ppd-cta-visible" : ""}`}
+      aria-labelledby="ppd-cta-heading"
+      style={{
+        backgroundImage: "url(assets/images/glob-bg.png)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
-      <div className="container">
-        <div className="row">
-          {/* Section Title */}
-          <div className="col-lg-12">
-            <div className="section_title text_center mb-50 mt-3">
-              <div className="section_sub_title uppercase mb-3"></div>
-              
-            
-            </div>
-          </div>
+      <div className="ppd-cta-container container">
+        <div className="ppd-cta-top ppd-cta-reveal">
+          <span className="ppd-cta-eyebrow">
+            DATA INTELLIGENCE <span aria-hidden="true">→</span> GTM IMPACT
+          </span>
+          <span className="ppd-cta-accent-line" aria-hidden="true" />
         </div>
 
-        {/* Content */}
-        <div className="row">
-          <div className="col-lg-9">
-            <div className="section_title text_left">
-              <div className="section_sub_title uppercase mb-3"></div>
-              <div className="section_main_title">
-                <h5>Ready to turn data intelligence into impact? Connect with us and discover how we can power your GTM | ABM strategies with precision!
-
-                </h5>
-              
-              </div>
-            </div>
+        <div className="ppd-cta-layout">
+          <div className="ppd-cta-content">
+            <h2
+              className="ppd-cta-heading ppd-cta-reveal"
+              id="ppd-cta-heading"
+            >
+              Ready to turn{" "}
+              <span className="ppd-cta-highlight">data intelligence</span> into
+              impact? Connect with us and discover how we can power your{" "}
+              <span className="ppd-cta-highlight">GTM | ABM</span> strategies
+              with precision!
+            </h2>
           </div>
 
-          <div className="col-lg-3">
-            <div className="section_button">
-              <div className="button two mt-10">
-                <a href="/contact-us">Connect With Us</a>
-              </div>
+          <div className="ppd-cta-action ppd-cta-reveal">
+            <a href="/contact-us" className="ppd-cta-button">
+              <span>Connect With Us</span>
+              <span className="ppd-cta-arrow" aria-hidden="true">
+                →
+              </span>
+            </a>
+
+            <div className="ppd-cta-flow" aria-hidden="true">
+              <span className="ppd-cta-flow-point" />
+              <span className="ppd-cta-flow-label">DATA</span>
+              <span className="ppd-cta-flow-line" />
+              <span className="ppd-cta-flow-point" />
+              <span className="ppd-cta-flow-label">GTM | ABM</span>
+              <span className="ppd-cta-flow-line" />
+              <span className="ppd-cta-flow-point" />
+              <span className="ppd-cta-flow-label">IMPACT</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,33 +1,34 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import './FaqSection.css';
 
 const AccordionPanel = ({ id, title, content, isOpen, parentId }) => {
   return (
-    <div className="panel panel-default">
-      <div className="panel-heading mb-3">
-        <h4 className="panel-title">
-          <a
-            data-bs-toggle="collapse"
-            data-bs-parent={`#${parentId}`}
-            href={`#${id}`}
-            className={`d-block ${!isOpen ? 'collapsed' : ''}`}
-            aria-expanded={isOpen ? "true" : "false"}
-          >
-            <i className="fa fa-check-circle me-2"></i>
-            {title}
-          </a>
-        </h4>
-      </div>
+    <article className="ppd-event-results-card">
+      <h3 className="ppd-event-results-card-heading">
+        <a
+          data-bs-toggle="collapse"
+          data-bs-parent={`#${parentId}`}
+          href={`#${id}`}
+          className={`ppd-event-results-trigger ${!isOpen ? 'collapsed' : ''}`}
+          aria-expanded={isOpen ? "true" : "false"}
+          aria-controls={id}
+        >
+          <i className="fa fa-check-circle ppd-event-results-check" aria-hidden="true"></i>
+          <span className="ppd-event-results-card-title">{title}</span>
+          <span className="ppd-event-results-indicator" aria-hidden="true"></span>
+        </a>
+      </h3>
       <div
         id={id}
-        className={`panel-collapse collapse ${isOpen ? "show" : ""}`}
+        className={`collapse ppd-event-results-collapse ${isOpen ? "show" : ""}`}
       >
-        <div className="panel-body ps-4 pe-4">
-          <p>{content}</p>
+        <div className="ppd-event-results-body">
+          <p className="ppd-event-results-description">{content}</p>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
@@ -78,28 +79,19 @@ const FAQSection = () => {
   ];
 
   return (
-    <div className="accordion_area style-two bg_color2 pt-50 pb-90">
+    <section className="ppd-event-results">
       <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="section_title text_center mb-50">
-             
-              <div className="section_main_title">
-                <h2>Smarter Events. Better ROI</h2>
-                
-              </div>
-              <div className="em_bar">
-                <div className="em_bar_bg"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <header className="ppd-event-results-header">
+          <span className="ppd-event-results-eyebrow">EVENT MARKETING</span>
+          <h2 className="ppd-event-results-title">
+            Smarter Events. Better <span>ROI</span>
+          </h2>
+          <div className="ppd-event-results-rule" aria-hidden="true"></div>
+        </header>
 
-        {/* Accordion Rows */}
-        <div className="row">
-          {/* Left Column */}
-          <div className="col-lg-6 col-md-6 col-sm-12">
-            <div className="panel-group default symb" id={leftAccordionId}>
+        <div className="ppd-event-results-grid">
+          <div className="ppd-event-results-column">
+            <div id={leftAccordionId} className="ppd-event-results-accordion">
               {leftData.map((item, index) => (
                 <AccordionPanel
                   key={item.id}
@@ -113,9 +105,8 @@ const FAQSection = () => {
             </div>
           </div>
 
-          {/* Right Column */}
-          <div className="col-lg-6 col-md-6 col-sm-12">
-            <div className="panel-group default symb" id={rightAccordionId}>
+          <div className="ppd-event-results-column">
+            <div id={rightAccordionId} className="ppd-event-results-accordion">
               {rightData.map((item, index) => (
                 <AccordionPanel
                   key={item.id}
@@ -130,7 +121,7 @@ const FAQSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

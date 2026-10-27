@@ -1,0 +1,368 @@
+.ppd-event-section {
+  padding-bottom: 70px;
+}
+
+.ppd-event-section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ppd-event-section-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #133580;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.ppd-event-section-title {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #0d1b3e;
+  margin: 0 0 20px 0;
+}
+
+.ppd-event-section-rule {
+  width: 50px;
+  height: 3px;
+  background-color: #133580;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.ppd-event-featured {
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(13, 27, 62, 0.06);
+  margin-bottom: 50px;
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.ppd-event-featured:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(13, 27, 62, 0.1);
+  border-color: #bfdbfe;
+}
+
+.ppd-event-featured {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+}
+
+.ppd-event-featured-media {
+  overflow: hidden;
+  height: 100%;
+  min-height: 380px;
+}
+
+.ppd-event-featured-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.ppd-event-featured:hover .ppd-event-featured-media img {
+  transform: scale(1.03);
+}
+
+.ppd-event-featured-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 45px;
+}
+
+.ppd-event-card {
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(13, 27, 62, 0.06);
+  margin-bottom: 40px;
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.ppd-event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(13, 27, 62, 0.1);
+  border-color: #bfdbfe;
+}
+
+.ppd-event-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ppd-event-card-media {
+  overflow: hidden;
+  height: 100%;
+  min-height: 340px;
+}
+
+.ppd-event-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.ppd-event-card:hover .ppd-event-card-media img {
+  transform: scale(1.03);
+}
+
+.ppd-event-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px 40px;
+}
+
+.ppd-event-card-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #133580;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.ppd-event-card-title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #0d1b3e;
+  margin: 0 0 24px 0;
+}
+
+.ppd-event-card-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(13, 27, 62, 0.68);
+  margin: 0 0 24px 0;
+}
+
+.ppd-event-meta {
+  margin-bottom: 24px;
+}
+
+.ppd-event-meta-item {
+  margin-bottom: 12px;
+}
+
+.ppd-event-meta-item:last-child {
+  margin-bottom: 0;
+}
+
+.ppd-event-meta-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #133580;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.ppd-event-meta-value {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(13, 27, 62, 0.8);
+}
+
+.ppd-event-card-link {
+  color: #133580;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.ppd-event-card-link:hover {
+  color: #0d1b3e;
+}
+
+.ppd-event-card-link span {
+  transition: transform 200ms ease;
+}
+
+.ppd-event-card-link:hover span {
+  transform: translateX(3px);
+}
+
+@media (max-width: 1199px) {
+  .ppd-event-section-header {
+    margin-bottom: 55px;
+  }
+
+  .ppd-event-section-title {
+    font-size: 38px;
+  }
+
+  .ppd-event-featured {
+    margin-bottom: 45px;
+  }
+
+  .ppd-event-featured-media {
+    min-height: 360px;
+  }
+
+  .ppd-event-featured-content {
+    padding: 36px 40px;
+  }
+
+  .ppd-event-card {
+    margin-bottom: 35px;
+  }
+
+  .ppd-event-card-media {
+    min-height: 320px;
+  }
+
+  .ppd-event-card-content {
+    padding: 32px 36px;
+  }
+
+  .ppd-event-card-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 991px) {
+  .ppd-event-section {
+    padding-bottom: 60px;
+  }
+
+  .ppd-event-section-header {
+    margin-bottom: 50px;
+  }
+
+  .ppd-event-section-title {
+    font-size: 36px;
+  }
+
+  .ppd-event-featured {
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+  }
+
+  .ppd-event-featured-media {
+    min-height: 300px;
+  }
+
+  .ppd-event-featured-content {
+    padding: 32px 36px;
+  }
+
+  .ppd-event-card {
+    grid-template-columns: 1fr;
+    margin-bottom: 30px;
+  }
+
+  .ppd-event-card-media {
+    min-height: 280px;
+  }
+
+  .ppd-event-card-content {
+    padding: 28px 32px;
+  }
+
+  .ppd-event-card-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ppd-event-section {
+    padding-bottom: 50px;
+  }
+
+  .ppd-event-section-header {
+    margin-bottom: 40px;
+  }
+
+  .ppd-event-section-title {
+    font-size: 32px;
+  }
+
+  .ppd-event-featured {
+    margin-bottom: 35px;
+  }
+
+  .ppd-event-featured-media {
+    min-height: 250px;
+  }
+
+  .ppd-event-featured-content {
+    padding: 26px 28px;
+  }
+
+  .ppd-event-card {
+    margin-bottom: 25px;
+  }
+
+  .ppd-event-card-media {
+    min-height: 230px;
+  }
+
+  .ppd-event-card-content {
+    padding: 24px 26px;
+  }
+
+  .ppd-event-card-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .ppd-event-card-description {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .ppd-event-meta {
+    margin-bottom: 20px;
+  }
+
+  .ppd-event-meta-value {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ppd-event-section-title {
+    font-size: 28px;
+  }
+
+  .ppd-event-featured-media {
+    min-height: 220px;
+  }
+
+  .ppd-event-featured-content {
+    padding: 24px;
+  }
+
+  .ppd-event-card-media {
+    min-height: 200px;
+  }
+
+  .ppd-event-card-content {
+    padding: 22px 24px;
+  }
+
+  .ppd-event-card-title {
+    font-size: 19px;
+  }
+
+  .ppd-event-card-description {
+    font-size: 15px;
+  }
+}

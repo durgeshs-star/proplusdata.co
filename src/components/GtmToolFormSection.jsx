@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./GtmToolFormSection.css";
 
 const GtmToolFormSection = () => {
 
@@ -105,169 +106,87 @@ const GtmToolFormSection = () => {
 };
 
   return (
-
-    <section
-      id="contact"
-      className="contact section bg-section"
-    >
-
-      <div className="container">
-
-        <h1 className="display-5 mt-5 mb-70">
-
-          <b>
-            See Your GTM Truth in
-            <span> 60 Seconds.</span>
-          </b>
-
-        </h1>
-
-        <div className="row g-5">
-
-          {/* LEFT CONTENT */}
-
-          <div className="col-lg-6">
-
-            <div className="content">
-
-              <p className="lead mb-4 text-left">
-
-                <b>
-                  Your GTM data is talking,
-                  Most teams aren’t hearing it.
-                  This quick check shows what’s
-                  driving revenue and what’s
-                  blocking growth.
-                </b>
-
+    <section className="ppd-gtm-assessment">
+      <div className="ppd-gtm-assessment-hero">
+        <div className="ppd-gtm-assessment-container">
+          <div className="ppd-gtm-assessment-grid">
+            <div className="ppd-gtm-assessment-content">
+              <span className="ppd-gtm-assessment-eyebrow">
+                GTM ASSESSMENT
+              </span>
+              <h1 className="ppd-gtm-assessment-title">
+                See Your GTM Truth in <span>60 Seconds.</span>
+              </h1>
+              <p className="ppd-gtm-assessment-intro">
+                Your GTM data is talking,
+                Most teams aren't hearing it.
+                This quick check shows what's
+                driving revenue and what's
+                blocking growth.
               </p>
-
-              <p className="lead text-left">
-
-                <b>
-                  In just 60 Seconds, uncover :
-                </b>
-
+              <p className="ppd-gtm-assessment-uncover">
+                In just 60 Seconds, uncover :
               </p>
-
-              <ul className="lead feature-benefits text-left">
-
-                <li>
-                  ● Which accounts show real buying intent
-                </li>
-
-                <li>
-                  ● Where GTM signals are misaligned
-                </li>
-
-                <li>
-                  ● Revenue risks hiding in plain sight
-                </li>
-
-                <li>
-                  ● Opportunities your team isn’t activating
-                </li>
-
+              <ul className="ppd-gtm-assessment-benefits">
+                <li>Which accounts show real buying intent</li>
+                <li>Where GTM signals are misaligned</li>
+                <li>Revenue risks hiding in plain sight</li>
+                <li>Opportunities your team isn't activating</li>
               </ul>
-
             </div>
-
-          </div>
-
-          {/* RIGHT FORM */}
-
-          <div className="col-lg-6">
-
-            <div className="contact-form card">
-
-              <div className="card-body p-4 p-lg-5">
-
-                <h5 className="mb-4 text-center">
-
-                  Fill in your details to unlock the tool.
-
-                </h5>
-
-                <form onSubmit={handleSubmit}>
-
-                  <div className="row gy-4">
-
-                    {/* NAME */}
-
-                    <div className="col-12">
-
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Name"
-                        required
-                        value={formData.name}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            name: e.target.value,
-                          })
-                        }
-                      />
-
-                    </div>
-
-                    {/* EMAIL */}
-
-                    <div className="col-12">
-
-                      <input
-                        type="email"
-                        className="form-control"
-                        placeholder="Email ID"
-                        required
-                        value={formData.email}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            email: e.target.value,
-                          })
-                        }
-                      />
-
-                    </div>
-
-                    {/* BUTTON */}
-
-                    <div className="col-12">
-
-                      <button
-                        type="submit"
-                        className="btn btn-submit w-100"
-                        disabled={loading}
-                      >
-
-                        {
-                          loading
-                            ? "Submitting..."
-                            : "Begin Assessment"
-                        }
-
-                      </button>
-
-                    </div>
-
+            <div className="ppd-gtm-assessment-form-card">
+              <div className="ppd-gtm-assessment-form-indicator"></div>
+              <h2 className="ppd-gtm-assessment-form-title">
+                Fill in your details to unlock the tool.
+              </h2>
+              <form onSubmit={handleSubmit} className="ppd-gtm-assessment-form">
+                <div className="row gy-4">
+                  <div className="col-12">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Name"
+                      required
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          name: e.target.value,
+                        })
+                      }
+                    />
                   </div>
-
-                </form>
-
-              </div>
-
+                  <div className="col-12">
+                    <input
+                      type="email"
+                      className="form-control"
+                      placeholder="Email ID"
+                      required
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          email: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="col-12">
+                    <button
+                      type="submit"
+                      className="btn btn-submit w-100"
+                      disabled={loading}
+                    >
+                      {loading ? "Submitting..." : "Begin Assessment"}
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
-
   );
 
 };

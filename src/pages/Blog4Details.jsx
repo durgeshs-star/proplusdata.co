@@ -1,31 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import Header1 from '../components/Header1'
+import Footer from '../components/Footer'
+import BlogDetailRedesign from '../components/BlogDetailRedesign'
 import { Helmet } from 'react-helmet-async';
 
 function Blog4Details() {
-  const [email, setEmail] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevents default form submission behavior
-
-    // Check if the form is valid before opening the PDF
-    if (validateForm()) {
-      window.open("cloud-infrastructure.pdf", "_blank"); // Opens PDF in new tab
-    }
-  };
-
-  // Validation function to check if the email is valid
-  const validateForm = () => {
-    if (!email) {
-      alert("Please enter an email address.");
-      return false;
-    }
-    // Add more validation logic here if needed (e.g., regex for email format)
-    return true;
-  };
-
   return (
-    <section>
+    <div>
       <Helmet>
       <title>Why Companies Are Taking Control of Cloud Infrastructure</title>
   <meta name="description" content="Discover why companies are shifting to hybrid cloud models, addressing data security, vendor lock-in, and regulations, with data for smooth transitions."/>
@@ -39,34 +20,14 @@ function Blog4Details() {
   <meta property="og:description"
       content="Learn why businesses are shifting to private or hybrid cloud models. Explore data and strategies to ensure effective and secure cloud transitions." />
       </Helmet>
-    <ul className="breadcrumb">
-      <li><Link to="/blogs">Blogs</Link></li>
-      <li><Link to="/blog4details">Blog 4</Link></li>
-    </ul>
-    <center>
-    <div className=" usecase1">
-      <h1>To Read Our Blog</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <br />
-        </div>
-        <br />
-        <div className="form-group">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+      <Header1/>
+      <BlogDetailRedesign
+        title="Why Companies Are Taking Control of Their Cloud Infrastructure?"
+        description="With the rising complexity of cloud services and evolving business needs, many companies are reconsidering their reliance on public cloud infrastructure and opting for private or hybrid cloud models, including moving to their own cloud data servers."
+        pdfFile="cloud-infrastructure.pdf"
+      />
+      <Footer/>
     </div>
-    </center>
-    </section>
   );
 }
 

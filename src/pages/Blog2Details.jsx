@@ -1,31 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import Header1 from '../components/Header1'
+import Footer from '../components/Footer'
+import BlogDetailRedesign from '../components/BlogDetailRedesign'
 import { Helmet } from 'react-helmet-async';
 
 function Blog2Details() {
-  const [email, setEmail] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevents default form submission behavior
-
-    // Check if the form is valid before opening the PDF
-    if (validateForm()) {
-      window.open("How-Data-Adoption-is-helping-telecom-industry-across-the-globe.pdf", "_blank"); // Opens PDF in new tab
-    }
-  };
-
-  // Validation function to check if the email is valid
-  const validateForm = () => {
-    if (!email) {
-      alert("Please enter an email address.");
-      return false;
-    }
-    // Add more validation logic here if needed (e.g., regex for email format)
-    return true;
-  };
-
   return (
-    <section>
+    <div>
         <Helmet>
       <title>Data Adoption & the Future of Connectivity | ProPlus Data</title>
   <meta name="description" content="Explore how data adoption shapes global telecom across JPAC, ASEAN, USA, EMEA, and ANZ. Discover key trends, growth opportunities, and regional impacts."/>
@@ -39,34 +20,14 @@ function Blog2Details() {
   <meta property="og:description"
       content="Analyze how data adoption is transforming global telecommunications across regions like JPAC, ASEAN, USA, EMEA, and ANZ. Learn about 5G, cloud services, and market growth trends." />
       </Helmet>
-    <ul className="breadcrumb">
-      <li><Link to="/blogs">Blogs</Link></li>
-      <li><Link to="/blog2details">Blog 2</Link></li>
-    </ul>
-    <center>
-    <div className=" usecase1">
-      <h1>To Read Our Blog</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <br />
-        </div>
-        <br />
-        <div className="form-group">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+      <Header1/>
+      <BlogDetailRedesign
+        title="How Data Adoption is Shaping the Future of Connectivity"
+        description="The global telecommunications industry is experiencing a profound transformation, driven by rapid technological advancements, the widespread adoption of smart devices and the growing demand for high-speed internet connectivity."
+        pdfFile="How-Data-Adoption-is-helping-telecom-industry-across-the-globe.pdf"
+      />
+      <Footer/>
     </div>
-    </center>
-    </section>
   );
 }
 

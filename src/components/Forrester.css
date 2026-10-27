@@ -1,0 +1,373 @@
+.ppd-forrester-event {
+  --ppd-event-navy: #0d1b3e;
+  --ppd-event-blue: #133580;
+  --ppd-event-accent: #2563eb;
+  --ppd-event-light: #f1f6ff;
+  --ppd-event-border: #dbeafe;
+  --ppd-event-muted: rgba(13, 27, 62, 0.68);
+  --ppd-event-white: #ffffff;
+}
+
+.ppd-forrester-hero {
+  background-color: var(--ppd-event-light);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(80px, 12vw, 120px) 0 clamp(60px, 10vw, 100px);
+}
+
+.ppd-forrester-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(to right, rgba(13, 27, 62, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13, 27, 62, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.ppd-forrester-hero-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ppd-event-blue);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.ppd-forrester-hero-title {
+  font-size: clamp(52px, 6vw, 68px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--ppd-event-navy);
+  margin: 0 0 20px 0;
+}
+
+.ppd-forrester-hero-highlight {
+  color: var(--ppd-event-accent);
+}
+
+.ppd-forrester-hero-rule {
+  width: 60px;
+  height: 3px;
+  background: var(--ppd-event-accent);
+  border-radius: 2px;
+  margin: 32px 0;
+}
+
+.ppd-forrester-hero-description {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--ppd-event-muted);
+  margin-bottom: 24px;
+  max-width: 620px;
+}
+
+.ppd-forrester-hero-media {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+}
+
+@media (max-width: 991px) {
+  .ppd-forrester-hero-media {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ppd-forrester-hero-media {
+    margin-top: 24px;
+  }
+}
+
+.ppd-forrester-hero-image {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--ppd-event-border);
+  box-shadow: 0 20px 50px rgba(13, 27, 62, 0.10);
+  display: block;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.ppd-forrester-hero-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 60px rgba(13, 27, 62, 0.12);
+}
+
+.ppd-forrester-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.ppd-forrester-content {
+  background: var(--ppd-event-white);
+  padding: clamp(60px, 10vw, 100px) 0;
+}
+
+.ppd-forrester-content-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ppd-forrester-section {
+  margin-top: 80px;
+}
+
+.ppd-forrester-section:first-child {
+  margin-top: 0;
+}
+
+.ppd-forrester-section-title {
+  font-size: clamp(28px, 3.5vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ppd-event-navy);
+  margin: 0 0 24px 0;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.ppd-forrester-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--ppd-event-accent);
+  border-radius: 2px;
+}
+
+.ppd-forrester-intro {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--ppd-event-muted);
+  margin-bottom: 24px;
+}
+
+.ppd-forrester-insights {
+  margin: 32px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ppd-forrester-insight {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--ppd-event-border);
+  transition: background-color 220ms ease;
+}
+
+.ppd-forrester-insight:hover {
+  background-color: var(--ppd-event-light);
+}
+
+.ppd-forrester-insight:last-child {
+  border-bottom: none;
+}
+
+.ppd-forrester-insight-number {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ppd-event-accent);
+  margin-right: 24px;
+  min-width: 40px;
+}
+
+.ppd-forrester-insight-content {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #24324f;
+  flex: 1;
+}
+
+.ppd-forrester-highlight {
+  background: var(--ppd-event-light);
+  border: 1px solid var(--ppd-event-border);
+  border-left: 4px solid var(--ppd-event-accent);
+  border-radius: 20px;
+  padding: 32px;
+  margin: 48px 0;
+}
+
+.ppd-forrester-highlight p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--ppd-event-muted);
+  margin-bottom: 0;
+}
+
+.ppd-forrester-closing {
+  background: var(--ppd-event-light);
+  border-radius: 24px;
+  padding: 32px;
+  margin-top: 48px;
+}
+
+.ppd-forrester-closing p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--ppd-event-muted);
+  margin-bottom: 0;
+}
+
+@media (max-width: 1199px) {
+  .ppd-forrester-hero {
+    padding: 70px 0 90px;
+  }
+
+  .ppd-forrester-content {
+    padding: 50px 0 80px;
+  }
+
+  .ppd-forrester-content-inner {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 991px) {
+  .ppd-forrester-hero {
+    padding: 60px 0 80px;
+  }
+
+  .ppd-forrester-hero-title {
+    margin-bottom: 16px;
+  }
+
+  .ppd-forrester-hero-rule {
+    margin: 24px 0;
+  }
+
+  .ppd-forrester-hero-description {
+    max-width: 100%;
+  }
+
+  .ppd-forrester-content {
+    padding: 40px 0 60px;
+  }
+
+  .ppd-forrester-content-inner {
+    max-width: 100%;
+  }
+
+  .ppd-forrester-section-title {
+    font-size: 30px;
+  }
+
+  .ppd-forrester-highlight {
+    padding: 24px;
+  }
+
+  .ppd-forrester-closing {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ppd-forrester-hero {
+    padding: 50px 0 70px;
+  }
+
+  .ppd-forrester-hero-title {
+    font-size: 36px;
+  }
+
+  .ppd-forrester-hero-description {
+    font-size: 16px;
+  }
+
+  .ppd-forrester-hero-image {
+    border-radius: 20px;
+  }
+
+  .ppd-forrester-content {
+    padding: 40px 0 60px;
+  }
+
+  .ppd-forrester-content-inner {
+    padding: 0 20px;
+  }
+
+  .ppd-forrester-section {
+    margin-top: 48px;
+  }
+
+  .ppd-forrester-section-title {
+    font-size: 26px;
+    padding-bottom: 12px;
+  }
+
+  .ppd-forrester-section-title::after {
+    width: 40px;
+    height: 2px;
+  }
+
+  .ppd-forrester-intro {
+    font-size: 16px;
+  }
+
+  .ppd-forrester-insight {
+    padding: 16px 0;
+  }
+
+  .ppd-forrester-insight-number {
+    font-size: 13px;
+    margin-right: 16px;
+    min-width: 32px;
+  }
+
+  .ppd-forrester-insight-content {
+    font-size: 16px;
+  }
+
+  .ppd-forrester-highlight {
+    padding: 20px;
+    margin: 32px 0;
+  }
+
+  .ppd-forrester-closing {
+    padding: 20px;
+    margin-top: 32px;
+  }
+
+  .ppd-forrester-closing p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ppd-forrester-hero {
+    padding: 40px 0 60px;
+  }
+
+  .ppd-forrester-hero-title {
+    font-size: 32px;
+  }
+
+  .ppd-forrester-section-title {
+    font-size: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ppd-forrester-event *,
+  .ppd-forrester-event *::before,
+  .ppd-forrester-event *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

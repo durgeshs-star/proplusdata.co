@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import "./Flipbox.css";
 
 const flipboxData = [
   {
@@ -35,50 +35,67 @@ const flipboxData = [
     alt:"renewal",
     link: "/renewal-intelligence"
   }
- 
-  
 ];
 
 const Flipbox = () => {
-    return (
-      <div className="flipbox_area top_feature" id="flipbox">
-        <div className="container">
-          <div className="row nagative_margin">
-            {flipboxData.map((item, index) => (
-              <div className="col-lg-3 col-md-6 col-sm-12 col-xs-6" key={index}>
-                 <Link to={item.link} className="text-decoration-none">
-                <div className="techno_flipbox mb-30">
-                  <div className="techno_flipbox_font">
-                    <div className="techno_flipbox_inner">
-                      <div className="techno_flipbox_icon">
-                     
-                          <img src={item.image} alt={item.alt} />
-                       
-                      </div>
-                      <div className="flipbox_title">
-                        <h3>{item.title}</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="techno_flipbox_back">
-                    <div className="techno_flipbox_inner">
-                      <div className="flipbox_title">
-                        <h3>{item.title}</h3>
-                      </div>
-                      <div className="flipbox_desc">
-                        <p>{item.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                </Link>
-              </div>
-            ))}
+  const [activeCard, setActiveCard] = useState(0);
+
+  return (
+    <section className="proplus-intelligence-section" id="flipbox">
+      <div className="proplus-intelligence-section__glow" aria-hidden="true" />
+      <div className="proplus-intelligence-section__inner">
+        <header className="proplus-intelligence-section__header">
+          <div className="proplus-intelligence-section__eyebrow">
+            <span className="proplus-intelligence-section__status" aria-hidden="true" />
+            Data Intelligence
           </div>
+          <h2 className="proplus-intelligence-section__title">
+            B2B intelligence for
+            <span> smarter decisions</span>
+          </h2>
+          <p className="proplus-intelligence-section__intro">
+            Explore the data intelligence capabilities behind precise targeting and data-driven decisions.
+          </p>
+        </header>
+
+        <div className="proplus-intelligence-grid">
+          {flipboxData.map((item, index) => (
+            <Link
+              to={item.link}
+              className={`proplus-intelligence-card${activeCard === index ? " is-active" : ""}`}
+              key={item.link}
+              onMouseEnter={() => setActiveCard(index)}
+              onMouseLeave={() => setActiveCard(null)}
+              onFocus={() => setActiveCard(index)}
+              onBlur={() => setActiveCard(null)}
+            >
+              <span className="proplus-intelligence-card__number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="proplus-intelligence-card__arrow" aria-hidden="true">
+                ↗
+              </span>
+
+              <span className="proplus-intelligence-card__icon-wrap">
+                <span className="proplus-intelligence-card__icon-ring" />
+                <span className="proplus-intelligence-card__icon">
+                  <img src={item.image} alt={item.alt} />
+                </span>
+              </span>
+
+              <span className="proplus-intelligence-card__title">{item.title}</span>
+              <span className="proplus-intelligence-card__description">{item.description}</span>
+
+              <span className="proplus-intelligence-card__footer">
+                <span>Explore</span>
+                <span className="proplus-intelligence-card__footer-arrow" aria-hidden="true">→</span>
+              </span>
+            </Link>
+          ))}
         </div>
       </div>
-    );
-  };
-  
+    </section>
+  );
+};
 
 export default Flipbox;

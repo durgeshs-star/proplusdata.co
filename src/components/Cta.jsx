@@ -2,7 +2,7 @@ import React from "react";
 
 const Cta = () => {
   return (
-    <div className="subscribe_area pt-10 pb-45">
+    <div className="subscribe_area pt-10 pb-45 proplus-cta-strip">
      
        <div className="col-lg-12">
             

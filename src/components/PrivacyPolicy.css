@@ -1,0 +1,277 @@
+.ppd-privacy {
+  --ppd-privacy-ink: #0d1b3e;
+  --ppd-privacy-blue: #2563eb;
+  --ppd-privacy-muted: #53627a;
+  --ppd-privacy-border: rgba(148, 163, 184, 0.28);
+  overflow: hidden;
+  background: #f5f8fc;
+  color: var(--ppd-privacy-ink);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.ppd-privacy *,
+.ppd-privacy *::before,
+.ppd-privacy *::after {
+  box-sizing: border-box;
+}
+
+.ppd-privacy a {
+  color: #1d4ed8;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-color: rgba(37, 99, 235, 0.32);
+  text-underline-offset: 0.18em;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.ppd-privacy a:hover {
+  color: #0d1b3e;
+  text-decoration-color: currentColor;
+}
+
+.ppd-privacy-shell {
+  width: min(100% - 3rem, 1100px);
+  margin: 0 auto;
+}
+
+.ppd-privacy-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(3.5rem, 6vw, 5rem) 0 2.3rem;
+  background:
+    radial-gradient(ellipse 42rem 22rem at 72% 45%, rgba(219, 234, 254, 0.48), transparent 76%),
+    #ffffff;
+}
+
+.ppd-privacy-grid {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+  background-position: center;
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 86% 82% at 50% 50%, #000 12%, transparent 100%);
+  pointer-events: none;
+}
+
+.ppd-privacy-hero h1 {
+  margin: 0;
+  color: var(--ppd-privacy-ink);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: clamp(2.8rem, 5.6vw, 4.5rem);
+  font-weight: 750;
+  letter-spacing: -0.06em;
+  line-height: 1.02;
+}
+
+.ppd-privacy-breadcrumb {
+  margin-top: 1.3rem;
+}
+
+.ppd-privacy-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  color: #64748b;
+  font-size: 0.82rem;
+  list-style: none;
+}
+
+.ppd-privacy-breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.ppd-privacy-breadcrumb a {
+  color: #475569;
+  text-decoration: none;
+}
+
+.ppd-privacy-breadcrumb a:hover {
+  color: var(--ppd-privacy-blue);
+}
+
+.ppd-privacy-breadcrumb li[aria-current="page"] {
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.ppd-privacy-content {
+  padding: 0 0 clamp(3.5rem, 7vw, 6rem);
+}
+
+.ppd-privacy-card {
+  padding: clamp(1.5rem, 5vw, 4.25rem);
+  border: 1px solid var(--ppd-privacy-border);
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 18px 48px rgba(15, 35, 75, 0.055);
+}
+
+.ppd-privacy-document h3 {
+  margin: 2.75rem 0 0.95rem;
+  color: var(--ppd-privacy-ink);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: clamp(1.5rem, 2.7vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.ppd-privacy-document > h3:first-child {
+  margin-top: 0;
+}
+
+.ppd-privacy-document p {
+  margin: 0 0 1.1rem;
+  color: var(--ppd-privacy-muted);
+  font-size: clamp(1rem, 1.15vw, 1.06rem);
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.ppd-privacy-document ul {
+  display: grid;
+  gap: 0.68rem;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.ppd-privacy-document li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.62rem;
+  color: var(--ppd-privacy-muted);
+  font-size: clamp(1rem, 1.15vw, 1.06rem);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.ppd-privacy-document li svg {
+  flex: 0 0 auto;
+  margin-top: 0.28rem;
+  color: var(--ppd-privacy-blue);
+  font-size: 0.95rem;
+}
+
+.ppd-privacy-document b {
+  color: #334155;
+  font-weight: 650;
+}
+
+.ppd-privacy-contact {
+  margin-top: 2.5rem;
+  padding: clamp(1.25rem, 3vw, 1.8rem);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 16px;
+  background: #f6f9ff;
+}
+
+.ppd-privacy-contact h3 {
+  margin-top: 0;
+}
+
+.ppd-privacy-contact p:last-child {
+  margin-bottom: 0;
+}
+
+.ppd-privacy-whatsapp {
+  position: fixed;
+  z-index: 1100;
+  right: 24px;
+  bottom: 24px;
+  display: inline-flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff !important;
+  font-size: 1.65rem;
+  line-height: 1;
+  text-decoration: none !important;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.2);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.ppd-privacy-whatsapp:hover {
+  transform: translateY(-3px);
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.26);
+}
+
+.ppd-privacy-whatsapp:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.65);
+  outline-offset: 4px;
+}
+
+@media (max-width: 767px) {
+  .ppd-privacy-shell {
+    width: min(100% - 2rem, 1100px);
+  }
+
+  .ppd-privacy-hero {
+    padding: 3.4rem 0 1.8rem;
+  }
+
+  .ppd-privacy-hero h1 {
+    font-size: clamp(2.65rem, 11vw, 3.7rem);
+  }
+
+  .ppd-privacy-card {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .ppd-privacy-document h3 {
+    margin-top: 2.25rem;
+    font-size: clamp(1.5rem, 6vw, 1.65rem);
+  }
+
+  .ppd-privacy-document p,
+  .ppd-privacy-document li {
+    font-size: 1rem;
+  }
+
+  .ppd-privacy-whatsapp {
+    right: 16px;
+    bottom: 16px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .ppd-privacy-shell {
+    width: min(100% - 1.5rem, 1100px);
+  }
+
+  .ppd-privacy-card {
+    padding: 1.35rem;
+  }
+
+  .ppd-privacy-breadcrumb ol,
+  .ppd-privacy-breadcrumb li {
+    gap: 0.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ppd-privacy *,
+  .ppd-privacy *::before,
+  .ppd-privacy *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

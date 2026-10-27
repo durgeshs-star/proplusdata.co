@@ -1,45 +1,57 @@
 import React from 'react'
+import "./EventCards.css"
 
 export default function UpcomingEvents() {
   return (
-    <div>
-       <div class="service_area pb-70">
-      
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 col-md-6 col-sm-12 event d-flex justify-content-center mb-3 mb-md-0">
-            <div class="service_style_two mb-4">
-              <div class="service_style_two_number mr-60 w-30">
-              <img src='assets/images/Gartner.webp' className="img-fluid" alt="Gartner Marketing Xpo"/>
-              </div>
-           
-            </div>
+    <div className="ppd-event-section">
+      <div className="container">
+        <div className="ppd-event-section-header">
+          <span className="ppd-event-section-eyebrow">
+            UPCOMING EVENTS
+          </span>
+          <h2 className="ppd-event-section-title">
+            Upcoming Events
+          </h2>
+          <div className="ppd-event-section-rule"></div>
+        </div>
+        <div className="ppd-event-featured">
+          <div className="ppd-event-featured-media">
+            <img src='assets/images/Gartner.webp' alt="Gartner Marketing Xpo"/>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="service_style_two mb-4">
-           
-              <div class="service_style_two_content">
-                <div class="service_style_two_title pb-3">
-                  <h4>Gartner Marketing Symposium | Xpo 2025.</h4>
-                </div>
-                <div class="service_style_two_text">
-                  <p className='text-left ml-75'>
-                  Meet us at booth #116 <br/> Dates - 2nd to 4th June 2025 <br/> Venue - Gaylord Rockies Resort & Convention Center, Denver, Co.
-                  </p>
-                  <div class="button three past-event mr-300">
-                <a href="/gartner-marketing-symposium-xpo-2025">Know More</a>
+          <div className="ppd-event-featured-content">
+            <span className="ppd-event-card-label">
+              UPCOMING EVENT
+            </span>
+            <h2 className="ppd-event-card-title">
+              Gartner Marketing Symposium | Xpo 2025.
+            </h2>
+            <div className="ppd-event-meta">
+              <div className="ppd-event-meta-item">
+                <span className="ppd-event-meta-label">BOOTH</span>
+                <span className="ppd-event-meta-value">
+                  Meet us at booth #116
+                </span>
               </div>
-                </div>
+              <div className="ppd-event-meta-item">
+                <span className="ppd-event-meta-label">DATE</span>
+                <span className="ppd-event-meta-value">
+                  Dates - 2nd to 4th June 2025
+                </span>
+              </div>
+              <div className="ppd-event-meta-item">
+                <span className="ppd-event-meta-label">VENUE</span>
+                <span className="ppd-event-meta-value">
+                  Venue - Gaylord Rockies Resort & Convention Center, Denver, Co.
+                </span>
               </div>
             </div>
+            <a href="/gartner-marketing-symposium-xpo-2025" className="ppd-event-card-link">
+              Know More
+              <span>→</span>
+            </a>
           </div>
-       
-         
-      
-         
         </div>
       </div>
-    </div>
     </div>
   )
 }

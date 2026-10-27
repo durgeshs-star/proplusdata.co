@@ -83,71 +83,66 @@ const SmartLink = ({ link, children, className }) => {
 
 const UseCasesComponent = () => {
   return (
-    <div className="blog_area pt-85 pb-65">
-      <div className="container">
-        <div className="row">
+    <>
+      <section className="ppd-usecases-hero">
+        <div className="ppd-usecases-shell">
+          <span className="ppd-usecases-eyebrow">
+            CASE STUDIES
+          </span>
+          <h1>Real-World Success Stories</h1>
+          <div className="ppd-usecases-rule"></div>
+          <p>Discover how leading organizations leverage ProPlus Data to transform their GTM strategies and achieve remarkable results across industries.</p>
+        </div>
+      </section>
+
+      <section className="ppd-usecases-content">
+        <div className="ppd-usecases-grid">
           {usecases.map((blog, index) => (
-            <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
-              <div className="single_blog mb-30">
-                
-                {/* Image */}
-                <div className="single_blog_thumb pb-4">
-                  <SmartLink link={blog.link}>
-                    <img src={blog.img} alt={blog.alt} />
-                  </SmartLink>
-                </div>
-
-                {/* Content */}
-                <div className="single_blog_content pl-4 pr-4">
-                  
-                  {/* Title */}
-                  <div className="blog_page_title pb-1 pt-4 text-left">
-                    <h3>
-                      <SmartLink link={blog.link}>
-                        {blog.title}
-                      </SmartLink>
-                    </h3>
-                  </div>
-
-                  {/* Description */}
-                  {blog.description && (
-                    <div className="blog_description text-left">
-                      <p>{blog.description}</p>
-                    </div>
-                  )}
-
-                  {/* Button */}
-                  {blog.description && (
-                    <div className="blog_page_button pb-4 text-left">
-                      <SmartLink
-                        link={blog.link}
-                        className="read-more-link"
-                      >
-                        Read More{" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="14"
-                          height="14"
-                          fill="currentColor"
-                          viewBox="0 0 16 16"
-                          style={{ marginLeft: "5px" }}
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M1 8a.5.5 0 0 1 .5-.5h11.793L9.146 4.354a.5.5 0 1 1 .708-.708l4.5 4.5a.498.498 0 0 1 .146.35.498.498 0 0 1-.146.35l-4.5 4.5a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                          />
-                        </svg>
-                      </SmartLink>
-                    </div>
-                  )}
-
-                </div>
+            <article className="ppd-usecase-card" key={index}>
+              <div className="ppd-usecase-image">
+                <SmartLink link={blog.link} className="ppd-usecase-image-link">
+                  <img src={blog.img} alt={blog.alt} />
+                </SmartLink>
               </div>
-            </div>
+
+              <div className="ppd-usecase-content">
+                <h2 className="ppd-usecase-title">
+                  <SmartLink link={blog.link}>
+                    {blog.title}
+                  </SmartLink>
+                </h2>
+
+                {blog.description && (
+                  <p className="ppd-usecase-description">{blog.description}</p>
+                )}
+
+                {blog.description && (
+                  <div className="ppd-usecase-action">
+                    <SmartLink link={blog.link} className="ppd-usecase-link">
+                      Read More
+                      <svg
+                        className="ppd-usecase-arrow"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793L9.146 4.354a.5.5 0 1 1 .708-.708l4.5 4.5a.498.498 0 0 1 .146.35.498.498 0 0 1-.146.35l-4.5 4.5a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                        />
+                      </svg>
+                    </SmartLink>
+                  </div>
+                )}
+              </div>
+            </article>
           ))}
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 

@@ -103,6 +103,7 @@ function App() {
        <Route path ="/event-audience-acquisition" element = {<EventAudienceAcquisition/>} />
        <Route path ="/buying-group" element = {<BuyingGroup/>} />
        <Route path ="/demand-gen" element = {<DemandGen/>} />
+       <Route path ="/contact" element = {<ContactUs/>} />
        <Route path ="/contact-us" element = {<ContactUs/>} />
        <Route path ="/thankyou" element = {<ThankYou/>} />
        <Route path ="/privacy-policy" element = {<PrivacyPolicy/>} />

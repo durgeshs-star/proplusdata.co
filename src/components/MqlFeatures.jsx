@@ -1,83 +1,76 @@
-import React from "react";
-
+import React, { useEffect, useRef, useState } from "react";
 
 const processItems = [
   {
     id: 1,
-   
     title: "Targeted Lead Acquisition",
-    desc: "Access a carefully curated pool of prospects actively interacting with pertinent content or offers, ensuring outreach efforts prioritize those most inclined to engage and convert.  ",
+    desc: "Access a carefully curated pool of prospects actively interacting with pertinent content or offers, ensuring outreach efforts prioritize those most inclined to engage and convert.",
   },
   {
     id: 2,
-   
     title: "Behavioral and Engagement Analytics",
-    desc: (
-        <>
-          Track real buying signals and engagement patterns to identify in-market accounts and prioritize outreach that drives pipeline.
-          <br /><br />
-        </>
-      ),
+    desc: "Track real buying signals and engagement patterns to identify in-market accounts and prioritize outreach that drives pipeline.",
   },
   {
     id: 3,
-   
-    title: "Structured Multi-Touch Campaigns ",
-    desc: "Implement a proven three-touch engagement sequence designed to heighten responsiveness and cultivate intent, building trust and encouraging deeper consideration.  ",
+    title: "Structured Multi-Touch Campaigns",
+    desc: "Implement a proven three-touch engagement sequence designed to heighten responsiveness and cultivate intent, building trust and encouraging deeper consideration.",
   },
   {
     id: 4,
-   
-    title: "A/B Testing for Ongoing Refinement ",
-    desc: (
-        <>
-        Evaluate subject lines, content structures, & calls to action in real time. Data-backed adjustments pinpoint the most impactful formats for sustained engagement.<br/>
-        </>
-    ),
+    title: "A/B Testing for Ongoing Refinement",
+    desc: "Evaluate subject lines, content structures, & calls to action in real time. Data-backed adjustments pinpoint the most impactful formats for sustained engagement.",
   },
 ];
 
 const MqlFeatures = () => {
-  return (
-    <div className="process_area work_process pt-30 pb-30">
-      <div className="container">
-        <div className="row">
-          {/* Section Title */}
-          <div className="col-lg-12">
-            <div className="section_title text_center mb-90 mt-3">
-              
-              <div className="section_main_title">
-                <h2>Key   
-                <span> Features</span>
-                </h2>
-              </div>
-              <div className="em_bar">
-                <div className="em_bar_bg"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-        {/* Process Cards */}
-        <div className="row">
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    if (!("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section ref={sectionRef} className={`ppd-mql-features${isVisible ? " is-visible" : ""}`} aria-labelledby="ppd-mql-features-title">
+      <div className="ppd-solution-shell">
+        <header className="ppd-mql-features-header">
+          <h2 className="ppd-mql-features-title" id="ppd-mql-features-title">
+            Key <span>Features</span>
+          </h2>
+          <span className="ppd-mql-features-accent" aria-hidden="true" />
+        </header>
+
+        <div className="ppd-mql-features-grid">
           {processItems.map((item) => (
-            <div key={item.id} className="col-lg-3 col-md-6">
-              <div className="single_process_work">
-                <div className="single_it_work_content">
-                 
-                  <div className="single_work_content_title pt-1">
-                    <h4>{item.title}</h4>
-                  </div>
-                  <div className="single_it_work_content_desc text-left">
-                    <p>{item.desc}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <article className="ppd-mql-feature-card" key={item.id}>
+              <span className="ppd-mql-feature-number">{item.id}</span>
+              <h3 className="ppd-mql-feature-title">{item.title}</h3>
+              <p className="ppd-mql-feature-description">{item.desc}</p>
+            </article>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

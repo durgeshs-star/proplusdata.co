@@ -2,16 +2,17 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import Breadcrumb from '../components/Breadcrumb'
 import TechnoComponent from '../components/TechnoComponent'
 import WhyTechno from '../components/WhyTechno'
 import TechnoPoints from '../components/TechnoPoints'
 import TechnographicsUse from '../components/TechnographicsUse'
 import CtaTechnographics from '../components/CtaTechnographics'
+// import SolutionBreadcrumb from '../components/solutions/SolutionBreadcrumb'
+import '../components/solutions/SolutionSystem.css'
 
 export default function TechnographicsData() {
   return (
-    <div>
+    <div className="ppd-solutions-page">
       <Helmet>
       {typeof window !== 'undefined' && (
   <script
@@ -56,15 +57,17 @@ export default function TechnographicsData() {
                                content="Discover how ProPlus Data’s technographics help you identify in-market prospects, segment audiences, and boost ABM success. Uncover your buyers' tech stack today." />
                   </Helmet>
       <Header1/>
-      <Breadcrumb/>
-      <TechnoComponent/>
-      <WhyTechno/>
-      <TechnoPoints/>
-      <TechnographicsUse/>
-      <CtaTechnographics/>
+      <main className="ppd-solution">
+        {/* <SolutionBreadcrumb label="Technographic Data" parentHref="/technographics" /> */}
+        <TechnoComponent/>
+        <WhyTechno/>
+        <TechnoPoints/>
+        <TechnographicsUse/>
+        <CtaTechnographics/>
+      </main>
       <Footer/>
-      <div class="btnwhatsapp-sm">
-        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i class="fa fa-whatsapp"></i></a>
+      <div className="btnwhatsapp-sm">
+        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i className="fa fa-whatsapp"></i></a>
     </div>
     </div>
   )

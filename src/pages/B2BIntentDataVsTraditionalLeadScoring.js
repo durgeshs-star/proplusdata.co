@@ -1,7 +1,7 @@
 import React from 'react'
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import WhatActuallyDrivesPipeline from '../components/WhatActuallydrivesPipeline'
+import IntentDataVsLeadScoring from '../components/IntentDataVsLeadScoring'
 import { Helmet } from 'react-helmet-async'
 
 export default function B2BIntentDataVsTraditionalLeadScoring() {
@@ -16,9 +16,9 @@ export default function B2BIntentDataVsTraditionalLeadScoring() {
         <meta property="og:type" content="article" />
         <meta property="og:title" content="B2B Intent Data vs Traditional Lead Scoring | ProPlus Data" />
         <meta property="og:description" content="Discover how intent data outperforms traditional lead scoring with smarter targeting, stronger lead generation, and accelerated pipeline growth." />
-      </Helmet> 
+      </Helmet>
       <Header1/>
-      <WhatActuallyDrivesPipeline/>
+      <IntentDataVsLeadScoring/>
       <Footer/>
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumWinterDataSummit from '../components/BreadcrumbWinterDataSummit'
+// import BreadcrumWinterDataSummit from '../components/BreadcrumbWinterDataSummit'
 import WinterEventComponent from '../components/WinterEventComponent'
 import WinterEventSection from '../components/WinterEventSection'
 import { Helmet } from 'react-helmet-async';
@@ -20,7 +20,7 @@ export default function NewYorkWinterDataSummit2025() {
         <meta property="og:description" content="Join us at the New York Winter Data Summit to explore the latest trends in  AI, data analytics, & business intelligence trends shaping smarter business growth." />
       </Helmet> 
       <Header1/>
-      <BreadcrumWinterDataSummit/>
+      {/* <BreadcrumWinterDataSummit/> */}
       <WinterEventComponent/>
       <WinterEventSection/>
       <Footer/>

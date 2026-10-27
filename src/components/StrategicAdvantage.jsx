@@ -1,109 +1,83 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { FaChartLine, FaAward, FaTachometerAlt, FaLeaf } from "react-icons/fa";
 
 const StrategicAdvantage = () => {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    if (!("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  const advantages = [
+    {
+      icon: <FaChartLine />,
+      title: "Maximized ROI",
+      description: "Channel resources toward high-potential prospects backed by validated intent, ensuring every investment delivers maximum returns."
+    },
+    {
+      icon: <FaAward />,
+      title: "Competitive Supremacy",
+      description: "Anticipate market trends and competitor maneuvers, positioning your business as the preferred choice."
+    },
+    {
+      icon: <FaTachometerAlt />,
+      title: "Operational Excellence",
+      description: "Eliminate inefficiencies with a clear, data-driven roadmap to engage prospects, streamlining execution."
+    },
+    {
+      icon: <FaLeaf />,
+      title: "Sustainable Growth",
+      description: "Build lasting relationships with decision-makers by addressing their needs with precision, fostering loyalty and advocacy."
+    }
+  ];
+
   return (
-    <div className="how_it_work pt-50 pb-65">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="section_title text_center mb-60 mt-3">
-             
-              <div className="section_main_title">
-                <h2>Strategic <span>Advantages</span></h2>
-              </div>
-              <div className="em_bar">
-                <div className="em_bar_bg"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section ref={sectionRef} className={`ppd-buyer-advantages${isVisible ? " is-visible" : ""}`} aria-labelledby="ppd-buyer-advantages-title">
+      <div className="ppd-solution-shell">
+        <header className="ppd-buyer-advantages-header">
+          <h2 className="ppd-buyer-advantages-title" id="ppd-buyer-advantages-title">
+            Strategic <span>Advantages</span>
+          </h2>
+          <span className="ppd-buyer-advantages-accent" aria-hidden="true" />
+        </header>
 
-        <div className="row">
-          {/* Step 1 */}
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <div className="single_it_work mb-4">
-              <div className="single_it_work_content pl-2 pr-2">
-                <div className="single_it_work_content_list pb-5">
-                 <img src="assets/images/icon/Process1.svg" alt="maximized roi"/>
-                </div>
-                <div className="single_work_content_title pb-2">
-                  <h4> Maximized ROI</h4>
-                </div>
-                <div className="single_it_work_content_text pt-1">
-                  <p>
-                  Channel resources toward high-potential prospects backed by validated <a href="https://proplusdata.co/intent-data">intent,</a> ensuring every investment delivers maximum returns. 
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Step 2 */}
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <div className="single_it_work mb-4">
-              <div className="single_it_work_content pl-2 pr-2">
-                <div className="single_it_work_content_list  pb-5">
-                <img src="assets/images/icon/Process2.svg" alt="competitive supremacy"/>
-                </div>
-                <div className="single_work_content_title pb-2">
-                  <h4> Competitive Supremacy</h4>
-                </div>
-                <div className="single_it_work_content_text pt-1">
-                  <p>
-                  Anticipate market trends and competitor maneuvers, positioning your business as the preferred choice.  
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Step 3 */}
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <div className="single_it_work mb-4">
-              <div className="single_it_work_content pl-2 pr-2">
-                <div className="single_it_work_content_list  pb-5">
-                <img src="assets/images/icon/Process3.svg" alt="operational excellence"/>
-                </div>
-                <div className="single_work_content_title pb-2">
-                  <h4>Operational Excellence
-                  </h4>
-                </div>
-                <div className="single_it_work_content_text pt-1">
-                  <p>
-                  Eliminate inefficiencies with a clear, data-driven roadmap to engage prospects, streamlining execution.
-
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-            {/* Step 4 */}
-            <div className="col-lg-3 col-md-6 col-sm-12">
-            <div className="single_it_work mb-4">
-              <div className="single_it_work_content pl-2 pr-2">
-                <div className="single_it_work_content_list three pb-5">
-                <img src="assets/images/icon/Process4.svg" alt="sustainable growth"/>
-                </div>
-                <div className="single_work_content_title pb-2">
-                  <h4>Sustainable Growth
-                  </h4>
-                </div>
-                <div className="single_it_work_content_text pt-1">
-                  <p>
-                  Build lasting relationships with decision-makers by addressing their needs with precision, fostering loyalty and advocacy.
-
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="ppd-buyer-advantages-hex">
+          {advantages.map((advantage, index) => (
+            <article 
+              className="ppd-buyer-advantage-hex" 
+              key={advantage.title}
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              <span className="ppd-buyer-advantage-icon">
+                {advantage.icon}
+              </span>
+              <h3 className="ppd-buyer-advantage-title">{advantage.title}</h3>
+              <p className="ppd-buyer-advantage-description">{advantage.description}</p>
+            </article>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

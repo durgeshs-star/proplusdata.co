@@ -1,116 +1,68 @@
-import React from 'react'
+import React from "react";
+
+const benefits = [
+  {
+    number: "01",
+    title: "Stay ahead of the curve",
+    description:
+      "Position offerings ahead of competitors by anticipating and responding to emerging technology adoption trends.",
+    image: "assets/images/shape/market-engagement.svg",
+    imageAlt: "stay ahead of the curve",
+    frameAlt: "frame1",
+  },
+  {
+    number: "02",
+    title: "Cost Efficiency",
+    description: "Focus efforts on high-propensity accounts to maximize ROI.",
+    image: "assets/images/shape/cost-efficiency.svg",
+    imageAlt: "cost-efficiency",
+    frameAlt: "frame2",
+  },
+  {
+    number: "03",
+    title: "Data-Backed Decision Making",
+    description:
+      "Equip teams with verified insights to guide strategic planning, reduce guesswork, and support data-driven outreach.",
+    image: "assets/images/shape/data backed.svg",
+    imageAlt: "data backed",
+    frameAlt: "frame3",
+  },
+];
 
 export default function NtpBenefits() {
   return (
-    <div>
-         <div class="how_it_work style_three pt-80 pb-10">
-      <div class="container">
-        <div class="row">
-          {/* <!-- Start Section Tile --> */}
-          <div class="col-lg-12">
-            <div class="section_title text_center mb-90 mt-3">
-             
-              <div class="section_main_title">
-                <h2>Benefits of<span> Next Tech Purchase<sup>&reg;</sup></span></h2>
+    <section className="ppd-ntp-benefits">
+      <div className="ppd-solution-shell">
+        <header className="ppd-ntp-benefits-header">
+          <h2 className="ppd-ntp-benefits-title">
+            Benefits of
+            <br />
+            <span>Next Tech Purchase<sup>&reg;</sup></span>
+          </h2>
+          <span className="ppd-ntp-benefits-rule" aria-hidden="true" />
+        </header>
+        <div className="ppd-ntp-benefits-grid">
+          {benefits.map((benefit) => (
+            <article className="ppd-ntp-benefit-card" key={benefit.number}>
+              <span className="ppd-ntp-benefit-number">{benefit.number}</span>
+              <div className="ppd-ntp-benefit-icon">
+                <img src={benefit.image} alt={benefit.imageAlt} />
+                <img
+                  className="ppd-ntp-benefit-frame"
+                  src="assets/images/shape/Frame 15.png"
+                  alt={benefit.frameAlt}
+                />
               </div>
-              <div class="em_bar">
-                <div class="em_bar_bg"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="single_how_it_work text-center mb-60 wow flipInY" data-wow-delay="0ms" data-wow-duration="1500ms pl-3 pr-3">
-              <div class="how_it_work_content">
-                <div class="how_it_work_number">
-                  <h4>01</h4>
-                </div>
-                <div class="how_it_work_icon">
-                  <div class="">
-                  <img src="assets/images/shape/market-engagement.svg" alt='stay ahead of the curve'/>
-                  </div>
-                  <div class="how_it_work_icon_bg_thumb">
-                    <div class="how_it_work_icon_bg_thumb_inner">
-                      <img src="assets/images/shape/Frame 15.png" alt="frame1"/>
-                    </div>
-                   
-                  </div>
-                </div>
-                <div class="how_it_work_title pt-65">
-                  <h4><a href="#">Stay ahead of the curve</a></h4>
-                </div>
-                <div class="how_it_work_text pt-2">
-                  <p>
-                  Position offerings ahead of competitors by anticipating and responding to emerging technology adoption trends.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="single_how_it_work text-center pl-3 pr-3 mb-60 wow flipInY" data-wow-delay="0ms" data-wow-duration="1500ms">
-              <div class="how_it_work_content">
-                <div class="how_it_work_number">
-                  <h4>02</h4>
-                </div>
-                <div class="how_it_work_icon">
-                  <div class="">
-                  <img src="assets/images/shape/cost-efficiency.svg" alt='cost-efficiency'/>
-                  </div>
-                  <div class="how_it_work_icon_bg_thumb">
-                    <div class="how_it_work_icon_bg_thumb_inner">
-                      <img src="assets/images/shape/Frame 15.png" alt="frame2"/>
-                    </div>
-                    
-                  </div>
-                </div>
-                <div class="how_it_work_title pt-65">
-                  <h4><a href="#">Cost Efficiency</a></h4>
-                </div>
-                <div class="how_it_work_text pt-2">
-                  <p>
-                  Focus efforts on high-propensity accounts to maximize ROI.
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-         
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="single_how_it_work text-center pl-3 pr-3 mb-60 wow flipInY" data-wow-delay="0ms" data-wow-duration="1500ms">
-              <div class="how_it_work_content">
-                <div class="how_it_work_number">
-                  <h4>03</h4>
-                </div>
-                <div class="how_it_work_icon">
-                  <div class="icon">
-                  <img src="assets/images/shape/data backed.svg" alt='data backed'/>
-                  </div>
-                  <div class="how_it_work_icon_bg_thumb">
-                    <div class="how_it_work_icon_bg_thumb_inner">
-                      <img src="assets/images/shape/Frame 15.png" alt="frame3"/>
-                    </div>
-                   
-                  </div>
-                </div>
-                <div class="how_it_work_title pt-65">
-                  <h4><a href="#">Data-Backed Decision Making</a></h4>
-                </div>
-                <div class="how_it_work_text pt-2">
-                  <p>
-                  Equip teams with verified insights to guide strategic planning, reduce guesswork, and support data-driven outreach.
-
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+              <h3 className="ppd-ntp-benefit-title">
+                <a href="#">{benefit.title}</a>
+              </h3>
+              <p className="ppd-ntp-benefit-description">
+                {benefit.description}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
-    </div>
-    </div>
-  )
+    </section>
+  );
 }

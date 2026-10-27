@@ -3,14 +3,15 @@ import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
 import EventComponent from '../components/EventComponent'
-import BreadcrumbEvent from '../components/BreadcrumbEvent'
 import FaqSection from '../components/FaqSection'
 import IndustriesSection from '../components/IndustriesSection'
 import CtaEvent from '../components/CtaEvent'
+// import SolutionBreadcrumb from '../components/solutions/SolutionBreadcrumb'
+import '../components/solutions/SolutionSystem.css'
 
 export default function EventAudienceAcquisition() {
   return (
-    <div>
+    <div className="ppd-solutions-page">
        <Helmet>
         {typeof window !== 'undefined' && (
   <script
@@ -43,14 +44,16 @@ export default function EventAudienceAcquisition() {
               content="Get qualified B2B audiences for your in-person or virtual events. ProPlus Data delivers event attendee targeting that drives real results." />
       </Helmet>
       <Header1/>
-      <BreadcrumbEvent/>
-      <EventComponent/>
-      <FaqSection/>
-      <IndustriesSection/>
-      <CtaEvent/>
+      <main className="ppd-solution">
+        {/* <SolutionBreadcrumb label="Event Audience Acquisition" parentHref="/event-audience-acquisition" /> */}
+        <EventComponent/>
+        <FaqSection/>
+        <IndustriesSection/>
+        <CtaEvent/>
+      </main>
       <Footer/>
-      <div class="btnwhatsapp-sm">
-        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i class="fa fa-whatsapp"></i></a>
+      <div className="btnwhatsapp-sm">
+        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i className="fa fa-whatsapp"></i></a>
     </div>
     </div>
   )

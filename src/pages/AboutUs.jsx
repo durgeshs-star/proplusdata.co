@@ -29,7 +29,7 @@ export default function AboutUs() {
     </Helmet>
     </>
     <Header1/>
-    <BreadcrumbAbout/>
+    {/* <BreadcrumbAbout/> */}
     <AboutComponent/>
     <AboutTab/>
     <IndustriesSection/>

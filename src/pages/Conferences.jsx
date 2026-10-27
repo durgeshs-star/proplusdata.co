@@ -26,7 +26,7 @@ export default function Conferences() {
                 content="Explore how ProPlus Data is making an impact. Join us at premier global conferences to experience our data-driven solutions firsthand and connect with our experts." />
       </Helmet>
       <Header1/>
-      <BreadcrumbConference/>
+      {/* <BreadcrumbConference/> */}
       <ConferenceSection/>
       <CmoLeadershipSummit2026/>
       <WinterDataSummit/>
@@ -34,8 +34,8 @@ export default function Conferences() {
       <UpcomingEvents/>
       <PastEvents/>
       <Footer/>
-      <div class="btnwhatsapp-sm">
-        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i class="fa fa-whatsapp"></i></a>
+      <div className="btnwhatsapp-sm">
+        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i className="fa fa-whatsapp"></i></a>
     </div>
     </div>
   )

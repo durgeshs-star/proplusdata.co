@@ -2,16 +2,17 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbRenewal from '../components/BreadcrumbRenewal'
 import RenewalComponent from '../components/RenewalComponent'
 import StrategicValue from '../components/StrategicValue'
 import HowRenewalWorks from '../components/HowRenewalWorks'
 import SubscriptionComponent from '../components/SubscriptionComponent'
 import CtaRenewal from '../components/CtaRenewal'
+// import SolutionBreadcrumb from '../components/solutions/SolutionBreadcrumb'
+import '../components/solutions/SolutionSystem.css'
 
 export default function RenewalIntelligence() {
   return (
-    <div>
+    <div className="ppd-solutions-page">
        <Helmet>
        {typeof window !== 'undefined' && (
   <script
@@ -45,15 +46,17 @@ export default function RenewalIntelligence() {
               content="Drive B2B growth by identifying accounts due for renewal. ProPlus Data helps reduce churn and uncover upsell-ready customers with subscription insights." />
       </Helmet>
       <Header1/>
-      <BreadcrumbRenewal/>
-      <RenewalComponent/>
-      <SubscriptionComponent/>
-      <StrategicValue/>
-      <HowRenewalWorks/>
-      <CtaRenewal/>
+      <main className="ppd-solution">
+        {/* <SolutionBreadcrumb label="Renewal Intelligence" parentHref="/renewal-n-subscription" /> */}
+        <RenewalComponent/>
+        <SubscriptionComponent/>
+        <StrategicValue/>
+        <HowRenewalWorks/>
+        <CtaRenewal/>
+      </main>
       <Footer/>
-      <div class="btnwhatsapp-sm">
-        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i class="fa fa-whatsapp"></i></a>
+      <div className="btnwhatsapp-sm">
+        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i className="fa fa-whatsapp"></i></a>
     </div>
     </div>
   )

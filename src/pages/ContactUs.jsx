@@ -36,7 +36,7 @@ export default function ContactUs() {
       <Header1/>
       <ContactInfo/>
       <Footer/>
-      <div class="btnwhatsapp-sm">
+      <div className="btnwhatsapp-sm">
         <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i class="fa fa-whatsapp"></i></a>
     </div>
     </div>

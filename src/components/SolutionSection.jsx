@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import "./SolutionSection.css";
 
 const solutionsData = [
   {
@@ -86,58 +88,137 @@ const solutionsData = [
 ];
 
 const SolutionSection = () => {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [activeSolution, setActiveSolution] = useState(0);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    let hasRevealed = false;
+    let observer = null;
+    const revealIfVisible = () => {
+      if (hasRevealed) return;
+      const bounds = section.getBoundingClientRect();
+      if (bounds.top < window.innerHeight && bounds.bottom > 0) {
+        hasRevealed = true;
+        setIsVisible(true);
+        observer?.disconnect();
+        window.removeEventListener("scroll", revealIfVisible);
+        window.removeEventListener("resize", revealIfVisible);
+      }
+    };
+
+    if (!("IntersectionObserver" in window)) {
+      revealIfVisible();
+      window.addEventListener("scroll", revealIfVisible, { passive: true });
+      window.addEventListener("resize", revealIfVisible);
+      return () => {
+        window.removeEventListener("scroll", revealIfVisible);
+        window.removeEventListener("resize", revealIfVisible);
+      };
+    }
+
+    observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) revealIfVisible();
+      },
+      { threshold: 0.12 }
+    );
+
+    observer.observe(section);
+    window.addEventListener("scroll", revealIfVisible, { passive: true });
+    window.addEventListener("resize", revealIfVisible);
+    revealIfVisible();
+
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener("scroll", revealIfVisible);
+      window.removeEventListener("resize", revealIfVisible);
+    };
+  }, []);
+
   return (
-    <div className="flipbox_area pt-85 pb-70" id="daas-solution" style={{ backgroundImage: `url(assets/images/slider/solution2.jpg)` }}>
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="section_title text_center white mb-55">
-              <div className="section_main_title">
-                <h2>Unified DaaS Solutions</h2>
-              </div>
-              <div className="em_bar">
-                <div className="em_bar_bg"></div>
-              </div>
-            </div>
+    <section
+      ref={sectionRef}
+      className={`ppd-daas-section${isVisible ? " is-visible" : ""}`}
+      id="daas-solution"
+      aria-labelledby="ppd-daas-title"
+    >
+      <div className="ppd-daas-background" aria-hidden="true">
+        <span className="ppd-daas-particle ppd-daas-particle--one" />
+        <span className="ppd-daas-particle ppd-daas-particle--two" />
+        <span className="ppd-daas-particle ppd-daas-particle--three" />
+        <span className="ppd-daas-particle ppd-daas-particle--four" />
+        <span className="ppd-daas-particle ppd-daas-particle--five" />
+        <span className="ppd-daas-particle ppd-daas-particle--six" />
+        <span className="ppd-daas-particle ppd-daas-particle--seven" />
+        <span className="ppd-daas-particle ppd-daas-particle--eight" />
+      </div>
+
+      <div className="ppd-daas-container">
+        <header className="ppd-daas-header">
+          <p className="ppd-daas-eyebrow">
+            <span className="ppd-daas-status" aria-hidden="true" />
+            Unified Data Intelligence
+          </p>
+          <h2 className="ppd-daas-title" id="ppd-daas-title">
+            Unified <span>DaaS</span> Solutions
+          </h2>
+        </header>
+
+        <div className="ppd-daas-matrix">
+          <div className="ppd-daas-core" aria-hidden="true">
+            <span className="ppd-daas-core-orbit ppd-daas-core-orbit--outer" />
+            <span className="ppd-daas-core-orbit ppd-daas-core-orbit--inner" />
+            <span className="ppd-daas-core-center" />
+            <span className="ppd-daas-core-label">Data core</span>
+          </div>
+
+          <div className="ppd-daas-grid">
+            {solutionsData.map((service, index) => {
+              const title = service.titleWithMark || service.title;
+
+              return (
+                <article
+                  key={service.link}
+                  className={`ppd-daas-card${activeSolution === index ? " is-active" : ""}`}
+                  onMouseEnter={() => setActiveSolution(index)}
+                >
+                  <div className="ppd-daas-card-top">
+                    <span className="ppd-daas-card-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="ppd-daas-card-signal" aria-hidden="true" />
+                  </div>
+
+                  <span className="ppd-daas-card-rule" aria-hidden="true" />
+
+                  <div className="ppd-daas-icon">
+                    <img src={service.image} alt={service.alt || "solution icon"} />
+                  </div>
+
+                  <div className="ppd-daas-content">
+                    <h3 className="ppd-daas-card-title">{title}</h3>
+                    <p className="ppd-daas-description">{service.description}</p>
+                  </div>
+
+                  <Link
+                    className="ppd-daas-link"
+                    to={service.link}
+                    aria-label={`Explore ${typeof title === "string" ? title : "Next Tech Purchase"}`}
+                  >
+                    <span>Explore</span>
+                    <span className="ppd-daas-link-arrow" aria-hidden="true">→</span>
+                  </Link>
+                </article>
+              );
+            })}
           </div>
         </div>
-        <div className="row">
-          {solutionsData.map((service, index) => (
-            <div className="col-lg-3 col-md-6 col-sm-12 col-xs-6" key={index}>
-              <div className="techno_flipbox mb-30">
-                <div className="techno_flipbox_font">
-                  <div className="techno_flipbox_inner">
-                    <div className="techno_flipbox_icon">
-                      <img src={service.image} alt={service.alt || "solution icon"} />
-                    </div>
-                    <div className="flipbox_title">
-                      <h3>{service.titleWithMark ? service.titleWithMark : service.title}</h3>
-                    </div>
-                  </div>
-                </div>
-                <div className="techno_flipbox_back">
-                  <div className="techno_flipbox_inner">
-                    <div className="flipbox_title">
-                      <h3>{service.backTitleWithMark ? service.backTitleWithMark : service.backTitle}</h3>
-                    </div>
-                    <div className="flipbox_desc">
-                      <p>{service.description}</p>
-                    </div>
-                    <div className="flipbox_button">
-                      {service.link && (
-                        <a href={service.link}>
-                          Read More <i className="fa fa-angle-double-right"></i>
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
