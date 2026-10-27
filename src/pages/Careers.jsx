@@ -24,7 +24,7 @@ export default function Careers() {
       <Header1/>
       <BreadcrumbCareers/>
       <CareerComponent/>
-      <CareerSection/>
+      {/* <CareerSection/> */}
       <Footer/>
 
     </div>

@@ -30,7 +30,10 @@ export default function CareerComponent() {
 
 
                   </p>
-                 
+                  <p className="career-email-note">
+                    Please share your CV on <a href="mailto:careers@proplusdata.co">careers@proplusdata.co</a>
+                  </p>
+
                 </div>
                
               </div>
