@@ -67,16 +67,6 @@ export default function CareerComponent() {
             </div>
           </article>
 
-                  </p>
-                  <p className="career-email-note">
-                    Please share your CV on <a href="mailto:careers@proplusdata.co">careers@proplusdata.co</a>
-                  </p>
-
-                </div>
-               
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
