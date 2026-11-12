@@ -126,11 +126,25 @@ export default function Header1() {
              <li className="dropdown">
                 <Link to="https://nexora.proplusdata.co/">RevenueGTM</Link>
             </li> 
-           
-
-           
-
+            <li className="get-started--mobile">
+              <a
+                className="dtbtn"
+                href="https://nexora.proplusdata.co/login"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Free Trial
+              </a>
+            </li>
           </ul>
+          <a
+            className="dtbtn proplus-header__trial"
+            href="https://nexora.proplusdata.co/login"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Free Trial
+          </a>
         </div>
       </div>
     </header>

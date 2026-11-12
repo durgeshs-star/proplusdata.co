@@ -204,14 +204,18 @@ body.proplus-home-page {
 
 @media (min-width: 1200px) {
   .proplus-header--reference .menu {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: max-content;
-    flex: 0 0 auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    flex: 1 1 auto;
     justify-content: center;
     gap: clamp(0.2rem, 0.9vw, 1rem);
-    transform: translate(-50%, -50%);
+    transform: none;
+  }
+
+  .proplus-header__trial {
+    flex: 0 0 auto;
   }
 }
 
@@ -2100,6 +2104,10 @@ body.proplus-home-page {
   }
 
   .proplus-header .get-started--desktop {
+    display: none;
+  }
+
+  .proplus-header__trial {
     display: none;
   }
 

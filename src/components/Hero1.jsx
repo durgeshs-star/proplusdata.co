@@ -215,7 +215,7 @@ const Hero1 = () => {
                   <input autoComplete="organization-title" type="text" name="jobTitle" value={trialData.jobTitle} onChange={updateTrialField} placeholder="Job title *" required tabIndex={trialExpanded ? 0 : -1} />
                 </label>
                 <button className="ppd-trial-form__submit" type="submit" disabled={trialLoading || Boolean(trialStatus)}>
-                  {trialLoading ? "Submitting…" : trialStatus ? "Submitted" : "Free Trial"}
+                  {trialLoading ? "Submitting…" : trialStatus ? "Submitted" : "Get Started"}
                 </button>
               </div>
               <p className="ppd-trial-form__disclaimer">By submitting this form, you agree to ProPlus Data&apos;s <Link to="/privacy-policy">Privacy Policy</Link> and <a href="mailto:info@proplusdata.co?subject=Terms%20of%20Use">Terms of Use</a>. You may unsubscribe at any time.</p>
