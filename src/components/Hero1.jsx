@@ -2,19 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import {
-  Activity,
-  ArrowUpRight,
-  Building2,
-  Check,
-  ChevronDown,
-  CircleDot,
-  Database,
-  Globe2,
-  Layers3,
-  Search,
-  UsersRound,
-} from "lucide-react";
 
 const clients = [
   "8x8.png",
@@ -30,79 +17,6 @@ const clients = [
 ];
 
 const marqueeClients = [...clients, ...clients];
-
-function ProductDashboard() {
-  return (
-    <div className="ppd-hero-dashboard-wrap" aria-hidden="true">
-      <div className="ppd-hero-dashboard-glow" />
-      <div className="ppd-hero-dashboard">
-        <aside className="ppd-hero-dashboard__sidebar">
-          <div className="ppd-hero-dashboard__brand">P</div>
-          <span className="ppd-hero-dashboard__nav-item is-active"><Layers3 size={17} /></span>
-          <span className="ppd-hero-dashboard__nav-item"><Building2 size={17} /></span>
-          <span className="ppd-hero-dashboard__nav-item"><UsersRound size={17} /></span>
-          <span className="ppd-hero-dashboard__nav-item"><Activity size={17} /></span>
-          <span className="ppd-hero-dashboard__nav-item ppd-hero-dashboard__nav-bottom"><Globe2 size={17} /></span>
-        </aside>
-
-        <div className="ppd-hero-dashboard__main">
-          <div className="ppd-hero-dashboard__topbar">
-            <div className="ppd-hero-dashboard__breadcrumb">Workspace <ChevronDown size={13} /><b>Account intelligence</b></div>
-            <span className="ppd-hero-dashboard__live"><i /> Live intelligence</span>
-          </div>
-
-          <div className="ppd-hero-dashboard__body">
-            <div className="ppd-hero-dashboard__heading-row">
-              <div>
-                <span className="ppd-hero-dashboard__overline">COMPANY INTELLIGENCE</span>
-                <h2>Account overview</h2>
-                <p>Technology company <span>·</span> North America</p>
-              </div>
-              <span className="ppd-hero-dashboard__search"><Search size={16} /></span>
-            </div>
-
-            <div className="ppd-hero-dashboard__summary">
-              <div className="ppd-hero-dashboard__company-mark"><Building2 size={21} /></div>
-              <div className="ppd-hero-dashboard__company-name"><strong>Company profile</strong><span>Verified business record <Check size={12} /></span></div>
-              <span className="ppd-hero-dashboard__verified"><Check size={12} /> Verified</span>
-            </div>
-
-            <div className="ppd-hero-dashboard__metrics">
-              <div className="ppd-hero-dashboard__metric"><span>Intent activity</span><strong>86 <small>/ 100</small></strong><em><ArrowUpRight size={12} /> Rising signal</em></div>
-              <div className="ppd-hero-dashboard__metric"><span>Tech coverage</span><strong>94<small>%</small></strong><em><Check size={12} /> Strong coverage</em></div>
-              <div className="ppd-hero-dashboard__metric"><span>Buying group</span><strong>8 <small>contacts</small></strong><em><UsersRound size={12} /> 3 active signals</em></div>
-            </div>
-
-            <div className="ppd-hero-dashboard__lower">
-              <div className="ppd-hero-dashboard__chart-card">
-                <div className="ppd-hero-dashboard__card-heading"><div><span>BUYING SIGNALS</span><strong>Intent activity</strong></div><span className="ppd-hero-dashboard__period">Last 30 days <ChevronDown size={12} /></span></div>
-                <div className="ppd-hero-dashboard__chart">
-                  <div className="ppd-hero-dashboard__chart-y"><span>High</span><span>Med</span><span>Low</span></div>
-                  <div className="ppd-hero-dashboard__chart-plot">
-                    <i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i />
-                    <svg viewBox="0 0 420 100" preserveAspectRatio="none"><path d="M0 78 C38 72 43 66 74 70 S111 63 143 67 S180 50 210 56 S250 49 278 53 S321 28 346 40 S384 20 420 12" /></svg>
-                  </div>
-                </div>
-                <div className="ppd-hero-dashboard__chart-x"><span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span></div>
-              </div>
-
-              <div className="ppd-hero-dashboard__stack-card">
-                <div className="ppd-hero-dashboard__card-heading"><div><span>TECHNOGRAPHICS</span><strong>Technology stack</strong></div><Database size={15} /></div>
-                <div className="ppd-hero-dashboard__stack-list"><span><i className="is-blue">C</i> CRM platform <b>CRM</b></span><span><i className="is-cyan">A</i> Cloud platform <b>Cloud</b></span><span><i className="is-violet">D</i> Data platform <b>Data</b></span></div>
-                <div className="ppd-hero-dashboard__stack-more">Explore technology insights <ArrowUpRight size={12} /></div>
-              </div>
-            </div>
-            <div className="ppd-hero-dashboard__sample"><CircleDot size={10} /> Illustrative intelligence dashboard</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="ppd-hero-float-card ppd-hero-float-card--signals"><span className="ppd-hero-float-card__icon"><Activity size={17} /></span><span><strong>Buying signals</strong><small>Research activity rising</small></span><ArrowUpRight size={16} /></div>
-      <div className="ppd-hero-float-card ppd-hero-float-card--group"><span className="ppd-hero-float-card__icon is-purple"><UsersRound size={17} /></span><span><strong>Buying group</strong><small>Contacts and roles mapped</small></span><span className="ppd-hero-float-card__avatars"><i /><i /><i /></span></div>
-      <div className="ppd-hero-float-card ppd-hero-float-card--renewal"><span className="ppd-hero-float-card__icon is-cyan"><CircleDot size={17} /></span><span><strong>Renewal intelligence</strong><small>Contract window identified</small></span><ArrowUpRight size={16} /></div>
-    </div>
-  );
-}
 
 const Hero1 = () => {
   const [trialExpanded, setTrialExpanded] = useState(false);

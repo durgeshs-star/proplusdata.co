@@ -2,7 +2,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbAbout from '../components/BreadcrumbAbout'
 import AboutComponent from '../components/AboutComponent'
 import AboutTab from '../components/AboutTab'
 import IndustriesSection from '../components/IndustriesSection'

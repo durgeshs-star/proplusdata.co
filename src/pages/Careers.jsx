@@ -4,8 +4,6 @@ import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
 import BreadcrumbCareers from '../components/BreadcrumbCareers'
 import CareerComponent from '../components/CareerComponent'
-import CareerSection from '../components/CareerSection'
-import CtaCareers from '../components/CtaCareers'
 import '../components/Careers.css'
 import '../components/CompanyPages.css'
 
