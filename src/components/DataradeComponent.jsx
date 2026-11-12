@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaCheckSquare } from "react-icons/fa";
 import "./PressReleases.css";
 
 const DataradeComponent = () => {

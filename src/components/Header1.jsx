@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCaretDown,
@@ -10,25 +10,10 @@ import {
 export default function Header1() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [languageOpen, setLanguageOpen] = useState(false);
-
-  const location = useLocation();
-  const currentPath = location.pathname;
-
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest(".language-dropdown")) {
-        setLanguageOpen(false);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -61,7 +46,7 @@ export default function Header1() {
           <ul className={`menu ${menuOpen ? "open" : ""}`}>
 
             <li className="dropdown">
-              <a href="#" onClick={(e) => e.preventDefault()}>
+              <a href="/technographics">
                 GTM Solutions <FontAwesomeIcon icon={faCaretDown} />
               </a>
               <ul className="dropdown-menu">
@@ -83,7 +68,7 @@ export default function Header1() {
             </li>
 
             <li className="dropdown">
-              <a href="#" onClick={(e) => e.preventDefault()}>
+              <a href="/about-us">
                 Company <FontAwesomeIcon icon={faCaretDown} />
               </a>
               <ul className="dropdown-menu">
@@ -96,7 +81,7 @@ export default function Header1() {
             </li>
 
             <li className="dropdown">
-              <a href="#" onClick={(e) => e.preventDefault()}>
+              <a href="/blogs">
                 Resources <FontAwesomeIcon icon={faCaretDown} />
               </a>
               <ul className="dropdown-menu">
