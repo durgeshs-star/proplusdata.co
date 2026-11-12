@@ -1,46 +1,45 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Building2, UsersRound, Network, Cpu, MonitorCog, TrendingUp, UserSearch, BarChart3, BarChart2 } from "lucide-react";
 
 const solutionsData = [
   {
+    number: "01",
     title: "Firmographic Insights",
     description: "A detailed profile of a business, including industry, size, location, structure, and performance.",
-    icon: <Building2 />,
   },
   {
+    number: "02",
     title: "Demographic Insights",
     description: "Uncover detailed insights on key stakeholders, including names, roles, responsibilities, and skillsets, enabling precision-targeted engagement",
-    icon: <UsersRound />,
   },
   {
+    number: "03",
     title: "Buyer Group Mapping",
     description: "Identify and understand buyer cohorts to effectively navigate complex decision-making ecosystems within target organizations.",
-    icon: <Network />,
   },
   {
+    number: "04",
     title: "Technology Adoption",
     description: "Access real-time insights into current and emerging technology adoption trends to inform and tailor go-to-market strategies.",
-    icon: <Cpu />,
   },
   {
+    number: "05",
     title: "Competitor Insights",
     description: "Gain strategic intelligence on the competitors to uncover differentiators and proactively outmanoeuvre them.",
-    icon: <BarChart3 />,
   },
   {
+    number: "06",
     title: "Digital Transformation",
     description: "Evaluate an organization's financial trajectory and digital initiatives to ensure alignment with your value proposition.",
-    icon: <MonitorCog />,
   },
   {
+    number: "07",
     title: "Technology Investments",
     description: "Understand enterprise-level technology investment priorities to strategically position your solutions in line with business objectives.",
-    icon: <BarChart2 />,
   },
   {
+    number: "08",
     title: "Potential Decision Makers",
     description: "Precisely identify decision-makers and influencers to maximize outreach effectiveness and accelerate engagement.",
-    icon: <UserSearch />,
   },
 ];
 
@@ -90,7 +89,7 @@ const KeyCapabilities = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <span className="ppd-buyer-capability-icon">
-                {item.icon}
+                {item.number}
               </span>
               <h3 className="ppd-buyer-capability-title">{item.title}</h3>
               <p className="ppd-buyer-capability-description">{item.description}</p>

@@ -52,7 +52,7 @@ export default function NextTechPurchase() {
                                      content="Anticipate client tech shifts with Next Tech Purchase® by ProPlus Data. Leverage predictive intelligence to align GTM strategies and drive growth with foresight." />
         </Helmet>
       <Header1/>
-        <main className="ppd-solution">
+        <main className="ppd-solution ppd-solution--next-tech-purchase">
           {/* <SolutionBreadcrumb label={<>Next Tech Purchase<sup>&reg;</sup></>} parentHref="/next-tech-purchase" /> */}
           <NtpComponent/>
           <NtpFeatures/>

@@ -39,10 +39,10 @@
 }
 
 .ppd-blogs-lead {
-  font-size: clamp(17px, 2vw, 22px);
+  font-size: clamp(18px, 2.2vw, 24px);
   line-height: 1.8;
   font-weight: 500;
-  color: rgba(13, 27, 62, 0.68);
+  color: #334155;
   margin: 0 auto;
   max-width: 960px;
 }
@@ -109,22 +109,60 @@
   width: 100%;
   aspect-ratio: 16/9;
   overflow: hidden;
-  background: linear-gradient(135deg, #f1f6ff 0%, #e0e7ff 100%);
+  background: #f3f5f8;
   border-radius: 16px 16px 0 0;
   position: relative;
 }
 
-.ppd-blog-image {
+.ppd-blog-image-wrap > a {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 300ms ease;
-  display: block;
 }
 
-.ppd-blog-card:hover .ppd-blog-image {
-  transform: scale(1.08);
+.ppd-blog-artwork {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: filter 300ms ease;
+}
+
+.ppd-blog-card:hover .ppd-blog-artwork {
+  filter: saturate(1.08);
+}
+
+.ppd-blog-artwork__signal {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ppd-blog-signal 2.8s ease-in-out infinite;
+}
+
+.ppd-blog-artwork__float {
+  animation: ppd-blog-float 4s ease-in-out infinite;
+}
+
+.ppd-blog-artwork__float--delay {
+  animation-delay: -2s;
+}
+
+.ppd-blog-artwork__chart-line {
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  animation: ppd-blog-chart 1.8s ease-out forwards;
+}
+
+@keyframes ppd-blog-signal {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .7; transform: scale(1.2); }
+}
+
+@keyframes ppd-blog-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes ppd-blog-chart {
+  to { stroke-dashoffset: 0; }
 }
 
 .ppd-blog-content {
@@ -172,9 +210,9 @@
 }
 
 .ppd-blog-description {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
-  color: #24324f;
+  color: #334155;
   margin: 0 0 20px 0;
   flex: 1;
   display: -webkit-box;
@@ -316,9 +354,15 @@
 
 @media (prefers-reduced-motion: reduce) {
   .ppd-blog-card,
-  .ppd-blog-image,
+  .ppd-blog-artwork,
   .ppd-blog-read-more,
   .ppd-blog-read-more svg {
     transition: none;
+  }
+
+  .ppd-blog-artwork__signal,
+  .ppd-blog-artwork__float,
+  .ppd-blog-artwork__chart-line {
+    animation: none;
   }
 }

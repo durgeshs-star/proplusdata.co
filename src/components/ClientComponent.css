@@ -29,6 +29,13 @@
   margin: 0;
 }
 
+.ppd-gtm-trust-title span {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #133580;
+  font-style: italic;
+  font-weight: 600;
+}
+
 .ppd-gtm-trust-marquee {
   position: relative;
   width: 100%;

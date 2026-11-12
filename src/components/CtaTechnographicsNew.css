@@ -1,0 +1,162 @@
+.ppd-techno-cta-new {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(5rem, 10vw, 8rem) 0;
+  background:
+    radial-gradient(ellipse 46rem 28rem at 20% 30%, rgba(37, 99, 235, 0.08), transparent 70%),
+    radial-gradient(ellipse 42rem 24rem at 80% 70%, rgba(244, 63, 94, 0.05), transparent 70%),
+    radial-gradient(ellipse 50rem 30rem at 50% 35%, rgba(219, 234, 254, 0.45), transparent 75%),
+    linear-gradient(135deg, #0d1b3e 0%, #133580 100%);
+}
+
+.ppd-techno-cta-new__background {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ppd-techno-cta-new__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-position: center center;
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 88% 78% at 50% 44%, #000 18%, transparent 100%);
+}
+
+.ppd-techno-cta-new__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(52rem, 90vw);
+  height: 22rem;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.15);
+  filter: blur(90px);
+  transform: translate(-50%, -50%);
+}
+
+.ppd-techno-cta-new__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 4rem);
+}
+
+.ppd-techno-cta-new__content {
+  text-align: center;
+  padding: clamp(3rem, 6vw, 5rem);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.ppd-techno-cta-new__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 auto 1.1rem;
+  padding: 0.48rem 0.8rem;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 999px;
+  background: rgba(239, 246, 255, 0.9);
+  color: #1d4ed8;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.ppd-techno-cta-new__status {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+  animation: ppd-techno-cta-status-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes ppd-techno-cta-status-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+}
+
+.ppd-techno-cta-new__title {
+  margin: 0 auto 1.5rem;
+  color: #0f1f3d;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 1.1;
+}
+
+.ppd-techno-cta-new__title span {
+  padding-bottom: 0.08em;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #133580 !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+  background: none !important;
+  -webkit-text-fill-color: #133580 !important;
+}
+
+.ppd-techno-cta-new__subtitle {
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  color: #334155;
+  font-size: clamp(1rem, 1.25vw, 1.1rem);
+  line-height: 1.7;
+}
+
+.ppd-techno-cta-new__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 auto;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 300ms ease, box-shadow 300ms ease, background-color 300ms ease;
+}
+
+.ppd-techno-cta-new__button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.4);
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+@media (max-width: 576px) {
+  .ppd-techno-cta-new__content {
+    padding: clamp(2rem, 6vw, 3rem);
+  }
+
+  .ppd-techno-cta-new__button {
+    width: 100%;
+    justify-content: center;
+  }
+}

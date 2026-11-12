@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import SolutionIllustration from "./solutions/SolutionIllustration";
 
 export default function BuyerPersonaMatter() {
   const sectionRef = useRef(null);
@@ -33,7 +34,7 @@ export default function BuyerPersonaMatter() {
         <div className="ppd-buyer-matter-layout">
           <div className="ppd-buyer-matter-visual">
             <div className="ppd-buyer-matter-frame" aria-hidden="true" />
-            <img src="/assets/images/Buyer Pesona Insights.webp" alt="Organizational Chart" />
+            <SolutionIllustration category="Buying Group" compact />
           </div>
           <div className="ppd-buyer-matter-content">
             <h2 className="ppd-buyer-matter-title" id="ppd-buyer-matter-title">

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="121" y1="52" x2="1048" y2="622" gradientUnits="userSpaceOnUse"><stop stop-color="#F0F6FF"/><stop offset="1" stop-color="#E4EEFC"/></linearGradient>
+    <linearGradient id="panel" x1="346" y1="190" x2="863" y2="528" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#F8FAFE"/></linearGradient>
+    <filter id="shadow" x="266" y="132" width="668" height="474" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feGaussianBlur in="SourceAlpha" stdDeviation="15"/><feOffset dy="14"/><feComponentTransfer><feFuncA type="linear" slope=".12"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1200v675H0z"/><circle cx="180" cy="110" r="150" fill="#DDEAFE"/><circle cx="1070" cy="540" r="190" fill="#D7E8F8"/>
+  <path d="M0 562c220-68 367-21 541 18 204 45 397 31 659-50v145H0V562Z" fill="#D9E7F8"/>
+  <g filter="url(#shadow)">
+    <rect x="320" y="168" width="560" height="366" rx="23" fill="url(#panel)" stroke="#D5E1F0" stroke-width="2"/>
+    <rect x="320" y="168" width="560" height="69" rx="23" fill="#fff"/>
+    <path d="M320 214v23h560v-23" fill="#fff"/>
+    <circle cx="352" cy="202" r="6" fill="#F28C45"/><circle cx="373" cy="202" r="6" fill="#F2C36B"/><circle cx="394" cy="202" r="6" fill="#69BFA6"/>
+    <text x="428" y="207" fill="#607895" font-family="Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="1.8">CLOUD ACCOUNT RENEWALS</text>
+    <rect x="350" y="265" width="210" height="220" rx="16" fill="#F4F7FC"/>
+    <path d="M388 352v91" stroke="#D3DEEC" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="388" cy="360" r="9" fill="#45B899" stroke="#fff" stroke-width="4"/><circle cx="388" cy="400" r="9" fill="#3979D4" stroke="#fff" stroke-width="4"/><circle cx="388" cy="440" r="9" fill="#F28C45" stroke="#fff" stroke-width="4"/>
+    <rect x="583" y="265" width="267" height="103" rx="16" fill="#173F91"/>
+    <text x="610" y="345" fill="#fff" font-family="Arial,sans-serif" font-size="44" font-weight="800">3× faster</text>
+    <rect x="583" y="386" width="267" height="99" rx="16" fill="#fff" stroke="#E0E8F2"/>
+    <path d="M611 449h207" stroke="#E6ECF4" stroke-width="8" stroke-linecap="round"/>
+    <path d="M611 449h154" stroke="#45B899" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="765" cy="449" r="10" fill="#fff" stroke="#45B899" stroke-width="4"/>
+  </g>
+  <path d="M170 294c43-65 116-70 156-37M874 423c47 44 100 37 148-16" stroke="#7D9FCF" stroke-width="2" stroke-dasharray="6 8"/>
+  <circle cx="163" cy="303" r="11" fill="#fff" stroke="#3979D4" stroke-width="3"/><circle cx="1030" cy="398" r="12" fill="#FFF2DF" stroke="#F28C45" stroke-width="3"/>
+  <path d="M1022 392c-17-20-10-47 15-53 21-5 38 11 37 31 0 16-15 26-28 37-12-9-18-14-24-15Z" fill="#fff" stroke="#6D9DE0" stroke-width="3"/>
+  <path d="M1034 372c5-10 18-11 24-2" stroke="#45B899" stroke-width="3" stroke-linecap="round"/>
+</svg>

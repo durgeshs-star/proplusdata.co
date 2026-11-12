@@ -9,25 +9,24 @@ export default function Blogs() {
     <div>
       <Helmet>
         <script type="application/ld+json">
-{`
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Unlocking the Full Potential of Data-Driven Business Strategies",
-  "author": {
-    "@type": "Organization",
-    "name": "ProPlus Data"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ProPlus Data",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://proplusdata.co/logo.png"
-    }
-  },
-  "datePublished": "07-08-2024",
-  "image": "https://proplusdata.co/assets/images/blog1.png"
-`}
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "Unlocking the Full Potential of Data-Driven Business Strategies",
+            author: {
+              "@type": "Organization",
+              name: "ProPlus Data",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "ProPlus Data",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://proplusdata.co/logo.png",
+              },
+            },
+            datePublished: "2024-08-07",
+          })}
 </script>
 
         <title>Insights & Analysis Blog | ProPlus Data</title>

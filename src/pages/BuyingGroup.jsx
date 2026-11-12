@@ -46,7 +46,7 @@ export default function BuyingGroup() {
                                 content="Identify and engage the right buying group with ProPlus Data. Access demographic, firmographic and technographic data to improve B2B targeting and GTM growth." />
       </Helmet>
       <Header1/>
-      <main className="ppd-solution">
+      <main className="ppd-solution ppd-solution--buying-group">
         {/* <SolutionBreadcrumb label="Buying Group" parentHref="/buyer-persona-insights" /> */}
         <BuyerComponent/>
         <BuyerPersonaMatter/>

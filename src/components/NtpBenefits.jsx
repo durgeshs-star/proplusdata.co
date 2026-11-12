@@ -1,4 +1,5 @@
 import React from "react";
+import SolutionStepCard from "./SolutionStepCard";
 
 const benefits = [
   {
@@ -6,60 +7,45 @@ const benefits = [
     title: "Stay ahead of the curve",
     description:
       "Position offerings ahead of competitors by anticipating and responding to emerging technology adoption trends.",
-    image: "assets/images/shape/market-engagement.svg",
-    imageAlt: "stay ahead of the curve",
-    frameAlt: "frame1",
   },
   {
     number: "02",
-    title: "Cost Efficiency",
-    description: "Focus efforts on high-propensity accounts to maximize ROI.",
-    image: "assets/images/shape/cost-efficiency.svg",
-    imageAlt: "cost-efficiency",
-    frameAlt: "frame2",
+    title: "Spend with precision",
+    description:
+      "Focus efforts on high-propensity accounts to maximize return on every sales and marketing investment.",
   },
   {
     number: "03",
-    title: "Data-Backed Decision Making",
+    title: "Make confident decisions",
     description:
-      "Equip teams with verified insights to guide strategic planning, reduce guesswork, and support data-driven outreach.",
-    image: "assets/images/shape/data backed.svg",
-    imageAlt: "data backed",
-    frameAlt: "frame3",
+      "Equip teams with verified insights to guide planning, reduce guesswork, and support data-driven outreach.",
   },
 ];
 
 export default function NtpBenefits() {
   return (
-    <section className="ppd-ntp-benefits">
+    <section className="ppd-renewal-how ppd-ntp-benefits" aria-labelledby="ppd-ntp-benefits-title">
       <div className="ppd-solution-shell">
-        <header className="ppd-ntp-benefits-header">
-          <h2 className="ppd-ntp-benefits-title">
-            Benefits of
-            <br />
-            <span>Next Tech Purchase<sup>&reg;</sup></span>
+        <header className="ppd-renewal-how-header">
+          <p className="ppd-renewal-how-eyebrow">The advantage</p>
+          <h2 className="ppd-renewal-how-title" id="ppd-ntp-benefits-title">
+            Benefits of <em>Next Tech Purchase</em><sup>&reg;</sup>
           </h2>
-          <span className="ppd-ntp-benefits-rule" aria-hidden="true" />
+          <p className="ppd-renewal-how-intro">
+            Turn predictive purchase signals into better timing, more precise
+            investment, and confident decisions.
+          </p>
         </header>
-        <div className="ppd-ntp-benefits-grid">
-          {benefits.map((benefit) => (
-            <article className="ppd-ntp-benefit-card" key={benefit.number}>
-              <span className="ppd-ntp-benefit-number">{benefit.number}</span>
-              <div className="ppd-ntp-benefit-icon">
-                <img src={benefit.image} alt={benefit.imageAlt} />
-                <img
-                  className="ppd-ntp-benefit-frame"
-                  src="assets/images/shape/Frame 15.png"
-                  alt={benefit.frameAlt}
-                />
-              </div>
-              <h3 className="ppd-ntp-benefit-title">
-                <a href="#">{benefit.title}</a>
-              </h3>
-              <p className="ppd-ntp-benefit-description">
-                {benefit.description}
-              </p>
-            </article>
+        <div className="ppd-renewal-how-steps">
+          {benefits.map((benefit, index) => (
+            <SolutionStepCard
+              key={benefit.number}
+              number={benefit.number}
+              label="Purchase advantage"
+              title={benefit.title}
+              description={benefit.description}
+              index={index}
+            />
           ))}
         </div>
       </div>

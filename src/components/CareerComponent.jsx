@@ -60,22 +60,11 @@ export default function CareerComponent() {
               <p className="ppd-careers-detail">
                 Whether you're diving into tech research, shaping digital campaigns, or streamlining operations, every role here contributes to innovations that matter. If you bring expertise, curiosity, and the drive to turn insight into impact, you'll find a workplace that values fresh ideas, encourages growth, and celebrates collaboration. Join us in shaping the future of data intelligence.
               </p>
-            </div>
 
-            <a
-              href="#career-openings"
-              className="ppd-careers-cta"
-              onClick={(e) => {
-                e.preventDefault();
-                const element = document.getElementById('career-openings');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-            >
-              <span>View Openings</span>
-              <span className="ppd-careers-cta-arrow" aria-hidden="true">→</span>
-            </a>
+              <p className="ppd-careers-email">
+                Please share your CV on <a href="mailto:careers@proplusdata.co">careers@proplusdata.co</a>
+              </p>
+            </div>
           </article>
 
           <div className="ppd-careers-visual-column col-lg-5 col-md-6">

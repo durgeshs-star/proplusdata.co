@@ -32,10 +32,10 @@
 }
 
 .ppd-career-form-title span {
-  background: linear-gradient(115deg, #2563eb 5%, #60a5fa 95%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #133580;
   font-style: italic;
+  font-weight: 600;
 }
 
 .ppd-career-form {

@@ -6,15 +6,6 @@ export default function NtpComponent() {
     <SolutionHero
       eyebrow="Next Tech Purchase"
       title={<>Identify Replacement Opportunity with <span>Next Tech Purchase<sup>&reg;</sup></span></>}
-      visual={
-        <video
-          src="/assets/images/Next-Tech-Purchase.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-      }
     >
       <p>
         <strong>Imagine, 87% of your audience isn’t ready to buy today; but when <br/> they are, will your solution be the first they think of?</strong>

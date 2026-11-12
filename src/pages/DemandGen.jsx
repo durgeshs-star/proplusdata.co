@@ -26,7 +26,7 @@ export default function DemandGen() {
                 content="Accelerate B2B demand generation with ProPlus Data. Leverage intent data, technographics, and verified contacts to drive qualified leads and pipeline growth." />
         </Helmet>
       <Header1/>
-        <main className="ppd-solution">
+        <main className="ppd-solution ppd-solution--demand-gen">
           {/* <SolutionBreadcrumb label="Demand Gen" parentHref="/marketing-qualified-leads" /> */}
           <MqlComponent/>
           <MqlFeatures/>

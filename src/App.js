@@ -81,6 +81,11 @@ import Pricing from './pages/Pricing';
 // import GTMAssessment from './pages/GtmAssessment';
 import GTMAssessmentQuestions from './pages/GtmAssessmentQuestions';
 import GTMAssessmentResult from './pages/GtmAssessmentResults';
+import WhenRevenueOpportunityBegins from './pages/WhenRevenueOpportunityBegins';
+import GtmPlanningGuide2027 from './pages/GtmPlanningGuide2027';
+import GtmTrends2027 from './pages/GtmTrends2027';
+import B2BIntelligencePlatforms from './pages/B2BIntelligencePlatforms';
+import TechnographicsOutdated from './pages/TechnographicsOutdated';
 
 
 
@@ -167,6 +172,11 @@ function App() {
       <Route path='/see-your-gtm-truth-in-60-sec' element = {<SeeYourGtmTruthIn60Sec/>}/>
       <Route path='/cmo-leadership-summit-2026' element = {<CmoLeadershipSummit2026/>}/>
       <Route path='/how-predictive-intelligence-is-transforming-b2b-demand-generation' element = {<HowPredictiveIntelligenceIsTransformingB2BDemandGeneration/>}/>
+      <Route path='/when-does-a-revenue-opportunity-begin' element = {<WhenRevenueOpportunityBegins/>}/>
+      <Route path='/2027-gtm-planning-guide' element = {<GtmPlanningGuide2027/>}/>
+      <Route path='/10-b2b-gtm-trends-2027' element = {<GtmTrends2027/>}/>
+      <Route path='/b2b-intelligence-platforms-reshaping-gtm' element = {<B2BIntelligencePlatforms/>}/>
+      <Route path='/what-if-your-technographic-data-is-already-outdated' element = {<TechnographicsOutdated/>}/>
       <Route path='/nexora-pricing' element = {<Pricing/>}/>
       <Route path='/gtm-assessment-questions' element = {<GTMAssessmentQuestions/>}/>
       <Route path='/gtm-assessment-results' element = {<GTMAssessmentResult/>}/>

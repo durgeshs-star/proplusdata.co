@@ -3,57 +3,57 @@ import { Link } from "react-router-dom";
 
 const usecases = [
   {
-    img: "assets/images/siemens-case-study.webp",
+    img: "assets/images/use-case-fortune500-manufacturer.svg",
     title: "How a Fortune 500 Manufacturer Transformed GTM with ProPlus",
     description:
       "ProPlus enabled a Fortune 500 manufacturer to boost pipeline precision across 11 regions and 10+ industries, driving 2.8x engagement and 43% GTM efficiency gains.",
     link: "/how-a-fortune-500-manufacturer-transformed-gtm-with-proplus",
-    alt: "fortune500-gtm-case-study",
+    alt: "Illustration of manufacturing regions connected to a precision-targeted sales pipeline",
   },
   {
-    img: "assets/images/renewal-intelligence-use-case.svg",
+    img: "assets/images/use-case-cloud-renewal.svg",
     title:
       "ProPlus' Renewal Intelligence Fuel 3X Pipeline Velocity for Leading Cloud Enterprise",
     description:
       "ProPlus Data enabled a global cloud leader to accelerate demand and pipeline velocity by leveraging renewal, technographic...",
     link: "/proplus-renewal-intelligence-boosts-cloud-enterprise-pipeline-3x",
-    alt: "proplus-renewal-intelligence-boosts-cloud-enterprise-pipeline-3x",
+    alt: "Illustration of cloud account renewal signals accelerating a sales pipeline",
   },
   {
-    img: "assets/images/use-case1.webp",
+    img: "assets/images/use-case-apac-cx.svg",
     title:
       "Cracking The Code: APAC CX Transformation Success Unveiled !",
     description:
       "Our Client, a global tech solution provider of Cloud-based Customer Experience (CX) driven by the transformative capabilities of CX One, sought to address key pain points in the APAC region.",
     link: "https://proplusdata.co/cracking-the-code-apac-transformation-success-unveiled.pdf",
-    alt: "apac-cx-transformation-success",
+    alt: "Illustration of connected customer experience teams across the Asia Pacific region",
   },
   {
-    img: "assets/images/use-case5.webp",
+    img: "assets/images/use-case-asean-cybersecurity.svg",
     title:
       "How ProPlus Data Accelerated ASEAN Market penetration Of A Western Market Leader IN Cyber Security?",
     description:
       "In the cybersecurity sector, our client is a standout leader, renowned for pioneering solutions in the...",
     link: "https://proplusdata.co/how-proplus-data-accelerated-asean-market-penetration-of-a-westren-market-leader-in-cybersecurity.pdf",
-    alt: "accelerating-asean-market-penetration",
+    alt: "Illustration of a cybersecurity shield protecting a connected Southeast Asian market",
   },
   {
-    img: "assets/images/use-case4.webp",
+    img: "assets/images/use-case-data-dashboard.svg",
     title:
       "How ProPlus Data's Dashboard Resonates Powerful Message Than An Aggregated Tool?",
     description:
       "Our client empowers companies of all sizes with the tools and technologies to bring ideas from concept to creation faster and more efficiently.",
     link: "https://proplusdata.co/how-proplus-data's-dashboard-resonates-powerful-message-than-an-aggregated-tool.pdf",
-    alt: "the-power-of-proplus-data-dashboard",
+    alt: "Illustration of a data intelligence dashboard turning metrics into clear insights",
   },
   {
-    img: "assets/images/use-case3.webp",
+    img: "assets/images/use-case-cloud-account-discovery.svg",
     title:
       "How ProPlus Data Helped Cloud Computing Giant Find Hidden Gems in a Sea of Accounts.",
     description:
       "Our client, a cloud computing giant, struggled to identify high-value customers among their massive user base. ProPlus Data helped them solve this...",
     link: "https://proplusdata.co/how-proplus-data-helped-cloud-computing-giant-find-hidden-gems-in-a-sea-of-accounts.pdf",
-    alt: "proplus-data-cloud-success",
+    alt: "Illustration of cloud accounts being analyzed to reveal high-value opportunities",
   },
 ];
 

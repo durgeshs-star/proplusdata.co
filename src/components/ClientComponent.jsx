@@ -35,7 +35,7 @@ const ClientComponent = () => {
           TRUSTED BY LEADING COMPANIES
         </span>
         <h2 className="ppd-gtm-trust-title">
-          Trusted by teams building the future
+          Trusted by teams <span>building the future</span>
         </h2>
       </div>
       <div className="ppd-gtm-trust-marquee">

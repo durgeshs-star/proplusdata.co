@@ -6,10 +6,11 @@ import CareerComponent from '../components/CareerComponent'
 import CareerSection from '../components/CareerSection'
 import CtaCareers from '../components/CtaCareers'
 import '../components/Careers.css'
+import '../components/CompanyPages.css'
 
 export default function Careers() {
   return (
-    <div className="ppd-careers-page">
+    <div className="ppd-company-page ppd-company-page--careers ppd-careers-page">
          <Helmet>
             <title>Careers at ProPlus Data | Shape the Future of Data Intelligence</title>
           <meta name="description" content="Join ProPlus Data and be part of a global team transforming GTM | ABM strategies with real-time intelligence. Explore impactful careers in data innovation."/>
@@ -25,7 +26,7 @@ export default function Careers() {
       <Header1/>
       <main>
         <CareerComponent/>
-        <CareerSection/>
+        {/* <CareerSection/> */}
         <CtaCareers/>
       </main>
       <Footer/>

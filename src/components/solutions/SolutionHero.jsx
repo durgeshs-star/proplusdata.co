@@ -1,6 +1,7 @@
 import React from "react";
+import SolutionIllustration from "./SolutionIllustration";
 
-export default function SolutionHero({ eyebrow, title, image, imageAlt, visual, children }) {
+export default function SolutionHero({ eyebrow, title, children }) {
   return (
     <section className="ppd-solution-hero" aria-label={eyebrow}>
       <div className="ppd-solution-hero__grid" aria-hidden="true" />
@@ -16,11 +17,7 @@ export default function SolutionHero({ eyebrow, title, image, imageAlt, visual, 
             <span className="ppd-solution-accent" aria-hidden="true" />
           </div>
           <div className="ppd-solution-visual">
-            {image ? (
-              <img src={image} alt={imageAlt} />
-            ) : (
-              visual
-            )}
+            <SolutionIllustration category={eyebrow} />
           </div>
         </div>
       </div>

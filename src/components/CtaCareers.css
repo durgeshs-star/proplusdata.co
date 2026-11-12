@@ -103,8 +103,10 @@
 }
 
 .ppd-cta-careers-highlight {
-  color: #93c5fd;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #133580;
   font-style: italic;
+  font-weight: 600;
 }
 
 .ppd-cta-careers-action {

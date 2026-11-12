@@ -76,10 +76,62 @@ export default function AboutComponent() {
                 <span className="ppd-about-connection-pulse" />
               </div>
               <div className="ppd-about-image-frame">
-                <img
-                  src="/assets/images/about/about.webp"
-                  alt="Data Intelligence Company"
-                />
+                <svg
+                  className="ppd-about-illustration"
+                  viewBox="0 0 560 390"
+                  role="img"
+                  aria-labelledby="ppd-about-illustration-title"
+                >
+                  <title id="ppd-about-illustration-title">
+                    Connected buyer signals becoming clear account intelligence
+                  </title>
+                  <defs>
+                    <linearGradient id="about-panel" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#f4f8ff" />
+                      <stop offset="1" stopColor="#e9f2ff" />
+                    </linearGradient>
+                    <linearGradient id="about-core" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#2d6fe8" />
+                      <stop offset="1" stopColor="#173a78" />
+                    </linearGradient>
+                  </defs>
+                  <rect width="560" height="390" rx="22" fill="url(#about-panel)" />
+                  <circle cx="280" cy="188" r="127" fill="none" stroke="#bfd4f8" strokeDasharray="3 8" />
+                  <circle cx="280" cy="188" r="97" fill="none" stroke="#d4e2f9" />
+                  <path d="M92 109C161 109 173 167 225 180M468 111C400 111 389 166 335 180M107 294C172 294 194 228 232 209M453 292C390 292 367 231 328 209" fill="none" stroke="#99b8ed" strokeWidth="2" />
+                  <g className="ppd-about-art-pulse">
+                    <circle cx="158" cy="128" r="5" fill="#f3a332" />
+                    <circle cx="402" cy="132" r="5" fill="#26aa94" />
+                    <circle cx="172" cy="263" r="5" fill="#916cda" />
+                    <circle cx="389" cy="258" r="5" fill="#18a9b5" />
+                  </g>
+                  <rect x="38" y="71" width="143" height="74" rx="12" fill="#fff" stroke="#dce7f7" />
+                  <circle cx="59" cy="95" r="7" fill="#f3a332" />
+                  <rect x="76" y="90" width="81" height="8" rx="4" fill="#243d68" opacity=".8" />
+                  <rect x="53" y="112" width="102" height="6" rx="3" fill="#c4d2e8" />
+                  <rect x="53" y="125" width="72" height="6" rx="3" fill="#e1e9f4" />
+                  <rect x="379" y="73" width="143" height="74" rx="12" fill="#fff" stroke="#dce7f7" />
+                  <circle cx="400" cy="96" r="7" fill="#26aa94" />
+                  <rect x="417" y="91" width="81" height="8" rx="4" fill="#243d68" opacity=".8" />
+                  <rect x="394" y="113" width="102" height="6" rx="3" fill="#c4d2e8" />
+                  <rect x="394" y="126" width="72" height="6" rx="3" fill="#e1e9f4" />
+                  <rect x="40" y="253" width="143" height="74" rx="12" fill="#fff" stroke="#dce7f7" />
+                  <circle cx="61" cy="276" r="7" fill="#916cda" />
+                  <rect x="78" y="271" width="81" height="8" rx="4" fill="#243d68" opacity=".8" />
+                  <rect x="55" y="293" width="102" height="6" rx="3" fill="#c4d2e8" />
+                  <rect x="55" y="306" width="72" height="6" rx="3" fill="#e1e9f4" />
+                  <rect x="377" y="251" width="143" height="74" rx="12" fill="#fff" stroke="#dce7f7" />
+                  <circle cx="398" cy="274" r="7" fill="#18a9b5" />
+                  <rect x="415" y="269" width="81" height="8" rx="4" fill="#243d68" opacity=".8" />
+                  <rect x="392" y="291" width="102" height="6" rx="3" fill="#c4d2e8" />
+                  <rect x="392" y="304" width="72" height="6" rx="3" fill="#e1e9f4" />
+                  <circle cx="280" cy="190" r="69" fill="#c8d9f6" opacity=".42" />
+                  <circle cx="280" cy="190" r="56" fill="url(#about-core)" />
+                  <circle cx="280" cy="171" r="12" fill="#fff" opacity=".96" />
+                  <path d="M254 208c3-17 13-25 26-25s23 8 26 25" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="8" />
+                  <circle className="ppd-about-art-orbit-dot" cx="280" cy="93" r="6" fill="#2d6fe8" />
+                  <circle className="ppd-about-art-orbit-dot ppd-about-art-orbit-dot-delay" cx="377" cy="190" r="6" fill="#f3a332" />
+                </svg>
               </div>
               <div className="ppd-about-data-tag ppd-about-data-tag-one">
                 <span aria-hidden="true" />

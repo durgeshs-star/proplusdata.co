@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import SolutionIllustration from "./solutions/SolutionIllustration";
 
 export default function VvlComponent() {
   const sectionRef = useRef(null);
@@ -32,7 +33,7 @@ export default function VvlComponent() {
       <div className="ppd-solution-shell">
         <div className="ppd-vvl-layout">
           <div className="ppd-vvl-visual">
-            <img src="/assets/images/Voice Verified.webp" alt="voice verified leads" />
+            <SolutionIllustration category="Demand Gen" compact />
           </div>
           <div className="ppd-vvl-content">
             <h2 className="ppd-vvl-title" id="ppd-vvl-title">

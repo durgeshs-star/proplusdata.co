@@ -1,5 +1,4 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
 
 const CtaIntent = () => {
   return (
@@ -8,11 +7,11 @@ const CtaIntent = () => {
       <div className="ppd-solution-shell">
         <div className="ppd-techno-cta__panel">
           <h2>
-            Engage with right accounts with buyer intent!
+            Engage with right accounts with <span>buyer intent!</span>
           </h2>
           <a className="ppd-techno-cta__button" href="/contact-us">
             Connect With Us
-            <FaArrowRight aria-hidden="true" />
+            <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>

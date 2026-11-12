@@ -7,24 +7,18 @@ const tabs = [
     number: "01",
     label: "Intent Accounts & Buying Propensity",
     shortLabel: "BUYING PROPENSITY",
-    image: "assets/images/portfolio/account-segment.webp",
-    alt: "account segment",
   },
   {
     id: "segmentation",
     number: "02",
     label: "Advanced Account Segmentation",
     shortLabel: "ACCOUNT SEGMENTATION",
-    image: "assets/images/portfolio/product-level.webp",
-    alt: "product level",
   },
   {
     id: "buying-groups",
     number: "03",
     label: "Identifying Buying Groups",
     shortLabel: "BUYING GROUPS",
-    image: "assets/images/portfolio/decision-making.webp",
-    alt: "decision making",
   },
 ];
 
@@ -84,39 +78,53 @@ function AboutTabContent({ activeTab }) {
 function TabVisualization({ activeTab }) {
   if (activeTab === 0) {
     return (
-      <div className="ppd-about-tabs-visual ppd-about-tabs-propensity" aria-hidden="true">
-        <span className="ppd-about-tabs-visual-label">PROPENSITY SIGNAL</span>
-        <div><span>HIGH</span><i className="is-strong" /></div>
-        <div><span>MEDIUM</span><i /></div>
-        <div><span>LOW</span><i /></div>
-        <div><span>GREENFIELD</span><i /></div>
+      <div className="ppd-about-tabs-artwork ppd-about-tabs-artwork--propensity" aria-hidden="true">
+        <div className="ppd-about-tabs-artwork-orbit" />
+        <div className="ppd-about-tabs-artwork-score">
+          <span>ACCOUNT FIT</span>
+          <strong>86<small>/100</small></strong>
+          <div className="ppd-about-tabs-artwork-score-line"><i /></div>
+          <span className="ppd-about-tabs-artwork-status"><i /> HIGH PROPENSITY</span>
+        </div>
+        <div className="ppd-about-tabs-artwork-chip ppd-about-tabs-artwork-chip--intent">Intent signals <i /></div>
+        <div className="ppd-about-tabs-artwork-chip ppd-about-tabs-artwork-chip--account">Account fit <i /></div>
+        <i className="ppd-about-tabs-artwork-pulse ppd-about-tabs-artwork-pulse--one" />
+        <i className="ppd-about-tabs-artwork-pulse ppd-about-tabs-artwork-pulse--two" />
       </div>
     );
   }
 
   if (activeTab === 1) {
     return (
-      <div className="ppd-about-tabs-visual ppd-about-tabs-segmentation" aria-hidden="true">
-        <span>COMPETING SOLUTION</span>
-        <i />
-        <span>DIGITAL TRANSFORMATION</span>
-        <i />
-        <span>TARGET OPPORTUNITY</span>
+      <div className="ppd-about-tabs-artwork ppd-about-tabs-artwork--segments" aria-hidden="true">
+        <div className="ppd-about-tabs-artwork-orbit" />
+        <div className="ppd-about-tabs-artwork-account">
+          <div className="ppd-about-tabs-artwork-avatar">A</div>
+          <span>ACCOUNT LANDSCAPE</span>
+          <strong>Technology profile</strong>
+          <div className="ppd-about-tabs-artwork-bars"><i /><i /><i /></div>
+        </div>
+        <div className="ppd-about-tabs-artwork-segment ppd-about-tabs-artwork-segment--one">Current stack</div>
+        <div className="ppd-about-tabs-artwork-segment ppd-about-tabs-artwork-segment--two">Opportunity</div>
+        <i className="ppd-about-tabs-artwork-pulse ppd-about-tabs-artwork-pulse--one" />
+        <i className="ppd-about-tabs-artwork-pulse ppd-about-tabs-artwork-pulse--two" />
       </div>
     );
   }
 
   return (
-    <div className="ppd-about-tabs-network" aria-hidden="true">
-      <span className="ppd-about-tabs-network-line ppd-about-tabs-network-line-top" />
-      <span className="ppd-about-tabs-network-line ppd-about-tabs-network-line-bottom" />
-      <span className="ppd-about-tabs-network-line ppd-about-tabs-network-line-left" />
-      <span className="ppd-about-tabs-network-line ppd-about-tabs-network-line-right" />
-      <i className="ppd-about-tabs-network-node ppd-about-tabs-network-node-top" />
-      <i className="ppd-about-tabs-network-node ppd-about-tabs-network-node-bottom" />
-      <i className="ppd-about-tabs-network-node ppd-about-tabs-network-node-left" />
-      <i className="ppd-about-tabs-network-node ppd-about-tabs-network-node-right" />
-      <i className="ppd-about-tabs-network-node ppd-about-tabs-network-node-center" />
+    <div className="ppd-about-tabs-artwork ppd-about-tabs-artwork--groups" aria-hidden="true">
+      <div className="ppd-about-tabs-artwork-network-line ppd-about-tabs-artwork-network-line--top" />
+      <div className="ppd-about-tabs-artwork-network-line ppd-about-tabs-artwork-network-line--left" />
+      <div className="ppd-about-tabs-artwork-network-line ppd-about-tabs-artwork-network-line--right" />
+      <div className="ppd-about-tabs-artwork-network-line ppd-about-tabs-artwork-network-line--bottom" />
+      <div className="ppd-about-tabs-artwork-person ppd-about-tabs-artwork-person--top"><i /><span>Marketing</span></div>
+      <div className="ppd-about-tabs-artwork-person ppd-about-tabs-artwork-person--left"><i /><span>IT</span></div>
+      <div className="ppd-about-tabs-artwork-person ppd-about-tabs-artwork-person--right"><i /><span>Finance</span></div>
+      <div className="ppd-about-tabs-artwork-person ppd-about-tabs-artwork-person--bottom"><i /><span>Operations</span></div>
+      <div className="ppd-about-tabs-artwork-hub"><i /><span>BUYING<br />GROUP</span></div>
+      <i className="ppd-about-tabs-artwork-pulse ppd-about-tabs-artwork-pulse--one" />
+      <i className="ppd-about-tabs-artwork-pulse ppd-about-tabs-artwork-pulse--two" />
     </div>
   );
 }
@@ -276,7 +284,7 @@ export default function AboutTab() {
         >
           <div className="ppd-about-tabs-image">
             <div className="ppd-about-tabs-image-grid" aria-hidden="true" />
-            <img src={currentTab.image} alt={currentTab.alt} />
+            <TabVisualization activeTab={activeTab} />
             <div className="ppd-about-tabs-image-status">
               <span />
               INTELLIGENCE ACTIVE
@@ -294,7 +302,6 @@ export default function AboutTab() {
             <div className="ppd-about-tabs-description">
               <AboutTabContent activeTab={activeTab} />
             </div>
-            <TabVisualization activeTab={activeTab} />
           </div>
         </div>
       </div>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="130" y1="31" x2="1094" y2="643" gradientUnits="userSpaceOnUse"><stop stop-color="#F2F7FF"/><stop offset="1" stop-color="#E4EDFA"/></linearGradient>
+    <filter id="shadow" x="204" y="105" width="792" height="483" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feGaussianBlur in="SourceAlpha" stdDeviation="15"/><feOffset dy="14"/><feComponentTransfer><feFuncA type="linear" slope=".13"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1200v675H0z"/><circle cx="1070" cy="118" r="175" fill="#D8E7FB"/><circle cx="130" cy="549" r="180" fill="#DCEDEB"/>
+  <path d="M0 555c211-59 366-20 558 18 221 45 415 29 642-49v151H0V555Z" fill="#DCE9F8"/>
+  <g filter="url(#shadow)">
+    <rect x="251" y="145" width="698" height="374" rx="25" fill="#fff" stroke="#D7E2EF" stroke-width="2"/>
+    <path d="M251 170a25 25 0 0 1 25-25h648a25 25 0 0 1 25 25v47H251v-47Z" fill="#F8FAFD"/>
+    <circle cx="284" cy="184" r="6" fill="#F28C45"/><circle cx="305" cy="184" r="6" fill="#F2C36B"/><circle cx="326" cy="184" r="6" fill="#69BFA6"/>
+    <text x="360" y="189" fill="#607895" font-family="Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="1.8">PROPLUS DATA INTELLIGENCE</text>
+    <rect x="283" y="250" width="192" height="99" rx="16" fill="#173F91"/>
+    <text x="307" y="326" fill="#fff" font-family="Arial,sans-serif" font-size="38" font-weight="800">360°</text>
+    <rect x="494" y="250" width="192" height="99" rx="16" fill="#F4F7FC"/>
+    <text x="518" y="326" fill="#173F91" font-family="Arial,sans-serif" font-size="38" font-weight="800">4.8M</text>
+    <rect x="705" y="250" width="212" height="99" rx="16" fill="#F1F8F5"/>
+    <text x="729" y="326" fill="#23896E" font-family="Arial,sans-serif" font-size="38" font-weight="800">+28%</text>
+    <rect x="283" y="373" width="404" height="119" rx="16" fill="#F7F9FC"/>
+    <path d="M307 466h355M307 443h355M307 420h355" stroke="#E3EAF3"/>
+    <path d="M316 459 366 448 415 454 464 425 513 433 563 410 610 420 657 399" stroke="#3979D4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="464" cy="425" r="6" fill="#F28C45" stroke="#fff" stroke-width="3"/><circle cx="563" cy="410" r="6" fill="#45B899" stroke="#fff" stroke-width="3"/>
+    <rect x="706" y="373" width="211" height="119" rx="16" fill="#fff" stroke="#E0E8F2"/>
+    <circle cx="738" cy="430" r="5" fill="#3979D4"/>
+    <circle cx="738" cy="454" r="5" fill="#F28C45"/>
+    <circle cx="738" cy="478" r="5" fill="#45B899"/>
+  </g>
+  <path d="M123 328h113M967 331h110" stroke="#8DAACF" stroke-width="2" stroke-dasharray="6 8"/>
+  <circle cx="111" cy="328" r="11" fill="#fff" stroke="#3979D4" stroke-width="3"/><circle cx="1089" cy="331" r="11" fill="#FFF2DF" stroke="#F28C45" stroke-width="3"/>
+  <rect x="78" y="101" width="186" height="42" rx="21" fill="#fff" fill-opacity=".9"/><circle cx="102" cy="122" r="5" fill="#F28C45"/>
+</svg>

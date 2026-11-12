@@ -101,10 +101,10 @@
 }
 
 .ppd-contact-title span {
-  background: linear-gradient(115deg, #2563eb 5%, #60a5fa 95%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #133580;
   font-style: italic;
+  font-weight: 600;
 }
 
 .ppd-contact-accent {
@@ -140,15 +140,15 @@
 
 .ppd-contact-lead {
   margin-bottom: 1.25rem;
-  color: #475569;
-  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  color: #334155;
+  font-size: clamp(1.15rem, 1.6vw, 1.3rem);
   line-height: 1.8;
 }
 
 .ppd-contact-detail {
   margin-bottom: 1.8rem;
-  color: #64748b;
-  font-size: clamp(1rem, 1.25vw, 1.1rem);
+  color: #475569;
+  font-size: clamp(1.1rem, 1.4vw, 1.2rem);
   line-height: 1.85;
 }
 
@@ -264,10 +264,10 @@
 }
 
 .ppd-contact-form-title span {
-  background: linear-gradient(115deg, #2563eb 5%, #60a5fa 95%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #133580;
   font-style: italic;
+  font-weight: 600;
 }
 
 .ppd-contact-form {
@@ -395,9 +395,9 @@
 
 .ppd-contact-form-success p {
   margin: 0;
-  color: #64748b;
+  color: #334155;
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   line-height: 1.6;
 }
 

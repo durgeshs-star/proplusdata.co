@@ -82,10 +82,10 @@
 }
 
 .ppd-about-title span {
-  background: linear-gradient(115deg, #2563eb 5%, #60a5fa 95%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #133580;
   font-style: italic;
+  font-weight: 600;
 }
 
 .ppd-about-accent {
@@ -275,12 +275,34 @@
   animation: ppd-about-float 8s ease-in-out infinite;
 }
 
-.ppd-about-image-frame img {
+.ppd-about-illustration {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 15px;
-  object-fit: contain;
+}
+
+.ppd-about-art-pulse {
+  animation: ppd-about-art-pulse 3.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.ppd-about-art-orbit-dot {
+  animation: ppd-about-art-orbit 6s linear infinite;
+  transform-origin: 280px 190px;
+}
+
+.ppd-about-art-orbit-dot-delay {
+  animation-delay: -3s;
+}
+
+@keyframes ppd-about-art-pulse {
+  0%, 100% { opacity: 0.65; }
+  50% { opacity: 1; }
+}
+
+@keyframes ppd-about-art-orbit {
+  to { transform: rotate(360deg); }
 }
 
 .ppd-about-data-tag {
@@ -364,10 +386,6 @@
     border-radius: 20px;
   }
 
-  .ppd-about-image-frame img {
-    border-radius: 13px;
-  }
-
   .ppd-about-data-tag {
     font-size: 0.55rem;
   }
@@ -440,7 +458,9 @@
   }
 
   .ppd-about-image-frame,
-  .ppd-about-connection-pulse {
+  .ppd-about-connection-pulse,
+  .ppd-about-art-pulse,
+  .ppd-about-art-orbit-dot {
     animation: none;
   }
 

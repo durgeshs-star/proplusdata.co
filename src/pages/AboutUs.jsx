@@ -9,11 +9,12 @@ import IndustriesSection from '../components/IndustriesSection'
 import IdentifyConnect from '../components/IdentifyConnect'
 import GlobalPresence from '../components/GlobalPresence'
 import CtaAbout from '../components/CtaAbout'
+import '../components/CompanyPages.css'
 
 
 export default function AboutUs() {
   return (
-    <div>
+    <div className="ppd-company-page ppd-company-page--about">
       <>
        <Helmet>
       <title>ProPlus Data | Precision Prospect Intelligence & B2B Insights</title>

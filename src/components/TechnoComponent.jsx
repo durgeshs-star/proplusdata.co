@@ -6,8 +6,6 @@ export default function TechnoComponent() {
     <SolutionHero
       eyebrow="Technographic Data"
       title={<>Revolutionize Outreach with <span>Technographics!</span></>}
-      image="/assets/images/technographics-data.gif"
-      imageAlt=" Technographics or Technographic Data"
     >
       <p>
         <strong>Want to know exactly which technology your ideal customers has adopted or when they’re ready to switch?</strong>

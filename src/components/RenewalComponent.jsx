@@ -6,8 +6,6 @@ export default function RenewalComponent() {
     <SolutionHero
       eyebrow="Renewal Intelligence"
       title={<>Prioritize Key Accounts with Refreshed <span>Renewal Intelligence.</span></>}
-      image="/assets/images/renewal-and-subscription.gif"
-      imageAlt="renewal & Subscription insights"
     >
       <p>
         <b>Most Technology Buying Decisions Start Months Before the Renewal Date.</b> <br/>When enterprise software contracts approach renewal, buyers quietly reassess their vendors, pricing, and technology stack. For revenue teams that know the timing, these moments become high-probability opportunities.

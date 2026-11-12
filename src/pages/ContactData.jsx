@@ -45,7 +45,7 @@ export default function ContactData() {
                     content="ProPlus Data helps you connect with verified B2B contacts and decision-makers. Enhance your sales outreach and increase lead quality." />
             </Helmet>
       <Header1/>
-            <main className="ppd-solution">
+            <main className="ppd-solution ppd-solution--contact-data">
               {/* <SolutionBreadcrumb label="Contact Data" parentHref="/contact-data" /> */}
               <ContactComponent/>
               <ContactDifference/>

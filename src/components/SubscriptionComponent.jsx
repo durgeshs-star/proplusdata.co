@@ -1,15 +1,12 @@
 import React from "react";
+import SolutionIllustration from "./solutions/SolutionIllustration";
 
 export default function SubscriptionComponent() {
   return (
     <section className="ppd-renewal-forecast">
       <div className="ppd-solution-shell ppd-renewal-forecast-inner">
         <div className="ppd-renewal-forecast-media">
-          <img
-            className="ppd-renewal-forecast-image"
-            src="assets/images/Renewal.webp"
-            alt="renewal cycle insights"
-          />
+          <SolutionIllustration category="Renewal Intelligence" compact />
         </div>
         <div className="ppd-renewal-forecast-content">
           <h2 className="ppd-renewal-forecast-title">

@@ -1,5 +1,4 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
 
 const CtaEvent = () => {
   return (
@@ -8,11 +7,12 @@ const CtaEvent = () => {
       <div className="ppd-solution-shell">
         <div className="ppd-techno-cta__panel">
           <h2 id="ppd-event-cta-title">
-            Want to ensure your next event delivers highest ROI?
+            Want to ensure your next event delivers{" "}
+            <span>highest ROI?</span>
           </h2>
           <a href="/contact-us" className="ppd-techno-cta__button">
             Connect With Us
-            <FaArrowRight />
+            <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>

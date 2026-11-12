@@ -98,8 +98,10 @@
 }
 
 .ppd-identify-connect-header h2 span {
-  color: #2563eb;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #133580;
   font-style: italic;
+  font-weight: 600;
 }
 
 .ppd-identify-connect-subtitle {
@@ -172,11 +174,11 @@
   position: relative;
   z-index: 1;
   min-width: 0;
-  padding: 0 1rem 1rem;
+  padding: 0 1rem 1.25rem;
   border: 1px solid rgba(15, 23, 42, 0.065);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.68);
-  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.035);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.05);
   opacity: 0;
   transform: translateY(18px);
   transition:
@@ -248,37 +250,134 @@
 .ppd-identify-connect-icon {
   position: relative;
   display: grid;
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 100%;
+  height: 10rem;
   place-items: center;
-  margin: 1.2rem auto 1.3rem;
+  margin: 0.4rem auto 1.35rem;
   border: 1px solid rgba(37, 99, 235, 0.1);
-  border-radius: 20px;
-  background:
-    radial-gradient(circle, rgba(219, 234, 254, 0.6), transparent 76%),
-    #f8fbff;
+  border-radius: 16px;
+  background: radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.92), transparent 50%), #edf4ff;
+  overflow: hidden;
+}
+
+.ppd-identify-connect-step:nth-of-type(2) .ppd-identify-connect-icon {
+  background: radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.92), transparent 50%), #edf9f5;
+}
+
+.ppd-identify-connect-step:nth-of-type(3) .ppd-identify-connect-icon {
+  background: radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.92), transparent 50%), #fff5e9;
 }
 
 .ppd-identify-connect-icon-ring {
   position: absolute;
-  inset: -0.45rem;
+  inset: 1.05rem 2.8rem;
   border: 1px solid rgba(96, 165, 250, 0.13);
-  border-radius: 23px;
+  border-radius: 50%;
   pointer-events: none;
 }
 
-.ppd-identify-connect-icon img {
+.ppd-identify-connect-icon svg {
   display: block;
-  width: 3.2rem;
-  height: 3.2rem;
-  object-fit: contain;
+  width: 7rem;
+  height: 7rem;
+  overflow: visible;
   transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ppd-identify-connect-step:hover .ppd-identify-connect-icon img,
-.ppd-identify-connect-step:focus-visible .ppd-identify-connect-icon img,
-.ppd-identify-connect-step.is-active .ppd-identify-connect-icon img {
+.ppd-identify-connect-step:hover .ppd-identify-connect-icon svg,
+.ppd-identify-connect-step:focus-visible .ppd-identify-connect-icon svg,
+.ppd-identify-connect-step.is-active .ppd-identify-connect-icon svg {
   transform: scale(1.08);
+}
+
+.ppd-identify-connect-art-orbit,
+.ppd-identify-connect-art-ring {
+  fill: none;
+  stroke: #adc8f4;
+  stroke-dasharray: 2 5;
+  stroke-width: 1.5;
+}
+
+.ppd-identify-connect-art-ring {
+  stroke: #8db4ef;
+  stroke-dasharray: none;
+}
+
+.ppd-identify-connect-art-point,
+.ppd-identify-connect-art-node {
+  fill: #f0a43b;
+  animation: ppd-identify-connect-art-pulse 2.6s ease-in-out infinite;
+}
+
+.ppd-identify-connect-art-point-two,
+.ppd-identify-connect-art-node-two { fill: #24a98d; animation-delay: -0.8s; }
+.ppd-identify-connect-art-point-three,
+.ppd-identify-connect-art-node-three { fill: #8a6bd1; animation-delay: -1.6s; }
+
+.ppd-identify-connect-art-core,
+.ppd-identify-connect-art-hub {
+  fill: #2868c8;
+  stroke: #fff;
+  stroke-width: 4;
+}
+
+.ppd-identify-connect-art-core-dot,
+.ppd-identify-connect-art-hub-dot { fill: #fff; }
+
+.ppd-identify-connect-art-link {
+  fill: none;
+  stroke: #9ab8e9;
+  stroke-dasharray: 4 5;
+  stroke-width: 2;
+}
+
+.ppd-identify-connect-art-node {
+  stroke: #fff;
+  stroke-width: 3;
+}
+
+.ppd-identify-connect-art-axis {
+  fill: none;
+  stroke: #b6c8e3;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.ppd-identify-connect-art-bar {
+  fill: #6ea0ea;
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: ppd-identify-connect-art-rise 2.2s ease-in-out infinite alternate;
+}
+
+.ppd-identify-connect-art-bar-two { fill: #34b99b; animation-delay: -0.6s; }
+.ppd-identify-connect-art-bar-three { fill: #f0a43b; animation-delay: -1.2s; }
+
+.ppd-identify-connect-art-arrow {
+  fill: none;
+  stroke: #526fd0;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  stroke-dasharray: 90;
+  stroke-dashoffset: 90;
+  animation: ppd-identify-connect-art-draw 2.8s ease-in-out infinite;
+}
+
+@keyframes ppd-identify-connect-art-pulse {
+  0%, 100% { opacity: 0.75; transform: scale(0.88); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+@keyframes ppd-identify-connect-art-rise {
+  from { transform: scaleY(0.78); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes ppd-identify-connect-art-draw {
+  0%, 15% { stroke-dashoffset: 90; }
+  60%, 85% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -90; }
 }
 
 .ppd-identify-connect-step-label {
@@ -422,8 +521,8 @@
   }
 
   .ppd-identify-connect-icon {
-    width: 3.7rem;
-    height: 3.7rem;
+    width: 4.1rem;
+    height: 4.1rem;
     grid-row: 1 / span 2;
     grid-column: 2;
     justify-self: end;
@@ -432,13 +531,16 @@
   }
 
   .ppd-identify-connect-icon-ring {
-    inset: -0.25rem;
-    border-radius: 16px;
+    inset: 0.4rem;
   }
 
-  .ppd-identify-connect-icon img {
-    width: 2.35rem;
-    height: 2.35rem;
+  .ppd-identify-connect-icon svg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .ppd-identify-connect-step .ppd-identify-connect-icon {
+    height: 4.1rem;
   }
 
   .ppd-identify-connect-step-label {

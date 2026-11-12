@@ -6,8 +6,6 @@ export default function EventComponent() {
     <SolutionHero
       eyebrow="Event Audience Acquisition"
       title={<>Maximize Your Event’s ROI <span>with the Right Audience</span></>}
-      image="/assets/images/event-audience.webp"
-      imageAlt="event audience acquisition"
     >
       <p>
         Want to ensure your next event delivers real results? The key is attracting attendees who are genuinely interested and ready to engage. At ProPlus Data, we specialize in audience acquisition solutions that connect you with the perfect attendees, driving better ROI and meaningful interactions.

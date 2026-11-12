@@ -6,8 +6,6 @@ export default function MqlComponent() {
     <SolutionHero
       eyebrow="Demand Gen"
       title={<>Smarter Demand Generation <span>for Better Pipeline</span></>}
-      image="/assets/images/demand-gen.jpg"
-      imageAlt="demand gen"
     >
       <p>
         Connect with decision-makers who have already shown interest in relevant solutions. Eliminate uncertainty from outbound by focusing only on prospects ready for meaningful engagement.

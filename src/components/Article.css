@@ -116,9 +116,9 @@
 }
 
 .ppd-article-content p {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.85;
-  color: #24324f;
+  color: #334155;
   margin-bottom: 24px;
 }
 
@@ -212,9 +212,9 @@
 }
 
 .ppd-article-strategic-callout p {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.8;
-  color: rgba(13, 27, 62, 0.85);
+  color: #334155;
   margin-bottom: 0;
 }
 
@@ -243,9 +243,9 @@
 }
 
 .ppd-article-conclusion p {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.8;
-  color: rgba(13, 27, 62, 0.85);
+  color: #334155;
   margin-bottom: 20px;
 }
 
@@ -342,9 +342,9 @@
 }
 
 .ppd-article-author p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
-  color: rgba(13, 27, 62, 0.68);
+  color: #475569;
   margin: 0;
 }
 
@@ -355,9 +355,9 @@
 }
 
 .ppd-article-related p {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
-  color: #133580;
+  color: #1e40af;
   margin: 0 0 12px 0;
 }
 
@@ -417,7 +417,7 @@
   }
 
   .ppd-article-content p {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .ppd-article-section-title {
@@ -484,7 +484,7 @@
   }
 
   .ppd-article-content p {
-    font-size: 16px;
+    font-size: 17px;
     margin-bottom: 20px;
   }
 
@@ -541,7 +541,7 @@
   }
 
   .ppd-article-conclusion p {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .ppd-article-cta {

@@ -9,10 +9,8 @@ import Flipbox from '../components/Flipbox';
 import AboutSection from '../components/AboutSection';
 import SolutionSection from '../components/SolutionSection';
 import OurProcess from '../components/OurProcess';
-import ProspectIntelligence from '../components/ProspectIntelligence';
-import ProspectFlipbox from '../components/ProspectFlipbox';
 import BrandSection from '../components/BrandSection';
-import ClientComponent from '../components/ClientComponent';
+import WhyProPlusData from '../components/WhyProPlusData';
 
 export default function Home() {
   useEffect(() => {
@@ -54,15 +52,11 @@ export default function Home() {
 
       <Hero1 />
 
-      <ClientComponent />
-
       <Flipbox />
 
+      <WhyProPlusData />
+
       <AboutSection />
-
-      <ProspectIntelligence />
-
-      <ProspectFlipbox />
 
       <SolutionSection />
 

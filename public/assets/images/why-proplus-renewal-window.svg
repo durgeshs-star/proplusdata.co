@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="420" viewBox="0 0 560 420" fill="none">
+  <defs>
+    <linearGradient id="timeline" x1="127" y1="281" x2="427" y2="281" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3A13B"/>
+      <stop offset=".52" stop-color="#E9B95D"/>
+      <stop offset="1" stop-color="#4388DC"/>
+    </linearGradient>
+    <filter id="shadow" x="93" y="34" width="374" height="362" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="12"/>
+      <feGaussianBlur stdDeviation="16"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix values="0 0 0 0 0.08 0 0 0 0 0.18 0 0 0 0 0.32 0 0 0 0.12 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+  <circle cx="280" cy="210" r="157" stroke="#8ACFC8" stroke-opacity=".7"/>
+  <circle cx="280" cy="210" r="119" stroke="#7CA6DF" stroke-opacity=".5" stroke-dasharray="5 9"/>
+  <g filter="url(#shadow)">
+    <rect x="125" y="69" width="310" height="282" rx="24" fill="#fff" stroke="#DDE6F0"/>
+    <path d="M125 135H435" stroke="#E7ECF3"/>
+    <rect x="125" y="69" width="310" height="66" rx="24" fill="#F7F9FD"/>
+    <path d="M125 111V135H435V111" fill="#F7F9FD"/>
+    <text x="154" y="108" fill="#526C91" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">RENEWAL WINDOW</text>
+    <circle cx="405" cy="101" r="5" fill="#45BE9B"/>
+    <text x="154" y="187" fill="#6C7F99" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="1.1">TIME TO ENGAGE</text>
+    <text x="151" y="245" fill="#173F91" font-family="Arial,sans-serif" font-size="49" font-weight="800" letter-spacing="-2">90–180</text>
+    <text x="156" y="270" fill="#7586A0" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2">DAYS BEFORE RENEWAL</text>
+    <path d="M155 306H405" stroke="#E3EAF3" stroke-width="8" stroke-linecap="round"/>
+    <path d="M155 306H340" stroke="url(#timeline)" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="340" cy="306" r="11" fill="#fff" stroke="#4388DC" stroke-width="4"/>
+    <text x="155" y="333" fill="#8796AA" font-family="Arial,sans-serif" font-size="9" font-weight="600">SIGNAL DETECTED</text>
+    <text x="405" y="333" text-anchor="end" fill="#8796AA" font-family="Arial,sans-serif" font-size="9" font-weight="600">RENEWAL</text>
+  </g>
+  <circle cx="110" cy="166" r="12" fill="#fff" stroke="#6D9DE0" stroke-width="2"/>
+  <circle cx="449" cy="248" r="12" fill="#FFF4E5" stroke="#F2A348" stroke-width="2"/>
+  <path d="M110 178L132 192M428 239L437 244" stroke="#8EAED7" stroke-width="2" stroke-dasharray="4 5"/>
+</svg>

@@ -44,7 +44,7 @@ export default function EventAudienceAcquisition() {
               content="Get qualified B2B audiences for your in-person or virtual events. ProPlus Data delivers event attendee targeting that drives real results." />
       </Helmet>
       <Header1/>
-      <main className="ppd-solution">
+      <main className="ppd-solution ppd-solution--event-audience">
         {/* <SolutionBreadcrumb label="Event Audience Acquisition" parentHref="/event-audience-acquisition" /> */}
         <EventComponent/>
         <FaqSection/>

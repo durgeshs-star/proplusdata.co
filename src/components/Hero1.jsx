@@ -1,381 +1,249 @@
- import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import {
+  Activity,
+  ArrowUpRight,
+  Building2,
+  Check,
+  ChevronDown,
+  CircleDot,
+  Database,
+  Globe2,
+  Layers3,
+  Search,
+  UsersRound,
+} from "lucide-react";
 
- const Hero1 = () => {
-  const [nexoraFormData, setNexoraFormData] = useState({
-    email: "",
-    fullName: "",
-    phone: "",
-    jobTitle: "",
-    countryCode: "+91"
-  });
-  const [nexoraFormSubmitted, setNexoraFormSubmitted] = useState(false);
-  const [nexoraFormError, setNexoraFormError] = useState("");
-  const [countryDropdownOpen, setCountryDropdownOpen] = useState(false);
+const clients = [
+  "8x8.png",
+  "Adobe.png",
+  "AWS.png",
+  "aviso.png",
+  "Blancco.png",
+  "cisco.png",
+  "Commvault.png",
+  "crestron.png",
+  "Databricks Logo.png",
+  "Datarade logo.png",
+];
 
-  const countryCodes = [
-    { code: "+1", name: "United States", flag: "🇺🇸" },
-    { code: "+44", name: "United Kingdom", flag: "🇬🇧" },
-    { code: "+91", name: "India", flag: "🇮🇳" },
-    { code: "+61", name: "Australia", flag: "🇦🇺" },
-    { code: "+1", name: "Canada", flag: "🇨🇦" },
-    { code: "+49", name: "Germany", flag: "🇩🇪" },
-    { code: "+33", name: "France", flag: "🇫🇷" },
-    { code: "+81", name: "Japan", flag: "🇯🇵" },
-    { code: "+86", name: "China", flag: "🇨🇳" },
-    { code: "+39", name: "Italy", flag: "🇮🇹" },
-    { code: "+34", name: "Spain", flag: "🇪🇸" },
-    { code: "+7", name: "Russia", flag: "🇷🇺" },
-    { code: "+55", name: "Brazil", flag: "🇧🇷" },
-    { code: "+52", name: "Mexico", flag: "🇲🇽" },
-    { code: "+82", name: "South Korea", flag: "🇰🇷" },
-    { code: "+31", name: "Netherlands", flag: "🇳🇱" },
-    { code: "+46", name: "Sweden", flag: "🇸🇪" },
-    { code: "+41", name: "Switzerland", flag: "🇨🇭" },
-    { code: "+351", name: "Portugal", flag: "🇵🇹" },
-    { code: "+358", name: "Finland", flag: "🇫🇮" },
-    { code: "+47", name: "Norway", flag: "🇳🇴" },
-    { code: "+45", name: "Denmark", flag: "🇩🇰" },
-    { code: "+43", name: "Austria", flag: "🇦🇹" },
-    { code: "+32", name: "Belgium", flag: "🇧🇪" },
-    { code: "+48", name: "Poland", flag: "🇵🇱" },
-    { code: "+420", name: "Czech Republic", flag: "🇨🇿" },
-    { code: "+421", name: "Slovakia", flag: "🇸🇰" },
-    { code: "+36", name: "Hungary", flag: "🇭🇺" },
-    { code: "+40", name: "Romania", flag: "🇷🇴" },
-    { code: "+30", name: "Greece", flag: "🇬🇷" },
-    { code: "+90", name: "Turkey", flag: "🇹🇷" },
-    { code: "+971", name: "United Arab Emirates", flag: "🇦🇪" },
-    { code: "+966", name: "Saudi Arabia", flag: "🇸🇦" },
-    { code: "+974", name: "Qatar", flag: "🇶🇦" },
-    { code: "+968", name: "Oman", flag: "🇴🇲" },
-    { code: "+973", name: "Bahrain", flag: "🇧🇭" },
-    { code: "+965", name: "Kuwait", flag: "🇰🇼" },
-    { code: "+65", name: "Singapore", flag: "🇸🇬" },
-    { code: "+60", name: "Malaysia", flag: "🇲🇾" },
-    { code: "+62", name: "Indonesia", flag: "🇮🇩" },
-    { code: "+63", name: "Philippines", flag: "🇵🇭" },
-    { code: "+66", name: "Thailand", flag: "🇹🇭" },
-    { code: "+84", name: "Vietnam", flag: "🇻🇳" },
-    { code: "+855", name: "Cambodia", flag: "🇰🇭" },
-    { code: "+95", name: "Myanmar", flag: "🇲🇲" },
-    { code: "+94", name: "Sri Lanka", flag: "🇱🇰" },
-    { code: "+92", name: "Pakistan", flag: "🇵🇰" },
-    { code: "+93", name: "Afghanistan", flag: "🇦🇫" },
-    { code: "+98", name: "Iran", flag: "🇮🇷" },
-    { code: "+964", name: "Iraq", flag: "🇮🇶" },
-    { code: "+962", name: "Jordan", flag: "🇯🇴" },
-    { code: "+961", name: "Lebanon", flag: "🇱🇧" },
-    { code: "+970", name: "Palestine", flag: "🇵🇸" },
-    { code: "+20", name: "Egypt", flag: "🇪🇬" },
-    { code: "+27", name: "South Africa", flag: "🇿🇦" },
-    { code: "+234", name: "Nigeria", flag: "🇳🇬" },
-    { code: "+254", name: "Kenya", flag: "🇰🇪" },
-    { code: "+233", name: "Ghana", flag: "🇬🇭" },
-    { code: "+231", name: "Liberia", flag: "🇱🇷" },
-    { code: "+509", name: "Haiti", flag: "🇭🇹" },
-    { code: "+504", name: "Honduras", flag: "🇭🇳" },
-    { code: "+852", name: "Hong Kong", flag: "🇭🇰" },
-    { code: "+354", name: "Iceland", flag: "🇮🇸" },
-    { code: "+503", name: "El Salvador", flag: "🇸🇻" },
-    { code: "+502", name: "Guatemala", flag: "🇬🇹" },
-    { code: "+501", name: "Belize", flag: "🇧🇿" },
-    { code: "+506", name: "Costa Rica", flag: "🇨🇷" },
-    { code: "+507", name: "Panama", flag: "🇵🇦" },
-    { code: "+57", name: "Colombia", flag: "🇨🇴" },
-    { code: "+56", name: "Chile", flag: "🇨🇱" },
-    { code: "+54", name: "Argentina", flag: "🇦🇷" },
-    { code: "+53", name: "Cuba", flag: "🇨🇺" },
-    { code: "+51", name: "Peru", flag: "🇵🇪" },
-    { code: "+58", name: "Venezuela", flag: "🇻🇪" },
-    { code: "+591", name: "Bolivia", flag: "🇧🇴" },
-    { code: "+593", name: "Ecuador", flag: "🇪🇨" },
-    { code: "+595", name: "Paraguay", flag: "🇵🇾" },
-    { code: "+598", name: "Uruguay", flag: "🇺🇾" },
-    { code: "+352", name: "Luxembourg", flag: "🇱🇺" },
-    { code: "+353", name: "Ireland", flag: "🇮🇪" },
-    { code: "+370", name: "Lithuania", flag: "🇱🇹" },
-    { code: "+371", name: "Latvia", flag: "🇱🇻" },
-    { code: "+372", name: "Estonia", flag: "🇪🇪" },
-    { code: "+380", name: "Ukraine", flag: "🇺🇦" },
-    { code: "+381", name: "Serbia", flag: "🇷🇸" },
-    { code: "+385", name: "Croatia", flag: "🇭🇷" },
-    { code: "+386", name: "Slovenia", flag: "🇸🇮" },
-    { code: "+387", name: "Bosnia", flag: "🇧🇦" },
-    { code: "+389", name: "North Macedonia", flag: "🇲🇰" },
-    { code: "+373", name: "Moldova", flag: "🇲🇩" },
-    { code: "+374", name: "Armenia", flag: "🇦🇲" },
-    { code: "+375", name: "Belarus", flag: "🇧🇾" },
-    { code: "+377", name: "Monaco", flag: "🇲🇨" },
-    { code: "+378", name: "San Marino", flag: "🇸🇲" },
-    { code: "+376", name: "Andorra", flag: "🇦🇩" },
-    { code: "+359", name: "Bulgaria", flag: "🇧🇬" },
-    { code: "+382", name: "Montenegro", flag: "🇲🇪" },
-    { code: "+994", name: "Azerbaijan", flag: "🇦🇿" },
-    { code: "+995", name: "Georgia", flag: "🇬🇪" },
-    { code: "+996", name: "Kyrgyzstan", flag: "🇰🇬" },
-    { code: "+998", name: "Uzbekistan", flag: "🇺🇿" },
-    { code: "+992", name: "Tajikistan", flag: "🇹🇯" },
-    { code: "+993", name: "Turkmenistan", flag: "🇹🇲" },
-    { code: "+7", name: "Kazakhstan", flag: "🇰🇿" },
-    { code: "+850", name: "North Korea", flag: "🇰🇵" },
-    { code: "+264", name: "Namibia", flag: "🇳🇦" },
-    { code: "+260", name: "Zambia", flag: "🇿🇲" },
-    { code: "+263", name: "Zimbabwe", flag: "🇿🇼" },
-    { code: "+268", name: "Eswatini", flag: "🇸🇿" },
-    { code: "+267", name: "Botswana", flag: "🇧🇼" },
-    { code: "+265", name: "Malawi", flag: "🇲🇼" },
-    { code: "+266", name: "Lesotho", flag: "🇱🇸" },
-    { code: "+261", name: "Madagascar", flag: "🇲🇬" },
-    { code: "+258", name: "Mozambique", flag: "🇲🇿" },
-    { code: "+257", name: "Burundi", flag: "🇧🇮" },
-    { code: "+256", name: "Uganda", flag: "🇺🇬" },
-    { code: "+255", name: "Tanzania", flag: "🇹🇿" },
-    { code: "+253", name: "Djibouti", flag: "🇩🇯" },
-    { code: "+252", name: "Somalia", flag: "🇸🇴" },
-    { code: "+251", name: "Ethiopia", flag: "🇪🇹" },
-    { code: "+250", name: "Rwanda", flag: "🇷🇼" },
-    { code: "+243", name: "DR Congo", flag: "🇨🇩" },
-    { code: "+242", name: "Congo", flag: "🇨🇬" },
-    { code: "+241", name: "Gabon", flag: "🇬🇦" },
-    { code: "+240", name: "Equatorial Guinea", flag: "🇬🇶" },
-    { code: "+239", name: "Sao Tome", flag: "🇸🇹" },
-    { code: "+238", name: "Cape Verde", flag: "🇨🇻" },
-    { code: "+237", name: "Cameroon", flag: "🇨🇲" },
-    { code: "+236", name: "Central African Republic", flag: "�🇫" },
-    { code: "+235", name: "Chad", flag: "�🇹🇩" },
-    { code: "+228", name: "Togo", flag: "🇹🇬" },
-    { code: "+227", name: "Niger", flag: "🇳🇪" },
-    { code: "+226", name: "Burkina Faso", flag: "🇧🇫" },
-    { code: "+225", name: "Ivory Coast", flag: "🇨🇮" },
-    { code: "+224", name: "Guinea", flag: "🇬🇳" },
-    { code: "+223", name: "Mali", flag: "🇲🇱" },
-    { code: "+222", name: "Mauritania", flag: "🇲🇷" },
-    { code: "+221", name: "Senegal", flag: "🇸🇳" },
-    { code: "+220", name: "Gambia", flag: "🇬🇲" },
-    { code: "+213", name: "Algeria", flag: "🇩🇿" },
-    { code: "+212", name: "Morocco", flag: "🇲🇦" },
-    { code: "+211", name: "South Sudan", flag: "🇸🇸" },
-    { code: "+210", name: "Western Sahara", flag: "🇪🇭" },
-    { code: "+248", name: "Seychelles", flag: "🇸🇨" },
-    { code: "+249", name: "Comoros", flag: "🇰🇲" },
-    { code: "+230", name: "Mauritius", flag: "🇲🇺" },
-    { code: "+687", name: "New Caledonia", flag: "🇳🇨" },
-    { code: "+685", name: "Samoa", flag: "🇼🇸" },
-    { code: "+684", name: "Cook Islands", flag: "🇨🇰" },
-    { code: "+683", name: "Niue", flag: "🇳🇺" },
-    { code: "+682", name: "Tokelau", flag: "🇹🇰" },
-    { code: "+681", name: "Wallis", flag: "🇼🇫" },
-    { code: "+680", name: "Palau", flag: "🇵🇼" },
-    { code: "+679", name: "Fiji", flag: "🇫🇯" },
-    { code: "+678", name: "Vanuatu", flag: "🇻🇺" },
-    { code: "+677", name: "Solomon Islands", flag: "🇸🇧" },
-    { code: "+676", name: "Tonga", flag: "🇹🇴" },
-    { code: "+675", name: "Papua New Guinea", flag: "🇵🇬" },
-    { code: "+674", name: "Nauru", flag: "🇳🇷" },
-    { code: "+673", name: "Brunei", flag: "🇧🇳" },
-    { code: "+672", name: "Antarctica", flag: "🇦🇶" },
-    { code: "+670", name: "Timor-Leste", flag: "🇹🇱" },
-    { code: "+692", name: "Marshall Islands", flag: "🇲🇭" },
-    { code: "+691", name: "Micronesia", flag: "🇫🇲" },
-    { code: "+690", name: "Tuvalu", flag: "🇹🇻" },
-    { code: "+688", name: "Kiribati", flag: "🇰🇮" },
-    { code: "+689", name: "French Polynesia", flag: "🇵🇫" },
-    { code: "+357", name: "Cyprus", flag: "🇨🇾" },
-    { code: "+356", name: "Malta", flag: "🇲🇹" },
-    { code: "+972", name: "Israel", flag: "🇮🇱" },
-    { code: "+355", name: "Albania", flag: "🇦🇱" },
-    { code: "+354", name: "Iceland", flag: "🇮🇸" },
-    { code: "+353", name: "Ireland", flag: "🇮🇪" },
-    { code: "+352", name: "Luxembourg", flag: "🇱🇺" },
-    { code: "+351", name: "Portugal", flag: "🇵🇹" },
-    { code: "+350", name: "Gibraltar", flag: "🇬🇮" },
-    { code: "+44", name: "Isle of Man", flag: "🇮🇲" },
-    { code: "+44", name: "Jersey", flag: "🇯🇪" },
-    { code: "+44", name: "Guernsey", flag: "🇬🇬" },
-    { code: "+44", name: "Scotland", flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿" },
-    { code: "+44", name: "Wales", flag: "🏴󠁧󠁢󠁷󠁬󠁳󠁿" },
-    { code: "+44", name: "Northern Ireland", flag: "🏴󠁧󠁢󠁮󠁢󠁧󠁿" },
-    { code: "+378", name: "Vatican City", flag: "🇻🇦" },
-    { code: "+377", name: "Monaco", flag: "🇲🇨" },
-    { code: "+376", name: "Andorra", flag: "🇦🇩" },
-    { code: "+375", name: "Belarus", flag: "🇧🇾" },
-    { code: "+374", name: "Armenia", flag: "🇦🇲" },
-    { code: "+373", name: "Moldova", flag: "🇲🇩" },
-    { code: "+372", name: "Estonia", flag: "🇪🇪" },
-    { code: "+371", name: "Latvia", flag: "🇱🇻" },
-    { code: "+370", name: "Lithuania", flag: "🇱🇹" },
-    { code: "+389", name: "North Macedonia", flag: "🇲🇰" },
-    { code: "+387", name: "Bosnia", flag: "🇧🇦" },
-    { code: "+386", name: "Slovenia", flag: "🇸🇮" },
-    { code: "+385", name: "Croatia", flag: "🇭🇷" },
-    { code: "+382", name: "Montenegro", flag: "🇲🇪" },
-    { code: "+381", name: "Serbia", flag: "🇷🇸" },
-    { code: "+380", name: "Ukraine", flag: "🇺🇦" },
-    { code: "+359", name: "Bulgaria", flag: "🇧🇬" },
-    { code: "+358", name: "Finland", flag: "🇫🇮" },
-    { code: "+357", name: "Cyprus", flag: "🇨🇾" },
-    { code: "+356", name: "Malta", flag: "🇲🇹" },
-    { code: "+355", name: "Albania", flag: "🇦🇱" },
-    { code: "+354", name: "Iceland", flag: "🇮🇸" },
-    { code: "+353", name: "Ireland", flag: "🇮🇪" },
-    { code: "+352", name: "Luxembourg", flag: "🇱🇺" },
-    { code: "+351", name: "Portugal", flag: "🇵🇹" },
-    { code: "+350", name: "Gibraltar", flag: "🇬🇮" },
-    { code: "+41", name: "Liechtenstein", flag: "🇱🇮" },
-    { code: "+423", name: "Liechtenstein", flag: "��" },
-  ];
+const marqueeClients = [...clients, ...clients];
 
-  const validateCompanyEmail = (email) => {
-    const forbiddenDomains = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "aol.com", "icloud.com", "mail.com", "protonmail.com", "zoho.com", "yandex.com"];
-    const domain = email.split("@")[1]?.toLowerCase();
-    return !forbiddenDomains.includes(domain);
+function ProductDashboard() {
+  return (
+    <div className="ppd-hero-dashboard-wrap" aria-hidden="true">
+      <div className="ppd-hero-dashboard-glow" />
+      <div className="ppd-hero-dashboard">
+        <aside className="ppd-hero-dashboard__sidebar">
+          <div className="ppd-hero-dashboard__brand">P</div>
+          <span className="ppd-hero-dashboard__nav-item is-active"><Layers3 size={17} /></span>
+          <span className="ppd-hero-dashboard__nav-item"><Building2 size={17} /></span>
+          <span className="ppd-hero-dashboard__nav-item"><UsersRound size={17} /></span>
+          <span className="ppd-hero-dashboard__nav-item"><Activity size={17} /></span>
+          <span className="ppd-hero-dashboard__nav-item ppd-hero-dashboard__nav-bottom"><Globe2 size={17} /></span>
+        </aside>
+
+        <div className="ppd-hero-dashboard__main">
+          <div className="ppd-hero-dashboard__topbar">
+            <div className="ppd-hero-dashboard__breadcrumb">Workspace <ChevronDown size={13} /><b>Account intelligence</b></div>
+            <span className="ppd-hero-dashboard__live"><i /> Live intelligence</span>
+          </div>
+
+          <div className="ppd-hero-dashboard__body">
+            <div className="ppd-hero-dashboard__heading-row">
+              <div>
+                <span className="ppd-hero-dashboard__overline">COMPANY INTELLIGENCE</span>
+                <h2>Account overview</h2>
+                <p>Technology company <span>·</span> North America</p>
+              </div>
+              <span className="ppd-hero-dashboard__search"><Search size={16} /></span>
+            </div>
+
+            <div className="ppd-hero-dashboard__summary">
+              <div className="ppd-hero-dashboard__company-mark"><Building2 size={21} /></div>
+              <div className="ppd-hero-dashboard__company-name"><strong>Company profile</strong><span>Verified business record <Check size={12} /></span></div>
+              <span className="ppd-hero-dashboard__verified"><Check size={12} /> Verified</span>
+            </div>
+
+            <div className="ppd-hero-dashboard__metrics">
+              <div className="ppd-hero-dashboard__metric"><span>Intent activity</span><strong>86 <small>/ 100</small></strong><em><ArrowUpRight size={12} /> Rising signal</em></div>
+              <div className="ppd-hero-dashboard__metric"><span>Tech coverage</span><strong>94<small>%</small></strong><em><Check size={12} /> Strong coverage</em></div>
+              <div className="ppd-hero-dashboard__metric"><span>Buying group</span><strong>8 <small>contacts</small></strong><em><UsersRound size={12} /> 3 active signals</em></div>
+            </div>
+
+            <div className="ppd-hero-dashboard__lower">
+              <div className="ppd-hero-dashboard__chart-card">
+                <div className="ppd-hero-dashboard__card-heading"><div><span>BUYING SIGNALS</span><strong>Intent activity</strong></div><span className="ppd-hero-dashboard__period">Last 30 days <ChevronDown size={12} /></span></div>
+                <div className="ppd-hero-dashboard__chart">
+                  <div className="ppd-hero-dashboard__chart-y"><span>High</span><span>Med</span><span>Low</span></div>
+                  <div className="ppd-hero-dashboard__chart-plot">
+                    <i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i />
+                    <svg viewBox="0 0 420 100" preserveAspectRatio="none"><path d="M0 78 C38 72 43 66 74 70 S111 63 143 67 S180 50 210 56 S250 49 278 53 S321 28 346 40 S384 20 420 12" /></svg>
+                  </div>
+                </div>
+                <div className="ppd-hero-dashboard__chart-x"><span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span></div>
+              </div>
+
+              <div className="ppd-hero-dashboard__stack-card">
+                <div className="ppd-hero-dashboard__card-heading"><div><span>TECHNOGRAPHICS</span><strong>Technology stack</strong></div><Database size={15} /></div>
+                <div className="ppd-hero-dashboard__stack-list"><span><i className="is-blue">C</i> CRM platform <b>CRM</b></span><span><i className="is-cyan">A</i> Cloud platform <b>Cloud</b></span><span><i className="is-violet">D</i> Data platform <b>Data</b></span></div>
+                <div className="ppd-hero-dashboard__stack-more">Explore technology insights <ArrowUpRight size={12} /></div>
+              </div>
+            </div>
+            <div className="ppd-hero-dashboard__sample"><CircleDot size={10} /> Illustrative intelligence dashboard</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="ppd-hero-float-card ppd-hero-float-card--signals"><span className="ppd-hero-float-card__icon"><Activity size={17} /></span><span><strong>Buying signals</strong><small>Research activity rising</small></span><ArrowUpRight size={16} /></div>
+      <div className="ppd-hero-float-card ppd-hero-float-card--group"><span className="ppd-hero-float-card__icon is-purple"><UsersRound size={17} /></span><span><strong>Buying group</strong><small>Contacts and roles mapped</small></span><span className="ppd-hero-float-card__avatars"><i /><i /><i /></span></div>
+      <div className="ppd-hero-float-card ppd-hero-float-card--renewal"><span className="ppd-hero-float-card__icon is-cyan"><CircleDot size={17} /></span><span><strong>Renewal intelligence</strong><small>Contract window identified</small></span><ArrowUpRight size={16} /></div>
+    </div>
+  );
+}
+
+const Hero1 = () => {
+  const [trialExpanded, setTrialExpanded] = useState(false);
+  const [trialData, setTrialData] = useState({ email: "", fullName: "", phone: "", jobTitle: "" });
+  const [trialError, setTrialError] = useState("");
+  const [trialStatus, setTrialStatus] = useState("");
+  const [trialLoading, setTrialLoading] = useState(false);
+
+  useEffect(() => {
+    if (window.scrollCue) window.scrollCue.init();
+  }, []);
+
+  const updateTrialField = (event) => {
+    setTrialData((current) => ({ ...current, [event.target.name]: event.target.value }));
+    setTrialError("");
+    setTrialStatus("");
   };
 
-  const handleNexoraFormChange = (e) => {
-    setNexoraFormData({
-      ...nexoraFormData,
-      [e.target.name]: e.target.value
-    });
-    setNexoraFormError("");
-  };
+  const handleTrialSubmit = async (event) => {
+    event.preventDefault();
+    setTrialError("");
+    setTrialStatus("");
 
-  const handleCountrySelect = (country) => {
-    setNexoraFormData({
-      ...nexoraFormData,
-      countryCode: country.code
-    });
-    setCountryDropdownOpen(false);
-  };
-
-  const handleNexoraFormSubmit = async (e) => {
-    e.preventDefault();
-
-    // Validate company email
-    if (!validateCompanyEmail(nexoraFormData.email)) {
-      setNexoraFormError("Please use a company email address (not gmail, yahoo, etc.)");
+    if (!trialExpanded) {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trialData.email.trim())) {
+        setTrialError("Enter a valid email address to continue.");
+        return;
+      }
+      setTrialData((current) => ({ ...current, email: current.email.trim() }));
+      setTrialExpanded(true);
       return;
     }
 
+    if (!trialData.fullName.trim() || !trialData.jobTitle.trim()) {
+      setTrialError("Enter your full name and job title.");
+      return;
+    }
+
+    setTrialLoading(true);
     try {
       const response = await fetch("/api/nexora-free-trial.php", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          ...nexoraFormData,
-          phone: nexoraFormData.countryCode + nexoraFormData.phone
+          email: trialData.email.trim(),
+          fullName: trialData.fullName.trim(),
+          phone: trialData.phone.trim(),
+          jobTitle: trialData.jobTitle.trim(),
         }),
       });
-
-      if (response.ok) {
-        setNexoraFormSubmitted(true);
-        setNexoraFormData({ email: "", fullName: "", phone: "", jobTitle: "", countryCode: "+91" });
-      } else {
-        setNexoraFormError("Something went wrong. Please try again.");
+      const responseText = await response.text();
+      let result;
+      try {
+        result = JSON.parse(responseText);
+      } catch {
+        throw new Error("The PHP form endpoint returned a webpage instead of JSON. Confirm /api/nexora-free-trial.php is deployed and PHP is enabled on the web server.");
       }
+      if (!response.ok || !result.success) throw new Error(result.message || "We couldn’t submit your request. Please try again.");
+      setTrialStatus("Thanks! Your free trial request has been submitted.");
     } catch (error) {
-      setNexoraFormError("Something went wrong. Please try again.");
+      setTrialError(error.message || "Submission failed. Please try again.");
+    } finally {
+      setTrialLoading(false);
     }
   };
-  
 
   return (
-    <div className="ppd-home-hero">
-      <div className="nexora-banner">
-        <img src="/assets/images/Nexora Logo_Blue.svg" alt="Nexora Logo" className="nexora-logo" />
-         <h2><b>The Timing Layer for </b><br/> <span className="fraunces-text">Predictable Revenue</span>
-        </h2><br/>
-        <p>
-          GTM AI platform, makes revenue predictable,revealing what's next, the right stakeholders to engage, and exactly when to act.
-        </p>
-
-        {/* Free Trial Form */}
-        <div className="nexora-free-trial-form">
-          {nexoraFormSubmitted ? (
-            <div className="nexora-form-success">
-              <p>Thank you! We'll be in touch soon.</p>
-            </div>
-          ) : (
-            <>
-              <form onSubmit={handleNexoraFormSubmit}>
-                <div className="nexora-form-grid">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email address"
-                    value={nexoraFormData.email}
-                    onChange={handleNexoraFormChange}
-                    required
-                  />
-                  <input
-                    type="text"
-                    name="fullName"
-                    placeholder="Full name *"
-                    value={nexoraFormData.fullName}
-                    onChange={handleNexoraFormChange}
-                    required
-                  />
-                  <div className="nexora-phone-input">
-                    <div className="nexora-country-selector">
-                      <button
-                        type="button"
-                        className="nexora-country-button"
-                        onClick={() => setCountryDropdownOpen(!countryDropdownOpen)}
-                      >
-                        {countryCodes.find(c => c.code === nexoraFormData.countryCode)?.flag} {nexoraFormData.countryCode}
-                        <span className="nexora-dropdown-arrow">▼</span>
-                      </button>
-                      {countryDropdownOpen && (
-                        <div className="nexora-country-dropdown">
-                          {countryCodes.map((country) => (
-                            <div
-                              key={country.code}
-                              className="nexora-country-option"
-                              onClick={() => handleCountrySelect(country)}
-                            >
-                              <span className="nexora-country-flag">{country.flag}</span>
-                              <span className="nexora-country-name">{country.name}</span>
-                              <span className="nexora-country-code">{country.code}</span>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone number *"
-                      value={nexoraFormData.phone}
-                      onChange={handleNexoraFormChange}
-                      required
-                    />
-                  </div>
-                  <input
-                    type="text"
-                    name="jobTitle"
-                    placeholder="Job title *"
-                    value={nexoraFormData.jobTitle}
-                    onChange={handleNexoraFormChange}
-                    required
+    <>
+      <section className="ppd-home-hero ppd-home-hero--split">
+        <div className="ppd-home-hero__background" aria-hidden="true" />
+        <div className="ppd-home-hero__layout">
+          <div className="ppd-home-hero__copy">
+            <h1 className="ppd-home-hero__title scroll-cue" data-scroll-cue="slide-up">
+              <span>Your GTM has enough surprises.</span>
+              <span>Your pipeline shouldn’t.</span>
+            </h1>
+            <p className="scroll-cue" data-scroll-cue="slide-up" data-scroll-cue-delay="100">
+              We combine proprietary AI and account intelligence to help your teams identify buying opportunities, prioritize accounts, and build a more predictable pipeline.
+            </p>
+            <form className={`ppd-trial-form${trialExpanded ? " is-expanded" : ""}`} onSubmit={handleTrialSubmit} noValidate>
+              <div className="ppd-trial-form__fields">
+                <label className="ppd-trial-form__field ppd-trial-form__email">
+                  <span className="ppd-trial-form__sr-only">Work email</span>
+                  <input autoComplete="email" type="email" name="email" value={trialData.email} onChange={updateTrialField} placeholder="Enter your work email" required aria-invalid={Boolean(trialError)} />
+                </label>
+                <label className="ppd-trial-form__field ppd-trial-form__name">
+                  <span className="ppd-trial-form__sr-only">Full name, required</span>
+                  <input autoComplete="name" type="text" name="fullName" value={trialData.fullName} onChange={updateTrialField} placeholder="Full name *" required tabIndex={trialExpanded ? 0 : -1} />
+                </label>
+                <div className="ppd-trial-form__field ppd-trial-form__phone">
+                  <label className="ppd-trial-form__sr-only" htmlFor="ppd-trial-phone">Phone number (optional)</label>
+                  <PhoneInput
+                    country="in"
+                    value={trialData.phone}
+                    onChange={(phone) => updateTrialField({ target: { name: "phone", value: phone } })}
+                    inputProps={{ id: "ppd-trial-phone", name: "phone", autoComplete: "tel", tabIndex: trialExpanded ? 0 : -1, "aria-label": "Phone number (optional)" }}
+                    containerClass="ppd-trial-phone-input"
+                    inputClass="ppd-trial-phone-input__control"
+                    buttonClass="ppd-trial-phone-input__country"
+                    dropdownClass="ppd-trial-phone-input__dropdown"
+                    enableSearch
+                    disableSearchIcon
+                    countryCodeEditable={false}
+                    specialLabel=""
+                    placeholder="Phone number (optional)"
                   />
                 </div>
-                {nexoraFormError && (
-                  <p className="nexora-form-error">{nexoraFormError}</p>
-                )}
-                <button type="submit" className="nexora-submit-btn">
-                  Free trial
+                <label className="ppd-trial-form__field ppd-trial-form__job">
+                  <span className="ppd-trial-form__sr-only">Job title, required</span>
+                  <input autoComplete="organization-title" type="text" name="jobTitle" value={trialData.jobTitle} onChange={updateTrialField} placeholder="Job title *" required tabIndex={trialExpanded ? 0 : -1} />
+                </label>
+                <button className="ppd-trial-form__submit" type="submit" disabled={trialLoading || Boolean(trialStatus)}>
+                  {trialLoading ? "Submitting…" : trialStatus ? "Submitted" : "Free Trial"}
                 </button>
-              </form>
-              <p className="nexora-form-privacy">
-                By submitting this form, you agree to ProPlus Data's Privacy Policy and Terms of Use. You may unsubscribe at any time.
-              </p>
-            </>
-          )}
+              </div>
+              <p className="ppd-trial-form__disclaimer">By submitting this form, you agree to ProPlus Data&apos;s <Link to="/privacy-policy">Privacy Policy</Link> and <a href="mailto:info@proplusdata.co?subject=Terms%20of%20Use">Terms of Use</a>. You may unsubscribe at any time.</p>
+              <p className="ppd-trial-form__message" role="status" aria-live="polite">{trialError || trialStatus}</p>
+            </form>
+            <div className="ppd-home-hero__trust" role="group" aria-label="Customer logos">
+              <div className="ppd-home-hero__trust-inner">
+                <span>Trusted by teams at</span>
+                <div className="hero-logos-marquee">
+                  <div className="hero-logos-track">
+                    {marqueeClients.map((client, index) => (
+                      <div className="hero-logo-item" key={`${client}-${index}`}>
+                        <img src={`/assets/images/brand/${client}`} alt={index < clients.length ? client.replace(".png", "") : ""} aria-hidden={index >= clients.length} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="ppd-home-hero__visual" aria-hidden="true">
+            <div className="ppd-hero-orbit ppd-hero-orbit--outer"><i /><i /><i /></div>
+            <div className="ppd-hero-orbit ppd-hero-orbit--inner"><i /><i /><i /></div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
- };
+};
 
 export default Hero1;

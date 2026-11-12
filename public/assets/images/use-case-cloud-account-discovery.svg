@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="111" y1="27" x2="1077" y2="643" gradientUnits="userSpaceOnUse"><stop stop-color="#F1F7FF"/><stop offset="1" stop-color="#E3EEF9"/></linearGradient>
+    <filter id="shadow" x="226" y="100" width="748" height="496" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feGaussianBlur in="SourceAlpha" stdDeviation="15"/><feOffset dy="14"/><feComponentTransfer><feFuncA type="linear" slope=".12"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1200v675H0z"/><circle cx="1015" cy="88" r="182" fill="#D9E8FB"/><circle cx="115" cy="554" r="178" fill="#DBECE9"/>
+  <path d="M0 560c218-66 383-21 561 19 221 49 423 30 639-49v145H0V560Z" fill="#DCE9F8"/>
+  <g filter="url(#shadow)">
+    <rect x="273" y="144" width="654" height="391" rx="24" fill="#fff" stroke="#D7E2EF" stroke-width="2"/>
+    <path d="M273 168a24 24 0 0 1 24-24h606a24 24 0 0 1 24 24v54H273v-54Z" fill="#F8FAFD"/>
+    <circle cx="307" cy="182" r="6" fill="#F28C45"/><circle cx="328" cy="182" r="6" fill="#F2C36B"/><circle cx="349" cy="182" r="6" fill="#69BFA6"/>
+    <text x="383" y="187" fill="#607895" font-family="Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="1.8">CLOUD ACCOUNT DISCOVERY</text>
+    <rect x="305" y="251" width="245" height="245" rx="16" fill="#F3F7FC"/>
+    <circle cx="427" cy="385" r="78" fill="#E7EFFB"/>
+    <circle cx="427" cy="385" r="58" fill="#D3E2F7"/>
+    <circle cx="427" cy="385" r="37" fill="#173F91"/>
+    <path d="m427 364 6 15 16 6-16 6-6 16-6-16-16-6 16-6 6-15Z" fill="#fff"/>
+    <circle cx="341" cy="338" r="7" fill="#3979D4"/><circle cx="508" cy="329" r="7" fill="#F28C45"/><circle cx="350" cy="435" r="7" fill="#45B899"/><circle cx="497" cy="448" r="7" fill="#8A79D7"/>
+    <circle cx="386" cy="310" r="5" fill="#F2B84B"/><circle cx="471" cy="306" r="5" fill="#3979D4"/><circle cx="316" cy="388" r="5" fill="#8A79D7"/><circle cx="527" cy="394" r="5" fill="#45B899"/>
+    <path d="M341 338 386 310 427 327 471 306 508 329M316 388l34 47 77-50 70 63 30-54" stroke="#9BB6DB" stroke-width="2" stroke-dasharray="4 6"/>
+    <rect x="574" y="251" width="322" height="111" rx="16" fill="#173F91"/>
+    <text x="601" y="335" fill="#fff" font-family="Arial,sans-serif" font-size="32" font-weight="800">Signal, not noise.</text>
+    <rect x="574" y="380" width="322" height="116" rx="16" fill="#fff" stroke="#E0E8F2"/>
+    <circle cx="609" cy="440" r="6" fill="#45B899"/>
+    <circle cx="609" cy="468" r="6" fill="#F28C45"/>
+  </g>
+  <path d="M153 286h104M943 393h104" stroke="#8DAACF" stroke-width="2" stroke-dasharray="6 8"/>
+  <circle cx="141" cy="286" r="11" fill="#fff" stroke="#3979D4" stroke-width="3"/><circle cx="1059" cy="393" r="11" fill="#FFF2DF" stroke="#F28C45" stroke-width="3"/>
+  <rect x="73" y="553" width="190" height="42" rx="21" fill="#fff" fill-opacity=".9"/><circle cx="98" cy="574" r="5" fill="#45B899"/>
+</svg>

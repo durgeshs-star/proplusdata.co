@@ -56,7 +56,7 @@ export default function IntentData() {
                     content="Use B2B intent data to uncover which companies are actively researching solutions like yours. ProPlus Data helps you engage high-intent leads before competitors do." />
       </Helmet>
       <Header1/>
-      <main className="ppd-solution">
+      <main className="ppd-solution ppd-solution--intent-data">
         {/* <SolutionBreadcrumb label="Intent Data" parentHref="/intent-data" /> */}
         <IntentComponent/>
         <DecodePropensity/>

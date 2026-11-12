@@ -6,10 +6,11 @@ import Footer from '../components/Footer'
 import PressReleaseComponent from '../components/PressReleaseComponent'
 import DataradeComponent from '../components/DataradeComponent';
 import '../components/PressReleases.css'
+import '../components/CompanyPages.css'
 
 export default function PressReleases() {
   return (
-    <div className="ppd-press-page">
+    <div className="ppd-company-page ppd-company-page--press ppd-press-page">
       <Helmet>
                         <title>Press Releases | ProPlus Data News & Industry Updates</title>
                       <meta name="description" content="Stay informed with the latest news from ProPlus Data. Explore press releases, industry insights, and key milestones shaping the future of data intelligence."/>

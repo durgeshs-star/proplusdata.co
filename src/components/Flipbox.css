@@ -1,410 +1,94 @@
-.proplus-intelligence-section {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: clamp(2.5rem, 5vw, 4rem) 1.25rem;
-  background:
-    radial-gradient(ellipse 34rem 20rem at 8% 18%, rgba(219, 234, 254, 0.32), transparent 76%),
-    radial-gradient(ellipse 32rem 18rem at 92% 82%, rgba(224, 242, 254, 0.3), transparent 78%),
-    #ffffff;
+.proplus-intelligence-section { position: relative; height: calc(var(--horizontal-scroll-distance, 300vh) + var(--horizontal-release-buffer, 0px)); background: #fff; margin: 0; padding: 0; }
+.proplus-intelligence-sticky { position: relative; display: flex; height: 100vh; align-items: center; overflow: hidden; margin: 0; padding: 0; background: #fff; }
+html.proplus-intelligence-scroll-lock #flipbox .proplus-intelligence-sticky { position: fixed; inset: 0 0 auto; z-index: 5; display: flex; width: 100%; height: 100vh; align-items: center; overflow: hidden; background: #fff; }
+.proplus-intelligence-section__inner { width: min(100%, 1440px); margin: 0 auto; padding: 2rem 5vw; }
+.proplus-intelligence-section__header { position: relative; z-index: 4; width: 100%; max-width: none; margin: 0 auto clamp(1rem, 2vh, 2rem); text-align: center; }
+.proplus-intelligence-section__eyebrow { display: inline-flex; align-items: center; gap: .6rem; margin-bottom: .9rem; color: #133580; font-size: .72rem; font-weight: 700; letter-spacing: .16em; line-height: 1; text-transform: uppercase; }
+.proplus-intelligence-section__status { width: .5rem; height: .5rem; border-radius: 50%; background: #3b82f6; box-shadow: 0 0 0 4px rgba(59,130,246,.1); animation: proplus-intelligence-pulse 2.4s ease-in-out infinite; }
+.proplus-intelligence-section__title { display: grid; gap: .04em; margin: 0; color: #0f1f3d; font-family: 'Inter','DM Sans',sans-serif; font-size: clamp(2rem,3.6vw,3.6rem); font-weight: 700; letter-spacing: -.055em; line-height: 1.05; }
+.proplus-intelligence-section__title-main { display: block; color: #0f1f3d; white-space: nowrap; }
+.proplus-intelligence-section__title-emphasis { display: block; padding-bottom: .08em; color: #133580; font-family: Georgia,'Times New Roman',serif; font-style: italic; font-weight: 600; }
+.proplus-intelligence-track-viewport { position: relative; z-index: 1; }
+.proplus-intelligence-section__intro { max-width: 600px; margin: 1rem auto 0; color: #64748b; font-size: 1rem; line-height: 1.6; }
+.proplus-intelligence-track-viewport { overflow: hidden; }
+.proplus-intelligence-grid { display: flex; width: calc(500% + 96px); gap: 24px; will-change: transform; }
+.proplus-intelligence-card { position: relative; isolation: isolate; display: flex; flex: 0 0 calc((100% - 96px) / 5); min-width: 0; min-height: clamp(300px,40vh,400px); flex-direction: row; overflow: hidden; border-radius: 24px; background: var(--card-color); box-shadow: 0 22px 60px rgba(15,23,42,.14); color: var(--card-ink); text-decoration: none; }
+.proplus-intelligence-card__content { z-index: 2; display: flex; width: 52%; flex-direction: column; padding: clamp(1.5rem,3vw,3rem); }
+.proplus-intelligence-card__label { margin-bottom: auto; font-size: .65rem; font-weight: 800; letter-spacing: .14em; opacity: .72; }
+.proplus-intelligence-card__header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 2.5rem 0 1rem; }
+.proplus-intelligence-card__title { margin: 0; color: var(--card-ink); font-family: 'Inter','DM Sans',sans-serif; font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 700; letter-spacing: -.045em; line-height: 1.08; }
+.proplus-intelligence-card__title sup { font-size: .48em; }
+.proplus-intelligence-card__arrow-icon { position: absolute; top: 24px; right: 24px; display: grid; width: 56px; height: 56px; flex: 0 0 56px; place-items: center; border: 1.5px solid currentColor; border-radius: 50%; font-size: 1.35rem; transition: transform .3s ease,background .3s ease; }
+.proplus-intelligence-card:hover .proplus-intelligence-card__arrow-icon { transform: rotate(45deg); background: rgba(255,255,255,.24); }
+.proplus-intelligence-card__description { max-width: 500px; margin: 0; font-size: clamp(.94rem,1.15vw,1.08rem); font-weight: 500; line-height: 1.7; }
+.proplus-intelligence-card__metric { display: flex; flex-direction: column; gap: .35rem; margin-top: 1.4rem; }
+.proplus-intelligence-card__metric span { font-size: .62rem; font-weight: 800; letter-spacing: .14em; opacity: .68; }
+.proplus-intelligence-card__metric strong { font-size: 1.02rem; }
+.proplus-intelligence-card__tags { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.proplus-intelligence-card__tags li { padding: .42rem .68rem; border: 1px solid currentColor; border-radius: 999px; font-size: .68rem; font-weight: 600; opacity: .83; }
+.proplus-intelligence-card__index { position: absolute; right: 1.5rem; bottom: 1rem; z-index: 3; font-size: .7rem; font-weight: 800; letter-spacing: .12em; opacity: .62; }
+.proplus-intelligence-visual { position: relative; display: grid; width: 48%; min-height: 100%; overflow: hidden; place-items: center; background: radial-gradient(ellipse at 60% 50%,rgba(255,255,255,.4),transparent 65%); }
+.proplus-intelligence-visual__glow { position: absolute; width: 75%; aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,.28); filter: blur(45px); }
+.proplus-intelligence-visual__window { position: relative; z-index: 1; width: 88%; overflow: hidden; border: 1px solid rgba(255,255,255,.7); border-radius: 14px; background: rgba(255,255,255,.92); box-shadow: 0 28px 70px rgba(15,23,42,.2); transform: rotate(-4deg); transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+.proplus-intelligence-card:hover .proplus-intelligence-visual__window { transform: rotate(-1deg) translateY(-5px) scale(1.025); }
+.proplus-intelligence-visual__topbar { display: flex; height: 35px; align-items: center; gap: 5px; padding: 0 12px; border-bottom: 1px solid #e8edf4; color: #7c8ba1; font-size: 6px; font-weight: 800; letter-spacing: .11em; }
+.proplus-intelligence-visual__topbar i { width: 5px; height: 5px; border-radius: 50%; background: #d5deea; }
+.proplus-intelligence-visual__topbar span { margin-left: auto; }
+.proplus-intelligence-visual__body { display: flex; min-height: 190px; padding: 15px; }
+.proplus-intelligence-visual__sidebar { display: flex; width: 18%; flex-direction: column; gap: 12px; padding: 5px 10px 0 2px; border-right: 1px solid #edf1f6; }
+.proplus-intelligence-visual__sidebar b { height: 5px; border-radius: 4px; background: #dce4ef; }
+.proplus-intelligence-visual__sidebar b:first-child { width: 70%; background: var(--card-color); }
+.proplus-intelligence-visual__chart { position: relative; display: flex; flex: 1; flex-direction: column; padding: 4px 8px 0 14px; }
+.proplus-intelligence-visual__chart-title { display: flex; justify-content: space-between; font-size: 8px; font-weight: 800; letter-spacing: .07em; }
+.proplus-intelligence-visual__chart-title span { font-size: 13px; }
+.proplus-intelligence-visual__bars { display: flex; height: 112px; align-items: end; justify-content: space-around; gap: 7px; padding: 12px 6px 0; }
+.proplus-intelligence-visual__bars i { width: 10%; height: 40%; border-radius: 4px 4px 0 0; background: var(--card-color); opacity: .52; }
+.proplus-intelligence-visual__bars i:nth-child(2n) { height: 66%; opacity: .72; }
+.proplus-intelligence-visual__bars i:nth-child(3n) { height: 90%; opacity: .9; }
+.proplus-intelligence-visual__baseline { height: 1px; background: #e8edf4; }
+.proplus-intelligence-visual__chips { display: flex; gap: 6px; margin-top: 12px; }
+.proplus-intelligence-visual__chips i { width: 28%; height: 8px; border-radius: 8px; background: #e9eef5; }
+.proplus-intelligence-visual__chips i:first-child { background: color-mix(in srgb,var(--card-color),white 68%); }
+.proplus-intelligence-visual__orbit { position: absolute; width: 80%; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; }
+.proplus-intelligence-visual__orbit--one { transform: scaleY(.38) rotate(-20deg); }
+.proplus-intelligence-visual__orbit--two { transform: scaleY(.6) rotate(35deg); }
+.proplus-intelligence-visual--intent .proplus-intelligence-visual__window { transform: rotate(3deg); }
+.proplus-intelligence-visual--purchase .proplus-intelligence-visual__window { transform: rotate(-2deg) translateY(-8px); }
+.proplus-intelligence-visual--renewal .proplus-intelligence-visual__window { transform: rotate(2deg) translateY(6px); }
+.proplus-intelligence-progress { display: flex; justify-content: center; gap: 9px; margin-top: 0.5rem; }
+.proplus-intelligence-progress__dot { width: 7px; height: 7px; border-radius: 50%; background: #cbd5e1; }
+.proplus-intelligence-progress__dot.is-active { width: 26px; border-radius: 8px; background: #133580; }
+
+/* Keep card copy legible when site-wide anchor hover colors apply. */
+.proplus-home .proplus-intelligence-card:hover,
+.proplus-home .proplus-intelligence-card:hover .proplus-intelligence-card__content,
+.proplus-home .proplus-intelligence-card:hover .proplus-intelligence-card__content *,
+.proplus-home .proplus-intelligence-card:hover .proplus-intelligence-card__arrow-icon,
+.proplus-home .proplus-intelligence-card:hover .proplus-intelligence-card__index {
+  color: #fff !important;
 }
-
-.proplus-intelligence-section::before {
-  position: absolute;
-  z-index: -2;
-  inset: 0;
-  content: "";
-  pointer-events: none;
-  background-image:
-    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
-  background-position: center center;
-  background-size: 42px 42px;
-  mask-image: radial-gradient(ellipse 80% 74% at 50% 48%, #000 18%, transparent 100%);
+@keyframes proplus-intelligence-pulse { 50% { box-shadow: 0 0 0 7px rgba(59,130,246,.04); } }
+@media (max-height: 760px) and (min-width: 901px) { .proplus-intelligence-section__header { margin-bottom: 1.4rem; } .proplus-intelligence-card { min-height: 380px; } .proplus-intelligence-card__header { margin-top: 1.5rem; } }
+@media (max-width: 900px) {
+  .proplus-intelligence-section { height: auto; margin-bottom: 0; padding: 4rem 0; }
+  .proplus-intelligence-sticky { position: relative; top: auto; display: block; height: auto; min-height: 0; overflow: visible; }
+  .proplus-intelligence-section__inner { padding: 0 1.25rem; }
+  .proplus-intelligence-section__header { margin-bottom: 2rem; }
+  .proplus-intelligence-section__title-main { white-space: normal; }
+  .proplus-intelligence-grid { width: 100%; flex-direction: column; gap: 1rem; transform: none !important; }
+  .proplus-intelligence-card { flex-basis: auto; min-height: 400px; }
+  .proplus-intelligence-progress { display: none; }
 }
-
-.proplus-intelligence-section__glow {
-  position: absolute;
-  z-index: -1;
-  top: 14%;
-  left: 50%;
-  width: min(48rem, 90vw);
-  height: 20rem;
-  border-radius: 50%;
-  background: rgba(219, 234, 254, 0.24);
-  filter: blur(100px);
-  pointer-events: none;
-  transform: translateX(-50%);
+@media (max-width: 600px) {
+  .proplus-intelligence-section { padding: 3rem 0; }
+  .proplus-intelligence-section__title { font-size: clamp(2rem,9vw,2.8rem); }
+  .proplus-intelligence-section__intro { font-size: .95rem; }
+  .proplus-intelligence-card { min-height: 0; flex-direction: column; }
+  .proplus-intelligence-card__content { width: 100%; min-height: 350px; padding: 1.35rem; }
+  .proplus-intelligence-card__header { margin: 2rem 0 .9rem; }
+  .proplus-intelligence-card__title { font-size: 1.8rem; }
+  .proplus-intelligence-card__description { font-size: .92rem; }
+  .proplus-intelligence-visual { width: 100%; min-height: 250px; }
+  .proplus-intelligence-visual__body { min-height: 160px; }
 }
-
-.proplus-intelligence-section__inner {
-  width: min(100%, 1240px);
-  margin: 0 auto;
-}
-
-.proplus-intelligence-section__header {
-  max-width: 760px;
-  margin: 0 auto clamp(2.5rem, 5vw, 3.75rem);
-  text-align: center;
-}
-
-.proplus-intelligence-section__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 1.1rem;
-  color: #133580;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.proplus-intelligence-section__status {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: #3b82f6;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-  animation: proplus-intelligence-pulse 2.4s ease-in-out infinite;
-}
-
-.proplus-intelligence-section__title {
-  margin: 0;
-  color: #0f1f3d;
-  font-family: 'Inter', 'DM Sans', sans-serif;
-  font-size: clamp(2.2rem, 4.4vw, 3.7rem);
-  font-weight: 700;
-  letter-spacing: -0.055em;
-  line-height: 1.08;
-}
-
-.proplus-intelligence-section__title span {
-  display: block;
-  padding-bottom: 0.08em;
-  background: linear-gradient(100deg, #2563eb 12%, #60a5fa 88%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.proplus-intelligence-section__intro {
-  max-width: 590px;
-  margin: 1.2rem auto 0;
-  color: #64748b;
-  font-size: 1.05rem;
-  line-height: 1.75;
-}
-
-.proplus-intelligence-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.1rem;
-}
-
-.proplus-intelligence-card {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  min-width: 0;
-  min-height: 390px;
-  flex-direction: column;
-  align-items: flex-start;
-  overflow: hidden;
-  padding: 1.5rem;
-  border: 1px solid rgba(148, 163, 184, 0.24);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
-  color: #111827;
-  text-decoration: none;
-  transition:
-    transform 650ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 500ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 650ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.proplus-intelligence-card::before {
-  position: absolute;
-  z-index: -1;
-  inset: -1rem;
-  content: "";
-  border-radius: inherit;
-  background: radial-gradient(ellipse at 50% 40%, rgba(96, 165, 250, 0.18), transparent 68%);
-  opacity: 0;
-  transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.proplus-intelligence-card::after {
-  position: absolute;
-  z-index: 1;
-  top: -35%;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  content: "";
-  pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.62), transparent);
-  opacity: 0;
-}
-
-.proplus-intelligence-card.is-active,
-.proplus-intelligence-card:focus-visible {
-  z-index: 2;
-  transform: translateY(-10px);
-  border-color: rgba(59, 130, 246, 0.38);
-  box-shadow:
-    0 28px 60px rgba(15, 23, 42, 0.1),
-    0 8px 24px rgba(37, 99, 235, 0.08);
-}
-
-.proplus-intelligence-card.is-active::before,
-.proplus-intelligence-card:focus-visible::before {
-  opacity: 1;
-}
-
-.proplus-intelligence-card.is-active::after,
-.proplus-intelligence-card:focus-visible::after {
-  animation: proplus-intelligence-scan 1.35s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.proplus-intelligence-card:focus-visible {
-  outline: 3px solid rgba(37, 99, 235, 0.42);
-  outline-offset: 4px;
-}
-
-.proplus-intelligence-card__number {
-  color: #94a3b8;
-  font-family: 'Inter', 'DM Sans', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  line-height: 2.4rem;
-}
-
-.proplus-intelligence-card__arrow {
-  position: absolute;
-  top: 1.35rem;
-  right: 1.35rem;
-  display: inline-flex;
-  width: 2.4rem;
-  height: 2.4rem;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  border-radius: 50%;
-  background: #ffffff;
-  color: #475569;
-  font-size: 1rem;
-  transition:
-    transform 550ms cubic-bezier(0.16, 1, 0.3, 1),
-    color 450ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 450ms cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 450ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.proplus-intelligence-card.is-active .proplus-intelligence-card__arrow,
-.proplus-intelligence-card:focus-visible .proplus-intelligence-card__arrow {
-  transform: rotate(45deg);
-  border-color: #2563eb;
-  background: #2563eb;
-  color: #ffffff;
-}
-
-.proplus-intelligence-card__icon-wrap {
-  position: relative;
-  display: grid;
-  width: 6.5rem;
-  height: 6.5rem;
-  place-items: center;
-  align-self: center;
-  margin: 1.4rem auto 1.6rem;
-}
-
-.proplus-intelligence-card__icon-ring {
-  position: absolute;
-  inset: 0.15rem;
-  border: 1px solid rgba(96, 165, 250, 0.24);
-  border-radius: 1.65rem;
-  background: linear-gradient(145deg, rgba(239, 246, 255, 0.78), rgba(219, 234, 254, 0.3));
-  transform: rotate(-8deg);
-  transition:
-    transform 650ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 500ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.proplus-intelligence-card__icon {
-  position: relative;
-  display: grid;
-  width: 4.5rem;
-  height: 4.5rem;
-  place-items: center;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  border-radius: 1.25rem;
-  background: #ffffff;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-  transition:
-    transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 600ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.proplus-intelligence-card__icon img {
-  display: block;
-  width: 2.7rem;
-  height: 2.7rem;
-  object-fit: contain;
-  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.proplus-intelligence-card.is-active .proplus-intelligence-card__icon-ring,
-.proplus-intelligence-card:focus-visible .proplus-intelligence-card__icon-ring {
-  transform: rotate(4deg);
-  border-color: rgba(37, 99, 235, 0.38);
-}
-
-.proplus-intelligence-card.is-active .proplus-intelligence-card__icon,
-.proplus-intelligence-card:focus-visible .proplus-intelligence-card__icon {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.13);
-}
-
-.proplus-intelligence-card.is-active .proplus-intelligence-card__icon img,
-.proplus-intelligence-card:focus-visible .proplus-intelligence-card__icon img {
-  transform: scale(1.06);
-}
-
-.proplus-intelligence-card__title {
-  display: block;
-  width: 100%;
-  color: #0f1f3d;
-  font-family: 'Inter', 'DM Sans', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.35;
-}
-
-.proplus-intelligence-card__title sup {
-  font-size: 0.65em;
-}
-
-.proplus-intelligence-card__description {
-  display: block;
-  margin-top: 0.75rem;
-  color: #64748b;
-  font-size: 0.92rem;
-  line-height: 1.7;
-  transition: color 500ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.proplus-intelligence-card.is-active .proplus-intelligence-card__description,
-.proplus-intelligence-card:focus-visible .proplus-intelligence-card__description {
-  color: #475569;
-}
-
-.proplus-intelligence-card__footer {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(226, 232, 240, 0.9);
-  color: #133580;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.proplus-intelligence-card__footer-arrow {
-  display: inline-block;
-  font-size: 1.1rem;
-  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.proplus-intelligence-card.is-active .proplus-intelligence-card__footer-arrow,
-.proplus-intelligence-card:focus-visible .proplus-intelligence-card__footer-arrow {
-  transform: translateX(5px);
-}
-
-@keyframes proplus-intelligence-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 0 7px rgba(59, 130, 246, 0.04);
-  }
-}
-
-@keyframes proplus-intelligence-scan {
-  0% {
-    top: -2%;
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.8;
-  }
-  100% {
-    top: 102%;
-    opacity: 0;
-  }
-}
-
-@media (max-width: 1100px) {
-  .proplus-intelligence-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  .proplus-intelligence-section {
-    padding: 4rem 1rem;
-  }
-
-  .proplus-intelligence-section__header {
-    margin-bottom: 2rem;
-  }
-
-  .proplus-intelligence-section__title {
-    font-size: clamp(2rem, 9vw, 2.8rem);
-  }
-
-  .proplus-intelligence-section__intro {
-    font-size: 0.98rem;
-  }
-
-  .proplus-intelligence-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1rem;
-  }
-
-  .proplus-intelligence-card {
-    min-height: 350px;
-    padding: 1.35rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .proplus-intelligence-section__status {
-    animation: none;
-  }
-
-  .proplus-intelligence-card,
-  .proplus-intelligence-card::before,
-  .proplus-intelligence-card::after,
-  .proplus-intelligence-card__arrow,
-  .proplus-intelligence-card__icon-ring,
-  .proplus-intelligence-card__icon,
-  .proplus-intelligence-card__icon img,
-  .proplus-intelligence-card__description,
-  .proplus-intelligence-card__footer-arrow {
-    animation: none !important;
-    transition: none !important;
-  }
-
-  .proplus-intelligence-card.is-active,
-  .proplus-intelligence-card:focus-visible {
-    transform: none;
-  }
-}
+@media (prefers-reduced-motion: reduce) { .proplus-intelligence-section__status { animation: none; } .proplus-intelligence-card__arrow-icon,.proplus-intelligence-visual__window { transition: none; } }

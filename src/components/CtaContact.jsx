@@ -1,5 +1,4 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
 
 const CtaContact = () => {
   return (
@@ -8,11 +7,12 @@ const CtaContact = () => {
       <div className="ppd-solution-shell">
         <div className="ppd-techno-cta__panel">
           <h2>
-            Unlock conversations that spark transformation with verified contacts!
+            Unlock conversations that spark transformation with{" "}
+            <span>verified contacts!</span>
           </h2>
           <a className="ppd-techno-cta__button" href="/contact-us">
             Connect With Us
-            <FaArrowRight aria-hidden="true" />
+            <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>

@@ -3,10 +3,11 @@ import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
 import ContactInfo from '../components/ContactInfo'
+import '../components/CompanyPages.css'
 
 export default function ContactUs() {
   return (
-    <div>
+    <div className="ppd-company-page ppd-company-page--contact">
          <Helmet>
          {typeof window !== 'undefined' && (
   <script

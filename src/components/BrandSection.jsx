@@ -63,12 +63,8 @@ const BrandSection = () => {
 
       <div className="ppd-marketplace-container">
         <header className="ppd-marketplace-header">
-          <p className="ppd-marketplace-eyebrow">
-            <span className="ppd-marketplace-status" aria-hidden="true" />
-            Data Ecosystem
-          </p>
           <h2 className="ppd-marketplace-title" id="ppd-marketplace-title">
-            Available on leading data marketplaces
+            Available on leading <span>data marketplaces</span>
           </h2>
           <div className="ppd-marketplace-indicator" aria-hidden="true">
             <span />

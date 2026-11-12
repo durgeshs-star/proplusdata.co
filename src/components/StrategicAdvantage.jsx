@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaChartLine, FaAward, FaTachometerAlt, FaLeaf } from "react-icons/fa";
+import SolutionStepCard from "./SolutionStepCard";
 
 const StrategicAdvantage = () => {
   const sectionRef = useRef(null);
@@ -30,50 +30,46 @@ const StrategicAdvantage = () => {
 
   const advantages = [
     {
-      icon: <FaChartLine />,
+      number: "01",
       title: "Maximized ROI",
       description: "Channel resources toward high-potential prospects backed by validated intent, ensuring every investment delivers maximum returns."
     },
     {
-      icon: <FaAward />,
+      number: "02",
       title: "Competitive Supremacy",
       description: "Anticipate market trends and competitor maneuvers, positioning your business as the preferred choice."
     },
     {
-      icon: <FaTachometerAlt />,
+      number: "03",
       title: "Operational Excellence",
-      description: "Eliminate inefficiencies with a clear, data-driven roadmap to engage prospects, streamlining execution."
-    },
-    {
-      icon: <FaLeaf />,
-      title: "Sustainable Growth",
-      description: "Build lasting relationships with decision-makers by addressing their needs with precision, fostering loyalty and advocacy."
+      description: "Eliminate inefficiencies with a clear, data-driven roadmap to engage prospects, streamlining execution. Build lasting relationships by addressing decision-makers' needs with precision, fostering loyalty and sustainable growth."
     }
   ];
 
   return (
-    <section ref={sectionRef} className={`ppd-buyer-advantages${isVisible ? " is-visible" : ""}`} aria-labelledby="ppd-buyer-advantages-title">
+    <section ref={sectionRef} className={`ppd-renewal-how ppd-buyer-advantages${isVisible ? " is-visible" : ""}`} aria-labelledby="ppd-buyer-advantages-title">
       <div className="ppd-solution-shell">
-        <header className="ppd-buyer-advantages-header">
-          <h2 className="ppd-buyer-advantages-title" id="ppd-buyer-advantages-title">
+        <header className="ppd-renewal-how-header">
+          <p className="ppd-renewal-how-eyebrow">Buying group impact</p>
+          <h2 className="ppd-renewal-how-title" id="ppd-buyer-advantages-title">
             Strategic <span>Advantages</span>
           </h2>
-          <span className="ppd-buyer-advantages-accent" aria-hidden="true" />
+          <p className="ppd-renewal-how-intro">
+            Use buyer group insight to prioritize accounts, strengthen
+            engagement, and create sustainable growth.
+          </p>
         </header>
 
-        <div className="ppd-buyer-advantages-hex">
+        <div className="ppd-renewal-how-steps ppd-buyer-advantages-hex">
           {advantages.map((advantage, index) => (
-            <article 
-              className="ppd-buyer-advantage-hex" 
+            <SolutionStepCard
               key={advantage.title}
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              <span className="ppd-buyer-advantage-icon">
-                {advantage.icon}
-              </span>
-              <h3 className="ppd-buyer-advantage-title">{advantage.title}</h3>
-              <p className="ppd-buyer-advantage-description">{advantage.description}</p>
-            </article>
+              number={advantage.number}
+              label="Strategic advantage"
+              title={advantage.title}
+              description={advantage.description}
+              index={index}
+            />
           ))}
         </div>
       </div>

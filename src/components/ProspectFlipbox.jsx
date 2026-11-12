@@ -24,6 +24,7 @@ const ProspectFlipbox = () => {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [activeItem, setActiveItem] = useState(0);
+  const [isPointerOverTrack, setIsPointerOverTrack] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -72,6 +73,14 @@ const ProspectFlipbox = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (!isVisible || isPointerOverTrack || window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return undefined;
+    const interval = window.setInterval(() => {
+      setActiveItem((current) => (current + 1) % flipboxData.length);
+    }, 1375);
+    return () => window.clearInterval(interval);
+  }, [isVisible, isPointerOverTrack]);
+
   return (
     <section
       ref={sectionRef}
@@ -93,12 +102,19 @@ const ProspectFlipbox = () => {
           </h2>
         </header>
 
-        <ol className="ppd-framework__track" aria-label="Four principles in our approach">
+        <ol
+          className="ppd-framework__track"
+          aria-label="Four principles in our approach"
+          onMouseLeave={() => setIsPointerOverTrack(false)}
+        >
           {flipboxData.map((item, index) => (
             <li
               className={`ppd-framework__item${activeItem === index ? " is-active" : ""}`}
               key={item.title}
-              onMouseEnter={() => setActiveItem(index)}
+              onMouseEnter={() => {
+                setIsPointerOverTrack(true);
+                setActiveItem(index);
+              }}
             >
               <span className="ppd-framework__number" aria-hidden="true">
                 {String(index + 1).padStart(2, "0")}

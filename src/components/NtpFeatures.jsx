@@ -1,9 +1,12 @@
 import React from "react";
+import SolutionStoryCarousel from "./SolutionStoryCarousel";
 
 const solutionsData = [
   {
-    image: "/assets/images/icon/cloud-data-collection.png",
-    alt: "Cloud Data Collection",
+    label: "01",
+    title: "Technology adoption context",
+    visualLabel: "TECHNOLOGY CONTEXT",
+    visualItems: [{ label: "Adoption history", value: "Mapped" }, { label: "Future needs", value: "Forecast" }],
     description: (
       <>
         Leveraging{" "}
@@ -16,8 +19,10 @@ const solutionsData = [
     ),
   },
   {
-    image: "/assets/images/icon/accountable.png",
-    alt: "Accountable Data",
+    label: "02",
+    title: "In-market account selection",
+    visualLabel: "IN-MARKET ACCOUNTS",
+    visualItems: [{ label: "Investment plans", value: "Identified" }, { label: "Account intent", value: "Matched" }],
     description:
       "Utilize a meticulously curated, data-driven selection of in-market accounts to engage exclusively with those actively planning new technology investments.",
   },
@@ -37,20 +42,17 @@ const NtpFeatures = () => {
           </h2>
           <span className="ppd-ntp-features-rule" aria-hidden="true" />
         </header>
-        <div className="ppd-ntp-features-grid">
-          {solutionsData.map((feature) => (
-            <article className="ppd-ntp-feature-card" key={feature.alt}>
-              <div className="ppd-ntp-feature-icon">
-                <img src={feature.image} alt={feature.alt} />
-              </div>
-              <div className="ppd-ntp-feature-content">
-                <p className="ppd-ntp-feature-description">
-                  {feature.description}
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
+        <SolutionStoryCarousel
+          items={solutionsData.map((feature) => ({
+            label: `${feature.label} / Purchase signal`,
+            title: feature.title,
+            description: feature.description,
+            visualLabel: feature.visualLabel,
+            visualItems: feature.visualItems,
+          }))}
+          ariaLabel="Next Tech Purchase features"
+          paginationLabel="Choose a Next Tech Purchase feature"
+        />
       </div>
     </section>
   );

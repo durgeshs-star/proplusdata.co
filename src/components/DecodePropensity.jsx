@@ -1,4 +1,5 @@
 import React from "react";
+import SolutionIllustration from "./solutions/SolutionIllustration";
 
 export default function DecodePropensity() {
   return (
@@ -6,7 +7,7 @@ export default function DecodePropensity() {
       <div className="ppd-solution-shell">
         <div className="ppd-techno-value__layout">
           <div className="ppd-techno-value__visual">
-            <img src="/assets/images/intent-accounts.png" alt="Intelligent Account Segmentation" />
+            <SolutionIllustration category="Intent Data" compact />
           </div>
           <div className="ppd-techno-value__content">
             <h2>
