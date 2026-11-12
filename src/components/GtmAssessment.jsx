@@ -1,7 +1,6 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 
 // import GtmToolFormSection from "../components/GtmToolFormSection";
-import CategorySection from "../components/CategorySection";
 import ScoreSummary from "../components/ScoreSummary";
 import ResultDashboard from "../components/ResultDashboard";
 import CustomPieChart from "../components/CustomPieChart";
@@ -15,7 +14,7 @@ export default function GTMAssessment() {
   console.log("CURRENT STEP:", step);
 
 
-  const [answers, setAnswers] = useState({});
+  const answers = {};
 
   // QUESTIONS
 
@@ -80,15 +79,6 @@ export default function GTMAssessment() {
 
   // SAVE ANSWERS
 
-  const handleAnswer = (question, value) => {
-
-    setAnswers({
-      ...answers,
-      [question]: value,
-    });
-
-  };
-
   // TOTAL QUESTIONS
 
   const totalQuestions = assessmentData.reduce(
@@ -98,14 +88,10 @@ export default function GTMAssessment() {
 
   // TOTAL SCORE
 
-  const totalScore = useMemo(() => {
-
-    return Object.values(answers).reduce(
-      (acc, value) => acc + Number(value),
-      0
-    );
-
-  }, [answers]);
+  const totalScore = Object.values(answers).reduce(
+    (acc, value) => acc + Number(value),
+    0
+  );
 
   // MAX SCORE
 
