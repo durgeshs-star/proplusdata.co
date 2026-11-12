@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
 import PastEventComponent from '../components/PastEventComponent'
-import BreadcrumbPastEvent from '../components/BreadcrumbPastEvent'
+// import BreadcrumbPastEvent from '../components/BreadcrumbPastEvent'
 import ForresterSection from '../components/ForresterSection'
 
 export default function ForresterB2BSummit2025() {
@@ -21,7 +21,7 @@ export default function ForresterB2BSummit2025() {
                 content="ProPlus Data proudly sponsored the Forrester B2B Summit 2025 in Denver. Discover how we’re driving smarter decisions with data intelligence and engaging global leaders." />
       </Helmet>
       <Header1/>
-      <BreadcrumbPastEvent/>
+      {/* <BreadcrumbPastEvent/> */}
       <PastEventComponent/>
       <ForresterSection/>
       <Footer/>

@@ -1,83 +1,65 @@
 import React from "react";
-
+import SolutionStoryCarousel from "./SolutionStoryCarousel";
 
 const processItems = [
   {
     id: 1,
-   
+    label: "01 / Acquire",
     title: "Targeted Lead Acquisition",
-    desc: "Access a carefully curated pool of prospects actively interacting with pertinent content or offers, ensuring outreach efforts prioritize those most inclined to engage and convert.  ",
+    desc: "Access a carefully curated pool of prospects actively interacting with pertinent content or offers, ensuring outreach efforts prioritize those most inclined to engage and convert.",
+    visualLabel: "LEAD ACQUISITION",
+    visualItems: [{ label: "Engaged prospects", value: "Matched" }, { label: "Conversion intent", value: "Prioritized" }],
   },
   {
     id: 2,
-   
+    label: "02 / Analyze",
     title: "Behavioral and Engagement Analytics",
-    desc: (
-        <>
-          Track real buying signals and engagement patterns to identify in-market accounts and prioritize outreach that drives pipeline.
-          <br /><br />
-        </>
-      ),
+    desc: "Track real buying signals and engagement patterns to identify in-market accounts and prioritize outreach that drives pipeline.",
+    visualLabel: "BUYING SIGNALS",
+    visualItems: [{ label: "Account activity", value: "Tracked" }, { label: "Intent patterns", value: "Active" }],
   },
   {
     id: 3,
-   
-    title: "Structured Multi-Touch Campaigns ",
-    desc: "Implement a proven three-touch engagement sequence designed to heighten responsiveness and cultivate intent, building trust and encouraging deeper consideration.  ",
+    label: "03 / Engage",
+    title: "Structured Multi-Touch Campaigns",
+    desc: "Implement a proven three-touch engagement sequence designed to heighten responsiveness and cultivate intent, building trust and encouraging deeper consideration.",
+    visualLabel: "CAMPAIGN SEQUENCE",
+    visualItems: [{ label: "First touch", value: "Delivered" }, { label: "Follow-up", value: "Scheduled" }],
   },
   {
     id: 4,
-   
-    title: "A/B Testing for Ongoing Refinement ",
-    desc: (
-        <>
-        Evaluate subject lines, content structures, & calls to action in real time. Data-backed adjustments pinpoint the most impactful formats for sustained engagement.<br/>
-        </>
-    ),
+    label: "04 / Refine",
+    title: "A/B Testing for Ongoing Refinement",
+    desc: "Evaluate subject lines, content structures, & calls to action in real time. Data-backed adjustments pinpoint the most impactful formats for sustained engagement.",
+    visualLabel: "CAMPAIGN PERFORMANCE",
+    visualItems: [{ label: "Message variants", value: "Compared" }, { label: "Top performer", value: "Selected" }],
   },
 ];
 
 const MqlFeatures = () => {
   return (
-    <div className="process_area work_process pt-30 pb-30">
-      <div className="container">
-        <div className="row">
-          {/* Section Title */}
-          <div className="col-lg-12">
-            <div className="section_title text_center mb-90 mt-3">
-              
-              <div className="section_main_title">
-                <h2>Key   
-                <span> Features</span>
-                </h2>
-              </div>
-              <div className="em_bar">
-                <div className="em_bar_bg"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section className="ppd-mql-features" aria-labelledby="ppd-mql-features-title">
+      <div className="ppd-solution-shell">
+        <header className="ppd-mql-features-header">
+          <h2 className="ppd-mql-features-title" id="ppd-mql-features-title">
+            Key <span>Features</span>
+          </h2>
+          <span className="ppd-mql-features-accent" aria-hidden="true" />
+        </header>
 
-        {/* Process Cards */}
-        <div className="row">
-          {processItems.map((item) => (
-            <div key={item.id} className="col-lg-3 col-md-6">
-              <div className="single_process_work">
-                <div className="single_it_work_content">
-                 
-                  <div className="single_work_content_title pt-1">
-                    <h4>{item.title}</h4>
-                  </div>
-                  <div className="single_it_work_content_desc text-left">
-                    <p>{item.desc}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <SolutionStoryCarousel
+          items={processItems.map((item) => ({
+            label: item.label,
+            title: item.title,
+            description: item.desc,
+            visualLabel: item.visualLabel,
+            visualItems: item.visualItems,
+          }))}
+          ariaLabel="Demand generation features"
+          paginationLabel="Choose a demand generation feature"
+        />
       </div>
-    </div>
+    </section>
   );
 };
 

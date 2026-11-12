@@ -1,48 +1,106 @@
-import React from "react";
-
+import React, { useEffect, useRef, useState } from "react";
+import { FaCheckSquare } from "react-icons/fa";
+import "./PressReleases.css";
 
 const DataradeComponent = () => {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    if (!("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="about_area mt-55 mb-100 pb-60 press-r">
-      <div className="container">
-        <div className="row d-flex align-items-center pd_gap nagative_mb">
-          <div className="col-lg-6">
-            <div className="about_skill_thumb mb-4 ml-2 mr-4">
-              <img src={"/assets/images/Datarade-Pulse.webp"} alt="Datarade pulse" />
-            </div>
-          </div>
-
-          <div className="col-lg-6">
-            <div className="section_title text_left mb-4">
-             
-
-              <div className="section_main_title text-left">
-                <h5>ProPlus Data in The Datarade Pulse April 25</h5>
-               
-              </div>
-
-              
-
-              <div className="section_content_text pt-3 datarade">
-                <p>
-                The <a href="https://datarade.substack.com/p/the-datarade-pulse-news-and-insights-2a6" target="_blank" rel="noreferrer">Datarade Pulse</a> curates some of the most impactful updates and trusted data providers in the ecosystem, and being featured is a testament to our:</p>
-                <ul className="text-left black">
-                    <li>✅ High-quality, verified insights</li>
-                    <li>✅ Global reach and precision targeting capabilities</li>
-                    <li>✅ Commitment to compliance</li>
-                </ul>
-                <p>This feature reinforces our belief that data is only as valuable as it is foresight driven, usable, compliant, and context-aware. Whether it's identifying key buyer groups or building hyper-targeted campaigns, <a href="https://proplusdata.co/" target="_blank" rel="noreferrer">ProPlus Data</a> empowers your sales and marketing teams to work smarter.
-                </p>
-                <p>Read More At: <a href="https://datarade.substack.com/p/the-datarade-pulse-news-and-insights-2a6" target="_blank" rel="noreferrer"> DATARADE PULSE </a> |<a href="https://www.linkedin.com/pulse/proplus-data-datarade-pulse-april-25-proplus-data-qleoc" target="_blank" rel="noreferrer"> LINKEDIN </a></p>
-              </div>
+    <section
+      ref={sectionRef}
+      className={`ppd-press-section ppd-press-section-hero${isVisible ? " is-visible" : ""}`}
+      aria-labelledby="datarade-title"
+    >
+      <div className="ppd-press-grid" aria-hidden="true" />
+      <div className="ppd-press-container container">
+        <div className="ppd-press-row row align-items-center">
+          <article className="ppd-press-copy col-lg-7 col-md-6">
+            <div className="ppd-press-eyebrow">
+              <span className="ppd-press-eyebrow-dot" aria-hidden="true" />
+              <span>FEATURED IN</span>
             </div>
 
-          
+            <h1 className="ppd-press-title" id="datarade-title">
+              The Datarade Pulse
+            </h1>
 
+            <div className="ppd-press-accent" aria-hidden="true">
+              <span />
+            </div>
+
+            <div className="ppd-press-text">
+              <p className="ppd-press-lead">
+                ProPlus Data has been featured in The Datarade Pulse on April 25, curating some of the most impactful updates and trusted data providers in the ecosystem.
+              </p>
+
+              <p className="ppd-press-detail">
+                This feature reinforces our commitment to high-quality, verified insights, global reach, precision targeting capabilities, and compliance. Whether it's identifying key buyer groups or building hyper-targeted campaigns, ProPlus Data empowers your sales and marketing teams to work smarter with data-driven intelligence.
+              </p>
+            </div>
+
+            <div className="ppd-press-links">
+              <a href="https://datarade.substack.com/p/the-datarade-pulse-news-and-insights-2a6" target="_blank" rel="noopener noreferrer" className="ppd-press-link">
+                <span>DATARADE PULSE</span>
+                <span className="ppd-press-link-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="https://www.linkedin.com/pulse/proplus-data-datarade-pulse-april-25-proplus-data-qleoc" target="_blank" rel="noopener noreferrer" className="ppd-press-link">
+                <span>LINKEDIN</span>
+                <span className="ppd-press-link-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <div className="ppd-press-visual-column col-lg-5 col-md-6">
+            <div className="ppd-press-visual">
+              <div className="ppd-press-visual-glow" aria-hidden="true" />
+              <div className="ppd-press-orbit ppd-press-orbit-one" aria-hidden="true" />
+              <div className="ppd-press-orbit ppd-press-orbit-two" aria-hidden="true" />
+              <div className="ppd-press-connection" aria-hidden="true">
+                <span className="ppd-press-connection-pulse" />
+              </div>
+              <div className="ppd-press-image-frame">
+                <img
+                  src="/assets/images/Datarade-Pulse.webp"
+                  alt="Datarade Pulse Feature"
+                />
+              </div>
+              <div className="ppd-press-data-tag ppd-press-data-tag-one">
+                <span aria-hidden="true" />
+                DATA QUALITY
+              </div>
+              <div className="ppd-press-data-tag ppd-press-data-tag-two">
+                <span aria-hidden="true" />
+                GLOBAL REACH
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

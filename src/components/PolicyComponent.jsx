@@ -3,11 +3,10 @@ import { FaCheckSquare } from 'react-icons/fa';
 
 const PrivacyPolicy = () => {
   return (
-    <div className="container mt-4 text-left privacy-policy">
-      <div className="row">
-      
-
-        <div className="col-md-12">
+    <section className="ppd-privacy-content">
+      <div className="ppd-privacy-shell">
+        <article className="ppd-privacy-card">
+          <div className="ppd-privacy-document">
           <h3 className="mb-3" id="intro">Introduction</h3>
           <p>
           ProPlus Data ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and protect your information when you use our services, which include Contact Discovery, Technographics, Email Data Management (EDM), Demand Generation, and other related services ("Services"). By using our Services, you agree to the collection and use of your information as described in this policy.
@@ -86,16 +85,19 @@ const PrivacyPolicy = () => {
           <h3 className="mb-3" id="privacy-policy">Changes to This Privacy Policy</h3>
           <p>We may update this Privacy Policy to reflect changes in our practices or legal requirements. Any changes will be posted on this page, and the effective date will be updated accordingly. We encourage you to review this policy periodically.</p>
 
-          <h3 className="mb-3" id="contact">Contact Us</h3>
-          <p>
-            For questions or concerns about this Privacy Policy, please contact us at:<br />
-            Royal Oak Society Rd, Karpe Nagar, Kemse Vasti, Wakad, Pimpri-Chinchwad, Maharashtra 411057<br />
-            <a href="mailto:info@proplusdata.co">info@proplusdata.co</a>
-          </p>
-          <p>Loactions - India | Japan | UK | Singapore | US</p>
-        </div>
+            <section className="ppd-privacy-contact" aria-labelledby="contact">
+              <h3 className="mb-3" id="contact">Contact Us</h3>
+              <p>
+                For questions or concerns about this Privacy Policy, please contact us at:<br />
+                Royal Oak Society Rd, Karpe Nagar, Kemse Vasti, Wakad, Pimpri-Chinchwad, Maharashtra 411057<br />
+                <a href="mailto:info@proplusdata.co">info@proplusdata.co</a>
+              </p>
+              <p>Loactions - India | Japan | UK | Singapore | US</p>
+            </section>
+          </div>
+        </article>
       </div>
-    </div>
+    </section>
   );
 };
 

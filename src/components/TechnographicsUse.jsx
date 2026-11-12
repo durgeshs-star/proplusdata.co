@@ -1,17 +1,23 @@
-import React from 'react'
+import React from "react";
 
 export default function TechnographicsUse() {
   return (
-    <div className='Techno-img mt-3'>
-      <div className="section_main_title">
-                <h3>Technographics for <span>Business Growth</span> 
-                </h3>
+    <section className="ppd-techno-growth" aria-labelledby="ppd-techno-growth-title">
+      <div className="ppd-solution-shell">
+        <header className="ppd-techno-growth-header">
+          <h2 id="ppd-techno-growth-title">
+            Technographics for <span>Business Growth</span>
+          </h2>
+          <span className="ppd-techno-growth-accent" aria-hidden="true" />
+        </header>
+        <div className="ppd-techno-growth-visual">
+          <img
+            src="assets/images/Technographics.webp"
+            className="img-fluid"
+            alt="Technographics for business growth"
+          />
+        </div>
       </div>
-      <div className="em_bar">
-                <div className="em_bar_bg"></div>
-              </div>
-        <img src='assets/images/Technographics.webp' className='img-fluid' alt="Technographics for business growth"/>
-     
-    </div>
-  )
+    </section>
+  );
 }

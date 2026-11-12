@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbExecutiveAssistant from '../components/BreadcrumbExecutiveAssistant'
+// import BreadcrumbExecutiveAssistant from '../components/BreadcrumbExecutiveAssistant'
 import ExecutiveAssistantComponent from '../components/ExecutiveAssistantComponent'
 
 export default function ExecutiveAssistant() {
@@ -20,7 +20,7 @@ export default function ExecutiveAssistant() {
                    content="Join our team as an Executive Assistant to the CEO/MD. Manage calendars, prep reports, and act as liaison for internal and external communication. Apply now!" />
       </Helmet>
       <Header1/>
-      <BreadcrumbExecutiveAssistant/>
+      {/* <BreadcrumbExecutiveAssistant/> */}
       <ExecutiveAssistantComponent/>
       <Footer/>
     </div>

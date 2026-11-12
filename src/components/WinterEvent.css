@@ -1,0 +1,480 @@
+.ppd-winter-event-page {
+  background: #ffffff;
+}
+
+.ppd-winter-event-hero {
+  background-color: #f1f6ff;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(80px, 12vw, 120px) 0 clamp(60px, 10vw, 100px);
+}
+
+.ppd-winter-event-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(to right, rgba(13, 27, 62, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13, 27, 62, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.ppd-winter-event-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #133580;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.ppd-winter-event-title {
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #0d1b3e;
+  margin: 0 0 20px 0;
+}
+
+.ppd-winter-event-title-accent {
+  color: #2563eb;
+}
+
+.ppd-winter-event-rule {
+  width: 60px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 2px;
+  margin: 32px 0;
+}
+
+.ppd-winter-event-intro {
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(13, 27, 62, 0.78);
+  margin-bottom: 24px;
+}
+
+.ppd-winter-event-intro-text {
+  max-width: 620px;
+}
+
+.ppd-winter-event-intro-text a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 200ms ease;
+}
+
+.ppd-winter-event-intro-text a:hover {
+  color: #133580;
+  text-decoration: underline;
+}
+
+.ppd-winter-event-media {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+}
+
+@media (max-width: 991px) {
+  .ppd-winter-event-media {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ppd-winter-event-media {
+    margin-top: 24px;
+  }
+}
+
+.ppd-winter-event-image {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #dbeafe;
+  box-shadow: 0 20px 50px rgba(13, 27, 62, 0.10);
+  display: block;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.ppd-winter-event-image:hover {
+  transform: scale(1.01);
+  box-shadow: 0 25px 60px rgba(13, 27, 62, 0.12);
+}
+
+.ppd-winter-event-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.ppd-winter-event-content {
+  background: #ffffff;
+  padding: clamp(60px, 10vw, 100px) 0;
+}
+
+.ppd-winter-event-content-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ppd-winter-event-section {
+  margin-top: 80px;
+}
+
+.ppd-winter-event-section:first-child {
+  margin-top: 0;
+}
+
+.ppd-winter-event-section-title {
+  font-size: clamp(28px, 3.5vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #0d1b3e;
+  margin: 0 0 24px 0;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.ppd-winter-event-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 2px;
+}
+
+.ppd-winter-event-section-intro {
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(13, 27, 62, 0.78);
+  margin-bottom: 24px;
+}
+
+.ppd-winter-event-section-intro a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 200ms ease;
+}
+
+.ppd-winter-event-section-intro a:hover {
+  color: #133580;
+  text-decoration: underline;
+}
+
+.ppd-winter-event-list {
+  margin: 32px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ppd-winter-event-list-item {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 16px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #24324f;
+  border-left: 2px solid #dbeafe;
+  padding: 12px 0 12px 40px;
+}
+
+.ppd-winter-event-list-item::before {
+  content: "✓";
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.ppd-winter-event-list-number {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #2563eb;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.ppd-winter-event-highlight {
+  border-left: 4px solid #2563eb;
+  padding-left: 24px;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #0d1b3e;
+  margin: 32px 0;
+  font-style: italic;
+}
+
+.ppd-winter-event-insights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.ppd-winter-event-insight {
+  background: #f1f6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  padding: 24px;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.ppd-winter-event-insight:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(13, 27, 62, 0.08);
+}
+
+.ppd-winter-event-insight-number {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #2563eb;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.ppd-winter-event-insight p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #24324f;
+  margin: 0;
+}
+
+.ppd-winter-event-insight a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 200ms ease;
+}
+
+.ppd-winter-event-insight a:hover {
+  color: #133580;
+  text-decoration: underline;
+}
+
+.ppd-winter-event-takeaway {
+  background: #f1f6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 24px;
+  padding: clamp(32px, 5vw, 48px);
+  margin-top: 80px;
+}
+
+.ppd-winter-event-takeaway-title {
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0d1b3e;
+  margin: 0 0 20px 0;
+}
+
+.ppd-winter-event-takeaway-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(13, 27, 62, 0.78);
+  margin-bottom: 16px;
+}
+
+.ppd-winter-event-takeaway-highlight {
+  border-left: 4px solid #2563eb;
+  padding-left: 24px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #0d1b3e;
+  margin-top: 24px;
+}
+
+@media (max-width: 1199px) {
+  .ppd-winter-event-hero {
+    padding: 70px 0 90px;
+  }
+
+  .ppd-winter-event-content {
+    padding: 50px 0 80px;
+  }
+
+  .ppd-winter-event-content-inner {
+    max-width: 900px;
+  }
+
+  .ppd-winter-event-section {
+    margin-top: 64px;
+  }
+}
+
+@media (max-width: 991px) {
+  .ppd-winter-event-hero {
+    padding: 60px 0 80px;
+  }
+
+  .ppd-winter-event-title {
+    margin-bottom: 16px;
+  }
+
+  .ppd-winter-event-rule {
+    margin: 24px 0;
+  }
+
+  .ppd-winter-event-content {
+    padding: 40px 0 60px;
+  }
+
+  .ppd-winter-event-content-inner {
+    max-width: 100%;
+  }
+
+  .ppd-winter-event-section-title {
+    font-size: 30px;
+  }
+
+  .ppd-winter-event-insights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ppd-winter-event-takeaway {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ppd-winter-event-hero {
+    padding: 50px 0 70px;
+  }
+
+  .ppd-winter-event-title {
+    font-size: 38px;
+  }
+
+  .ppd-winter-event-intro {
+    font-size: 16px;
+  }
+
+  .ppd-winter-event-intro-text {
+    max-width: 100%;
+  }
+
+  .ppd-winter-event-image {
+    border-radius: 20px;
+  }
+
+  .ppd-winter-event-content {
+    padding: 40px 0 60px;
+  }
+
+  .ppd-winter-event-content-inner {
+    padding: 0 20px;
+  }
+
+  .ppd-winter-event-section {
+    margin-top: 48px;
+  }
+
+  .ppd-winter-event-section-title {
+    font-size: 26px;
+    padding-bottom: 12px;
+  }
+
+  .ppd-winter-event-section-title::after {
+    width: 40px;
+    height: 2px;
+  }
+
+  .ppd-winter-event-section-intro {
+    font-size: 16px;
+  }
+
+  .ppd-winter-event-list-item {
+    font-size: 16px;
+    padding-left: 36px;
+    padding: 10px 0 10px 36px;
+  }
+
+  .ppd-winter-event-list-item::before {
+    left: 10px;
+    top: 10px;
+    font-size: 16px;
+  }
+
+  .ppd-winter-event-highlight {
+    font-size: 17px;
+    padding-left: 20px;
+  }
+
+  .ppd-winter-event-insights {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .ppd-winter-event-insight {
+    padding: 20px;
+  }
+
+  .ppd-winter-event-insight p {
+    font-size: 15px;
+  }
+
+  .ppd-winter-event-takeaway {
+    padding: 24px 20px;
+    margin-top: 48px;
+  }
+
+  .ppd-winter-event-takeaway-title {
+    font-size: 22px;
+  }
+
+  .ppd-winter-event-takeaway-text {
+    font-size: 16px;
+  }
+
+  .ppd-winter-event-takeaway-highlight {
+    font-size: 18px;
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ppd-winter-event-hero {
+    padding: 40px 0 60px;
+  }
+
+  .ppd-winter-event-title {
+    font-size: 32px;
+  }
+
+  .ppd-winter-event-section-title {
+    font-size: 24px;
+  }
+
+  .ppd-winter-event-takeaway-title {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ppd-winter-event-image,
+  .ppd-winter-event-insight {
+    transition: none;
+  }
+}

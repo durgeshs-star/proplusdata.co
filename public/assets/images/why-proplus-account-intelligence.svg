@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="420" viewBox="0 0 560 420" fill="none">
+  <defs>
+    <linearGradient id="hub" x1="205" y1="142" x2="355" y2="293" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#24539F"/>
+      <stop offset="1" stop-color="#173579"/>
+    </linearGradient>
+    <filter id="shadow" x="54" y="39" width="452" height="353" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="12"/>
+      <feGaussianBlur stdDeviation="16"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix values="0 0 0 0 0.08 0 0 0 0 0.18 0 0 0 0 0.32 0 0 0 0.12 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+  <circle cx="280" cy="210" r="157" stroke="#8ACFC8" stroke-opacity=".7"/>
+  <circle cx="280" cy="210" r="119" stroke="#7CA6DF" stroke-opacity=".48" stroke-dasharray="5 9"/>
+  <g filter="url(#shadow)">
+    <rect x="85" y="69" width="390" height="282" rx="24" fill="#fff" stroke="#DDE6F0"/>
+    <text x="115" y="108" fill="#627895" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="1.7">CONNECTED ACCOUNT INTELLIGENCE</text>
+    <circle cx="444" cy="103" r="5" fill="#45BE9B"/>
+    <path d="M280 204L174 158M280 204L386 158M280 204L174 274M280 204L386 274" stroke="#A9BEDB" stroke-width="2.5" stroke-dasharray="5 6"/>
+    <path d="M174 158L174 274M386 158L386 274" stroke="#D0DBE9" stroke-width="1.5" stroke-dasharray="4 6"/>
+    <rect x="116" y="131" width="116" height="53" rx="13" fill="#F5F8FD" stroke="#DDE6F0"/>
+    <circle cx="136" cy="157" r="6" fill="#F2A348"/>
+    <text x="150" y="154" fill="#304B73" font-family="Arial,sans-serif" font-size="9" font-weight="700">TECH STACK</text>
+    <text x="150" y="168" fill="#8796AA" font-family="Arial,sans-serif" font-size="8">Adoption signals</text>
+    <rect x="328" y="131" width="116" height="53" rx="13" fill="#F5F8FD" stroke="#DDE6F0"/>
+    <circle cx="348" cy="157" r="6" fill="#4B91D8"/>
+    <text x="362" y="154" fill="#304B73" font-family="Arial,sans-serif" font-size="9" font-weight="700">BUYING INTENT</text>
+    <text x="362" y="168" fill="#8796AA" font-family="Arial,sans-serif" font-size="8">In-market activity</text>
+    <rect x="116" y="249" width="116" height="53" rx="13" fill="#F5F8FD" stroke="#DDE6F0"/>
+    <circle cx="136" cy="275" r="6" fill="#55B89B"/>
+    <text x="150" y="272" fill="#304B73" font-family="Arial,sans-serif" font-size="9" font-weight="700">RENEWAL</text>
+    <text x="150" y="286" fill="#8796AA" font-family="Arial,sans-serif" font-size="8">Timing signals</text>
+    <rect x="328" y="249" width="116" height="53" rx="13" fill="#F5F8FD" stroke="#DDE6F0"/>
+    <circle cx="348" cy="275" r="6" fill="#8A79D7"/>
+    <text x="362" y="272" fill="#304B73" font-family="Arial,sans-serif" font-size="9" font-weight="700">DECISION MAKERS</text>
+    <text x="362" y="286" fill="#8796AA" font-family="Arial,sans-serif" font-size="8">People signals</text>
+    <circle cx="280" cy="204" r="47" fill="#E9F0FB"/>
+    <circle cx="280" cy="204" r="36" fill="url(#hub)"/>
+    <path d="M280 181L285 198L302 203L285 209L280 226L274 209L258 203L274 198L280 181Z" fill="#fff"/>
+    <circle cx="280" cy="204" r="5" fill="#F3A13B"/>
+    <rect x="229" y="316" width="102" height="20" rx="10" fill="#EEF4FD"/>
+    <text x="280" y="329" text-anchor="middle" fill="#385A8E" font-family="Arial,sans-serif" font-size="8" font-weight="700" letter-spacing=".8">ONE CLEARER VIEW</text>
+  </g>
+</svg>

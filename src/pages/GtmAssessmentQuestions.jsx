@@ -9,8 +9,6 @@ export default function GTMAssessmentQuestions() {
 
   const [answers, setAnswers] = useState({});
 
-  const [showResult, setShowResult] = useState(false);
-
   const assessmentData = [
 
     {
@@ -108,26 +106,6 @@ export default function GTMAssessmentQuestions() {
   const percentage = Math.round(
     (totalScore / maxScore) * 100
   ) || 0;
-
-  // LEVEL
-
-  const getLevel = () => {
-
-    if (percentage >= 80) {
-      return "Excellent GTM Readiness";
-    }
-
-    if (percentage >= 60) {
-      return "Strong GTM Foundation";
-    }
-
-    if (percentage >= 40) {
-      return "Moderate GTM Readiness";
-    }
-
-    return "Needs Improvement";
-
-  };
 
   return (
 
@@ -248,40 +226,6 @@ export default function GTMAssessmentQuestions() {
 </button>
 
 </div>
-
-      {/* RESULT */}
-
-      
-
-{showResult && (
-
-  <div className="card p-4 mt-5 text-center">
-
-    <h2 className="mb-3">
-
-      Your GTM Readiness Score:
-      {percentage}%
-
-    </h2>
-
-    <h4 className="mb-3">
-
-      {getLevel()}
-
-    </h4>
-
-    <p>
-
-      Total Score:
-      {totalScore} / {maxScore}
-
-    </p>
-
-  </div>
-
-)}
-
-     
 
     </div>
 

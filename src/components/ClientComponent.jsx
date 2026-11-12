@@ -1,8 +1,5 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
+import "./ClientComponent.css";
 
 const ClientComponent = () => {
   const clients = [
@@ -29,47 +26,34 @@ const ClientComponent = () => {
     "twilio.png",
   ];
 
+  const marqueeClients = [...clients, ...clients];
+
   return (
-    <section id="clients" className="clients section">
-         <div className="row">
-          <div className="col-lg-12">
-            <div className="section_title text_center mb-80 mt-5">
-              <div className="section_main_title">
-                <h2>
-                  Featured
-                  <span> Adopters</span>
-                </h2>
-              </div>
-              <div className="em_bar">
-                <div className="em_bar_bg"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <div className="container mb-80">
-        <Swiper
-          loop={true}
-          speed={600}
-          autoplay={{ delay: 1000, disableOnInteraction: false }}
-          breakpoints={{
-            320: { slidesPerView: 2, spaceBetween: 40 },
-            480: { slidesPerView: 3, spaceBetween: 60 },
-            640: { slidesPerView: 4, spaceBetween: 80 },
-            992: { slidesPerView: 6, spaceBetween: 60 },
-          }}
-          modules={[Autoplay, Pagination]}
-          className="clients-swiper"
-        >
-          {clients.map((client, index) => (
-            <SwiperSlide key={index}>
+    <section className="ppd-gtm-trust">
+      <div className="ppd-gtm-trust-header">
+        <span className="ppd-gtm-trust-eyebrow">
+          TRUSTED BY LEADING COMPANIES
+        </span>
+        <h2 className="ppd-gtm-trust-title">
+          Trusted by teams <span>building the future</span>
+        </h2>
+      </div>
+      <div className="ppd-gtm-trust-marquee">
+        <div className="ppd-gtm-trust-track">
+          {marqueeClients.map((client, index) => (
+            <div
+              className="ppd-gtm-trust-item"
+              key={`${client}-${index}`}
+              aria-hidden={index >= clients.length ? "true" : undefined}
+            >
               <img
-                src={`assets/images/brand/${client}`}
-                className="img-fluid"
-                alt={client.replace(".png", "")}
+                src={`/assets/images/brand/${client}`}
+                alt={index >= clients.length ? "" : client.replace(".png", "")}
+                loading="eager"
               />
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
+        </div>
       </div>
     </section>
   );

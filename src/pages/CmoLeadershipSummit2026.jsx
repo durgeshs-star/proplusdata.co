@@ -2,7 +2,7 @@ import React from 'react'
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
 import CmoLeadershipEventComponent from '../components/CmoLeadershipEventComponent'
-import BreadcrumCmoLeadershipSummit from '../components/BreadcrumbCmoLeadershipSummit'
+// import BreadcrumCmoLeadershipSummit from '../components/BreadcrumbCmoLeadershipSummit'
 import CmoSummitEventSection from '../components/CmoSummitEvevntSection'
 import { Helmet } from 'react-helmet-async'
 
@@ -20,7 +20,7 @@ export default function CmoLeadershipSummit2026() {
         <meta property="og:description" content="Join us at the CMO Leadership Summit 2026 to explore the latest trends in marketing, data-driven strategies, and leadership insights with ProPlus Data." />
       </Helmet> 
       <Header1/>
-      <BreadcrumCmoLeadershipSummit/>
+      {/* <BreadcrumCmoLeadershipSummit/> */}
       <CmoLeadershipEventComponent/>
       <CmoSummitEventSection/>
       <Footer/>

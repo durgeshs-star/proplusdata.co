@@ -2,16 +2,17 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbBuyerPersona from '../components/BreadcrumbBuyerPersona'
 import BuyerComponent from '../components/BuyerComponent'
 import BuyerPersonaMatter from '../components/BuyerPersonaMatter'
 import KeyCapabilities from '../components/KeyCapabilities'
 import StrategicAdvantage from '../components/StrategicAdvantage'
 import CtaBuyerPersona from '../components/CtaBuyerPersona'
+// import SolutionBreadcrumb from '../components/solutions/SolutionBreadcrumb'
+import '../components/solutions/SolutionSystem.css'
 
 export default function BuyingGroup() {
   return (
-    <div>
+    <div className="ppd-solutions-page">
       <Helmet>
         {typeof window !== 'undefined' && (
   <script
@@ -45,15 +46,17 @@ export default function BuyingGroup() {
                                 content="Identify and engage the right buying group with ProPlus Data. Access demographic, firmographic and technographic data to improve B2B targeting and GTM growth." />
       </Helmet>
       <Header1/>
-      <BreadcrumbBuyerPersona/>
-      <BuyerComponent/>
-      <BuyerPersonaMatter/>
-      <KeyCapabilities/>
-      <StrategicAdvantage/>
-      <CtaBuyerPersona/>
+      <main className="ppd-solution ppd-solution--buying-group">
+        {/* <SolutionBreadcrumb label="Buying Group" parentHref="/buyer-persona-insights" /> */}
+        <BuyerComponent/>
+        <BuyerPersonaMatter/>
+        <KeyCapabilities/>
+        <StrategicAdvantage/>
+        <CtaBuyerPersona/>
+      </main>
       <Footer/>
-      <div class="btnwhatsapp-sm">
-        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i class="fa fa-whatsapp"></i></a>
+      <div className="btnwhatsapp-sm">
+        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i className="fa fa-whatsapp"></i></a>
     </div>
     </div>
   )

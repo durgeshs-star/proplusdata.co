@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="420" viewBox="0 0 560 420" fill="none">
+  <defs>
+    <linearGradient id="line" x1="144" y1="276" x2="412" y2="126" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F28C28"/>
+      <stop offset="1" stop-color="#3979D4"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="151" y1="93" x2="410" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff"/>
+      <stop offset="1" stop-color="#F8FAFE"/>
+    </linearGradient>
+    <filter id="shadow" x="80" y="46" width="400" height="340" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="12"/>
+      <feGaussianBlur stdDeviation="16"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix values="0 0 0 0 0.08 0 0 0 0 0.18 0 0 0 0 0.32 0 0 0 0.12 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+  <circle cx="280" cy="210" r="155" stroke="#8ACFC8" stroke-opacity=".72"/>
+  <circle cx="280" cy="210" r="119" stroke="#7CA6DF" stroke-opacity=".52" stroke-dasharray="5 9"/>
+  <circle cx="280" cy="210" r="83" stroke="#F0B55F" stroke-opacity=".56" stroke-dasharray="3 8"/>
+  <g filter="url(#shadow)">
+    <rect x="113" y="75" width="334" height="270" rx="22" fill="url(#panel)" stroke="#DCE5F0"/>
+    <text x="142" y="112" fill="#627895" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="1.8">ACCOUNT SIGNALS</text>
+    <circle cx="416" cy="107" r="5" fill="#45BE9B"/>
+    <path d="M142 143H418" stroke="#E8EDF4"/>
+    <text x="143" y="169" fill="#71839D" font-family="Arial,sans-serif" font-size="11" font-weight="600">DEMAND MOMENTUM</text>
+    <rect x="142" y="183" width="276" height="112" rx="12" fill="#F5F8FC"/>
+    <path d="M160 269H399M160 241H399M160 213H399" stroke="#E1E9F3"/>
+    <path d="M168 257L218 233L260 247L307 195L349 213L391 176" stroke="url(#line)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="218" cy="233" r="7" fill="#F28C28" stroke="white" stroke-width="4"/>
+    <circle cx="307" cy="195" r="7" fill="#F28C28" stroke="white" stroke-width="4"/>
+    <circle cx="391" cy="176" r="8" fill="#3979D4" stroke="white" stroke-width="4"/>
+    <rect x="142" y="311" width="126" height="18" rx="9" fill="#EEF4FD"/>
+    <circle cx="154" cy="320" r="3" fill="#3979D4"/>
+    <text x="164" y="323" fill="#385A8E" font-family="Arial,sans-serif" font-size="8" font-weight="700" letter-spacing=".7">BUYING SIGNAL</text>
+    <rect x="347" y="311" width="71" height="18" rx="9" fill="#FFF2DF"/>
+    <text x="382.5" y="323" text-anchor="middle" fill="#B56B18" font-family="Arial,sans-serif" font-size="8" font-weight="700" letter-spacing=".5">RISING</text>
+  </g>
+  <circle cx="94" cy="154" r="12" fill="#fff" stroke="#6D9DE0" stroke-width="2"/>
+  <circle cx="465" cy="265" r="12" fill="#FFF4E5" stroke="#F2A348" stroke-width="2"/>
+  <path d="M94 166L123 185M437 250L453 260" stroke="#8EAED7" stroke-width="2" stroke-dasharray="4 5"/>
+</svg>

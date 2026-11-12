@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbGartner from '../components/BreadcrumbGartner'
+// import BreadcrumbGartner from '../components/BreadcrumbGartner'
 import GartnerComponent from '../components/GartnerComponent'
 import GartnerSection from '../components/GartnerSection'
 
@@ -21,7 +21,7 @@ export default function GartnerMarketingSymposiumXpo2025() {
                       content="Explore how ProPlus Data showcased its B2B data intelligence and innovation at the Gartner Marketing Symposium XPO 2025. Discover event highlights and insights." />
             </Helmet>
       <Header1/>
-      <BreadcrumbGartner/>
+      {/* <BreadcrumbGartner/> */}
       <GartnerComponent/>
       <GartnerSection/>
       <Footer/>

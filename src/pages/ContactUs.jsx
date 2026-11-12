@@ -3,10 +3,11 @@ import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
 import ContactInfo from '../components/ContactInfo'
+import '../components/CompanyPages.css'
 
 export default function ContactUs() {
   return (
-    <div>
+    <div className="ppd-company-page ppd-company-page--contact">
          <Helmet>
          {typeof window !== 'undefined' && (
   <script
@@ -36,7 +37,7 @@ export default function ContactUs() {
       <Header1/>
       <ContactInfo/>
       <Footer/>
-      <div class="btnwhatsapp-sm">
+      <div className="btnwhatsapp-sm">
         <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i class="fa fa-whatsapp"></i></a>
     </div>
     </div>

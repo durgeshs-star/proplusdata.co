@@ -1,31 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import Header1 from '../components/Header1'
+import Footer from '../components/Footer'
+import BlogDetailRedesign from '../components/BlogDetailRedesign'
 import { Helmet } from 'react-helmet-async';
 
 function Blog3Details() {
-  const [email, setEmail] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevents default form submission behavior
-
-    // Check if the form is valid before opening the PDF
-    if (validateForm()) {
-      window.open("Tech-Data-Enabled-GTM.pdf", "_blank"); // Opens PDF in new tab
-    }
-  };
-
-  // Validation function to check if the email is valid
-  const validateForm = () => {
-    if (!email) {
-      alert("Please enter an email address.");
-      return false;
-    }
-    // Add more validation logic here if needed (e.g., regex for email format)
-    return true;
-  };
-
   return (
-    <section>
+    <div>
        <Helmet>
       <title>Why Data & Tech Innovation is Key for Industrial Companies</title>
   <meta name="description" content="Learn how industrial companies can innovate go-to-market strategies with digital transformation, using tech and data to boost revenue and profitability."/>
@@ -39,34 +20,14 @@ function Blog3Details() {
   <meta property="og:description"
       content="Explore how industrial companies can drive profitability and revenue growth through digital transformation and innovative go-to-market strategies." />
       </Helmet>
-    <ul className="breadcrumb">
-      <li><Link to="/blogs">Blogs</Link></li>
-      <li><Link to="/blog3details">Blog 3</Link></li>
-    </ul>
-    <center>
-    <div className=" usecase1">
-      <h1>To Read Our Blog</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <br />
-        </div>
-        <br />
-        <div className="form-group">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+      <Header1/>
+      <BlogDetailRedesign
+        title="Why Data-Driven Go-to-Market Innovation Matters for Industrial Companies"
+        description="Industrial companies are at a pivotal moment where they must innovate their traditional go-to-market strategies by embracing digital transformation. The confluence of emerging digital commerce..."
+        pdfFile="Tech-Data-Enabled-GTM.pdf"
+      />
+      <Footer/>
     </div>
-    </center>
-    </section>
   );
 }
 

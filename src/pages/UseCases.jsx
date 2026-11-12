@@ -2,12 +2,13 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbUseCases from '../components/BreadcrumbUseCases'
+// import BreadcrumbUseCases from '../components/BreadcrumbUseCases'
 import UseCasesComponent from '../components/UseCasesComponent'
+import '../components/UseCases.css'
 
 export default function UseCases() {
   return (
-    <div>
+    <div className="ppd-usecases-page">
       <Helmet>
                               <title>Use Cases | Real-World Applications of ProPlus Data Solutions</title>
                             <meta name="description" content="Explore how ProPlus Data drives results across GTM, ABM, and sales strategies. See real-world use cases of data intelligence in action across industries."/>
@@ -21,12 +22,21 @@ export default function UseCases() {
                                content="Explore how ProPlus Data drives results across GTM, ABM, and sales strategies. See real-world use cases of data intelligence in action across industries." />
                   </Helmet>
       <Header1/>
-      <BreadcrumbUseCases/>
-      <UseCasesComponent/>
+      <main className="ppd-usecases">
+        {/* <BreadcrumbUseCases/> */}
+        <UseCasesComponent/>
+      </main>
       <Footer/>
-      <div class="btnwhatsapp-sm">
-        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i class="fa fa-whatsapp"></i></a>
-    </div>
+      <div className="btnwhatsapp-sm ppd-usecases-whatsapp">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://wa.me/+919112110691"
+          aria-label="Chat with ProPlus Data on WhatsApp"
+        >
+          <i className="fa fa-whatsapp" aria-hidden="true" />
+        </a>
+      </div>
     </div>
   )
 }

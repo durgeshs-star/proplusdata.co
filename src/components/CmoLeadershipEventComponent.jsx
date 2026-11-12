@@ -1,51 +1,40 @@
 import React from "react";
+import "./CmoLeadershipEvent.css"
 
 export default function CmoLeadershipEventComponent() {
   return (
-    <div className="about_area pt-45 pb-45">
+    <section className="ppd-cmo-event-hero">
       <div className="container">
-        <div className="row">
-          
-
-          {/* Text Content Section */}
-          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-6">
-            <div className="section_title text_left mb-40 mt-3">
-              
-              <div className="section_main_title text-left">
-                <h1>CMO Leadership Summit 2026: How ProPlus Data is Redefining Predictable Pipeline
-                </h1>
-                <p><b>Austin, TX | April 12–14, 2026</b></p>
-              </div>
-              <div className="em_bar">
-                <div className="em_bar_bg"></div>
-              </div>
-             
+        <div className="row align-items-center">
+          <div className="col-lg-6">
+            <span className="ppd-cmo-event-eyebrow">
+              CMO LEADERSHIP SUMMIT 2026
+            </span>
+            <h1 className="ppd-cmo-event-title">
+              CMO Leadership Summit 2026: How ProPlus Data is Redefining <span className="ppd-cmo-event-title-accent">Predictable Pipeline</span>
+            </h1>
+            <div className="ppd-cmo-event-meta">
+              Austin, TX | April 12–14, 2026
             </div>
-
-            <div className="singel_about_left mb-30">
-              <div className="singel_about_left_inner mb-3">
-                <div className="singel-about-content text-left">
-                    <p>As a sponsor at the CMO Leadership Summit 2026, ProPlus Data engaged with B2B marketing leaders tackling one of the biggest challenges in modern GTM strategy, pipeline predictability.</p>
-                <p>
+            <div className="ppd-cmo-event-rule"></div>
+            <div className="ppd-cmo-event-intro-text">
+              <p className="ppd-cmo-event-intro">
+                As a sponsor at the CMO Leadership Summit 2026, ProPlus Data engaged with B2B marketing leaders tackling one of the biggest challenges in modern GTM strategy, pipeline predictability.
+              </p>
+              <p className="ppd-cmo-event-intro">
                 Despite increased investments in intent data, AI-driven marketing, and demand generation, most teams still struggle to align execution with actual buyer readiness.
-
-                </p>
-                  
-                 
-                </div>
-              </div>
-
-              
+              </p>
             </div>
           </div>
-          {/* Image Section */}
-          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-6">
-            <div className="about_thumb">
-              <img src="/assets/images/cmo-summit-tx.jpg" alt="CMO Leadership Summit event" />
+          <div className="col-lg-6">
+            <div className="ppd-cmo-event-media">
+              <div className="ppd-cmo-event-image">
+                <img src="/assets/images/cmo-summit-tx.jpg" alt="CMO Leadership Summit event" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

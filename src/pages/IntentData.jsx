@@ -2,17 +2,18 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbIntent from '../components/BreadcrumbIntent'
 import IntentComponent from '../components/IntentComponent'
 import DecodePropensity from '../components/DecodePropensity'
 import IntentDelivers from '../components/IntentDelivers'
 import DataEnables from '../components/DataEnables'
 import CtaIntent from '../components/CtaIntent'
+// import SolutionBreadcrumb from '../components/solutions/SolutionBreadcrumb'
+import '../components/solutions/SolutionSystem.css'
 
 
 export default function IntentData() {
   return (
-    <div>
+    <div className="ppd-solutions-page">
        <Helmet>
         {typeof window !== 'undefined' && (
   <script
@@ -55,15 +56,17 @@ export default function IntentData() {
                     content="Use B2B intent data to uncover which companies are actively researching solutions like yours. ProPlus Data helps you engage high-intent leads before competitors do." />
       </Helmet>
       <Header1/>
-      <BreadcrumbIntent/>
-      <IntentComponent/>
-      <DecodePropensity/>
-      <IntentDelivers/>
-      <DataEnables/>
-      <CtaIntent/>
+      <main className="ppd-solution ppd-solution--intent-data">
+        {/* <SolutionBreadcrumb label="Intent Data" parentHref="/intent-data" /> */}
+        <IntentComponent/>
+        <DecodePropensity/>
+        <IntentDelivers/>
+        <DataEnables/>
+        <CtaIntent/>
+      </main>
       <Footer/>
-      <div class="btnwhatsapp-sm">
-        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i class="fa fa-whatsapp"></i></a>
+      <div className="btnwhatsapp-sm">
+        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i className="fa fa-whatsapp"></i></a>
     </div>
     </div>
   )

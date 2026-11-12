@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbAccountant from '../components/BreadcrumbAccountant'
+// import BreadcrumbAccountant from '../components/BreadcrumbAccountant'
 import AccountantComponent from '../components/AccountantComponent'
 
 export default function FinanceExecutive() {
@@ -20,7 +20,7 @@ export default function FinanceExecutive() {
        content="Join our finance team! We're hiring an accountant with 1-2 years experience to manage returns, ledgers, MIS reports, and day-to-day accounting." />
       </Helmet>
       <Header1/>
-      <BreadcrumbAccountant/>
+      {/* <BreadcrumbAccountant/> */}
       <AccountantComponent/>
       <Footer/>
     </div>

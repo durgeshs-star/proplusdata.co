@@ -1,0 +1,117 @@
+.ppd-conference-intro {
+  background-color: #f1f6ff;
+  padding-top: 90px;
+  padding-bottom: 80px;
+}
+
+.ppd-conference-intro .container {
+  max-width: 1200px;
+}
+
+.ppd-conference-intro-inner {
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.ppd-conference-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #133580;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.ppd-conference-intro-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #0d1b3e;
+  margin: 0 0 20px 0;
+}
+
+.ppd-conference-intro-rule {
+  width: 50px;
+  height: 3px;
+  background-color: #133580;
+  margin: 0 auto 30px;
+  border-radius: 2px;
+}
+
+.ppd-conference-intro-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #334155;
+  margin: 0;
+}
+
+.ppd-conference-intro-text a {
+  color: #133580;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 200ms ease;
+}
+
+.ppd-conference-intro-text a:hover {
+  color: #0d1b3e;
+  text-decoration: underline;
+}
+
+@media (max-width: 1199px) {
+  .ppd-conference-intro {
+    padding-top: 85px;
+    padding-bottom: 75px;
+  }
+
+  .ppd-conference-intro-title {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 991px) {
+  .ppd-conference-intro {
+    padding-top: 75px;
+    padding-bottom: 70px;
+  }
+
+  .ppd-conference-intro-title {
+    font-size: 40px;
+  }
+
+  .ppd-conference-intro-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ppd-conference-intro {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .ppd-conference-intro-inner {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .ppd-conference-intro-title {
+    font-size: 34px;
+  }
+
+  .ppd-conference-intro-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ppd-conference-intro {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .ppd-conference-intro-title {
+    font-size: 30px;
+  }
+}

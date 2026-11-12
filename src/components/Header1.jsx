@@ -4,13 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCaretDown,
   faBars,
-  faTimes,
-  faSquareEnvelope
+  faTimes
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faLinkedin,
-  faSquareWhatsapp
-} from "@fortawesome/free-brands-svg-icons";
 
 export default function Header1() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,77 +35,9 @@ export default function Header1() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className={scrolled ? "header fixed blue-bg" : "header fixed"}>
-      <div className="container">
-<div
-  className="top-bar"
-  style={{
-    position: "absolute",
-    top: "10px",
-    right: "150px",
-    display: "flex",
-    alignItems: "center",
-    gap: "12px",
-    zIndex: 1000,
-    padding:"8px",
-  }}
->
-  {/* Social Icons FIRST */}
-  <a href="mailto:info@proplusdata.co" style={{ color: "#2f337a" }}>
-    <FontAwesomeIcon icon={faSquareEnvelope} />
-  </a>
-
-  <a href="https://www.linkedin.com/company/proplus-data/" style={{ color: "#2f337a" }}>
-    <FontAwesomeIcon icon={faLinkedin} />
-  </a>
-
-  <a href="https://wa.me/919112110691" style={{ color: "#2f337a" }}>
-    <FontAwesomeIcon icon={faSquareWhatsapp} />
-  </a>
-
-  {/* Language LAST */}
-  {/* <div className="language-dropdown" style={{ position: "relative" }}>
-    <button
-      className="lang-btn"
-      onClick={() => setLanguageOpen(!languageOpen)}
-      style={{
-        background: "none",
-        border: "none",
-        fontWeight: "bold",
-        fontSize: "14px",
-        cursor: "pointer",
-        color: "#2f337a",
-      }}
-    >
-      English ▾
-    </button>
-
-    {languageOpen && (
-      <ul
-        className="lang-menu"
-        style={{
-          position: "absolute",
-          top: "25px",
-          right: 0,
-          background: "white",
-          border: "1px solid #ccc",
-          padding: "5px 0",
-          listStyle: "none",
-          minWidth: "140px",
-          boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-        }}
-      >
-        <li style={{ padding: "8px 15px" }}>
-          <a href={`https://app.proplusdata.co${currentPath}`}>English</a>
-        </li>
-        <li style={{ padding: "8px 15px" }}>
-          <a href={`https://proplusdata.jp${currentPath}`}>日本語</a>
-        </li>
-      </ul>
-    )}
-  </div> */}
-</div>
-
+    <>
+    <header className={`header fixed proplus-header proplus-header--reference${scrolled ? " blue-bg" : ""}`}>
+      <div className="container proplus-navbar-shell">
         {/* NAVBAR */}
         <div className="navbar">
 
@@ -120,25 +47,32 @@ export default function Header1() {
           </Link>
 
           {/* Hamburger */}
-          <div className="menu-toggle" onClick={toggleMenu}>
+          <button
+            type="button"
+            className="menu-toggle"
+            onClick={toggleMenu}
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
+          >
             <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
-          </div>
+          </button>
 
           {/* Menu */}
           <ul className={`menu ${menuOpen ? "open" : ""}`}>
 
-            <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-
             <li className="dropdown">
               <a href="#" onClick={(e) => e.preventDefault()}>
-                Company <FontAwesomeIcon icon={faCaretDown} />
+                GTM Solutions <FontAwesomeIcon icon={faCaretDown} />
               </a>
               <ul className="dropdown-menu">
-                <li><Link to="/about-us" onClick={closeMenu}>About Us</Link></li>
-                <li><Link to="/careers" onClick={closeMenu}>Careers</Link></li>
-                <li><Link to="/contact-us" onClick={closeMenu}>Contact Us</Link></li>
-                <li><Link to="/privacy-policy" onClick={closeMenu}>Privacy Policy</Link></li>
-                <li><Link to="/press-releases" onClick={closeMenu}>Press Releases</Link></li>
+                <li><Link to="/technographics">Technographics</Link></li>
+                <li><Link to="/renewal-intelligence">Renewal Intelligence</Link></li>
+                <li><Link to="/intent-data">Intent</Link></li>
+                <li><Link to="/contact-data" onClick={closeMenu}>Contact Data</Link></li>
+                <li><Link to="/demand-gen" onClick={closeMenu}>Demand Gen</Link></li>
+                <li><Link to="/event-audience-acquisition" onClick={closeMenu}>Event Audience Acquisition</Link></li>
+                <li><Link to="/buying-group">Buying Groups</Link></li>
+                <li><Link to="/next-tech-purchase">Next Tech Purchase<sup>®</sup></Link></li>
               </ul>
             </li>
 
@@ -150,17 +84,14 @@ export default function Header1() {
 
             <li className="dropdown">
               <a href="#" onClick={(e) => e.preventDefault()}>
-                Solutions <FontAwesomeIcon icon={faCaretDown} />
+                Company <FontAwesomeIcon icon={faCaretDown} />
               </a>
               <ul className="dropdown-menu">
-                <li><Link to="/technographics">Technographic Data</Link></li>
-                <li><Link to="/next-tech-purchase">Next Tech Purchase®</Link></li>
-                <li><Link to="/renewal-intelligence">Renewal Intelligence</Link></li>
-                <li><Link to="/intent-data">Intent Data</Link></li>
-                <li><Link to="/contact-data">Contact Data</Link></li>
-                <li><Link to="/demand-gen">Demand Gen</Link></li>
-                <li><Link to="/buying-group">Buying Group</Link></li>
-                <li><Link to="/event-audience-acquisition">Event Audience Acquisition</Link></li>
+                <li><Link to="/about-us" onClick={closeMenu}>About Us</Link></li>
+                <li><Link to="/careers" onClick={closeMenu}>Careers</Link></li>
+                <li><Link to="/contact-us" onClick={closeMenu}>Contact Us</Link></li>
+                <li><Link to="/privacy-policy" onClick={closeMenu}>Privacy Policy</Link></li>
+                <li><Link to="/press-releases" onClick={closeMenu}>Press Releases</Link></li>
               </ul>
             </li>
 
@@ -199,16 +130,11 @@ export default function Header1() {
 
            
 
-            {/* Get Started */}
-            <li className="donate-btn-header get-started">
-              <Link className="dtbtn" to="/contact-us">
-                Get Started
-              </Link>
-            </li>
-
           </ul>
         </div>
       </div>
     </header>
+    <div className="proplus-header-spacer" aria-hidden="true" />
+    </>
   );
 }

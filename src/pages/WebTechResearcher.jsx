@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbWebTechResearcher from '../components/BreadcrumbWebTechResearcher'
+// import BreadcrumbWebTechResearcher from '../components/BreadcrumbWebTechResearcher'
 import WebTechComponent from '../components/WebTechComponent'
 
 export default function WebTechResearcher() {
@@ -20,7 +20,7 @@ export default function WebTechResearcher() {
              content="Seeking a Web Research Specialist with experience in contact discovery, strong analytical skills, and proficiency in advanced Excel and data analysis tools. Join us to drive impactful data-driven decisions." />
       </Helmet>
       <Header1/>
-      <BreadcrumbWebTechResearcher/>
+      {/* <BreadcrumbWebTechResearcher/> */}
       <WebTechComponent/>
       <Footer/>
     </div>

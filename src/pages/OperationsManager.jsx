@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Footer from '../components/Footer'
-import BreadcrumbOperationsManager from '../components/BreadcrumbOperationsManager'
+// import BreadcrumbOperationsManager from '../components/BreadcrumbOperationsManager'
 import OperationsManagerComponent from '../components/OperationsManagerComponent'
 import Header1 from '../components/Header1';
 
@@ -20,7 +20,7 @@ export default function EmailMarketingSpecialist() {
               content="We’re hiring an experienced Operations Manager to oversee teams, maintain data integrity, and ensure compliance with GDPR. Apply now and be part of a global team." />
       </Helmet>
       <Header1/>
-      <BreadcrumbOperationsManager/>
+      {/* <BreadcrumbOperationsManager/> */}
       <OperationsManagerComponent/>
       <Footer/>
     </div>

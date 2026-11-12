@@ -1,42 +1,109 @@
-import React from "react";
-
+import React, { useEffect, useRef, useState } from "react";
+import "./PressReleases.css";
 
 const PressReleaseComponent = () => {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    if (!("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="about_area mt-65 mb-140 pb-60 press-r">
-      <div className="container">
-        <div className="row d-flex align-items-center pd_gap nagative_mb">
-          <div className="col-lg-6">
-            <div className="about_skill_thumb mb-4 ml-2 mr-4">
-              <img src={"/assets/images/cm-x-proplus-data.jpeg"} alt="Custom Media - ProPlus Data Partnership" />
-            </div>
-          </div>
-
-          <div className="col-lg-6">
-            <div className="section_title text_left mb-5">
-             
-
-              <div className="section_main_title text-left">
-                <h5>Custom Media to Partner with ProPlus Data for Account-Based Marketing Services</h5>
-               
-              </div>
-
-              
-
-              <div className="section_content_text pt-4">
-                <p>
-                <a href="https://custom-media.com/" target="_blank" rel="noreferrer">Custom Media</a>, an award-winning B2B marketing agency based in Tokyo, Japan, has entered a partnership with <a href="https://proplusdata.co/" target="_blank" rel="noreferrer">ProPlus Data</a>, a data insight and prospect intelligence company based in Pune, India and Tokyo, Japan, to improve their delivery of account-based marketing (ABM) and account-based experience (ABX) services to its clients.
-                </p>
-                <p>Read More At: <a href="https://www.einpresswire.com/article/703080658/custom-media-to-partner-with-proplus-data-for-account-based-marketing-services" target="_blank" rel="noreferrer"> EINPRESSWIRE </a> |<a href="https://www.linkedin.com/posts/proplus-data_proplus-data-japan-partnership-2024-activity-7185505879373332481-jF0C?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noreferrer"> LINKEDIN </a>| <a href="https://fox2now.com/business/press-releases/ein-presswire/703080658/custom-media-to-partner-with-proplus-data-for-account-based-marketing-services/" target="_blank" rel="noreferrer"> FOX2NOW </a></p>
-              </div>
+    <section
+      ref={sectionRef}
+      className={`ppd-press-section${isVisible ? " is-visible" : ""}`}
+      aria-labelledby="custom-media-title"
+    >
+      <div className="ppd-press-grid" aria-hidden="true" />
+      <div className="ppd-press-container container">
+        <div className="ppd-press-row row align-items-center">
+          <article className="ppd-press-copy col-lg-7 col-md-6">
+            <div className="ppd-press-eyebrow">
+              <span className="ppd-press-eyebrow-dot" aria-hidden="true" />
+              <span>PRESS RELEASE</span>
             </div>
 
-          
+            <h1 className="ppd-press-title" id="custom-media-title">
+              Custom Media Partnership
+            </h1>
 
+            <div className="ppd-press-accent" aria-hidden="true">
+              <span />
+            </div>
+
+            <div className="ppd-press-text">
+              <p className="ppd-press-lead">
+                <a href="https://custom-media.com/" target="_blank" rel="noopener noreferrer">Custom Media</a>, an award-winning B2B marketing agency based in Tokyo, Japan, has entered a strategic partnership with ProPlus Data to enhance their account-based marketing (ABM) and account-based experience (ABX) services delivery.
+              </p>
+
+              <p className="ppd-press-detail">
+                This collaboration combines Custom Media's marketing expertise with ProPlus Data's advanced data intelligence capabilities, enabling more precise targeting and better campaign performance for clients across global markets.
+              </p>
+            </div>
+
+            <div className="ppd-press-links">
+              <a href="https://www.einpresswire.com/article/703080658/custom-media-to-partner-with-proplus-data-for-account-based-marketing-services" target="_blank" rel="noopener noreferrer" className="ppd-press-link">
+                <span>EIN PRESSWIRE</span>
+                <span className="ppd-press-link-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="https://www.linkedin.com/posts/proplus-data_proplus-data-japan-partnership-2024-activity-7185505879373332481-jF0C?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener noreferrer" className="ppd-press-link">
+                <span>LINKEDIN</span>
+                <span className="ppd-press-link-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="https://fox2now.com/business/press-releases/ein-presswire/703080658/custom-media-to-partner-with-proplus-data-for-account-based-marketing-services/" target="_blank" rel="noopener noreferrer" className="ppd-press-link">
+                <span>FOX2NOW</span>
+                <span className="ppd-press-link-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <div className="ppd-press-visual-column col-lg-5 col-md-6">
+            <div className="ppd-press-visual">
+              <div className="ppd-press-visual-glow" aria-hidden="true" />
+              <div className="ppd-press-orbit ppd-press-orbit-one" aria-hidden="true" />
+              <div className="ppd-press-orbit ppd-press-orbit-two" aria-hidden="true" />
+              <div className="ppd-press-connection" aria-hidden="true">
+                <span className="ppd-press-connection-pulse" />
+              </div>
+              <div className="ppd-press-image-frame">
+                <img
+                  src="/assets/images/cm-x-proplus-data.jpeg"
+                  alt="Custom Media - ProPlus Data Partnership"
+                />
+              </div>
+              <div className="ppd-press-data-tag ppd-press-data-tag-one">
+                <span aria-hidden="true" />
+                ABM SERVICES
+              </div>
+              <div className="ppd-press-data-tag ppd-press-data-tag-two">
+                <span aria-hidden="true" />
+                PARTNERSHIP
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

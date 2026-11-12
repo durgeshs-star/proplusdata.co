@@ -1,0 +1,624 @@
+/* ===== Interactive GTM Intelligence Demo Section ===== */
+.ppd-demo-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(4.5rem, 8vw, 7rem) clamp(1rem, 4vw, 4rem);
+  background:
+    radial-gradient(ellipse 50rem 26rem at 50% 20%, rgba(219, 234, 254, 0.4), transparent 75%),
+    radial-gradient(ellipse 40rem 24rem at 10% 80%, rgba(224, 242, 254, 0.35), transparent 75%),
+    #ffffff;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.ppd-demo-section::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+  background-position: center center;
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, #000 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, #000 30%, transparent 100%);
+}
+
+.ppd-demo-glow {
+  position: absolute;
+  z-index: 0;
+  top: 18%;
+  left: 50%;
+  width: min(54rem, 90vw);
+  height: 22rem;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.08);
+  filter: blur(90px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.ppd-demo-container {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1200px);
+  margin: 0 auto;
+}
+
+/* Header */
+.ppd-demo-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.ppd-demo-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.38rem 1.15rem;
+  margin-bottom: 1rem;
+  border-radius: 9999px;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.22);
+  color: #1d4ed8;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.06);
+}
+
+.ppd-demo-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2563eb;
+  box-shadow: 0 0 10px #2563eb;
+  animation: demoPulse 2s infinite ease-in-out;
+}
+
+@keyframes demoPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.75); }
+}
+
+.ppd-demo-title {
+  margin: 0 auto;
+  color: #0d1b3e;
+  font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.ppd-demo-title b {
+  font-weight: 850;
+  color: #2563eb;
+}
+
+.ppd-demo-subtitle {
+  max-width: 640px;
+  margin: 1.15rem auto 0;
+  color: #475569;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.65;
+}
+
+/* Tabs Bar */
+.ppd-demo-tabs-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 2rem;
+}
+
+.ppd-demo-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  color: #475569;
+  cursor: pointer;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.ppd-demo-tab-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.ppd-demo-tab-btn.active {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.18);
+  transform: translateY(-2px);
+}
+
+.ppd-demo-tab-icon {
+  display: flex;
+  align-items: center;
+  color: #2563eb;
+  transition: color 180ms ease;
+}
+
+.ppd-demo-tab-btn.active .ppd-demo-tab-icon {
+  color: #60a5fa;
+}
+
+.ppd-demo-tab-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.ppd-demo-tab-label {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ppd-demo-tab-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  opacity: 0.75;
+  letter-spacing: 0.02em;
+}
+
+.ppd-demo-tab-btn.active .ppd-demo-tab-badge {
+  color: #93c5fd;
+  opacity: 1;
+}
+
+/* Card Container */
+.ppd-demo-card {
+  background: #ffffff;
+  border: 1.5px solid #d1d9e6;
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(13, 27, 62, 0.08), 0 2px 8px rgba(13, 27, 62, 0.04);
+  overflow: hidden;
+  transition: box-shadow 300ms ease;
+  animation: cardFadeIn 250ms ease;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0.8;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Topbar */
+.ppd-demo-card-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+  background: #f8fafc;
+  border-bottom: 1.5px solid #e2e8f0;
+}
+
+.ppd-demo-card-company-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ppd-demo-company-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.ppd-demo-company-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ppd-demo-company-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ppd-demo-company-title h3 {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.ppd-demo-domain-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  background: #e2e8f0;
+  color: #334155;
+  border-radius: 6px;
+}
+
+.ppd-demo-company-sub {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Score Box */
+.ppd-demo-score-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ppd-demo-score-ring {
+  display: flex;
+  align-items: baseline;
+  padding: 0.4rem 0.8rem;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 10px;
+}
+
+.ppd-demo-score-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #059669;
+}
+
+.ppd-demo-score-max {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #10b981;
+  margin-left: 2px;
+}
+
+.ppd-demo-score-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.ppd-demo-score-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.ppd-demo-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.ppd-demo-score-desc {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Card Body */
+.ppd-demo-card-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+/* Left Column */
+.ppd-demo-body-left {
+  padding: 2rem;
+  border-right: 1.5px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.ppd-demo-signal-overview h4 {
+  margin: 0 0 0.5rem;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.ppd-demo-signal-overview p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.ppd-demo-metrics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #f8fafc;
+  padding: 1.1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.ppd-demo-metric-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.88rem;
+}
+
+.ppd-demo-metric-label {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.ppd-demo-metric-val {
+  color: #0f172a;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+
+.ppd-demo-action-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 1.15rem;
+  background: rgba(37, 99, 235, 0.06);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 12px;
+}
+
+.ppd-demo-action-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.ppd-demo-action-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.ppd-demo-action-text strong {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.ppd-demo-action-text span {
+  color: #1e293b;
+  line-height: 1.45;
+}
+
+/* Right Column: Contacts */
+.ppd-demo-body-right {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.ppd-demo-contacts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ppd-demo-contacts-header h4 {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.ppd-demo-verified-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.ppd-demo-contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ppd-demo-contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.ppd-demo-contact-card:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
+}
+
+.ppd-demo-contact-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #e0e7ff;
+  color: #3730a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.ppd-demo-contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ppd-demo-contact-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ppd-demo-contact-name {
+  font-size: 0.95rem;
+  font-weight: 750;
+  color: #0f172a;
+}
+
+.ppd-demo-check-badge {
+  font-size: 0.7rem;
+  color: #16a34a;
+  font-weight: 700;
+  background: #f0fdf4;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+}
+
+.ppd-demo-contact-role {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.ppd-demo-contact-channels {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.ppd-demo-channel-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.ppd-demo-channel-pill.phone {
+  color: #0369a1;
+}
+
+.ppd-demo-channel-pill.email {
+  color: #4338ca;
+}
+
+.ppd-demo-bottom-cta {
+  margin-top: 0.5rem;
+}
+
+.ppd-demo-card-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 180ms ease;
+}
+
+.ppd-demo-card-action-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+}
+
+.ppd-demo-card-action-btn:hover .ppd-arrow-move {
+  transform: translateX(4px);
+}
+
+.ppd-arrow-move {
+  transition: transform 180ms ease;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .ppd-demo-card-body {
+    grid-template-columns: 1fr;
+  }
+  .ppd-demo-body-left {
+    border-right: none;
+    border-bottom: 1.5px solid #e2e8f0;
+  }
+  .ppd-demo-card-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ppd-demo-tabs-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  .ppd-demo-tab-btn {
+    flex-shrink: 0;
+  }
+}

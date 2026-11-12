@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const solutionsData = [
   {
     image: "/assets/images/icon/target.png",
@@ -8,14 +7,14 @@ const solutionsData = [
     description:
       "Target companies that are most likely to buy based on current tech, gaps, and switching cycles.",
     alt: "right accounts",
-    },
+  },
   {
     image: "/assets/images/icon/campaign.png",
     title: " Power Up GTM | ABM Campaigns",
     description:
       "Get ultra-personal with your outreach by tailoring it to the actual tech stack of each account.",
     alt: "abm campaigns",
-    },
+  },
   {
     image: "/assets/images/icon/upsell-opportunities.png",
     title: " Find Cross-Sell & Upsell Opportunities",
@@ -34,47 +33,30 @@ const solutionsData = [
 
 const TechnoPoints = () => {
   return (
-    <div className="service_area  pb-20">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="section_title text_center mb-60 mt-1">
-             
-              <div className="section_main_title">
-                <h2>Why Choose <span>Technographics?</span>
-                </h2>
+    <section className="ppd-techno-points" aria-labelledby="ppd-techno-points-title">
+      <div className="ppd-solution-shell">
+        <header className="ppd-techno-points-header">
+          <h2 className="ppd-techno-points-title" id="ppd-techno-points-title">
+            Why Choose <span>Technographics?</span>
+          </h2>
+          <span className="ppd-techno-points-accent" aria-hidden="true" />
+        </header>
+
+        <div className="ppd-techno-points-grid">
+          {solutionsData.map((service) => (
+            <article className="ppd-techno-point-card" key={service.title}>
+              <span className="ppd-techno-point-icon">
+                <img src={service.image} alt={service.alt} />
+              </span>
+              <div className="ppd-techno-point-content">
+                <h3 className="ppd-techno-point-title">{service.title}</h3>
+                <p className="ppd-techno-point-description">{service.description}</p>
               </div>
-              <div className="em_bar">
-                <div className="em_bar_bg"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          {solutionsData.map((service, index) => (
-            <div key={index} className="col-lg-6 col-md-6 col-sm-12">
-              <div className="service_style_seven pt-3 pb-3 pl-4 pr-3 mb-30 d-flex">
-                <div className="service_style_seven_icon pt-3 mr-3">
-                  <img
-                    src={service.image}
-                    alt={service.alt}
-                    style={{ width: "40px", height: "40px" }}
-                  />
-                </div>
-                <div className="service_style_seven_content">
-                  <div className="service_style_seven_title pb-3 text-left">
-                    <h4>{service.title}</h4>
-                  </div>
-                  <div className="service_style_seven_text text-left">
-                    <p>{service.description}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

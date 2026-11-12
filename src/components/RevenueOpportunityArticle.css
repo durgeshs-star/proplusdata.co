@@ -1,0 +1,527 @@
+.ppd-revenue-article {
+  overflow: hidden;
+  background: #fff;
+  color: #233750;
+}
+
+.ppd-revenue-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(68px, 9vw, 112px) 20px clamp(78px, 10vw, 126px);
+  background:
+    radial-gradient(ellipse at 82% 18%, rgba(35, 162, 143, .16), transparent 30%),
+    radial-gradient(ellipse at 12% 100%, rgba(235, 162, 63, .14), transparent 31%),
+    #f6f5ef;
+}
+
+.ppd-revenue-hero::before,
+.ppd-revenue-hero::after {
+  position: absolute;
+  pointer-events: none;
+  content: "";
+}
+
+.ppd-revenue-hero::before {
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(19, 53, 89, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(19, 53, 89, .035) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(90deg, transparent, #000 45%, transparent);
+}
+
+.ppd-revenue-hero::after {
+  width: 420px;
+  height: 420px;
+  right: -210px;
+  top: -260px;
+  border: 1px solid rgba(24, 136, 124, .17);
+  border-radius: 50%;
+  box-shadow: 0 0 0 35px rgba(24, 136, 124, .035), 0 0 0 70px rgba(24, 136, 124, .025);
+}
+
+.ppd-revenue-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ppd-revenue-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 28px;
+  color: #133580;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.ppd-revenue-hero__eyebrow span {
+  width: 23px;
+  height: 2px;
+  border-radius: 2px;
+  background: #e7a03a;
+}
+
+.ppd-revenue-hero__kicker {
+  margin: 0 0 15px;
+  color: #133580;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  line-height: 1.5;
+}
+
+.ppd-revenue-hero h1 {
+  max-width: 880px;
+  margin: 0 auto;
+  color: #142a49;
+  font-size: clamp(42px, 6vw, 74px);
+  font-weight: 750;
+  letter-spacing: -.052em;
+  line-height: 1.04;
+}
+
+.ppd-revenue-hero__lead {
+  max-width: 750px;
+  margin: 25px auto 0;
+  color: #4a5b70;
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.7;
+}
+
+.ppd-revenue-hero__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  color: #334155;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.ppd-revenue-hero__meta i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #e7a03a;
+}
+
+.ppd-revenue-feature {
+  position: relative;
+  z-index: 2;
+  max-width: 1060px;
+  margin: -42px auto 0;
+  padding: 0 20px;
+}
+
+.ppd-revenue-artwork {
+  margin: 0;
+}
+
+.ppd-revenue-feature > .ppd-revenue-artwork {
+  overflow: hidden;
+  border: 1px solid #e1e9ee;
+  border-radius: 24px;
+  background: #f3f6f6;
+  box-shadow: 0 22px 55px rgba(26, 48, 73, .13);
+}
+
+.ppd-revenue-artwork__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ppd-revenue-artwork figcaption {
+  padding: 0 18px 15px;
+  color: #334155;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-align: center;
+}
+
+.ppd-revenue-art__label,
+.ppd-revenue-art__card-key {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+.ppd-revenue-art__caption,
+.ppd-revenue-art__gap-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .7px;
+}
+
+.ppd-revenue-art__card-number {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.ppd-revenue-art__card-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.ppd-revenue-art__node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ppd-revenue-node 3.2s ease-in-out infinite;
+  animation-delay: var(--node-delay, 0s);
+}
+
+.ppd-revenue-art__path {
+  stroke-dasharray: 9 10;
+  animation: ppd-revenue-dash 14s linear infinite;
+}
+
+.ppd-revenue-art__spark {
+  animation: ppd-revenue-node 2.4s ease-in-out infinite;
+}
+
+.ppd-revenue-art__spark--delay {
+  animation-delay: -1.2s;
+}
+
+.ppd-revenue-art__framework-card {
+  animation: ppd-revenue-float 5s ease-in-out infinite;
+  animation-delay: var(--node-delay, 0s);
+}
+
+@keyframes ppd-revenue-node {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .7; transform: scale(1.12); }
+}
+
+@keyframes ppd-revenue-dash {
+  to { stroke-dashoffset: -190; }
+}
+
+@keyframes ppd-revenue-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.ppd-revenue-body {
+  padding: clamp(48px, 7vw, 82px) 20px 96px;
+}
+
+.ppd-revenue-content {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.ppd-revenue-content__intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  margin: 0 0 27px;
+}
+
+.ppd-revenue-content__dropcap {
+  display: grid;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 15px;
+  background: #e6f4f1;
+  color: #133580;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.ppd-revenue-content__intro p,
+.ppd-revenue-paragraph {
+  margin: 0 0 15px;
+  color: #405267;
+  font-size: 17px;
+  line-height: 1.82;
+}
+
+.ppd-revenue-content__intro p {
+  padding-top: 5px;
+  font-size: 18px;
+}
+
+.ppd-revenue-heading {
+  color: #0d1b3e;
+  font-weight: 750;
+  letter-spacing: -.025em;
+}
+
+.ppd-revenue-heading--1 {
+  margin: 64px 0 24px;
+  padding: 0 0 17px;
+  border-bottom: 1px solid #e1e9ee;
+  font-size: clamp(29px, 3.6vw, 39px);
+  line-height: 1.18;
+}
+
+.ppd-revenue-heading--2 {
+  position: relative;
+  margin: 44px 0 19px;
+  font-size: clamp(22px, 2.7vw, 28px);
+  line-height: 1.28;
+}
+
+.ppd-revenue-heading--2::before {
+  display: inline-block;
+  width: 4px;
+  height: 1.05em;
+  margin: 0 12px 0 0;
+  border-radius: 3px;
+  background: #1b9c89;
+  content: "";
+  vertical-align: -2px;
+}
+
+.ppd-revenue-heading--3 {
+  margin: 27px 0 11px;
+  color: #133580;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.ppd-revenue-list {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.ppd-revenue-list li {
+  position: relative;
+  padding: 13px 17px 13px 43px;
+  border: 1px solid #e7edf1;
+  border-radius: 12px;
+  background: #fbfcfb;
+  color: #405267;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.ppd-revenue-list li::before {
+  position: absolute;
+  top: 21px;
+  left: 18px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1b9c89;
+  box-shadow: 0 0 0 4px #e6f4f1;
+  content: "";
+}
+
+.ppd-revenue-table-wrap {
+  max-width: 100%;
+  margin: 18px 0 34px;
+  overflow-x: auto;
+  border: 1px solid #e1e9ee;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(29, 50, 72, .06);
+  scrollbar-color: #9cabbc #eef2f5;
+}
+
+.ppd-revenue-table-wrap:focus-visible {
+  outline: 3px solid #4985cf;
+  outline-offset: 3px;
+}
+
+.ppd-revenue-table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+  color: #405267;
+  font-size: 13px;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.ppd-revenue-table th,
+.ppd-revenue-table td {
+  padding: 14px 15px;
+  border-bottom: 1px solid #e8edf1;
+  vertical-align: top;
+}
+
+.ppd-revenue-table th {
+  background: #f3f6f7;
+  color: #142a49;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.ppd-revenue-table tbody tr:first-child td {
+  background: #f7faf9;
+}
+
+.ppd-revenue-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.ppd-revenue-table tbody tr:first-child td:first-child {
+  color: #0d1b3e;
+  font-weight: 750;
+}
+
+.ppd-revenue-paragraph--flow {
+  width: fit-content;
+  margin: 4px auto;
+  color: #133580;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ppd-revenue-inline-art {
+  margin: 36px 0 43px;
+  overflow: hidden;
+  border: 1px solid #e2e9ee;
+  border-radius: 20px;
+  background: #f3f6f6;
+  box-shadow: 0 12px 32px rgba(29, 50, 72, .07);
+}
+
+.ppd-revenue-inline-art .ppd-revenue-artwork__svg {
+  max-height: 320px;
+}
+
+@media (max-width: 767px) {
+  .ppd-revenue-hero {
+    padding: 57px 17px 76px;
+  }
+
+  .ppd-revenue-hero__eyebrow {
+    gap: 7px;
+    margin-bottom: 22px;
+    font-size: 10px;
+  }
+
+  .ppd-revenue-hero__eyebrow span {
+    width: 14px;
+  }
+
+  .ppd-revenue-hero__kicker {
+    font-size: 10px;
+  }
+
+  .ppd-revenue-hero h1 {
+    font-size: clamp(38px, 10vw, 52px);
+  }
+
+  .ppd-revenue-hero__lead {
+    margin-top: 18px;
+    font-size: 16px;
+  }
+
+  .ppd-revenue-feature {
+    margin-top: -34px;
+    padding: 0 14px;
+  }
+
+  .ppd-revenue-feature > .ppd-revenue-artwork {
+    border-radius: 17px;
+  }
+
+  .ppd-revenue-artwork figcaption {
+    padding-bottom: 12px;
+    font-size: 9px;
+  }
+
+  .ppd-revenue-art__label {
+    font-size: 14px;
+    letter-spacing: .6px;
+  }
+
+  .ppd-revenue-art__caption,
+  .ppd-revenue-art__gap-label {
+    font-size: 12px;
+  }
+
+  .ppd-revenue-body {
+    padding: 42px 18px 68px;
+  }
+
+  .ppd-revenue-content__intro p,
+  .ppd-revenue-paragraph {
+    font-size: 16px;
+    line-height: 1.78;
+  }
+
+  .ppd-revenue-content__intro p {
+    font-size: 17px;
+  }
+
+  .ppd-revenue-content__dropcap {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .ppd-revenue-heading--1 {
+    margin-top: 47px;
+  }
+
+  .ppd-revenue-heading--2 {
+    margin-top: 35px;
+  }
+
+  .ppd-revenue-table-wrap {
+    margin-right: -8px;
+    margin-left: -8px;
+    border-radius: 12px;
+  }
+
+  .ppd-revenue-table {
+    font-size: 12px;
+  }
+
+  .ppd-revenue-table th,
+  .ppd-revenue-table td {
+    padding: 12px;
+  }
+
+  .ppd-revenue-inline-art {
+    margin: 28px -8px 34px;
+    border-radius: 15px;
+  }
+
+  .ppd-revenue-art__card-key {
+    font-size: 18px;
+  }
+
+  .ppd-revenue-art__card-number {
+    font-size: 18px;
+  }
+
+  .ppd-revenue-art__card-title {
+    font-size: 22px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ppd-revenue-art__node,
+  .ppd-revenue-art__path,
+  .ppd-revenue-art__spark,
+  .ppd-revenue-art__framework-card {
+    animation: none;
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbVoiceSpecialist from '../components/BreadcrumbVoiceSpcialist'
+// import BreadcrumbVoiceSpecialist from '../components/BreadcrumbVoiceSpcialist'
 import VoiceSpecialistComponent from '../components/VoiceSpecialistComponent'
 
 export default function VoiceSpecialist() {
@@ -20,7 +20,7 @@ export default function VoiceSpecialist() {
       content="Seeking Voive Specialist with strong English skills and basic Word/Excel proficiency. Responsibilities include office tasks, tele-calling from provided database. Freshers meeting criteria welcome." />
       </Helmet>
       <Header1/>
-      <BreadcrumbVoiceSpecialist/>
+      {/* <BreadcrumbVoiceSpecialist/> */}
       <VoiceSpecialistComponent/>
       <Footer/>
     </div>

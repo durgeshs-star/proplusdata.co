@@ -1,0 +1,452 @@
+.ppd-gartner-event {
+  --ppd-event-navy: #0d1b3e;
+  --ppd-event-blue: #133580;
+  --ppd-event-accent: #2563eb;
+  --ppd-event-light: #f1f6ff;
+  --ppd-event-border: #dbeafe;
+  --ppd-event-muted: rgba(13, 27, 62, 0.68);
+  --ppd-event-white: #ffffff;
+}
+
+.ppd-gartner-hero {
+  background-color: var(--ppd-event-light);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(80px, 12vw, 120px) 0 clamp(60px, 10vw, 100px);
+}
+
+.ppd-gartner-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(to right, rgba(13, 27, 62, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13, 27, 62, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.ppd-gartner-hero-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ppd-event-blue);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.ppd-gartner-hero-title {
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--ppd-event-navy);
+  margin: 0 0 20px 0;
+}
+
+.ppd-gartner-hero-highlight {
+  color: var(--ppd-event-accent);
+}
+
+.ppd-gartner-hero-rule {
+  width: 60px;
+  height: 3px;
+  background: var(--ppd-event-accent);
+  border-radius: 2px;
+  margin: 32px 0;
+}
+
+.ppd-gartner-hero-description {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--ppd-event-muted);
+  margin-bottom: 24px;
+  max-width: 620px;
+}
+
+.ppd-gartner-hero-description a {
+  color: var(--ppd-event-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 200ms ease;
+}
+
+.ppd-gartner-hero-description a:hover {
+  color: var(--ppd-event-blue);
+  text-decoration: underline;
+}
+
+.ppd-gartner-hero-media {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+}
+
+@media (max-width: 991px) {
+  .ppd-gartner-hero-media {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ppd-gartner-hero-media {
+    margin-top: 24px;
+  }
+}
+
+.ppd-gartner-hero-image {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--ppd-event-border);
+  box-shadow: 0 20px 50px rgba(13, 27, 62, 0.10);
+  display: block;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.ppd-gartner-hero-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 60px rgba(13, 27, 62, 0.12);
+}
+
+.ppd-gartner-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.ppd-gartner-content {
+  background: var(--ppd-event-white);
+  padding: clamp(60px, 10vw, 100px) 0;
+}
+
+.ppd-gartner-content-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ppd-gartner-section {
+  margin-top: 80px;
+}
+
+.ppd-gartner-section:first-child {
+  margin-top: 0;
+}
+
+.ppd-gartner-section-title {
+  font-size: clamp(28px, 3.5vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ppd-event-navy);
+  margin: 0 0 24px 0;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.ppd-gartner-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--ppd-event-accent);
+  border-radius: 2px;
+}
+
+.ppd-gartner-intro {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--ppd-event-muted);
+  margin-bottom: 24px;
+}
+
+.ppd-gartner-intro a {
+  color: var(--ppd-event-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 200ms ease;
+}
+
+.ppd-gartner-intro a:hover {
+  color: var(--ppd-event-blue);
+  text-decoration: underline;
+}
+
+.ppd-gartner-insights {
+  margin: 32px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ppd-gartner-insight {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--ppd-event-border);
+  transition: background-color 220ms ease;
+}
+
+.ppd-gartner-insight:hover {
+  background-color: var(--ppd-event-light);
+}
+
+.ppd-gartner-insight:last-child {
+  border-bottom: none;
+}
+
+.ppd-gartner-insight-number {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ppd-event-accent);
+  margin-right: 24px;
+  min-width: 40px;
+}
+
+.ppd-gartner-insight-text {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #24324f;
+  flex: 1;
+}
+
+.ppd-gartner-feature {
+  background: var(--ppd-event-light);
+  border: 1px solid var(--ppd-event-border);
+  border-left: 4px solid var(--ppd-event-accent);
+  border-radius: 20px;
+  padding: 32px;
+  margin: 48px 0;
+}
+
+.ppd-gartner-feature p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--ppd-event-muted);
+  margin-bottom: 0;
+}
+
+.ppd-gartner-feature a {
+  color: var(--ppd-event-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 200ms ease;
+}
+
+.ppd-gartner-feature a:hover {
+  color: var(--ppd-event-blue);
+  text-decoration: underline;
+}
+
+.ppd-gartner-pullquote {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--ppd-event-navy);
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(13, 27, 62, 0.1);
+}
+
+.ppd-gartner-closing {
+  background: var(--ppd-event-light);
+  border-radius: 24px;
+  padding: 32px;
+  margin-top: 48px;
+}
+
+.ppd-gartner-closing p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--ppd-event-muted);
+  margin-bottom: 16px;
+}
+
+.ppd-gartner-closing p:last-child {
+  margin-bottom: 0;
+}
+
+.ppd-gartner-closing a {
+  color: var(--ppd-event-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 200ms ease;
+}
+
+.ppd-gartner-closing a:hover {
+  color: var(--ppd-event-blue);
+  text-decoration: underline;
+}
+
+@media (max-width: 1199px) {
+  .ppd-gartner-hero {
+    padding: 70px 0 90px;
+  }
+
+  .ppd-gartner-content {
+    padding: 50px 0 80px;
+  }
+
+  .ppd-gartner-content-inner {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 991px) {
+  .ppd-gartner-hero {
+    padding: 60px 0 80px;
+  }
+
+  .ppd-gartner-hero-title {
+    margin-bottom: 16px;
+  }
+
+  .ppd-gartner-hero-rule {
+    margin: 24px 0;
+  }
+
+  .ppd-gartner-hero-description {
+    max-width: 100%;
+  }
+
+  .ppd-gartner-content {
+    padding: 40px 0 60px;
+  }
+
+  .ppd-gartner-content-inner {
+    max-width: 100%;
+  }
+
+  .ppd-gartner-section-title {
+    font-size: 30px;
+  }
+
+  .ppd-gartner-pullquote {
+    font-size: 20px;
+  }
+
+  .ppd-gartner-feature {
+    padding: 24px;
+  }
+
+  .ppd-gartner-closing {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ppd-gartner-hero {
+    padding: 50px 0 70px;
+  }
+
+  .ppd-gartner-hero-title {
+    font-size: 38px;
+  }
+
+  .ppd-gartner-hero-description {
+    font-size: 16px;
+  }
+
+  .ppd-gartner-hero-image {
+    border-radius: 20px;
+  }
+
+  .ppd-gartner-content {
+    padding: 40px 0 60px;
+  }
+
+  .ppd-gartner-content-inner {
+    padding: 0 20px;
+  }
+
+  .ppd-gartner-section {
+    margin-top: 48px;
+  }
+
+  .ppd-gartner-section-title {
+    font-size: 26px;
+    padding-bottom: 12px;
+  }
+
+  .ppd-gartner-section-title::after {
+    width: 40px;
+    height: 2px;
+  }
+
+  .ppd-gartner-intro {
+    font-size: 16px;
+  }
+
+  .ppd-gartner-insight {
+    padding: 16px 0;
+  }
+
+  .ppd-gartner-insight-number {
+    font-size: 13px;
+    margin-right: 16px;
+    min-width: 32px;
+  }
+
+  .ppd-gartner-insight-text {
+    font-size: 16px;
+  }
+
+  .ppd-gartner-feature {
+    padding: 20px;
+    margin: 32px 0;
+  }
+
+  .ppd-gartner-feature p {
+    font-size: 16px;
+  }
+
+  .ppd-gartner-pullquote {
+    font-size: 18px;
+    padding-top: 20px;
+  }
+
+  .ppd-gartner-closing {
+    padding: 20px;
+    margin-top: 32px;
+  }
+
+  .ppd-gartner-closing p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ppd-gartner-hero {
+    padding: 40px 0 60px;
+  }
+
+  .ppd-gartner-hero-title {
+    font-size: 32px;
+  }
+
+  .ppd-gartner-section-title {
+    font-size: 24px;
+  }
+
+  .ppd-gartner-pullquote {
+    font-size: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ppd-gartner-event *,
+  .ppd-gartner-event *::before,
+  .ppd-gartner-event *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

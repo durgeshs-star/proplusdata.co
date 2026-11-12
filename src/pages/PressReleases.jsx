@@ -2,13 +2,15 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbPressReleases from '../components/BreadcrumbPressReleases'
+// import BreadcrumbPressReleases from '../components/BreadcrumbPressReleases'
 import PressReleaseComponent from '../components/PressReleaseComponent'
 import DataradeComponent from '../components/DataradeComponent';
+import '../components/PressReleases.css'
+import '../components/CompanyPages.css'
 
 export default function PressReleases() {
   return (
-    <div>
+    <div className="ppd-company-page ppd-company-page--press ppd-press-page">
       <Helmet>
                         <title>Press Releases | ProPlus Data News & Industry Updates</title>
                       <meta name="description" content="Stay informed with the latest news from ProPlus Data. Explore press releases, industry insights, and key milestones shaping the future of data intelligence."/>
@@ -21,13 +23,21 @@ export default function PressReleases() {
                          content="Stay informed with the latest news from ProPlus Data. Explore press releases, industry insights, and key milestones shaping the future of data intelligence." />
             </Helmet>
       <Header1/>
-      <BreadcrumbPressReleases/>
-      <DataradeComponent/>
-      <PressReleaseComponent/>
+      <main className="ppd-press">
+        {/* <BreadcrumbPressReleases/> */}
+        <DataradeComponent/>
+        <PressReleaseComponent/>
+      </main>
       <Footer/>
-      <div class="btnwhatsapp-sm">
-        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i class="fa fa-whatsapp"></i></a>
-    </div>
+      <a
+        className="ppd-press-whatsapp"
+        target="_blank"
+        rel="noreferrer"
+        href="https://wa.me/+919112110691"
+        aria-label="Chat with ProPlus Data on WhatsApp"
+      >
+        <i className="fa fa-whatsapp" aria-hidden="true" />
+      </a>
     </div>
   )
 }

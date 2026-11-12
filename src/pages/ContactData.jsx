@@ -2,15 +2,16 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbContact from '../components/BreadcrumbContact'
 import ContactComponent from '../components/ContactComponent'
 import ContactDifference from '../components/ContactDifference'
 import BusinessBenefit from '../components/BusinessBenefit'
 import CtaContact from '../components/CtaContact'
+// import SolutionBreadcrumb from '../components/solutions/SolutionBreadcrumb'
+import '../components/solutions/SolutionSystem.css'
 
 export default function ContactData() {
   return (
-    <div>
+    <div className="ppd-solutions-page">
          <Helmet>
           {typeof window !== 'undefined' && (
   <script
@@ -44,14 +45,16 @@ export default function ContactData() {
                     content="ProPlus Data helps you connect with verified B2B contacts and decision-makers. Enhance your sales outreach and increase lead quality." />
             </Helmet>
       <Header1/>
-      <BreadcrumbContact/>
-      <ContactComponent/>
-      <ContactDifference/>
-      <BusinessBenefit/>
-      <CtaContact/>
-      <Footer/>
-      <div class="btnwhatsapp-sm">
-        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i class="fa fa-whatsapp"></i></a>
+            <main className="ppd-solution ppd-solution--contact-data">
+              {/* <SolutionBreadcrumb label="Contact Data" parentHref="/contact-data" /> */}
+              <ContactComponent/>
+              <ContactDifference/>
+              <BusinessBenefit/>
+              <CtaContact/>
+            </main>
+            <Footer/>
+            <div className="btnwhatsapp-sm">
+              <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i className="fa fa-whatsapp"></i></a>
     </div>
 
     </div>

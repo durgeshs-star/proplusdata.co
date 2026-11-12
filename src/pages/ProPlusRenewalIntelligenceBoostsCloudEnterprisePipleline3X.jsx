@@ -1,15 +1,7 @@
 import React from 'react'
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import CloudUseCaseComponent from '../components/CloudUseCaseComponent'
-import ChallengeOpportunity from '../components/ChallengeOpportunity'
-import ProplusdataApproach from '../components/ProplusdataApproach'
-import SolutionLeveraged from '../components/SolutionsLeveraged'
-import HighMediumComponent from '../components/HighMediumComponent'
-import MessagingConverts from '../components/MessagingConverts'
-import TimelineComponent from '../components/TimelineComponent'
-import CtaAwsCaseStudy from '../components/CtaAwsCaseStudy'
-import CloudContent from '../components/CloudContent'
+import CloudEnterpriseRedesign from '../components/CloudEnterpriseRedesign'
 import { Helmet } from 'react-helmet-async'
 
 export default function ProPlusRenewalIntelligenceBoostsCloudEnterprisePipleline3X() {
@@ -26,15 +18,7 @@ export default function ProPlusRenewalIntelligenceBoostsCloudEnterprisePipleline
         <meta property="og:description" content="Learn how ProPlus renewal intelligence solutions helped a leading cloud enterprise boost its pipeline by 3X, driving revenue growth and customer retention." />
       </Helmet>
       <Header1/>
-      <CloudUseCaseComponent/>
-      <CloudContent/>
-      <ChallengeOpportunity/>
-       <SolutionLeveraged/>
-      <ProplusdataApproach/>
-      <HighMediumComponent/>
-      <MessagingConverts/>
-      <TimelineComponent/>
-      <CtaAwsCaseStudy/>
+      <CloudEnterpriseRedesign/>
       <Footer/>
     </div>
   )

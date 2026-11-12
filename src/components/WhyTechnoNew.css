@@ -1,0 +1,206 @@
+.ppd-techno-value-new {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(4.5rem, 8vw, 7rem) 0;
+  background: #ffffff;
+}
+
+.ppd-techno-value-new__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 4rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.ppd-techno-value-new__visual {
+  position: relative;
+}
+
+.ppd-techno-value-new__image-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, 0.12),
+    0 0 0 1px rgba(37, 99, 235, 0.08);
+}
+
+.ppd-techno-value-new__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+}
+
+.ppd-techno-value-new__decoration {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  filter: blur(60px);
+  opacity: 0.5;
+}
+
+.ppd-techno-value-new__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ppd-techno-value-new__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.48rem 0.8rem;
+  border: 1px solid rgba(37, 99, 235, 0.14);
+  border-radius: 999px;
+  background: rgba(239, 246, 255, 0.82);
+  color: #1d4ed8;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  line-height: 1;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.ppd-techno-value-new__status {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  animation: ppd-techno-value-status-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes ppd-techno-value-status-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+}
+
+.ppd-techno-value-new__title {
+  margin: 0;
+  color: #0f1f3d;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 1.1;
+}
+
+.ppd-techno-value-new__title span {
+  padding-bottom: 0.08em;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #133580 !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+  background: none !important;
+  -webkit-text-fill-color: #133580 !important;
+}
+
+.ppd-techno-value-new__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ppd-techno-value-new__copy p {
+  margin: 0;
+  color: #334155;
+  font-size: clamp(1rem, 1.25vw, 1.1rem);
+  line-height: 1.8;
+}
+
+.ppd-techno-value-new__copy a {
+  color: #1d4ed8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 200ms ease;
+}
+
+.ppd-techno-value-new__copy a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.ppd-techno-value-new__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+.ppd-techno-value-new__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f6ff 100%);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.ppd-techno-value-new__stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.12);
+}
+
+.ppd-techno-value-new__stat-number {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #1d4ed8;
+  margin-bottom: 0.25rem;
+}
+
+.ppd-techno-value-new__stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991.98px) {
+  .ppd-techno-value-new__container {
+    grid-template-columns: 1fr;
+  }
+
+  .ppd-techno-value-new__visual {
+    order: -1;
+  }
+
+  .ppd-techno-value-new__stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .ppd-techno-value-new__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .ppd-techno-value-new__stat {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}

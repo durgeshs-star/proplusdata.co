@@ -1,0 +1,390 @@
+.ppd-company-page {
+  --company-ink: #102144;
+  --company-navy: #173f91;
+  --company-teal: #10a69b;
+  --company-orange: #ed5b1d;
+}
+
+.ppd-company-page .ppd-about-section,
+.ppd-company-page .ppd-careers-hero,
+.ppd-company-page .ppd-contact-hero,
+.ppd-company-page .ppd-press-section {
+  background:
+    radial-gradient(ellipse 32rem 24rem at 82% 42%, rgba(16, 166, 155, 0.075), transparent 72%),
+    linear-gradient(135deg, #fbfcff 0%, #f3f6fc 58%, #fff 100%);
+}
+
+.ppd-company-page .ppd-about-grid,
+.ppd-company-page .ppd-careers-grid,
+.ppd-company-page .ppd-contact-grid,
+.ppd-company-page .ppd-press-grid {
+  opacity: 0.38;
+  background-image:
+    linear-gradient(rgba(39, 91, 180, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(39, 91, 180, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.ppd-company-page .ppd-about-title,
+.ppd-company-page .ppd-careers-title,
+.ppd-company-page .ppd-contact-title,
+.ppd-company-page .ppd-press-title {
+  color: #111;
+  letter-spacing: -0.055em;
+}
+
+.ppd-company-page .ppd-about-title span,
+.ppd-company-page .ppd-careers-title span,
+.ppd-company-page .ppd-contact-title span {
+  color: #000080;
+}
+
+.ppd-company-page .ppd-about-eyebrow,
+.ppd-company-page .ppd-careers-eyebrow,
+.ppd-company-page .ppd-contact-eyebrow,
+.ppd-company-page .ppd-press-eyebrow {
+  color: #173f91;
+}
+
+.ppd-company-page .ppd-about-eyebrow-dot,
+.ppd-company-page .ppd-careers-eyebrow-dot,
+.ppd-company-page .ppd-contact-eyebrow-dot,
+.ppd-company-page .ppd-press-eyebrow-dot {
+  background: #10a69b;
+  box-shadow: 0 0 0 4px rgba(16, 166, 155, 0.12);
+  animation: ppd-company-signal-pulse 2.4s ease-in-out infinite;
+}
+
+.ppd-company-page .ppd-about-accent,
+.ppd-company-page .ppd-careers-accent,
+.ppd-company-page .ppd-contact-accent,
+.ppd-company-page .ppd-press-accent {
+  background: linear-gradient(90deg, #ed5b1d, rgba(237, 91, 29, 0.12));
+}
+
+.ppd-company-page .ppd-about-accent span,
+.ppd-company-page .ppd-careers-accent span,
+.ppd-company-page .ppd-contact-accent span,
+.ppd-company-page .ppd-press-accent span {
+  background: #ed5b1d;
+  box-shadow: 0 0 0 2px rgba(237, 91, 29, 0.16);
+}
+
+.ppd-company-page .ppd-about-image-frame,
+.ppd-company-page .ppd-careers-image-frame,
+.ppd-company-page .ppd-press-image-frame {
+  border-color: rgba(16, 166, 155, 0.22);
+  border-radius: 28px;
+  background: #f3f0e8;
+  box-shadow: 0 22px 58px rgba(35, 51, 77, 0.1);
+}
+
+.ppd-company-page .ppd-about-orbit,
+.ppd-company-page .ppd-careers-orbit,
+.ppd-company-page .ppd-press-orbit {
+  border-color: rgba(16, 166, 155, 0.3);
+}
+
+.ppd-company-page .ppd-about-connection,
+.ppd-company-page .ppd-careers-connection,
+.ppd-company-page .ppd-press-connection {
+  background: linear-gradient(90deg, transparent, rgba(16, 166, 155, 0.65), transparent);
+}
+
+.ppd-company-page .ppd-about-connection-pulse,
+.ppd-company-page .ppd-careers-connection-pulse,
+.ppd-company-page .ppd-press-connection-pulse {
+  background: #ed5b1d;
+  box-shadow: 0 0 9px rgba(237, 91, 29, 0.5);
+}
+
+.ppd-company-page .ppd-about-data-tag > span,
+.ppd-company-page .ppd-careers-data-tag > span,
+.ppd-company-page .ppd-press-data-tag > span {
+  background: #10a69b;
+  box-shadow: 0 0 0 3px rgba(16, 166, 155, 0.14);
+}
+
+.ppd-company-page .ppd-about-cta,
+.ppd-company-page .ppd-careers-cta,
+.ppd-company-page .ppd-press-link {
+  border-color: #102144;
+  border-radius: 999px;
+  background: #102144;
+}
+
+.ppd-company-page .ppd-about-cta:hover,
+.ppd-company-page .ppd-careers-cta:hover,
+.ppd-company-page .ppd-press-link:hover {
+  border-color: #173f91;
+  background: #173f91;
+}
+
+.ppd-company-page .ppd-contact {
+  background: #fbfcff;
+}
+
+.ppd-company-page .ppd-contact-action,
+.ppd-company-page .ppd-contact-form-container {
+  border-color: rgba(23, 63, 145, 0.12);
+  border-radius: 22px;
+  box-shadow: 0 16px 38px rgba(35, 51, 77, 0.07);
+}
+
+.ppd-company-page .ppd-contact-action:hover {
+  border-color: rgba(16, 166, 155, 0.45);
+  box-shadow: 0 20px 34px rgba(35, 51, 77, 0.1);
+}
+
+.ppd-company-page .ppd-contact-action__icon {
+  border-color: rgba(16, 166, 155, 0.2);
+  border-radius: 50%;
+  background: #e8f7f4;
+  color: #138f83;
+}
+
+.ppd-company-page .ppd-contact-action__arrow {
+  color: #ed5b1d;
+}
+
+.ppd-company-page .ppd-contact-form-container {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.ppd-company-page .ppd-contact-form-group input,
+.ppd-company-page .ppd-contact-form-group textarea {
+  border-radius: 12px;
+}
+
+.ppd-company-page .ppd-contact-form-submit {
+  border-radius: 999px;
+  background: #102144;
+}
+
+.ppd-company-page .ppd-contact-form-submit:hover:not(:disabled) {
+  background: #173f91;
+}
+
+.ppd-company-page .ppd-press-section + .ppd-press-section {
+  background:
+    radial-gradient(ellipse 28rem 24rem at 18% 54%, rgba(237, 91, 29, 0.05), transparent 72%),
+    linear-gradient(135deg, #f8f6f0, #f3f6fc 65%, #fff);
+}
+
+.ppd-company-page .ppd-about-tabs-section {
+  background:
+    radial-gradient(ellipse 38rem 28rem at 52% 72%, rgba(16, 166, 155, 0.07), transparent 75%),
+    #f7f6f0;
+}
+
+.ppd-company-page .ppd-about-tabs-grid {
+  opacity: 0.26;
+  background-image:
+    linear-gradient(rgba(39, 91, 180, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(39, 91, 180, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.ppd-company-page .ppd-about-tabs-header h2 {
+  color: #111;
+  font-size: clamp(2.4rem, 5vw, 4.15rem);
+  letter-spacing: -0.055em;
+}
+
+.ppd-company-page .ppd-about-tabs-header h2 > span {
+  color: #000080;
+}
+
+.ppd-company-page .ppd-about-tabs-eyebrow {
+  color: #173f91;
+}
+
+.ppd-company-page .ppd-about-tabs-eyebrow-dot,
+.ppd-company-page .ppd-about-tabs-active-label > span,
+.ppd-company-page .ppd-about-tabs-image-status > span {
+  background: #10a69b;
+  box-shadow: 0 0 0 4px rgba(16, 166, 155, 0.12);
+}
+
+.ppd-company-page .ppd-about-tabs-accent {
+  background: linear-gradient(90deg, rgba(237, 91, 29, 0.12), #ed5b1d);
+}
+
+.ppd-company-page .ppd-about-tabs-accent span {
+  background: #ed5b1d;
+  box-shadow: 0 0 0 2px rgba(237, 91, 29, 0.18);
+}
+
+.ppd-company-page .ppd-about-tabs-track-progress,
+.ppd-company-page .ppd-about-tabs-nav-item::after {
+  background: linear-gradient(90deg, #ed5b1d, #f4a261);
+}
+
+.ppd-company-page .ppd-about-tabs-track-pulse,
+.ppd-company-page .ppd-about-tabs-nav-item.is-active .ppd-about-tabs-node {
+  background: #ed5b1d;
+}
+
+.ppd-company-page .ppd-about-tabs-nav-item.is-active .ppd-about-tabs-number,
+.ppd-company-page .ppd-about-tabs-nav-item.is-active .ppd-about-tabs-short-label,
+.ppd-company-page .ppd-about-tabs-active-label {
+  color: #173f91;
+}
+
+.ppd-company-page .ppd-about-tabs-nav-item.is-active .ppd-about-tabs-node {
+  border-color: #ed5b1d;
+  box-shadow: 0 0 0 4px var(--ppd-tabs-bg), 0 0 0 7px rgba(237, 91, 29, 0.15);
+}
+
+.ppd-company-page .ppd-about-tabs-panel {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  min-height: 430px;
+  padding: clamp(1.4rem, 3vw, 2.6rem);
+  border-color: rgba(145, 151, 157, 0.38);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 18px 48px rgba(35, 51, 77, 0.065);
+}
+
+.ppd-company-page .ppd-about-tabs-image {
+  grid-column: 2;
+  grid-row: 1;
+  min-height: 350px;
+  border: 0;
+  border-radius: 24px;
+  background: #f3f0e8;
+}
+
+.ppd-company-page .ppd-about-tabs-image::before,
+.ppd-company-page .ppd-about-tabs-image::after {
+  position: absolute;
+  border: 1px solid rgba(16, 166, 155, 0.68);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.ppd-company-page .ppd-about-tabs-image::before {
+  top: 12%;
+  left: -44%;
+  width: 120%;
+  aspect-ratio: 1;
+}
+
+.ppd-company-page .ppd-about-tabs-image::after {
+  right: -44%;
+  bottom: -50%;
+  width: 110%;
+  aspect-ratio: 1;
+}
+
+.ppd-company-page .ppd-about-tabs-image-grid {
+  opacity: 0.34;
+  background-image:
+    linear-gradient(rgba(16, 166, 155, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 166, 155, 0.06) 1px, transparent 1px);
+}
+
+.ppd-company-page .ppd-about-tabs-image-status {
+  border-radius: 999px;
+}
+
+.ppd-company-page .ppd-about-tabs-content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.ppd-company-page .ppd-about-tabs-content-number {
+  color: #d77900;
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+}
+
+.ppd-company-page .ppd-about-tabs-content h3 {
+  color: #111;
+}
+
+.ppd-company-page .ppd-about-tabs-content-accent {
+  background: linear-gradient(90deg, #ed5b1d, rgba(237, 91, 29, 0.18));
+}
+
+.ppd-company-page .ppd-about-tabs-artwork {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(16, 166, 155, 0.08), transparent 55%),
+    transparent;
+}
+
+.ppd-company-page .ppd-about-tabs-artwork-orbit {
+  border-color: rgba(16, 166, 155, 0.5);
+  box-shadow: 0 0 0 1.8rem rgba(16, 166, 155, 0.04), 0 0 0 3.6rem rgba(16, 166, 155, 0.025);
+}
+
+.ppd-company-page .ppd-about-tabs-artwork-score,
+.ppd-company-page .ppd-about-tabs-artwork-account,
+.ppd-company-page .ppd-about-tabs-artwork-chip,
+.ppd-company-page .ppd-about-tabs-artwork-segment,
+.ppd-company-page .ppd-about-tabs-artwork-person {
+  box-shadow: 0 12px 30px rgba(35, 51, 77, 0.1);
+}
+
+.ppd-company-page .ppd-industries-section,
+.ppd-company-page .ppd-identify-connect,
+.ppd-company-page .ppd-global-section {
+  background-color: #f7f6f0;
+}
+
+.ppd-company-page .ppd-industries-section {
+  background:
+    radial-gradient(ellipse 42rem 25rem at 88% 12%, rgba(16, 166, 155, 0.09), transparent 70%),
+    #f7f6f0;
+}
+
+.ppd-company-page .ppd-identify-connect {
+  background:
+    radial-gradient(ellipse 35rem 20rem at 50% 48%, rgba(16, 166, 155, 0.07), transparent 76%),
+    #f7f6f0;
+}
+
+.ppd-company-page .ppd-global-section {
+  background: #f7f6f0;
+}
+
+.ppd-company-page .ppd-identify-connect-header h2 span,
+.ppd-company-page .ppd-industries-header h2 em,
+.ppd-company-page .ppd-global-heading-accent {
+  color: #000080;
+}
+
+@keyframes ppd-company-signal-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(16, 166, 155, 0.12); }
+  50% { box-shadow: 0 0 0 8px rgba(16, 166, 155, 0); }
+}
+
+@media (max-width: 767.98px) {
+  .ppd-company-page .ppd-about-tabs-panel {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 0.9rem;
+  }
+
+  .ppd-company-page .ppd-about-tabs-image {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 230px;
+  }
+
+  .ppd-company-page .ppd-about-tabs-content {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ppd-company-page .ppd-about-eyebrow-dot,
+  .ppd-company-page .ppd-careers-eyebrow-dot,
+  .ppd-company-page .ppd-contact-eyebrow-dot,
+  .ppd-company-page .ppd-press-eyebrow-dot {
+    animation: none;
+  }
+}

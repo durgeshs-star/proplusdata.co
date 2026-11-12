@@ -1,47 +1,21 @@
 import React from "react";
 
-
 const CtaNtp = () => {
   return (
-    <div
-      className="call_do_action bg_color2 pt-5 pb-70"
-      style={{ backgroundImage: 'url(assets/images/glob-bg.png)' }}
-    >
-      <div className="container">
-        <div className="row">
-          {/* Section Title */}
-          <div className="col-lg-12">
-            <div className="section_title text_center mb-50 mt-3">
-              <div className="section_sub_title uppercase mb-3"></div>
-              
-            
-            </div>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="row">
-          <div className="col-lg-9">
-            <div className="section_title text_left">
-              <div className="section_sub_title uppercase mb-3"></div>
-              <div className="section_main_title text-left">
-                <h5>Target replacement opprtunities with Next Tech Purchase<sup>&reg;</sup>
-                </h5>
-              
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-3">
-            <div className="section_button">
-              <div className="button two mt-10">
-                <a href="/contact-us">Connect With Us</a>
-              </div>
-            </div>
-          </div>
+    <section className="ppd-ntp-cta">
+      <div className="ppd-ntp-cta-grid" aria-hidden="true" />
+      <div className="ppd-solution-shell">
+        <div className="ppd-ntp-cta-content">
+          <h2 className="ppd-ntp-cta-title">
+            Target replacement opprtunities with{" "}
+            <span>Next Tech Purchase<sup>&reg;</sup></span>
+          </h2>
+          <a className="ppd-ntp-cta-button" href="/contact-us">
+            Connect With Us
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

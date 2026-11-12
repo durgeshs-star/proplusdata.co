@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbAdminExecutive from '../components/BreadcrumbAdminExecutive'
+// import BreadcrumbAdminExecutive from '../components/BreadcrumbAdminExecutive'
 import AdminExecutiveComponent from '../components/AdminExecutiveComponent'
 
 export default function AdminExecutive() {
@@ -20,7 +20,7 @@ export default function AdminExecutive() {
              content="We're hiring an Office Administrator to handle admin tasks, document organization, employee coordination, and event support. Apply now!" />
       </Helmet>
       <Header1/>
-      <BreadcrumbAdminExecutive/>
+      {/* <BreadcrumbAdminExecutive/> */}
       <AdminExecutiveComponent/>
       <Footer/>
     </div>

@@ -1,0 +1,432 @@
+/* ═══════════════════════════════════════════════════════
+   Technographics for Business Growth — Clean Redesign
+   ═══════════════════════════════════════════════════════ */
+
+.ppd-techno-growth-new {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(5rem, 9vw, 8rem) 0;
+  background:
+    radial-gradient(ellipse 38rem 22rem at 8% 60%, rgba(191, 219, 254, 0.38), transparent 72%),
+    radial-gradient(ellipse 34rem 20rem at 92% 20%, rgba(219, 234, 254, 0.3), transparent 72%),
+    #f1f6ff;
+}
+
+/* Subtle bg texture */
+.ppd-techno-growth-new::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 85% 80% at 50% 50%, #000 10%, transparent 100%);
+}
+
+/* ─── Outer wrapper ─────────────────────────────────── */
+.ppd-techno-growth-new__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 6vw, 5rem);
+}
+
+/* ─── Top: Eyebrow + Title + Subtitle ───────────────── */
+.ppd-techno-growth-new__top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 680px;
+}
+
+.ppd-techno-growth-new__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 999px;
+  background: rgba(239, 246, 255, 0.95);
+  color: #1d4ed8;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.ppd-techno-growth-new__status {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+  animation: ppd-status-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes ppd-status-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.75); }
+}
+
+.ppd-techno-growth-new__title {
+  margin: 0;
+  color: #0f1f3d;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: clamp(2.1rem, 3.8vw, 3.1rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.1;
+}
+
+.ppd-techno-growth-new__title span {
+  display: block;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 600;
+  color: #133580;
+  -webkit-text-fill-color: #133580;
+}
+
+.ppd-techno-growth-new__subtitle {
+  margin: 0;
+  color: #64748b;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 560px;
+}
+
+/* ─── Bottom: Two-col layout ─────────────────────────── */
+.ppd-techno-growth-new__body {
+  display: grid;
+  grid-template-columns: 1fr 1.55fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+/* ─── Left: Feature cards ────────────────────────────── */
+.ppd-techno-growth-new__features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ppd-techno-growth-new__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.35rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(219, 234, 254, 0.85);
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease, border-color 280ms ease;
+  backdrop-filter: blur(6px);
+}
+
+.ppd-techno-growth-new__feature:hover {
+  transform: translateX(5px);
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+}
+
+.ppd-techno-growth-new__feature-icon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.22);
+}
+
+.ppd-techno-growth-new__feature-text h3 {
+  margin: 0 0 0.3rem;
+  color: #0f1f3d;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.ppd-techno-growth-new__feature-text p {
+  margin: 0;
+  color: #64748b;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+/* ─── Right: Interactive panel ───────────────────────── */
+.ppd-techno-growth-new__panel-wrap {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(219, 234, 254, 0.85),
+    0 20px 56px rgba(19, 53, 128, 0.1);
+  background: #ffffff;
+  min-height: 480px;
+}
+
+/* ── Vertical Tab Rail ── */
+.ppd-techno-tabs {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 100%);
+  border-right: 1px solid rgba(191, 219, 254, 0.7);
+  padding: 0.6rem 0;
+  min-width: 52px;
+}
+
+.ppd-techno-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 1.1rem 0.75rem;
+  border: none;
+  border-left: 3px solid transparent;
+  background: transparent;
+  color: #64748b;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease;
+  text-align: center;
+  line-height: 1.25;
+  position: relative;
+}
+
+.ppd-techno-tab:hover {
+  color: #1e293b;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.ppd-techno-tab.is-active {
+  color: var(--tab-color, #2563eb);
+  background: rgba(255, 255, 255, 0.95);
+  border-left-color: var(--tab-color, #2563eb);
+  font-weight: 700;
+}
+
+.ppd-techno-tab__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: transparent;
+  transition: background 200ms ease;
+}
+
+.ppd-techno-tab.is-active .ppd-techno-tab__icon {
+  background: color-mix(in srgb, var(--tab-color, #2563eb) 12%, transparent);
+  color: var(--tab-color, #2563eb);
+}
+
+.ppd-techno-tab__label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  font-size: 0.67rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  padding: 0.15rem 0;
+}
+
+/* ── Panel content area ── */
+.ppd-techno-panel {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  gap: 1.75rem;
+  animation: ppd-panel-enter 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes ppd-panel-enter {
+  from { opacity: 0; transform: translateX(14px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Category kicker */
+.ppd-techno-panel__category {
+  margin: 0;
+  color: var(--panel-color, #2563eb);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Headline */
+.ppd-techno-panel__headline {
+  margin: 0.45rem 0 0;
+  color: #0f172a;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+}
+
+/* Description */
+.ppd-techno-panel__description {
+  margin: 0;
+  color: #475569;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.975rem;
+  line-height: 1.8;
+}
+
+/* Divider */
+.ppd-techno-panel__divider {
+  height: 1px;
+  background: rgba(226, 232, 240, 0.9);
+  border: none;
+  margin: 0;
+}
+
+/* Bullets */
+.ppd-techno-panel__bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ppd-techno-panel__bullet {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #334155;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.ppd-techno-panel__bullet-check {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+/* Stat row */
+.ppd-techno-panel__stat {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  border-radius: 14px;
+  border: 1.5px solid;
+  width: fit-content;
+  margin-top: auto;
+}
+
+.ppd-techno-panel__stat-value {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.ppd-techno-panel__stat-label {
+  color: #475569;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.83rem;
+  font-weight: 600;
+  line-height: 1.4;
+  max-width: 130px;
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .ppd-techno-growth-new__body {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .ppd-techno-growth-new__panel-wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: auto;
+  }
+
+  .ppd-techno-tabs {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    padding: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .ppd-techno-tabs::-webkit-scrollbar { display: none; }
+
+  .ppd-techno-tab {
+    flex: 1;
+    flex-direction: row;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    padding: 0.85rem 0.6rem;
+    min-width: 70px;
+    gap: 0;
+  }
+
+  .ppd-techno-tab.is-active {
+    border-bottom-color: var(--tab-color, #2563eb);
+    border-left-color: transparent;
+  }
+
+  .ppd-techno-tab__icon { display: none; }
+
+  .ppd-techno-tab__label {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.68rem;
+  }
+
+  .ppd-techno-panel__headline {
+    font-size: 1.35rem;
+  }
+
+  .ppd-techno-panel__stat-value {
+    font-size: 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ppd-techno-growth-new__status { animation: none; }
+  .ppd-techno-panel { animation: none; }
+  .ppd-techno-growth-new__feature { transition: none; }
+}

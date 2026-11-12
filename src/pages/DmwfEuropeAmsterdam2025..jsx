@@ -1,7 +1,7 @@
 import React from 'react'
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbDmwf from '../components/BreadcrumbDmwf'
+// import BreadcrumbDmwf from '../components/BreadcrumbDmwf'
 import DmwfComponent from '../components/Dmwfcomponent'
 import DmwfSection from '../components/DmwfSection'
 import DmwfSection2 from '../components/DmwfSection2'
@@ -21,7 +21,7 @@ export default function DmwfEuropeAmsterdam2025() {
         <meta property="og:description" content="Join ProPlus Data at the DMWF Europe in Amsterdam 2025 to explore the latest trends and innovations in data management, analytics, and business intelligence." />
       </Helmet> 
       <Header1/>
-      <BreadcrumbDmwf/>
+      {/* <BreadcrumbDmwf/> */}
       <DmwfComponent/>
       <DmwfSection/>
       <DmwfSection2/>

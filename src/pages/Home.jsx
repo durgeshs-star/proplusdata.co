@@ -1,20 +1,22 @@
 // import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import Header1 from '../components/Header1';
 import Hero1 from '../components/Hero1';
 import Footer from '../components/Footer';
 import Flipbox from '../components/Flipbox';
-import Cta from '../components/Cta';
 import AboutSection from '../components/AboutSection';
 import SolutionSection from '../components/SolutionSection';
 import OurProcess from '../components/OurProcess';
-import ProspectIntelligence from '../components/ProspectIntelligence';
-import ProspectFlipbox from '../components/ProspectFlipbox';
 import BrandSection from '../components/BrandSection';
-import ClientComponent from '../components/ClientComponent';
+import WhyProPlusData from '../components/WhyProPlusData';
 
 export default function Home() {
+  useEffect(() => {
+    document.body.classList.add('proplus-home-page');
+    return () => document.body.classList.remove('proplus-home-page');
+  }, []);
 
   // const [collapsed, setCollapsed] = useState(false);
 
@@ -27,7 +29,7 @@ export default function Home() {
   // }, []);
 
   return (
-    <div>
+    <div className="proplus-home">
 
       <Helmet>
         <title>ProPlus Data | B2B Data Solutions | Intent & Buying Signals</title>
@@ -52,15 +54,9 @@ export default function Home() {
 
       <Flipbox />
 
-      <ClientComponent />
-
-      <Cta />
+      <WhyProPlusData />
 
       <AboutSection />
-
-      <ProspectIntelligence />
-
-      <ProspectFlipbox />
 
       <SolutionSection />
 
@@ -68,7 +64,7 @@ export default function Home() {
 
       <BrandSection />
 
-      <Footer />
+      <Footer homepage />
 
       {/* Playbook Button */}
 

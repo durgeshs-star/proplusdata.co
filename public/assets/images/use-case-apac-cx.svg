@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="94" y1="42" x2="1096" y2="636" gradientUnits="userSpaceOnUse"><stop stop-color="#F3F8FF"/><stop offset="1" stop-color="#E7F1FB"/></linearGradient>
+    <filter id="shadow" x="180" y="113" width="840" height="459" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feGaussianBlur in="SourceAlpha" stdDeviation="15"/><feOffset dy="12"/><feComponentTransfer><feFuncA type="linear" slope=".1"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1200v675H0z"/><circle cx="1040" cy="101" r="164" fill="#D9E8FA"/><circle cx="105" cy="577" r="185" fill="#DDEEEB"/>
+  <path d="M0 537c197-60 364-30 538 11 234 56 442 39 662-38v165H0V537Z" fill="#DCEAF8"/>
+  <g filter="url(#shadow)">
+    <rect x="218" y="149" width="764" height="379" rx="25" fill="#fff" stroke="#D7E2EF" stroke-width="2"/>
+    <text x="260" y="194" fill="#607895" font-family="Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="2">ASIA PACIFIC CUSTOMER EXPERIENCE</text>
+    <rect x="262" y="220" width="676" height="266" rx="20" fill="#F5F8FC"/>
+    <path d="M344 355c89-116 197-105 274-23 60 64 126 78 214-3" stroke="#ABC3E2" stroke-width="4" stroke-linecap="round" stroke-dasharray="3 11"/>
+    <path d="M351 361c110-115 227-72 297 0 64 67 114 64 184-4" stroke="#8ACFC8" stroke-opacity=".62" stroke-width="2"/>
+    <circle cx="360" cy="342" r="34" fill="#fff" stroke="#75A2DF" stroke-width="3"/><circle cx="360" cy="342" r="12" fill="#3979D4"/>
+    <circle cx="536" cy="301" r="29" fill="#fff" stroke="#F0B45D" stroke-width="3"/><circle cx="536" cy="301" r="10" fill="#F28C45"/>
+    <circle cx="678" cy="365" r="34" fill="#fff" stroke="#75A2DF" stroke-width="3"/><circle cx="678" cy="365" r="12" fill="#3979D4"/>
+    <circle cx="852" cy="329" r="29" fill="#fff" stroke="#55B89B" stroke-width="3"/><circle cx="852" cy="329" r="10" fill="#45B899"/>
+    <rect x="283" y="447" width="144" height="24" rx="12" fill="#E8F2FF"/><circle cx="300" cy="459" r="4" fill="#3979D4"/>
+    <rect x="745" y="447" width="164" height="24" rx="12" fill="#E7F5F1"/><circle cx="762" cy="459" r="4" fill="#45B899"/>
+  </g>
+  <path d="M114 263h86M1000 431h88" stroke="#8DAACF" stroke-width="2" stroke-dasharray="6 8"/>
+  <circle cx="104" cy="263" r="10" fill="#fff" stroke="#3979D4" stroke-width="3"/><circle cx="1096" cy="431" r="10" fill="#FFF2DF" stroke="#F28C45" stroke-width="3"/>
+  <rect x="73" y="90" width="156" height="43" rx="21" fill="#fff" fill-opacity=".9"/>
+</svg>

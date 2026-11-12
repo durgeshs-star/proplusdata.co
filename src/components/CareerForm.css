@@ -1,0 +1,274 @@
+.ppd-career-form-container {
+  position: relative;
+  padding: 2rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 767.98px) {
+  .ppd-career-form-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .ppd-career-form-container {
+    padding: 1.25rem;
+  }
+}
+
+.ppd-career-form-title {
+  margin: 0 0 1.5rem;
+  color: #0f1f3d;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.ppd-career-form-title span {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #133580;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.ppd-career-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ppd-career-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.ppd-career-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ppd-career-form-group label {
+  color: #334155;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+.ppd-career-form-group input,
+.ppd-career-form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.ppd-career-form-group input:focus,
+.ppd-career-form-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.ppd-career-form-group input::placeholder,
+.ppd-career-form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.ppd-career-form-group input[readonly] {
+  background: #f1f5f9;
+  cursor: not-allowed;
+}
+
+.ppd-career-form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.ppd-career-form-file {
+  position: relative;
+}
+
+.ppd-career-form-file input[type="file"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.ppd-career-form-file input[type="file"]:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.ppd-career-form-file-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.ppd-career-form-file-name {
+  flex: 1;
+  color: #334155;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ppd-career-form-file-size {
+  color: #64748b;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.ppd-career-form-submit {
+  min-height: 48px;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition:
+    transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 200ms ease,
+    background-color 200ms ease;
+}
+
+.ppd-career-form-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+.ppd-career-form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ppd-career-form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.ppd-career-form-success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.ppd-career-form-success h3 {
+  margin: 0;
+  color: #0f172a;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.ppd-career-form-success p {
+  margin: 0;
+  color: #64748b;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.ppd-career-form-reset {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  background: transparent;
+  color: #3b82f6;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.ppd-career-form-reset:hover {
+  background: rgba(59, 130, 246, 0.05);
+  color: #2563eb;
+}
+
+@media (max-width: 767.98px) {
+  .ppd-career-form-title {
+    font-size: 1.75rem;
+  }
+
+  .ppd-career-form-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .ppd-career-form-group label {
+    font-size: 0.85rem;
+  }
+
+  .ppd-career-form-group input,
+  .ppd-career-form-group textarea {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .ppd-career-form-group input,
+  .ppd-career-form-group textarea,
+  .ppd-career-form-file input[type="file"] {
+    padding: 0.65rem 0.875rem;
+    font-size: 0.875rem;
+  }
+}

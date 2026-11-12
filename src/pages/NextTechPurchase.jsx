@@ -3,15 +3,16 @@ import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
 import NtpComponent from '../components/NtpComponent'
-import BreadcrumbNtp from '../components/BreadcrumbNtp'
 import NtpFeatures from '../components/NtpFeatures'
 import NtpBenefits from '../components/NtpBenefits'
 import CtaNtp from '../components/CtaNtp'
+// import SolutionBreadcrumb from '../components/solutions/SolutionBreadcrumb'
+import '../components/solutions/SolutionSystem.css'
 
 
 export default function NextTechPurchase() {
   return (
-    <div>
+    <div className="ppd-solutions-page">
        <Helmet>
        {typeof window !== 'undefined' && (
   <script
@@ -51,14 +52,16 @@ export default function NextTechPurchase() {
                                      content="Anticipate client tech shifts with Next Tech Purchase® by ProPlus Data. Leverage predictive intelligence to align GTM strategies and drive growth with foresight." />
         </Helmet>
       <Header1/>
-      <BreadcrumbNtp/>
-      <NtpComponent/>
-      <NtpFeatures/>
-      <NtpBenefits/>
-      <CtaNtp/>
-      <Footer/>
-      <div class="btnwhatsapp-sm">
-        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i class="fa fa-whatsapp"></i></a>
+        <main className="ppd-solution ppd-solution--next-tech-purchase">
+          {/* <SolutionBreadcrumb label={<>Next Tech Purchase<sup>&reg;</sup></>} parentHref="/next-tech-purchase" /> */}
+          <NtpComponent/>
+          <NtpFeatures/>
+          <NtpBenefits/>
+          <CtaNtp/>
+        </main>
+        <Footer/>
+        <div className="btnwhatsapp-sm">
+          <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i className="fa fa-whatsapp"></i></a>
     </div>
     </div>
   )

@@ -1,0 +1,117 @@
+.ppd-gtm-final-cta {
+  background-color: #0d1b3e;
+  padding: clamp(60px, 10vw, 100px) 0;
+}
+
+.ppd-gtm-final-cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ppd-gtm-final-cta-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+
+.ppd-gtm-final-cta-title {
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+}
+
+.ppd-gtm-final-cta-description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+.ppd-gtm-final-cta-action {
+  display: flex;
+  align-items: center;
+}
+
+.ppd-gtm-final-cta-button {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #ffffff;
+  color: #0d1b3e;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.ppd-gtm-final-cta-button:hover {
+  background: #f1f6ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 991px) {
+  .ppd-gtm-final-cta {
+    padding: 50px 0 80px;
+  }
+
+  .ppd-gtm-final-cta-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .ppd-gtm-final-cta-action {
+    justify-content: center;
+  }
+
+  .ppd-gtm-final-cta-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ppd-gtm-final-cta {
+    padding: 40px 0 60px;
+  }
+
+  .ppd-gtm-final-cta-inner {
+    padding: 0 16px;
+  }
+
+  .ppd-gtm-final-cta-title {
+    font-size: 32px;
+  }
+
+  .ppd-gtm-final-cta-description {
+    font-size: 16px;
+  }
+
+  .ppd-gtm-final-cta-button {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ppd-gtm-final-cta-title {
+    font-size: 28px;
+  }
+
+  .ppd-gtm-final-cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ppd-gtm-final-cta-button {
+    transition: none;
+  }
+}

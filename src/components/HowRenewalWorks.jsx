@@ -1,90 +1,84 @@
 import React from "react";
 
+const steps = [
+  {
+    number: "01",
+    label: "Spot the signal",
+    title: "Know when a renewal is coming.",
+    description:
+      "See upcoming technology contract renewals across your target accounts, with time to prepare.",
+  },
+  {
+    number: "02",
+    label: "Start the conversation",
+    title: "Reach buyers at the right moment.",
+    description:
+      "Prioritize accounts entering an evaluation window and tailor outreach to their changing needs.",
+  },
+  {
+    number: "03",
+    label: "Build the opportunity",
+    title: "Turn timing into account growth.",
+    description:
+      "Bring a relevant solution to the conversation before renewal decisions are locked in.",
+  },
+];
+
 const HowRenewalWorks = () => {
   return (
-    <div className="how_it_work pt-30 pb-45">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="section_title text_center mb-60 mt-3">
-             
-              <div className="section_main_title">
-                <h2>How It <span>Works</span> 
-                </h2>
+    <section className="ppd-renewal-how" aria-labelledby="ppd-renewal-how-title">
+      <div className="ppd-solution-shell">
+        <header className="ppd-renewal-how-header">
+          <p className="ppd-renewal-how-eyebrow">From signal to opportunity</p>
+          <h2 className="ppd-renewal-how-title" id="ppd-renewal-how-title">
+            How It <span>Works.</span>
+          </h2>
+          <p className="ppd-renewal-how-intro">
+            A clearer view of renewal timing helps your team make every next move
+            more relevant.
+          </p>
+        </header>
+        <div className="ppd-renewal-how-steps">
+          {steps.map((step, index) => (
+            <article
+              className={`ppd-renewal-how-step ppd-renewal-how-step--${index + 1}`}
+              key={step.number}
+            >
+              <div className="ppd-renewal-how-step-heading">
+                <span className="ppd-renewal-how-step-number">{step.number}</span>
+                <span className="ppd-renewal-how-step-label">{step.label}</span>
+                <span className="ppd-renewal-how-step-arrow" aria-hidden="true">↗</span>
               </div>
-              <div className="em_bar">
-                <div className="em_bar_bg"></div>
+              <h3>{step.title}</h3>
+              <p className="ppd-renewal-how-step-description">{step.description}</p>
+              <div className={`ppd-renewal-how-scene ppd-renewal-how-scene--${index + 1}`} aria-hidden="true">
+                {index === 0 && (
+                  <div className="ppd-renewal-scene-tracking">
+                    <div className="ppd-renewal-scene-topline"><span>ACCOUNT SIGNALS</span><i /></div>
+                    <div className="ppd-renewal-scene-row"><b>Northstar Health</b><span>Renewal in 42 days</span><i /></div>
+                    <div className="ppd-renewal-scene-row"><b>Meridian Group</b><span>Renewal in 68 days</span><i /></div>
+                    <div className="ppd-renewal-scene-timeline"><i /><span /><i /><span /><i /></div>
+                  </div>
+                )}
+                {index === 1 && (
+                  <div className="ppd-renewal-scene-outreach">
+                    <div className="ppd-renewal-scene-message"><i /><span /><span /></div>
+                    <div className="ppd-renewal-scene-reply"><span /><span /></div>
+                    <div className="ppd-renewal-scene-send"><span>Relevant account context</span><b>↗</b></div>
+                  </div>
+                )}
+                {index === 2 && (
+                  <div className="ppd-renewal-scene-growth">
+                    <div className="ppd-renewal-scene-ring"><span>86<small>FIT</small></span></div>
+                    <div className="ppd-renewal-scene-growth-copy"><b>Account opportunity</b><span>Renewal window identified</span><i><em /></i></div>
+                  </div>
+                )}
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="row">
-          {/* Step 1 */}
-          <div className="col-lg-4 col-md-6 col-sm-12">
-            <div className="single_it_work mb-4">
-              <div className="single_it_work_content pl-2 pr-2">
-                <div className="single_it_work_content_list pb-5">
-                 <img src="assets/images/icon/Process1.svg" alt="real time tracking"/>
-                </div>
-                <div className="single_work_content_title pb-2">
-                  <h4> Real-Time Tracking</h4>
-                </div>
-                <div className="single_it_work_content_text pt-1">
-                  <p>
-                  Monitors subscription signals to flag upcoming renewals.
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Step 2 */}
-          <div className="col-lg-4 col-md-6 col-sm-12">
-            <div className="single_it_work mb-4">
-              <div className="single_it_work_content pl-2 pr-2">
-                <div className="single_it_work_content_list pb-5">
-                <img src="assets/images/icon/Process2.svg" alt="targeted outreach"/>
-                </div>
-                <div className="single_work_content_title pb-2">
-                  <h4>  Targeted Outreach
-                  </h4>
-                </div>
-                <div className="single_it_work_content_text pt-1">
-                  <p>
-                  Triggers strategies for retention, upsells, and growth. 
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Step 3 */}
-          <div className="col-lg-4 col-md-6 col-sm-12">
-            <div className="single_it_work mb-4">
-              <div className="single_it_work_content pl-2 pr-2">
-                <div className="single_it_work_content_list three pb-5">
-                <img src="assets/images/icon/Process3.svg" alt="client lock-in"/>
-                </div>
-                <div className="single_work_content_title pb-2">
-                  <h4>Client Lock-In
-                  </h4>
-                </div>
-                <div className="single_it_work_content_text pt-1">
-                  <p>
-                  Strengthens ties before competitors move in.
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-         
+            </article>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

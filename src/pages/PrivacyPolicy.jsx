@@ -2,12 +2,13 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
-import BreadcrumbPrivacy from '../components/BreadcrumbPrivacy'
+// import BreadcrumbPrivacy from '../components/BreadcrumbPrivacy'
 import PolicyComponent from '../components/PolicyComponent'
+import '../components/PrivacyPolicy.css'
 
 export default function PrivacyPolicy() {
   return (
-    <div>
+    <div className="ppd-privacy-page">
       <Helmet>
                   <title>Privacy Policy | How ProPlus Data Protects Your Data</title>
                 <meta name="description" content="Learn how ProPlus Data collects, uses, and protects your information. Review our privacy practices to understand your rights and our data security standards."/>
@@ -20,12 +21,20 @@ export default function PrivacyPolicy() {
                    content="Learn how ProPlus Data collects, uses, and protects your information. Review our privacy practices to understand your rights and our data security standards." />
       </Helmet>
       <Header1/>
-      <BreadcrumbPrivacy/>
-      <PolicyComponent/>
+      <main className="ppd-privacy">
+        {/* <BreadcrumbPrivacy/> */}
+        <PolicyComponent/>
+      </main>
       <Footer/>
-      <div class="btnwhatsapp-sm">
-        <a target="_blank" rel="noreferrer" href="https://wa.me/+919112110691"><i class="fa fa-whatsapp"></i></a>
-    </div>
+      <a
+        className="ppd-privacy-whatsapp"
+        target="_blank"
+        rel="noreferrer"
+        href="https://wa.me/+919112110691"
+        aria-label="Chat with ProPlus Data on WhatsApp"
+      >
+        <i className="fa fa-whatsapp" aria-hidden="true" />
+      </a>
     </div>
   )
 }

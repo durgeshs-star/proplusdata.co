@@ -3,57 +3,57 @@ import { Link } from "react-router-dom";
 
 const usecases = [
   {
-    img: "assets/images/siemens-case-study.webp",
+    img: "assets/images/use-case-fortune500-manufacturer.svg",
     title: "How a Fortune 500 Manufacturer Transformed GTM with ProPlus",
     description:
       "ProPlus enabled a Fortune 500 manufacturer to boost pipeline precision across 11 regions and 10+ industries, driving 2.8x engagement and 43% GTM efficiency gains.",
     link: "/how-a-fortune-500-manufacturer-transformed-gtm-with-proplus",
-    alt: "fortune500-gtm-case-study",
+    alt: "Illustration of manufacturing regions connected to a precision-targeted sales pipeline",
   },
   {
-    img: "assets/images/renewal-intelligence-use-case.svg",
+    img: "assets/images/use-case-cloud-renewal.svg",
     title:
       "ProPlus' Renewal Intelligence Fuel 3X Pipeline Velocity for Leading Cloud Enterprise",
     description:
       "ProPlus Data enabled a global cloud leader to accelerate demand and pipeline velocity by leveraging renewal, technographic...",
     link: "/proplus-renewal-intelligence-boosts-cloud-enterprise-pipeline-3x",
-    alt: "proplus-renewal-intelligence-boosts-cloud-enterprise-pipeline-3x",
+    alt: "Illustration of cloud account renewal signals accelerating a sales pipeline",
   },
   {
-    img: "assets/images/use-case1.webp",
+    img: "assets/images/use-case-apac-cx.svg",
     title:
       "Cracking The Code: APAC CX Transformation Success Unveiled !",
     description:
       "Our Client, a global tech solution provider of Cloud-based Customer Experience (CX) driven by the transformative capabilities of CX One, sought to address key pain points in the APAC region.",
     link: "https://proplusdata.co/cracking-the-code-apac-transformation-success-unveiled.pdf",
-    alt: "apac-cx-transformation-success",
+    alt: "Illustration of connected customer experience teams across the Asia Pacific region",
   },
   {
-    img: "assets/images/use-case5.webp",
+    img: "assets/images/use-case-asean-cybersecurity.svg",
     title:
       "How ProPlus Data Accelerated ASEAN Market penetration Of A Western Market Leader IN Cyber Security?",
     description:
       "In the cybersecurity sector, our client is a standout leader, renowned for pioneering solutions in the...",
     link: "https://proplusdata.co/how-proplus-data-accelerated-asean-market-penetration-of-a-westren-market-leader-in-cybersecurity.pdf",
-    alt: "accelerating-asean-market-penetration",
+    alt: "Illustration of a cybersecurity shield protecting a connected Southeast Asian market",
   },
   {
-    img: "assets/images/use-case4.webp",
+    img: "assets/images/use-case-data-dashboard.svg",
     title:
       "How ProPlus Data's Dashboard Resonates Powerful Message Than An Aggregated Tool?",
     description:
       "Our client empowers companies of all sizes with the tools and technologies to bring ideas from concept to creation faster and more efficiently.",
     link: "https://proplusdata.co/how-proplus-data's-dashboard-resonates-powerful-message-than-an-aggregated-tool.pdf",
-    alt: "the-power-of-proplus-data-dashboard",
+    alt: "Illustration of a data intelligence dashboard turning metrics into clear insights",
   },
   {
-    img: "assets/images/use-case3.webp",
+    img: "assets/images/use-case-cloud-account-discovery.svg",
     title:
       "How ProPlus Data Helped Cloud Computing Giant Find Hidden Gems in a Sea of Accounts.",
     description:
       "Our client, a cloud computing giant, struggled to identify high-value customers among their massive user base. ProPlus Data helped them solve this...",
     link: "https://proplusdata.co/how-proplus-data-helped-cloud-computing-giant-find-hidden-gems-in-a-sea-of-accounts.pdf",
-    alt: "proplus-data-cloud-success",
+    alt: "Illustration of cloud accounts being analyzed to reveal high-value opportunities",
   },
 ];
 
@@ -83,71 +83,66 @@ const SmartLink = ({ link, children, className }) => {
 
 const UseCasesComponent = () => {
   return (
-    <div className="blog_area pt-85 pb-65">
-      <div className="container">
-        <div className="row">
+    <>
+      <section className="ppd-usecases-hero">
+        <div className="ppd-usecases-shell">
+          <span className="ppd-usecases-eyebrow">
+            CASE STUDIES
+          </span>
+          <h1>Real-World Success Stories</h1>
+          <div className="ppd-usecases-rule"></div>
+          <p>Discover how leading organizations leverage ProPlus Data to transform their GTM strategies and achieve remarkable results across industries.</p>
+        </div>
+      </section>
+
+      <section className="ppd-usecases-content">
+        <div className="ppd-usecases-grid">
           {usecases.map((blog, index) => (
-            <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
-              <div className="single_blog mb-30">
-                
-                {/* Image */}
-                <div className="single_blog_thumb pb-4">
-                  <SmartLink link={blog.link}>
-                    <img src={blog.img} alt={blog.alt} />
-                  </SmartLink>
-                </div>
-
-                {/* Content */}
-                <div className="single_blog_content pl-4 pr-4">
-                  
-                  {/* Title */}
-                  <div className="blog_page_title pb-1 pt-4 text-left">
-                    <h3>
-                      <SmartLink link={blog.link}>
-                        {blog.title}
-                      </SmartLink>
-                    </h3>
-                  </div>
-
-                  {/* Description */}
-                  {blog.description && (
-                    <div className="blog_description text-left">
-                      <p>{blog.description}</p>
-                    </div>
-                  )}
-
-                  {/* Button */}
-                  {blog.description && (
-                    <div className="blog_page_button pb-4 text-left">
-                      <SmartLink
-                        link={blog.link}
-                        className="read-more-link"
-                      >
-                        Read More{" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="14"
-                          height="14"
-                          fill="currentColor"
-                          viewBox="0 0 16 16"
-                          style={{ marginLeft: "5px" }}
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M1 8a.5.5 0 0 1 .5-.5h11.793L9.146 4.354a.5.5 0 1 1 .708-.708l4.5 4.5a.498.498 0 0 1 .146.35.498.498 0 0 1-.146.35l-4.5 4.5a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                          />
-                        </svg>
-                      </SmartLink>
-                    </div>
-                  )}
-
-                </div>
+            <article className="ppd-usecase-card" key={index}>
+              <div className="ppd-usecase-image">
+                <SmartLink link={blog.link} className="ppd-usecase-image-link">
+                  <img src={blog.img} alt={blog.alt} />
+                </SmartLink>
               </div>
-            </div>
+
+              <div className="ppd-usecase-content">
+                <h2 className="ppd-usecase-title">
+                  <SmartLink link={blog.link}>
+                    {blog.title}
+                  </SmartLink>
+                </h2>
+
+                {blog.description && (
+                  <p className="ppd-usecase-description">{blog.description}</p>
+                )}
+
+                {blog.description && (
+                  <div className="ppd-usecase-action">
+                    <SmartLink link={blog.link} className="ppd-usecase-link">
+                      Read More
+                      <svg
+                        className="ppd-usecase-arrow"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793L9.146 4.354a.5.5 0 1 1 .708-.708l4.5 4.5a.498.498 0 0 1 .146.35.498.498 0 0 1-.146.35l-4.5 4.5a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                        />
+                      </svg>
+                    </SmartLink>
+                  </div>
+                )}
+              </div>
+            </article>
           ))}
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 

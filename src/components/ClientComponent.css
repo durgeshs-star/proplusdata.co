@@ -1,0 +1,140 @@
+.ppd-gtm-trust {
+  background: #ffffff;
+  padding: clamp(50px, 8vw, 80px) 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.ppd-gtm-trust-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 clamp(1rem, 4vw, 4rem);
+}
+
+.ppd-gtm-trust-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #133580;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.ppd-gtm-trust-title {
+  font-size: clamp(28px, 3.5vw, 36px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0d1b3e;
+  margin: 0;
+}
+
+.ppd-gtm-trust-title span {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #133580;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.ppd-gtm-trust-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ppd-gtm-trust-track {
+  display: flex;
+  animation: ppd-gtm-trust-scroll 15s linear infinite;
+}
+
+.ppd-gtm-trust-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  padding: 0 50px;
+  opacity: 0.7;
+  transition: opacity 200ms ease;
+}
+
+.ppd-gtm-trust-item:hover {
+  opacity: 1;
+}
+
+.ppd-gtm-trust-item img {
+  max-width: 200px;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 200ms ease;
+}
+
+.ppd-gtm-trust-item:hover img {
+  filter: grayscale(0%);
+}
+
+@keyframes ppd-gtm-trust-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 991px) {
+  .ppd-gtm-trust-header {
+    margin-bottom: 40px;
+  }
+
+  .ppd-gtm-trust-item {
+    height: 100px;
+    padding: 0 35px;
+  }
+
+  .ppd-gtm-trust-item img {
+    max-width: 160px;
+    max-height: 65px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ppd-gtm-trust {
+    padding: 40px 0 60px;
+  }
+
+  .ppd-gtm-trust-header {
+    margin-bottom: 30px;
+  }
+
+  .ppd-gtm-trust-title {
+    font-size: 26px;
+  }
+
+  .ppd-gtm-trust-item {
+    height: 85px;
+    padding: 0 30px;
+  }
+
+  .ppd-gtm-trust-item img {
+    max-width: 130px;
+    max-height: 55px;
+  }
+
+  .ppd-gtm-trust-marquee::before,
+  .ppd-gtm-trust-marquee::after {
+    width: 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ppd-gtm-trust-track {
+    animation: none;
+  }
+
+  .ppd-gtm-trust-item,
+  .ppd-gtm-trust-item img {
+    transition: none;
+  }
+}
