@@ -67,27 +67,13 @@ export default function CareerComponent() {
             </div>
           </article>
 
-          <div className="ppd-careers-visual-column col-lg-5 col-md-6">
-            <div className="ppd-careers-visual">
-              <div className="ppd-careers-visual-glow" aria-hidden="true" />
-              <div className="ppd-careers-orbit ppd-careers-orbit-one" aria-hidden="true" />
-              <div className="ppd-careers-orbit ppd-careers-orbit-two" aria-hidden="true" />
-              <div className="ppd-careers-connection" aria-hidden="true">
-                <span className="ppd-careers-connection-pulse" />
-              </div>
-              <div className="ppd-careers-image-frame">
-                <img
-                  src="/assets/images/Career.webp"
-                  alt="ProPlus Data careers"
-                />
-              </div>
-              <div className="ppd-careers-data-tag ppd-careers-data-tag-one">
-                <span aria-hidden="true" />
-                DATA INTELLIGENCE
-              </div>
-              <div className="ppd-careers-data-tag ppd-careers-data-tag-two">
-                <span aria-hidden="true" />
-                TEAM COLLABORATION
+                  </p>
+                  <p className="career-email-note">
+                    Please share your CV on <a href="mailto:careers@proplusdata.co">careers@proplusdata.co</a>
+                  </p>
+
+                </div>
+               
               </div>
             </div>
           </div>

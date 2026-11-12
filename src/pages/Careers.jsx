@@ -24,11 +24,9 @@ export default function Careers() {
              content="Join ProPlus Data and be part of a global team transforming GTM | ABM strategies with real-time intelligence. Explore impactful careers in data innovation." />
           </Helmet>
       <Header1/>
-      <main>
-        <CareerComponent/>
-        {/* <CareerSection/> */}
-        <CtaCareers/>
-      </main>
+      <BreadcrumbCareers/>
+      <CareerComponent/>
+      {/* <CareerSection/> */}
       <Footer/>
 
     </div>
