@@ -132,7 +132,7 @@ const Hero1 = () => {
                   {trialLoading ? "Submitting…" : trialStatus ? "Submitted" : "Get Started"}
                 </button>
               </div>
-              <p className="ppd-trial-form__disclaimer">By submitting this form, you agree to ProPlus Data&apos;s <Link to="/privacy-policy">Privacy Policy</Link> and <a href="mailto:info@proplusdata.co?subject=Terms%20of%20Use">Terms of Use</a>. You may unsubscribe at any time.</p>
+              <p className="ppd-trial-form__disclaimer">By submitting this form, you agree to ProPlus Data&apos;s <Link to="/privacy-policy">Privacy Policy and Terms of Use</Link> any time.</p>
               <p className="ppd-trial-form__message" role="status" aria-live="polite">{trialError || trialStatus}</p>
             </form>
             <div className="ppd-home-hero__trust" role="group" aria-label="Customer logos">

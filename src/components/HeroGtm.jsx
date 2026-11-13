@@ -67,7 +67,7 @@ const HeroGtm = () => {
         {/* ✅ Web3Forms END */}
 
         <small className="ppd-hero-note text-left">
-          By submitting this form, you agree to our <a href="/privacy-policy">Privacy Policy</a> & Terms of Service.
+          By submitting this form, you agree to our <a href="/privacy-policy">Privacy Policy & Terms of Service.</a>
         </small>
       </div>
     </div>

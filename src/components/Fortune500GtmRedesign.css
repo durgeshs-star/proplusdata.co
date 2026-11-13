@@ -508,3 +508,51 @@
     transition: none;
   }
 }
+
+/* Fortune 500 use case content and evidence blocks */
+.ppd-f500-case .ppd-f500-hero-inner { max-width: 1320px; }
+.ppd-f500-case .ppd-article-title { max-width: 1120px; }
+.ppd-f500-hero-results { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; max-width: 1060px; margin: 34px auto 0; }
+.ppd-f500-metric { display: flex; min-height: 112px; flex-direction: column; justify-content: center; gap: 8px; padding: 18px 20px; border: 1px solid rgba(37, 99, 235, .16); border-radius: 16px; background: rgba(255,255,255,.86); box-shadow: 0 12px 30px rgba(16, 43, 102, .07); text-align: center; }
+.ppd-f500-metric strong { color: #183d91; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1; }
+.ppd-f500-metric span { color: #435873; font-size: .9rem; font-weight: 650; line-height: 1.4; }
+.ppd-f500-content > .ppd-article-section:first-child { margin-top: 0; }
+.ppd-f500-intro > p:first-child { color: #203958; font-size: clamp(1.08rem, 1.5vw, 1.28rem); font-weight: 600; }
+.ppd-f500-intro .ppd-article-quote { margin-top: 30px; }
+.ppd-f500-challenge-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.ppd-f500-challenge-grid li { position: relative; padding: 18px 20px 18px 44px; border: 1px solid #e1e9f2; border-radius: 14px; background: #f8faff; color: #3d5069; font-size: 1rem; line-height: 1.6; }
+.ppd-f500-challenge-grid li::before { position: absolute; top: 1.55rem; left: 20px; width: 8px; height: 8px; border-radius: 50%; background: #3472dd; box-shadow: 0 0 0 5px #e7efff; content: ""; }
+.ppd-f500-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 30px 0 0; padding: 0; list-style: none; counter-reset: process; }
+.ppd-f500-flow li { display: flex; min-height: 102px; flex-direction: column; justify-content: space-between; gap: 12px; padding: 15px; border: 1px solid #dce6f3; border-radius: 14px; background: linear-gradient(145deg, #fff, #f4f8ff); color: #21395e; font-size: .92rem; font-weight: 700; line-height: 1.4; }
+.ppd-f500-flow li span { color: #4381e6; font-size: .75rem; font-weight: 800; letter-spacing: .12em; }
+.ppd-f500-stage-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.ppd-f500-stage { position: relative; min-width: 0; padding: 24px 22px; border: 1px solid #e0e8f1; border-radius: 16px; background: #fff; box-shadow: 0 12px 34px rgba(18, 44, 83, .055); }
+.ppd-f500-stage-number { display: block; margin-bottom: 14px; color: #4a7ed7; font-size: .75rem; font-weight: 800; letter-spacing: .12em; }
+.ppd-f500-stage h3,.ppd-f500-lever h3 { margin: 0 0 10px; color: #12284b; font-size: 1.1rem; line-height: 1.3; }
+.ppd-f500-stage p,.ppd-f500-lever p,.ppd-f500-region p { margin: 0; color: #475b74; font-size: .96rem; line-height: 1.65; }
+.ppd-f500-lever-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.ppd-f500-lever { padding: clamp(22px, 3vw, 32px); border: 1px solid #dce6f2; border-radius: 18px; background: linear-gradient(145deg, #f9fbff, #fff); }
+.ppd-f500-lever > span { display: block; margin-bottom: 14px; color: #3674df; font-size: .72rem; font-weight: 800; letter-spacing: .12em; }
+.ppd-f500-lever h3 { font-size: clamp(1.15rem, 1.6vw, 1.4rem); }
+.ppd-f500-lever ul { display: grid; gap: 10px; margin: 18px 0 0; padding-left: 19px; color: #475b74; font-size: .95rem; line-height: 1.6; }
+.ppd-f500-subheading { margin: 28px 0 15px; color: #1b3559; font-size: clamp(1.15rem, 1.8vw, 1.45rem); line-height: 1.3; }
+.ppd-f500-region-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+.ppd-f500-region { padding: 18px; border: 1px solid #dce6f2; border-radius: 14px; background: #f7faff; }
+.ppd-f500-region h3 { margin: 0 0 8px; color: #173b83; font-size: 1rem; }
+.ppd-f500-outcomes,.ppd-f500-summary ul { display: grid; gap: 12px; margin: 0; padding-left: 22px; color: #40546c; line-height: 1.65; }
+.ppd-f500-decisions { display: flex; flex-wrap: wrap; gap: 10px; }
+.ppd-f500-decisions span { padding: 11px 16px; border: 1px solid #d4e1f2; border-radius: 999px; background: #f2f7ff; color: #173b83; font-size: .92rem; font-weight: 700; }
+.ppd-f500-testimonials { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 52px 0 0; }
+.ppd-f500-testimonial { display: flex; flex-direction: column; gap: 18px; margin: 0; padding: clamp(22px, 3vw, 32px); border: 1px solid #e1e9f2; border-radius: 16px; background: #fff; box-shadow: 0 14px 36px rgba(17, 42, 80, .07); }
+.ppd-f500-testimonial blockquote { margin: 0; color: #40546c; font-size: 1rem; line-height: 1.7; }
+.ppd-f500-testimonial figcaption { color: #1d4b9f; font-size: .9rem; font-weight: 750; }
+
+@media (max-width: 900px) {
+  .ppd-f500-stage-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 680px) {
+  .ppd-f500-hero-results { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 26px; }
+  .ppd-f500-metric { min-height: 94px; padding: 14px 12px; }
+  .ppd-f500-challenge-grid,.ppd-f500-stage-grid,.ppd-f500-lever-grid,.ppd-f500-testimonials { grid-template-columns: 1fr; }
+  .ppd-f500-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

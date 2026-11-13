@@ -33,8 +33,7 @@ export default function NexoraShowcase() {
           </p>
           <p className="nexora-showcase__promise">Less searching. <strong>More seeing what matters.</strong></p>
           <div className="nexora-showcase__actions">
-            <a className="nexora-showcase__primary" href="https://nexora.proplusdata.co/login" target="_blank" rel="noopener noreferrer">Get Free Access</a>
-            <a className="nexora-showcase__secondary" href="https://nexora.proplusdata.co/" target="_blank" rel="noopener noreferrer">Meet Nexora<sup>®</sup></a>
+            <a className="nexora-showcase__primary" href="https://nexora.proplusdata.co" target="_blank" rel="noopener noreferrer">Get Free Access</a>
           </div>
           <p className="nexora-showcase__note"><span aria-hidden="true">✓</span> No credit card required</p>
         </div>

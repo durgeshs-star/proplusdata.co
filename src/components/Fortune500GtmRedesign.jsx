@@ -1,104 +1,202 @@
 import React from 'react'
 import "./Fortune500GtmRedesign.css"
 
+const metrics = [
+  { value: "45%", label: "Engagement rate" },
+  { value: "52%", label: "Target account reach rate" },
+  { value: "31%", label: "Response rate on verified outreach" },
+  { value: "2.8×", label: "Lift in campaign engagement" },
+]
+
+const challenges = [
+  "No enterprise-wide view of upcoming technology renewal cycles across key accounts.",
+  "Resource allocation lacked visibility into installed technology, detection dates, and contract maturity.",
+  "Regional teams could not anticipate competitive displacement or churn windows.",
+  "Time-sensitive detection insights were missing, undermining timely, relevant outreach.",
+  "Legacy technology adoption patterns in emerging regions remained largely uncharted.",
+  "Growth initiatives missed buying signals tied to upgrade or replacement intent.",
+  "Market engagement strategies were misaligned with the actual technology landscape.",
+  "Strategic engagement often came too late, after renewal decisions had already been made.",
+]
+
+const intelligenceSteps = [
+  "Intent signals",
+  "Contact data acquisition",
+  "Technographic account intelligence",
+  "Renewal intelligence",
+  "EDM activation",
+  "VVL qualification",
+  "Lead delivery",
+]
+
+const executionStages = [
+  {
+    title: "Intent Signals",
+    description: "We identified accounts showing active interest in relevant solutions through digital behavior, content engagement, and research activity.",
+  },
+  {
+    title: "Technographic Account Intelligence",
+    description: "Each account was profiled for its current technology environment, including contract detection dates, deployment maturity, and potential switch triggers, enabling more contextual targeting.",
+  },
+  {
+    title: "Renewal Intelligence",
+    description: "Accounts were filtered by contract renewal timelines and technology lifecycle stages, so outreach could happen when decision windows were open—before renewal inertia set in.",
+  },
+  {
+    title: "EDM Activation",
+    description: "Targeted electronic direct mail reflected each buyer’s technology stack, intent behavior, and regional nuances.",
+  },
+  {
+    title: "VVL Qualification",
+    description: "Every response was validated through direct conversations with decision-makers to confirm pain points, priorities, and project timelines.",
+  },
+  {
+    title: "Lead Delivery",
+    description: "Only verified, sales-ready opportunities backed by buyer intent and technology context were passed to the client’s commercial teams.",
+  },
+]
+
+const regionalFindings = [
+  { label: "India", detail: "Electronics led the mix at 41%." },
+  { label: "Japan", detail: "Electronics led the mix at 44%." },
+  { label: "Korea", detail: "Semiconductors led demand at 43%." },
+  { label: "ASEAN", detail: "Demand was balanced; Electronics (32%) and Semiconductors (22%) led." },
+  { label: "ANZ", detail: "Energy & Utilities (21%) and Aerospace & Defense (17%) showed focused traction." },
+]
+
+const outcomes = [
+  "More meaningful leads and fewer wasted ones, with quality improving in previously underperforming sectors.",
+  "Sales teams received leads with context: buyer type, signal source, and timing.",
+  "Regional leaders could prioritize what was working and understand why, instead of chasing campaign volume.",
+  "Clearer attribution tied marketing spend to strategic outcomes rather than vanity metrics.",
+]
+
+const testimonials = [
+  {
+    quote: "ProPlus helped us prioritize high-conversion accounts and align marketing with sales execution. That shifted results quickly. We’ve seen the impact, and now we’re leaning on them to help us scale faster across regions and tighten the handoff to sales even further.",
+    role: "VP, Marketing – Growth Markets",
+  },
+  {
+    quote: "Partnering with ProPlus gave us the clarity we needed to focus on the right accounts. Their data-driven insights helped us accelerate pipeline growth and improve alignment between our sales and marketing teams. The partnership now plays a critical role in scaling our efforts across global markets.",
+    role: "Director, Demand Gen",
+  },
+]
+
 export default function Fortune500GtmRedesign() {
   return (
-    <main className="ppd-article-page ppd-article-page--fortune-gtm">
+    <main className="ppd-article-page ppd-article-page--fortune-gtm ppd-f500-case">
       <section className="ppd-article-hero">
-        <div className="ppd-article-hero-inner">
-          <span className="ppd-article-eyebrow">
-            CASE STUDY
-          </span>
-          <h1 className="ppd-article-title">
-            How a Fortune 500 Manufacturing Conglomerate Fixed GTM Across 11 Regions and 10+ Industries with ProPlus
-          </h1>
-          <p className="ppd-article-lead">
-            A Fortune 500 Manufacturing Conglomerate operating across 11+ regions and serving over 10 high-value sectors, including Automotive, Semiconductors, Aerospace, Energy, Electronics, and Consumer Products, set out to sharpen its global go-to-market strategy.
-          </p>
+        <div className="ppd-article-hero-inner ppd-f500-hero-inner">
+          <span className="ppd-article-eyebrow">Use case</span>
+          <h1 className="ppd-article-title">How a Fortune 500 Manufacturing Conglomerate Fixed GTM Across 11 Regions and 10+ Industries with ProPlus</h1>
+          <div className="ppd-f500-hero-results" aria-label="Case study results">
+            {metrics.map((metric) => (
+              <div className="ppd-f500-metric" key={metric.label}>
+                <strong>{metric.value}</strong>
+                <span>{metric.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="ppd-article-body-section">
-        <article className="ppd-article-content">
-          <section className="ppd-article-section">
-            <h2 className="ppd-article-section-title">The Challenge</h2>
-            <p>Despite the scale, the organization lacked clarity on which opportunities to prioritize, where to focus resources, and how to align marketing with frontline sales. The GTM engine was fully loaded: campaigns running, leads flowing, teams in motion.</p>
-            <p>However, behind the activity, key questions remained unanswered:</p>
-            <div className="ppd-article-quote">
-              <p>"We're generating leads. But which ones matter? Where do we double down? And how do we align marketing's signal with sales reality, without creating more dashboards and meetings?"</p>
-            </div>
+        <article className="ppd-article-content ppd-f500-content">
+          <section className="ppd-article-section ppd-f500-intro">
+            <p>A Fortune 500 manufacturing conglomerate operating across 11+ regions and serving over 10 high-value sectors—including Automotive, Semiconductors, Aerospace, Energy, Electronics, and Consumer Products—set out to sharpen its global go-to-market strategy.</p>
+            <p>Despite its scale, the organization lacked clarity on which opportunities to prioritize, where to focus resources, and how to align marketing with frontline sales. Campaigns were running, leads were flowing, and teams were in motion. Yet key questions remained unanswered:</p>
+            <blockquote className="ppd-article-quote"><p>“We’re generating leads. But which ones matter? Where do we double down? And how do we align marketing’s signal with sales reality, without creating more dashboards and meetings?”</p></blockquote>
           </section>
 
           <section className="ppd-article-section">
-            <h2 className="ppd-article-section-title">The Results</h2>
-            <div className="ppd-article-metrics-grid">
-              <div className="ppd-article-metric-card">
-                <div className="ppd-article-metric-value">45%</div>
-                <div className="ppd-article-metric-label">Engagement Rate</div>
-              </div>
-              <div className="ppd-article-metric-card">
-                <div className="ppd-article-metric-value">52%</div>
-                <div className="ppd-article-metric-label">Target Account Reach Rate</div>
-              </div>
-              <div className="ppd-article-metric-card">
-                <div className="ppd-article-metric-value">31%</div>
-                <div className="ppd-article-metric-label">Response Rate on Verified Outreach</div>
-              </div>
-              <div className="ppd-article-metric-card">
-                <div className="ppd-article-metric-value">2.8X</div>
-                <div className="ppd-article-metric-label">Lift in Campaign Engagement</div>
-              </div>
+            <h2 className="ppd-article-section-title">The Problem Beneath the Surface</h2>
+            <ul className="ppd-f500-challenge-grid">
+              {challenges.map((challenge) => <li key={challenge}>{challenge}</li>)}
+            </ul>
+          </section>
+
+          <section className="ppd-article-section">
+            <h2 className="ppd-article-section-title">The ProPlus Intelligence Translated into GTM Impact</h2>
+            <p>ProPlus Intelligence enabled a disciplined, insight-driven approach to demand generation, transforming fragmented campaign activity into a high-precision engine for qualified pipeline growth. Refreshed buyer signals and technology insights anchored execution in verified relevance, not volume.</p>
+            <ol className="ppd-f500-flow" aria-label="GTM intelligence workflow">
+              {intelligenceSteps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>)}
+            </ol>
+          </section>
+
+          <section className="ppd-article-section">
+            <h2 className="ppd-article-section-title">How the Intelligence Came Together</h2>
+            <div className="ppd-f500-stage-grid">
+              {executionStages.map((stage, index) => (
+                <article className="ppd-f500-stage" key={stage.title}>
+                  <span className="ppd-f500-stage-number">{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{stage.title}</h3>
+                  <p>{stage.description}</p>
+                </article>
+              ))}
             </div>
           </section>
 
           <section className="ppd-article-section">
             <h2 className="ppd-article-section-title">What We Did Differently</h2>
-            <p>ProPlus Data implemented a comprehensive intelligence layer that connected disconnected signals across the organization's GTM motion.</p>
-            <div className="ppd-article-signal-list">
-              <div className="ppd-article-signal-item">
-                <p><b>Account Prioritization:</b> We identified high-potential accounts across 11 regions using intent signals, technographic footprints, and renewal timing data.</p>
-              </div>
-              <div className="ppd-article-signal-item">
-                <p><b>Buying Group Mapping:</b> We mapped decision-making units across 10+ industries to understand who actually influences purchasing decisions.</p>
-              </div>
-              <div className="ppd-article-signal-item">
-                <p><b>Verified Contact Paths:</b> We provided opted-in, verified contact data to reduce friction in outreach and improve response rates.</p>
-              </div>
-              <div className="ppd-article-signal-item">
-                <p><b>Timing Intelligence:</b> We aligned outreach with renewal windows and technology change events to engage accounts when they were most receptive.</p>
-              </div>
+            <p>At ProPlus, we didn’t roll out a huge transformation plan. We started with a simple principle: the same campaign doesn’t work the same way everywhere. Instead of templating campaigns, we rebuilt demand generation around strategic regional and industry differences.</p>
+            <div className="ppd-f500-lever-grid">
+              <article className="ppd-f500-lever">
+                <span>01 / REGIONAL STRATEGY</span>
+                <h3>Regions Were Treated as Strategic Markets, Not Just Geographies</h3>
+                <p>We looked at 11 key regions independently, factoring in technology maturity, buying timelines, and competitive noise.</p>
+                <ul>
+                  <li>In India, volume and conversion potential were high, especially in Electronics, Energy, and Food.</li>
+                  <li>SEA markets needed signal acceleration, so lead delivery models worked better.</li>
+                  <li>In Vietnam, direct campaigns outperformed longer nurturing flows.</li>
+                </ul>
+              </article>
+              <article className="ppd-f500-lever">
+                <span>02 / INDUSTRY STRATEGY</span>
+                <h3>We Re-evaluated 10+ Verticals by How Their Buying Groups Operated</h3>
+                <p>We examined how buyer groups worked and aligned, rather than treating each industry as a label.</p>
+                <ul>
+                  <li>Semiconductors showed consistent traction across India and Southeast Asia, driven by clear ownership in technical buying units.</li>
+                  <li>Flexible Manufacturing emerged as a high-performing vertical across four regions, with well-defined decision-making clusters.</li>
+                  <li>Aerospace &amp; Defense required richer signals because influence was distributed and timing-sensitive.</li>
+                </ul>
+              </article>
             </div>
           </section>
 
           <section className="ppd-article-section">
-            <h2 className="ppd-article-section-title">The Impact</h2>
-            <p>The transformation was measurable across every dimension of their GTM engine. Marketing could now identify which leads mattered. Sales could focus on accounts ready to buy. The organization stopped guessing and started acting on verified signals.</p>
-            <p>By connecting intent, technographics, and renewal intelligence into a single operational layer, the Fortune 500 manufacturer achieved:</p>
-            <div className="ppd-article-checklist">
-              <div className="ppd-article-checklist-item">
-                <p>45% engagement rate across target accounts</p>
-              </div>
-              <div className="ppd-article-checklist-item">
-                <p>52% target account reach rate across 11 regions</p>
-              </div>
-              <div className="ppd-article-checklist-item">
-                <p>31% response rate on verified outreach</p>
-              </div>
-              <div className="ppd-article-checklist-item">
-                <p>2.8X lift in campaign engagement</p>
-              </div>
+            <h2 className="ppd-article-section-title">The Difference It Made</h2>
+            <h3 className="ppd-f500-subheading">Results Across Markets</h3>
+            <div className="ppd-f500-region-grid">
+              {regionalFindings.map((finding) => (
+                <article className="ppd-f500-region" key={finding.label}>
+                  <h3>{finding.label}</h3>
+                  <p>{finding.detail}</p>
+                </article>
+              ))}
             </div>
+            <p>CP&amp;R, Food &amp; Beverage, and Flexible Manufacturing added breadth across regions. ProPlus Data didn’t just gather leads; it tracked where demand was moving. High-intent signals surfaced faster, targeting sharpened, and conversions followed.</p>
+            <h3 className="ppd-f500-subheading">Here’s What That Translated to on the Ground</h3>
+            <ul className="ppd-f500-outcomes">
+              {outcomes.map((outcome) => <li key={outcome}>{outcome}</li>)}
+            </ul>
+            <h3 className="ppd-f500-subheading">The Client Could Make Decisions with Confidence</h3>
+            <div className="ppd-f500-decisions"><span>Where to invest</span><span>Where to expand</span><span>Where to pull back</span></div>
           </section>
 
-          <section className="ppd-article-section">
-            <div className="ppd-article-takeaway">
-              <h2>The takeaway</h2>
-              <p>Scale without intelligence is activity, not strategy. The Fortune 500 manufacturer had the resources, the teams, and the markets. What they needed was clarity on where to apply them.</p>
-              <p>ProPlus Data provided that clarity by turning the invisible—buying intent, technology footprints, renewal timing—into actionable intelligence. The result wasn't just better numbers. It was a GTM engine that worked with precision across 11 regions and 10+ industries.</p>
-              <div className="ppd-article-cta">
-                <a href="/contact-us" className="ppd-cta-button">Contact Us</a>
-              </div>
-            </div>
+          <section className="ppd-article-section ppd-f500-summary">
+            <h2 className="ppd-article-section-title">In Summary</h2>
+            <p>This wasn’t a story about “more data” or “better tools.” It was about getting three things right:</p>
+            <ul><li>Knowing which region needs what.</li><li>Understanding how each vertical behaves.</li><li>Choosing the right campaign flow for both.</li></ul>
+            <p>Scaling globally demands precision, not uniformity—and that’s exactly what this partnership achieved.</p>
+          </section>
+
+          <section className="ppd-f500-testimonials" aria-label="Client feedback">
+            {testimonials.map((testimonial) => (
+              <figure className="ppd-f500-testimonial" key={testimonial.role}>
+                <blockquote>{testimonial.quote}</blockquote>
+                <figcaption>{testimonial.role}</figcaption>
+              </figure>
+            ))}
           </section>
         </article>
       </section>

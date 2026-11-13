@@ -50,7 +50,7 @@
 .nexora-showcase__logo {
   display: block;
   width: clamp(132px, 14vw, 190px);
-  max-height: 52px;
+  max-height: 102px;
   margin: 0 0 2rem;
   object-fit: contain;
   object-position: left center;
