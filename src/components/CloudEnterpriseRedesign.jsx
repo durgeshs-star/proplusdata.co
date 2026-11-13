@@ -56,7 +56,7 @@ export default function CloudEnterpriseRedesign() {
     <main className="ppd-article-page ppd-article-page--cloud-enterprise ppd-cloud-case">
       <section className="ppd-article-hero">
         <div className="ppd-article-hero-inner">
-          <span className="ppd-article-eyebrow">Case study</span>
+          <span className="ppd-article-eyebrow">Use Case</span>
           <h1 className="ppd-article-title">ProPlus’ Renewal Intelligence Fuels 3X Pipeline Velocity for Leading Cloud Enterprise</h1>
         </div>
       </section>
