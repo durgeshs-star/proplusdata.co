@@ -30,7 +30,6 @@ export default function PastEvents() {
             </p>
             <a href="/forrester-b2b-summit-2025" className="ppd-event-card-link">
               Know More
-              <span>→</span>
             </a>
           </div>
         </div>

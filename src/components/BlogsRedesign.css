@@ -127,6 +127,8 @@
   transition: filter 300ms ease;
 }
 
+.ppd-blog-artwork text { display: none; }
+
 .ppd-blog-card:hover .ppd-blog-artwork {
   filter: saturate(1.08);
 }
@@ -351,6 +353,25 @@
     font-size: 17px;
   }
 }
+
+/* Use the same editorial palette and card surface as the updated articles. */
+.ppd-blogs-hero {
+  background:
+    radial-gradient(ellipse at 82% 18%, rgba(35, 162, 143, .16), transparent 30%),
+    radial-gradient(ellipse at 12% 100%, rgba(235, 162, 63, .14), transparent 31%),
+    #f6f5ef;
+}
+
+.ppd-blogs-eyebrow { color: #133580; font-weight: 800; }
+.ppd-blogs-title { color: #142a49; font-weight: 750; }
+.ppd-blogs-lead { color: #4a5b70; }
+.ppd-blogs-rule { background: #e7a03a; }
+.ppd-blog-card { border-color: #e1e9ee; box-shadow: 0 10px 30px rgba(26, 48, 73, .07); }
+.ppd-blog-card:hover { border-color: #b9d9d4; box-shadow: 0 18px 38px rgba(26, 48, 73, .12); }
+.ppd-blog-meta span { color: #133580; }
+.ppd-blog-card-title a { color: #142a49; }
+.ppd-blog-description { color: #4a5b70; }
+.ppd-blog-read-more { color: #133580; }
 
 @media (prefers-reduced-motion: reduce) {
   .ppd-blog-card,

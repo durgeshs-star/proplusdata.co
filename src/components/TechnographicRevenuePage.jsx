@@ -107,7 +107,7 @@ export default function TechnographicRevenuePage() {
             <Eyebrow>Technographics</Eyebrow>
             <h1>Your <em>next revenue opportunity</em> is already in their tech stack.</h1>
             <p>See the technologies your target accounts use, how their stacks change, and where those signals can open a revenue conversation.</p>
-            <a className="ppd-revtech__button" href="/contact-us">Get started <span aria-hidden="true">→</span></a>
+            <a className="ppd-revtech__button" href="/contact-us">Get started</a>
           </div>
           <div className="ppd-revtech__dashboard ppd-revtech__reveal" aria-label="Illustrative technology intelligence table">
             <div className="ppd-revtech__dashboard-head"><strong>Technographics</strong><span>Account intelligence</span></div>
@@ -203,7 +203,7 @@ export default function TechnographicRevenuePage() {
           <p className="ppd-revtech__journey-intro">Turn real technology signals into a timely, thoughtful opening for your next conversation.</p>
           <div className="ppd-revtech__journey-board">
             <div className="ppd-revtech__journey-tabs" role="tablist" aria-label="Technology signal journey">
-              {journey.map(([label], index) => <button key={label} id={`ppd-revtech-journey-tab-${index}`} type="button" role="tab" aria-controls="ppd-revtech-journey-panel" aria-selected={activeStep === index} className={activeStep === index ? "is-active" : ""} onClick={() => setActiveStep(index)}><span>{String(index + 1).padStart(2, "0")}</span>{label}</button>)}
+              {journey.map(([label], index) => <button key={label} id={`ppd-revtech-journey-tab-${index}`} type="button" role="tab" aria-controls="ppd-revtech-journey-panel" aria-selected={activeStep === index} className={activeStep === index ? "is-active" : ""} onClick={() => setActiveStep(index)}><span>{String(index + 1).padStart(2, "0")}</span>{label}<i aria-hidden="true">↗</i></button>)}
             </div>
             <div id="ppd-revtech-journey-panel" className="ppd-revtech__journey-panel" role="tabpanel" aria-labelledby={`ppd-revtech-journey-tab-${activeStep}`} tabIndex="0">
               <div className="ppd-revtech__journey-panel-content" key={activeStep}>
@@ -241,7 +241,7 @@ export default function TechnographicRevenuePage() {
         <div className="ppd-revtech__shell ppd-revtech__results-layout"><div><Eyebrow>The results</Eyebrow><blockquote>“Technology context helped us focus outbound. We now book more meetings with fewer, more relevant conversations.”</blockquote><p>VP, Sales · TechCorp</p></div><div className="ppd-revtech__results-stat">2.3<span>×</span></div></div>
       </section>
 
-      <section className="ppd-revtech__cta"><div className="ppd-revtech__shell"><Eyebrow>Make the next move</Eyebrow><h2>Find the opportunity already in your market.</h2><a className="ppd-revtech__button" href="/contact-us">Talk to our team <span aria-hidden="true">→</span></a></div></section>
+      <section className="ppd-revtech__cta"><div className="ppd-revtech__shell"><Eyebrow>Make the next move</Eyebrow><h2>Find the opportunity already in your market.</h2><a className="ppd-revtech__button" href="/contact-us">Talk to our team</a></div></section>
     </div>
   );
 }

@@ -125,274 +125,85 @@
   overflow: hidden;
   border: 1px solid rgba(37, 99, 235, 0.09);
   border-radius: 22px;
-  background:
-    radial-gradient(ellipse at 50% 47%, rgba(219, 234, 254, 0.68), transparent 48%),
-    rgba(255, 255, 255, 0.67);
+  background: rgba(255, 255, 255, 0.93);
   box-shadow:
     0 18px 50px rgba(15, 23, 42, 0.045),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-.ppd-global-network::before,
-.ppd-global-network::after {
-  position: absolute;
-  border: 1px solid rgba(37, 99, 235, 0.055);
-  border-radius: 50%;
-  content: "";
-  pointer-events: none;
-}
-
-.ppd-global-network::before {
-  top: 50%;
-  left: 50%;
-  width: 19rem;
-  height: 19rem;
-  transform: translate(-50%, -50%);
-}
-
-.ppd-global-network::after {
-  top: 50%;
-  left: 50%;
-  width: 13rem;
-  height: 13rem;
-  transform: translate(-50%, -50%);
-}
-
-.ppd-global-core {
-  position: absolute;
-  z-index: 2;
-  top: 44%;
-  left: 50%;
+.ppd-world-map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
-  width: 11.5rem;
-  min-height: 6.25rem;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.9rem;
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow:
-    0 12px 30px rgba(37, 99, 235, 0.11),
-    0 0 0 6px rgba(255, 255, 255, 0.45);
-  text-align: center;
-  transform: translate(-50%, -50%);
 }
 
-.ppd-global-core-mark {
-  display: flex;
-  height: 0.65rem;
-  align-items: center;
-  gap: 0.18rem;
-  margin-bottom: 0.45rem;
+.ppd-world-map {
+  width: 95%;
+  max-height: 90%;
+  object-fit: contain;
+  opacity: 0.5;
 }
 
-.ppd-global-core-mark i {
-  display: block;
-  width: 0.22rem;
-  height: 0.42rem;
-  border-radius: 999px;
+.ppd-map-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   background: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+  color: #2563eb;
+  transform: translate(-50%, -50%);
 }
 
-.ppd-global-core-mark i:nth-child(2) {
-  height: 0.62rem;
-  background: #60a5fa;
-}
-
-.ppd-global-core-label {
-  color: #0f172a;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.13em;
-}
-
-.ppd-global-core-caption {
-  margin-top: 0.22rem;
-  color: #64748b;
-  font-size: 0.73rem;
-}
-
-.ppd-global-node {
+.ppd-map-dot::after {
   position: absolute;
-  z-index: 2;
-  display: flex;
-  min-width: 7.25rem;
-  min-height: 3.85rem;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.55rem 0.8rem;
-  border: 1px solid rgba(15, 23, 42, 0.09);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.93);
-  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
-  transition:
-    transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 250ms ease,
-    box-shadow 300ms ease;
-}
-
-.ppd-global-visible .ppd-global-node {
-  transition-delay: calc(var(--ppd-global-order) * 100ms + 250ms);
-}
-
-.ppd-global-visible .ppd-global-node:hover {
-  transition-delay: 0ms;
-  border-color: rgba(37, 99, 235, 0.36);
-  box-shadow:
-    0 11px 24px rgba(15, 23, 42, 0.07),
-    0 0 18px rgba(37, 99, 235, 0.09);
-  transform: translateY(-2px);
-}
-
-.ppd-global-node-countries {
-  top: 13%;
-  left: 7%;
-}
-
-.ppd-global-node-apac {
-  top: 13%;
-  right: 7%;
-}
-
-.ppd-global-node-emea {
-  bottom: 23%;
-  left: 7%;
-}
-
-.ppd-global-node-north-america {
-  right: 7%;
-  bottom: 23%;
-}
-
-.ppd-global-node-indicator {
-  position: absolute;
-  top: 0.55rem;
-  left: 0.55rem;
-  width: 0.35rem;
-  height: 0.35rem;
+  inset: -4px;
+  border: 1px solid currentColor;
   border-radius: 50%;
-  background: #60a5fa;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
-}
-
-.ppd-global-node-value {
-  color: #1e3a8a;
-  font-size: 0.78rem;
-  font-weight: 750;
-  letter-spacing: 0.07em;
-  line-height: 1.25;
-}
-
-.ppd-global-node-countries .ppd-global-node-value {
-  font-size: 1.05rem;
-  letter-spacing: -0.02em;
-}
-
-.ppd-global-node-label {
-  margin-top: 0.1rem;
-  color: #64748b;
-  font-size: 0.55rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-}
-
-.ppd-global-connection {
-  position: absolute;
-  z-index: 1;
-  top: 44%;
-  left: 50%;
-  width: 37%;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(37, 99, 235, 0.3), rgba(37, 99, 235, 0.1));
-  transform-origin: left center;
-  pointer-events: none;
-  transition: background-color 250ms ease, opacity 250ms ease;
-}
-
-.ppd-global-connection::after {
-  position: absolute;
-  top: -2px;
-  left: 0;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #60a5fa;
-  box-shadow: 0 0 8px rgba(37, 99, 235, 0.45);
   content: "";
-  animation: ppd-global-pulse 5.5s ease-in-out infinite;
+  opacity: 0;
+  animation: ppd-map-dot-pulse 8s ease-out infinite;
 }
 
-.ppd-global-connection-countries {
-  transform: rotate(202deg);
+.ppd-map-dot--na-west { top: 44%; left: 25%; }
+.ppd-map-dot--na-central { top: 49%; left: 29%; }
+.ppd-map-dot--na-east { top: 47%; left: 34%; }
+.ppd-map-dot--emea-west { top: 44%; left: 52%; }
+.ppd-map-dot--emea-east { top: 45%; left: 57%; }
+.ppd-map-dot--emea-south { top: 57%; left: 53%; }
+.ppd-map-dot--emea-middle-east { top: 52%; left: 60%; }
+.ppd-map-dot--apac-china { top: 47%; left: 72%; }
+.ppd-map-dot--apac-sea { top: 57%; left: 75%; }
+.ppd-map-dot--apac-japan { top: 52%; left: 80%; }
+
+.ppd-map-dot-hq {
+  top: 58%;
+  left: 64%;
+  width: 10px;
+  height: 10px;
+  background: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.24);
+  color: #f59e0b;
 }
 
-.ppd-global-connection-apac {
-  transform: rotate(338deg);
+.ppd-map-dot--na-central::after,
+.ppd-map-dot--emea-east::after,
+.ppd-map-dot--apac-sea::after {
+  animation-delay: 0.6s;
 }
 
-.ppd-global-connection-emea {
-  transform: rotate(158deg);
-}
-
-.ppd-global-connection-north-america {
-  transform: rotate(22deg);
-}
-
-.ppd-global-connection-apac::after {
+.ppd-map-dot--na-east::after,
+.ppd-map-dot--emea-south::after,
+.ppd-map-dot--apac-japan::after {
   animation-delay: 1.2s;
 }
 
-.ppd-global-connection-emea::after {
-  animation-delay: 2.4s;
-}
-
-.ppd-global-connection-north-america::after {
-  animation-delay: 3.6s;
-}
-
-.ppd-global-network:has(.ppd-global-node:hover) .ppd-global-connection {
-  background: linear-gradient(90deg, rgba(37, 99, 235, 0.45), rgba(37, 99, 235, 0.18));
-}
-
-.ppd-global-india {
-  position: absolute;
-  z-index: 2;
-  bottom: 4.5%;
-  left: 50%;
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: center;
-  column-gap: 0.4rem;
-  color: #1e3a8a;
-  transform: translateX(-50%);
-}
-
-.ppd-global-india-dot {
-  width: 0.45rem;
-  height: 0.45rem;
-  grid-row: 1 / span 2;
-  border-radius: 50%;
-  background: #2563eb;
-  box-shadow:
-    0 0 0 4px rgba(37, 99, 235, 0.1),
-    0 0 12px rgba(37, 99, 235, 0.3);
-}
-
-.ppd-global-india-name {
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  line-height: 1.2;
-}
-
-.ppd-global-india-label {
-  color: #64748b;
-  font-size: 0.48rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
+.ppd-map-dot--emea-middle-east::after,
+.ppd-map-dot--apac-china::after {
+  animation-delay: 1.8s;
 }
 
 .ppd-global-content {
@@ -527,6 +338,11 @@
   }
 }
 
+@keyframes ppd-map-dot-pulse {
+  0% { opacity: 0.7; transform: scale(0.7); }
+  100% { opacity: 0; transform: scale(1.8); }
+}
+
 @media (max-width: 991.98px) {
   .ppd-global-layout {
     grid-template-columns: minmax(0, 1fr);
@@ -567,86 +383,17 @@
   }
 
   .ppd-global-network {
-    display: grid;
-    height: auto;
-    min-height: 345px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: auto auto auto auto;
-    align-content: start;
-    justify-items: center;
-    gap: 0.75rem 0.55rem;
-    padding: 1.25rem 0.75rem 1rem;
-    overflow: hidden;
+    height: 320px;
   }
 
-  .ppd-global-network::before {
-    top: 44%;
-    width: 14rem;
-    height: 14rem;
+  .ppd-map-dot {
+    width: 6px;
+    height: 6px;
   }
 
-  .ppd-global-network::after {
-    top: 44%;
-    width: 9.5rem;
-    height: 9.5rem;
-  }
-
-  .ppd-global-core {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 11rem;
-    min-height: 5.7rem;
-    grid-column: 1 / -1;
-    grid-row: 1;
-    margin-bottom: 0.9rem;
-    transform: none;
-  }
-
-  .ppd-global-node {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    width: min(100%, 8.5rem);
-    min-width: 0;
-    min-height: 3.65rem;
-    transform: none;
-  }
-
-  .ppd-global-node-countries {
-    grid-area: 2 / 1;
-  }
-
-  .ppd-global-node-apac {
-    grid-area: 2 / 2;
-  }
-
-  .ppd-global-node-emea {
-    grid-area: 3 / 1;
-  }
-
-  .ppd-global-node-north-america {
-    grid-area: 3 / 2;
-  }
-
-  .ppd-global-visible .ppd-global-node:hover {
-    transform: translateY(-2px);
-  }
-
-  .ppd-global-connection {
-    display: none;
-  }
-
-  .ppd-global-india {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    grid-column: 1 / -1;
-    grid-row: 4;
-    margin-top: 0.35rem;
-    transform: none;
+  .ppd-map-dot-hq {
+    width: 8px;
+    height: 8px;
   }
 
   .ppd-global-metrics {

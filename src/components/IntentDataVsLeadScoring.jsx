@@ -1,14 +1,14 @@
 import React from 'react'
 import "./IntentDataVsLeadScoring.css"
+import "./Article.css"
+import BlogContentAnimation from "./BlogContentAnimation";
 
 export default function IntentDataVsLeadScoring() {
   return (
-    <main className="ppd-article-page">
+    <main className="ppd-article-page ppd-article-page--intent-scoring">
       <section className="ppd-article-hero">
         <div className="ppd-article-hero-inner">
-          <span className="ppd-article-eyebrow">
-            INSIGHTS & INTELLIGENCE
-          </span>
+           
           <h1 className="ppd-article-title">
             B2B Intent Data vs Traditional Lead Scoring: What Actually Drives Pipeline?
           </h1>
@@ -19,8 +19,8 @@ export default function IntentDataVsLeadScoring() {
       </section>
 
       <div className="ppd-article-featured">
-        <div className="ppd-article-featured-media">
-          <img src="/assets/images/intent-data-lead-scoring.png" alt="B2B Intent Data vs Traditional Lead Scoring" />
+        <div className="ppd-article-featured-media" data-blog-art="intent-featured">
+          <BlogContentAnimation variant="intent" />
         </div>
       </div>
 
@@ -77,8 +77,8 @@ export default function IntentDataVsLeadScoring() {
           </section>
 
           <div className="ppd-article-featured">
-            <div className="ppd-article-featured-media">
-              <img src="/assets/images/accelarate-your-2026-gtm.webp" alt="Accelerate Your 2026 GTM" />
+            <div className="ppd-article-featured-media" data-blog-art="intent-inline-art">
+              <BlogContentAnimation variant="intent" />
             </div>
           </div>
 

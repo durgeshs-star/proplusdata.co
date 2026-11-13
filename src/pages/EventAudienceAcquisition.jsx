@@ -4,7 +4,6 @@ import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
 import EventComponent from '../components/EventComponent'
 import FaqSection from '../components/FaqSection'
-import IndustriesSection from '../components/IndustriesSection'
 import CtaEvent from '../components/CtaEvent'
 // import SolutionBreadcrumb from '../components/solutions/SolutionBreadcrumb'
 import '../components/solutions/SolutionSystem.css'
@@ -48,7 +47,6 @@ export default function EventAudienceAcquisition() {
         {/* <SolutionBreadcrumb label="Event Audience Acquisition" parentHref="/event-audience-acquisition" /> */}
         <EventComponent/>
         <FaqSection/>
-        <IndustriesSection/>
         <CtaEvent/>
       </main>
       <Footer/>

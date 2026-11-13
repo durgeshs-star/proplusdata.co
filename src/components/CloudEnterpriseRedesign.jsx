@@ -3,7 +3,7 @@ import "./CloudEnterpriseRedesign.css"
 
 export default function CloudEnterpriseRedesign() {
   return (
-    <main className="ppd-article-page">
+    <main className="ppd-article-page ppd-article-page--cloud-enterprise">
       <section className="ppd-article-hero">
         <div className="ppd-article-hero-inner">
           <span className="ppd-article-eyebrow">

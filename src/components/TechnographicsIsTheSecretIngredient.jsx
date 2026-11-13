@@ -1,20 +1,19 @@
 import React from 'react';
 import "./Article.css"
+import BlogContentAnimation from "./BlogContentAnimation";
 
 export default function TechnographicsIsTheSecretIngredient() {
   return (
-    <main className="ppd-article-page">
+    <main className="ppd-article-page ppd-article-page--technographics-secret">
       <div className="ppd-article-featured">
-        <div className="ppd-article-featured-media">
-          <img src="/assets/images/why-technographics-is-the-secret-ingredient-to-precision-messaging.webp" alt="" />
+        <div className="ppd-article-featured-media" data-blog-art="techsecret-featured">
+          <BlogContentAnimation variant="technographics" />
         </div>
       </div>
 
       <section className="ppd-article-hero">
         <div className="ppd-article-hero-inner">
-          <span className="ppd-article-eyebrow">
-            INSIGHTS & INTELLIGENCE
-          </span>
+           
           <h1 className="ppd-article-title">
             5 Reasons Why Technographics is the Secret Ingredient to Precision Messaging
           </h1>
@@ -50,8 +49,8 @@ export default function TechnographicsIsTheSecretIngredient() {
             <p>Precision messaging is not limited to marketing. Sales leaders often struggle to connect with executives who receive dozens of pitches each week. Armed with technographic intelligence, your sales team can walk into a conversation knowing which platforms the company uses, what investments are likely coming up for renewal, and which competitors are already embedded. This transforms a cold outreach into a relevant, value-driven conversation that earns executive attention.</p>
           </section>
 
-          <div className="ppd-article-inline-media">
-            <img src="/assets/images/technographics-is-secret-ingradient.webp" alt="" />
+          <div className="ppd-article-inline-media" data-blog-art="techsecret-inline">
+            <BlogContentAnimation variant="technographics" />
           </div>
 
           <section className="ppd-article-section">

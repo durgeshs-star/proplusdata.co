@@ -1,12 +1,14 @@
 import React from 'react';
 import "./ExpansionRevenueOvertakeNetWorth.css"
+import "./Article.css"
+import BlogContentAnimation from "./BlogContentAnimation";
 
 export default function ExpansionRevenueOvertakeNetWorth() {
   return (
-    <main className="ppd-article-page">
+    <main className="ppd-article-page ppd-article-page--expansion">
       <div className="ppd-article-featured">
-        <div className="ppd-article-featured-media">
-          <img src="/assets/images/revenue-overtake-net-acquisition.jpg" alt="" />
+        <div className="ppd-article-featured-media" data-blog-art="expansion-featured">
+          <BlogContentAnimation variant="expansion" />
         </div>
       </div>
 
@@ -58,8 +60,8 @@ export default function ExpansionRevenueOvertakeNetWorth() {
             <p>This is why expansion revenue is increasingly discussed in boardrooms. It offers a growth path that leadership teams can stand behind.</p>
           </section>
 
-          <div className="ppd-article-inline-media">
-            <img src="/assets/images/accelarate-your-2026-gtm.webp" alt="" />
+          <div className="ppd-article-inline-media" data-blog-art="expansion-inline">
+            <BlogContentAnimation variant="enterprise" />
           </div>
 
           <section className="ppd-article-section">

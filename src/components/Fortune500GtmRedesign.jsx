@@ -3,7 +3,7 @@ import "./Fortune500GtmRedesign.css"
 
 export default function Fortune500GtmRedesign() {
   return (
-    <main className="ppd-article-page">
+    <main className="ppd-article-page ppd-article-page--fortune-gtm">
       <section className="ppd-article-hero">
         <div className="ppd-article-hero-inner">
           <span className="ppd-article-eyebrow">

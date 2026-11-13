@@ -32,7 +32,6 @@ export default function Dmwf2025() {
             </div>
             <a href="/dmwf-europe-amsterdam-2025" className="ppd-event-card-link">
               Know More
-              <span>→</span>
             </a>
           </div>
         </div>

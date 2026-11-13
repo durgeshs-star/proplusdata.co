@@ -104,15 +104,15 @@
 }
 
 .ppd-privacy-content {
-  padding: 0 0 clamp(3.5rem, 7vw, 6rem);
+  padding: clamp(2rem, 4vw, 3.5rem) 0 clamp(3.5rem, 7vw, 6rem);
 }
 
 .ppd-privacy-card {
-  padding: clamp(1.5rem, 5vw, 4.25rem);
-  border: 1px solid var(--ppd-privacy-border);
-  border-radius: 24px;
-  background: #ffffff;
-  box-shadow: 0 18px 48px rgba(15, 35, 75, 0.055);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .ppd-privacy-document h3 {
@@ -229,8 +229,7 @@
   }
 
   .ppd-privacy-card {
-    padding: 1.5rem;
-    border-radius: 20px;
+    padding: 0;
   }
 
   .ppd-privacy-document h3 {
@@ -258,7 +257,7 @@
   }
 
   .ppd-privacy-card {
-    padding: 1.35rem;
+    padding: 0;
   }
 
   .ppd-privacy-breadcrumb ol,

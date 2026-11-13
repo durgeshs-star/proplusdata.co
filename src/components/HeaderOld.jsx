@@ -42,7 +42,6 @@ export default function Header() {
                 <li><a href="/aboutus">About Us</a></li>
                 <li><a href="/careers">Careers</a></li>
                 <li><a href="/contactus">Contact Us</a></li>
-                <li><a href="/privacypolicy">Privacy Policy</a></li>
                 <li><a href="/pressreleases">Press Releases</a></li>
               </ul>
             </li>

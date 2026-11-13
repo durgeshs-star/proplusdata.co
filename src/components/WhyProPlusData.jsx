@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./WhyProPlusData.css";
 
 const reasons = [
@@ -79,6 +79,14 @@ export default function WhyProPlusData() {
   const [activeIndex, setActiveIndex] = useState(0);
   const previousIndex = (activeIndex - 1 + carouselItems.length) % carouselItems.length;
   const nextIndex = (activeIndex + 1) % carouselItems.length;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleCarouselKeyDown = (event) => {
     if (event.key === "ArrowRight") setActiveIndex(nextIndex);

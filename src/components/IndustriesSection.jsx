@@ -7,18 +7,27 @@ const industries = [
   "CAD", "Cloud Communications",
 ];
 
+const industryDescriptions = [
+  "See which cloud platforms power each account and where expansion may be possible.",
+  "Map the systems behind shipping, fulfillment, fleet, and supply chain operations.",
+  "Identify service providers and the technology their teams deliver and support.",
+  "Find communications infrastructure, network providers, and related buying signals.",
+  "Understand the software platforms companies use and how their stacks evolve.",
+  "Spot payment, banking, and financial technology platforms across target accounts.",
+  "Reveal endpoint protection tools and security solutions already in place.",
+  "Identify device, server, and infrastructure vendors across business environments.",
+  "Map networking vendors and connectivity technologies used across organizations.",
+  "See data center platforms and infrastructure supporting an account’s operations.",
+  "Find engineering and design teams using CAD tools and related software.",
+  "Discover the voice, messaging, and collaboration platforms organizations rely on.",
+];
+
 export default function IndustriesSection() {
   const [activeIndustry, setActiveIndustry] = useState(0);
 
   return (
-    <section className="ppd-industries-section" aria-labelledby="ppd-industries-title">
+    <section className="ppd-industries-section" aria-label="Technology markets we cover">
       <div className="ppd-industries-container container">
-        <header className="ppd-industries-header">
-          <p className="ppd-industries-eyebrow"><span className="ppd-industries-eyebrow-dot" aria-hidden="true" />Industry intelligence</p>
-          <h2 id="ppd-industries-title">A clearer view of <em>every market</em></h2>
-          <p className="ppd-industries-intro">Explore the technology landscapes and decision-makers shaping the industries you sell into.</p>
-        </header>
-
         <div className="ppd-industries-explorer">
           <div className="ppd-industries-feature">
             <div
@@ -40,15 +49,15 @@ export default function IndustriesSection() {
               <div className="ppd-industries-feature-center">
                 <span className="ppd-industries-feature-number">0{activeIndustry + 1}</span>
                 <span className="ppd-industries-feature-kicker">MARKET INTELLIGENCE</span>
-                <strong>{industries[activeIndustry]}</strong>
+                <strong className={industries[activeIndustry].length > 16 ? "is-long" : ""}>{industries[activeIndustry]}</strong>
+                <p className="ppd-industries-feature-description" key={activeIndustry} aria-live="polite">
+                  {industryDescriptions[activeIndustry]}
+                </p>
                 <span className="ppd-industries-feature-status"><i aria-hidden="true" /> Coverage available</span>
               </div>
               <span className="ppd-industries-feature-signal ppd-industries-feature-signal-one">TECH LANDSCAPE</span>
               <span className="ppd-industries-feature-signal ppd-industries-feature-signal-two">BUYER SIGNALS</span>
             </div>
-            <p className="ppd-industries-feature-caption">
-              Explore account and technology context across the markets you serve.
-            </p>
           </div>
           <div className="ppd-industries-selector">
             <div className="ppd-industries-selector-heading">

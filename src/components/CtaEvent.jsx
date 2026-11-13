@@ -12,7 +12,6 @@ const CtaEvent = () => {
           </h2>
           <a href="/contact-us" className="ppd-techno-cta__button">
             Connect With Us
-            <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>

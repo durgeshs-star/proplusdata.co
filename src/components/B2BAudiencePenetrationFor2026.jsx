@@ -1,20 +1,20 @@
 import React from 'react'
 import "./B2BAudiencePenetrationFor2026.css"
+import "./Article.css"
+import BlogContentAnimation from "./BlogContentAnimation";
 
 export default function B2BAudiencePenetrationFor2026() {
   return (
-    <main className="ppd-article-page">
+    <main className="ppd-article-page ppd-article-page--audience">
       <div className="ppd-article-featured">
-        <a href='https://proplusdata.co/contact-us' target="_blank" rel="noopener noreferrer" className="ppd-article-featured-media">
-          <img src="/assets/images/new-rules-of-b2b-audience-penetration-for-2026.webp" alt="" />
+        <a href='https://proplusdata.co/contact-us' target="_blank" rel="noopener noreferrer" className="ppd-article-featured-media" data-blog-art="audience-featured">
+          <BlogContentAnimation variant="audience" />
         </a>
       </div>
 
       <section className="ppd-article-hero">
         <div className="ppd-article-hero-inner">
-          <span className="ppd-article-eyebrow">
-            INSIGHTS & INTELLIGENCE
-          </span>
+           
           <h1 className="ppd-article-title">
             The New Rules of B2B Audience Penetration for 2026
           </h1>
@@ -68,8 +68,8 @@ export default function B2BAudiencePenetrationFor2026() {
             <p>Renewal windows are one of the few structurally predictable moments in the B2B cycle. When an account approaches contract transition, internal conversations are already underway. Renewal intelligence allows enterprises to position themselves inside these conversations at the right time, giving penetration a natural tailwind.</p>
           </section>
 
-          <a href='https://proplusdata.co/contact-us' target="_blank" rel="noopener noreferrer" className="ppd-article-inline-media">
-            <img src="/assets/images/accelarate-your-2026-gtm.webp" alt="" />
+          <a href='https://proplusdata.co/contact-us' target="_blank" rel="noopener noreferrer" className="ppd-article-inline-media" data-blog-art="audience-inline">
+            <BlogContentAnimation variant="audience" />
           </a>
 
           <section className="ppd-article-section">

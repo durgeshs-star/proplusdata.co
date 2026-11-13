@@ -1,12 +1,13 @@
 import React from 'react';
 import "./Article.css"
+import BlogContentAnimation from "./BlogContentAnimation";
 
 export default function RenewalAreTheNewArr() {
   return (
-    <main className="ppd-article-page">
+    <main className="ppd-article-page ppd-article-page--renewal-arr">
       <div className="ppd-article-featured">
-        <div className="ppd-article-featured-media">
-          <img src="assets/images/renewals-are -the-new-arr.webp" alt="" />
+        <div className="ppd-article-featured-media" data-blog-art="arr-featured">
+          <BlogContentAnimation variant="arr" />
         </div>
       </div>
 
@@ -69,8 +70,8 @@ export default function RenewalAreTheNewArr() {
             </ul>
           </section>
 
-          <div className="ppd-article-inline-media">
-            <img src="assets/images/renewal-contract-cycle.webp" alt="" />
+          <div className="ppd-article-inline-media" data-blog-art="arr-inline">
+            <BlogContentAnimation variant="renewalTiming" />
           </div>
 
           <section className="ppd-article-section">

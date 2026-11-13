@@ -4,9 +4,9 @@ import Header1 from '../components/Header1'
 import Footer from '../components/Footer'
 import AboutComponent from '../components/AboutComponent'
 import AboutTab from '../components/AboutTab'
-import IndustriesSection from '../components/IndustriesSection'
 import IdentifyConnect from '../components/IdentifyConnect'
 import GlobalPresence from '../components/GlobalPresence'
+import ProvenIndustries from '../components/ProvenIndustries'
 import CtaAbout from '../components/CtaAbout'
 import '../components/CompanyPages.css'
 
@@ -32,8 +32,13 @@ export default function AboutUs() {
     {/* <BreadcrumbAbout/> */}
     <AboutComponent/>
     <AboutTab/>
-    <IndustriesSection/>
     <IdentifyConnect/>
+    <section className="ppd-about-industries-heading" aria-labelledby="ppd-about-industries-title">
+      <span className="ppd-about-industries-heading__eyebrow"><i aria-hidden="true" /> OUR EXPERIENCE</span>
+      <h2 id="ppd-about-industries-title">Proven Across <em>Industries</em></h2>
+      <span className="ppd-about-industries-heading__rule" aria-hidden="true" />
+    </section>
+    <ProvenIndustries />
     <GlobalPresence/>
     <CtaAbout/>
     <Footer/>

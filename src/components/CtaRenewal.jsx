@@ -7,7 +7,7 @@ const CtaRenewal = () => (
         <p>Make timing your advantage</p>
         <h2 id="ppd-renewal-cta-title">Optimize customer lifecycles with <em>renewal intelligence.</em></h2>
       </div>
-      <a href="/contact-us">Connect with us <span aria-hidden="true">→</span></a>
+      <a href="/contact-us">Connect with us</a>
     </div>
   </section>
 );

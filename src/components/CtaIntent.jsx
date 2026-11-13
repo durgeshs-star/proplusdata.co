@@ -11,7 +11,6 @@ const CtaIntent = () => {
           </h2>
           <a className="ppd-techno-cta__button" href="/contact-us">
             Connect With Us
-            <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>

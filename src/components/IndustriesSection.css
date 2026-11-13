@@ -198,6 +198,7 @@
   font-family: Georgia, "Times New Roman", serif;
   font-size: 2.6rem;
   font-style: italic;
+  font-weight: 600;
   line-height: 1;
 }
 
@@ -215,7 +216,7 @@
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.6rem, 2.8vw, 2.2rem);
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.04em;
 }
 
@@ -437,4 +438,20 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.ppd-industries-feature-center { min-height: 17rem; padding: 1.25rem 1.4rem; }
+.ppd-industries-feature-number { font-size: 2.25rem; }
+.ppd-industries-feature-kicker { margin-top: .45rem; }
+.ppd-industries-feature-description { max-width: 18rem; margin: .65rem 0 0; color: #5d6f89; font-size: .82rem; line-height: 1.5; }
+.ppd-industries-feature-status { margin-top: .75rem; }
+.ppd-industries-feature-center > strong { width: 100%; max-width: 100%; font-size: clamp(1.25rem, 2vw, 1.85rem); line-height: 1.12; overflow-wrap: normal; word-break: normal; text-wrap: balance; }
+.ppd-industries-feature-center > strong.is-long { font-size: clamp(1.1rem, 1.3vw, 1.3rem); }
+
+@media (max-width: 560px) {
+  .ppd-industries-feature-center { min-height: 15rem; padding: 1rem; }
+  .ppd-industries-feature-description { max-width: 16rem; margin-top: .5rem; font-size: .76rem; }
+  .ppd-industries-feature-status { margin-top: .6rem; }
+  .ppd-industries-feature-center > strong { font-size: clamp(1.2rem, 5vw, 1.55rem); }
+  .ppd-industries-feature-center > strong.is-long { font-size: clamp(1.05rem, 4vw, 1.25rem); }
 }

@@ -38,7 +38,7 @@ export default function TechnographicsOutdated() {
         kicker="TECHNOLOGY INTELLIGENCE"
         lead="A static technology list is a snapshot. A timeline can show what changed, when it changed, and why it may matter."
         markdown={technographicsOutdatedMarkdown}
-        readingTime="7 MIN READ"
+        readingTime="10 MIN READ"
         heroArtwork="techTimeline"
       />
       <Footer />

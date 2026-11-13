@@ -30,7 +30,7 @@ const blogs = [
     {
      artwork: "b2bPlatforms",
      category: "B2B INTELLIGENCE",
-     title: "Beyond Contact Data: 8 B2B Intelligence Platforms Reshaping GTM",
+     title: "8 B2B Data Vendors Reshaping GTM",
      description:
        "Compare eight platforms across contact, account, intent, technology, buying group, and timing intelligence—and see how each supports a different GTM need.",
      link: "/b2b-intelligence-platforms-reshaping-gtm",
@@ -165,20 +165,6 @@ const blogs = [
 const BlogsRedesign = () => {
   return (
     <main className="ppd-blogs-page">
-      <section className="ppd-blogs-hero">
-        <div className="ppd-blogs-hero-inner">
-          <span className="ppd-blogs-eyebrow">
-            INSIGHTS & ANALYSIS
-          </span>
-          <h1 className="ppd-blogs-title">
-            Insights & Analysis
-          </h1>
-          <div className="ppd-blogs-rule"></div>
-          <p className="ppd-blogs-lead">
-            Expert insights, industry trends, and data-driven strategies to help you lead with intelligence in your GTM and ABM journey.
-          </p>
-        </div>
-      </section>
 
       <section className="ppd-blogs-body-section">
         <div className="ppd-blogs-grid">

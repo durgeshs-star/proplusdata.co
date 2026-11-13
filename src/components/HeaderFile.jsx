@@ -46,7 +46,6 @@ export default function HeaderFile() {
                 <li><a href="/aboutus" onClick={closeMenu}>About Us</a></li>
                 <li><a href="/careers" onClick={closeMenu}>Careers</a></li>
                 <li><a href="/contactus" onClick={closeMenu}>Contact Us</a></li>
-                <li><a href="/privacypolicy" onClick={closeMenu}>Privacy Policy</a></li>
                 <li><a href="/pressreleases" onClick={closeMenu}>Press Releases</a></li>
               </ul>
             </li>

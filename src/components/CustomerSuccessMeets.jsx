@@ -1,12 +1,13 @@
 import React from 'react';
 import "./Article.css"
+import BlogContentAnimation from "./BlogContentAnimation";
 
 export default function CustomerSuccessMeets() {
   return (
-    <main className="ppd-article-page">
+    <main className="ppd-article-page ppd-article-page--customer-success">
       <div className="ppd-article-featured">
-        <div className="ppd-article-featured-media">
-          <img src="assets/images/renewal-intelligence-wins.webp" alt="" />
+        <div className="ppd-article-featured-media" data-blog-art="success-featured">
+          <BlogContentAnimation variant="customerSuccess" />
         </div>
       </div>
 
@@ -53,8 +54,8 @@ export default function CustomerSuccessMeets() {
             <p>In markets where switching costs are high and competition is relentless, this dual capability can be the difference between flatlining growth and compounding net revenue retention year after year.</p>
           </section>
 
-          <div className="ppd-article-inline-media">
-            <img src="assets/images/renewal-intelligence-win.webp" alt="" />
+          <div className="ppd-article-inline-media" data-blog-art="success-inline">
+            <BlogContentAnimation variant="renewal" />
           </div>
 
           <section className="ppd-article-section">

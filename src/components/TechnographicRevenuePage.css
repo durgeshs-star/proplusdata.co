@@ -661,7 +661,7 @@
   color: var(--rt-blue);
   font-family: inherit;
   font-style: italic;
-  font-weight: 780;
+  font-weight: 600;
 }
 .ppd-revtech__hero-copy > p:not(.ppd-revtech__eyebrow) {
   color: var(--rt-mid);
@@ -1161,5 +1161,209 @@
   .ppd-revtech__outcome-grid article,
   .ppd-revtech__button span {
     transition: none;
+  }
+}
+
+/* Close the oversized transition between the blind spot and workflow sections. */
+.ppd-revtech__blindspot {
+  padding-bottom: 3rem;
+}
+
+.ppd-revtech__workflow {
+  padding-top: 3rem;
+}
+
+@media (max-width: 650px) {
+  .ppd-revtech__blindspot {
+    padding-bottom: 2rem;
+  }
+
+  .ppd-revtech__workflow {
+    padding-top: 2rem;
+  }
+}
+
+/* Give the signals section a distinct, high-contrast treatment. */
+.ppd-revtech__signals {
+  border: 0;
+  background:
+    radial-gradient(ellipse 34rem 28rem at 100% 0%, rgba(65, 123, 215, .3), transparent 72%),
+    linear-gradient(125deg, #0d1b3e, #142d5c);
+}
+
+.ppd-revtech__signals-heading .ppd-revtech__eyebrow,
+.ppd-revtech__signals-heading .ppd-revtech__section-title,
+.ppd-revtech__signals-heading .ppd-revtech__section-intro {
+  color: #f8fbff;
+}
+
+.ppd-revtech__signals-heading .ppd-revtech__section-title em {
+  color: #9fc4ff;
+}
+
+.ppd-revtech__signals-heading .ppd-revtech__section-intro {
+  color: #c1cee2;
+}
+
+.ppd-revtech__signals-caption {
+  color: #aebed7;
+}
+
+.ppd-revtech__signals-caption i {
+  background: #73c9ff;
+  box-shadow: 0 0 0 4px rgba(115, 201, 255, .16);
+}
+
+.ppd-revtech__signals .ppd-revtech__signal-list {
+  gap: .8rem;
+}
+
+.ppd-revtech__signals .ppd-revtech__signal-list li {
+  min-height: 4.5rem;
+  padding: .85rem 1rem;
+  border: 1px solid rgba(190, 211, 244, .2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .055);
+  color: #e2eaf6 !important;
+  transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.ppd-revtech__signals .ppd-revtech__signal-list li::before {
+  display: none;
+}
+
+.ppd-revtech__signals .ppd-revtech__signal-list li:hover {
+  transform: translateY(-2px);
+  border-color: rgba(130, 190, 255, .6);
+  background: rgba(255, 255, 255, .11);
+}
+
+.ppd-revtech__signal-index {
+  color: #7fc4ff;
+}
+
+.ppd-revtech__signal-name {
+  color: #e2eaf6 !important;
+}
+
+.ppd-revtech__signal-arrow {
+  color: #a8caff;
+}
+
+.ppd-revtech__signals::after {
+  border-color: rgba(190, 211, 244, .1);
+  box-shadow: 0 0 0 38px rgba(190, 211, 244, .025), 0 0 0 76px rgba(190, 211, 244, .018);
+}
+
+.ppd-revtech__signals .ppd-revtech__signal-list li:hover .ppd-revtech__signal-name {
+  color: #ffffff !important;
+}
+
+.ppd-revtech__signals .ppd-revtech__signal-list li:hover .ppd-revtech__signal-index,
+.ppd-revtech__signals .ppd-revtech__signal-list li:hover .ppd-revtech__signal-arrow {
+  color: #9bd7ff !important;
+}
+
+/* Polish the interactive signal journey tabs and step panel. */
+.ppd-revtech__journey-board {
+  border-color: #d7e2f3;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 24px 60px rgba(20, 45, 93, .1), 0 4px 14px rgba(20, 45, 93, .04);
+}
+
+.ppd-revtech__journey-tabs {
+  gap: .45rem;
+  padding: .55rem;
+  border-bottom-color: #e2eaf6;
+  background: #f3f6fc;
+}
+
+.ppd-revtech__journey-tabs button {
+  position: relative;
+  min-height: 96px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  transition: color .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  cursor: pointer;
+}
+
+.ppd-revtech__journey-tabs button > i {
+  position: absolute;
+  right: .75rem;
+  bottom: .65rem;
+  display: grid;
+  width: 1.45rem;
+  height: 1.45rem;
+  place-items: center;
+  border: 1px solid #d8e3f3;
+  border-radius: 50%;
+  color: #6b83a8;
+  font-size: .8rem;
+  font-style: normal;
+  line-height: 1;
+  transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.ppd-revtech__journey-tabs button:hover:not(.is-active) {
+  border-color: #d6e2f3;
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.ppd-revtech__journey-tabs button:hover > i {
+  transform: translate(2px, -2px);
+  border-color: #3975d5;
+  color: #fff;
+  background: #3975d5;
+}
+
+.ppd-revtech__journey-tabs button.is-active {
+  border-color: #214c9e;
+  border-radius: 13px;
+  background: linear-gradient(140deg, #173e8b, #285db8);
+  box-shadow: 0 7px 18px rgba(27, 71, 151, .2);
+}
+
+.ppd-revtech__journey-tabs button.is-active > i {
+  border-color: rgba(255, 255, 255, .45);
+  color: #fff;
+}
+
+.ppd-revtech__journey-panel {
+  padding: clamp(1.5rem, 3.5vw, 2.75rem);
+  background: radial-gradient(ellipse 45rem 24rem at 100% 0%, rgba(227, 237, 253, .4), transparent 70%);
+}
+
+.ppd-revtech__journey-panel-content {
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.ppd-revtech__journey-insight {
+  margin-top: 1.25rem;
+  padding: .85rem 1rem;
+  border: 1px solid #e4ebf6;
+  border-radius: 10px;
+  background: #f7f9fd;
+}
+
+.ppd-revtech__journey-preview {
+  border-color: #dce6f4;
+  border-radius: 15px;
+  box-shadow: 0 16px 38px rgba(27, 55, 103, .1), 0 2px 7px rgba(27, 55, 103, .04);
+}
+
+@media (max-width: 650px) {
+  .ppd-revtech__journey-tabs {
+    gap: .35rem;
+    padding: .4rem;
+  }
+
+  .ppd-revtech__journey-tabs button {
+    min-height: 88px;
+  }
+
+  .ppd-revtech__journey-panel {
+    padding: 1.1rem;
   }
 }

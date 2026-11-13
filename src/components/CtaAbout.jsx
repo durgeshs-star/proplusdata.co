@@ -52,21 +52,8 @@ const CtaAbout = () => {
       ref={sectionRef}
       className={`ppd-cta-section${isVisible ? " ppd-cta-visible" : ""}`}
       aria-labelledby="ppd-cta-heading"
-      style={{
-        backgroundImage: "url(assets/images/glob-bg.png)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
     >
       <div className="ppd-cta-container container">
-        <div className="ppd-cta-top ppd-cta-reveal">
-          <span className="ppd-cta-eyebrow">
-            DATA INTELLIGENCE <span aria-hidden="true">→</span> GTM IMPACT
-          </span>
-          <span className="ppd-cta-accent-line" aria-hidden="true" />
-        </div>
-
         <div className="ppd-cta-layout">
           <div className="ppd-cta-content">
             <h2
@@ -75,18 +62,13 @@ const CtaAbout = () => {
             >
               Ready to turn{" "}
               <span className="ppd-cta-highlight">data intelligence</span> into
-              impact? Connect with us and discover how we can power your{" "}
-              <span className="ppd-cta-highlight">GTM | ABM</span> strategies
-              with precision!
+              impact?
             </h2>
           </div>
 
           <div className="ppd-cta-action ppd-cta-reveal">
             <a href="/contact-us" className="ppd-cta-button">
               <span>Connect With Us</span>
-              <span className="ppd-cta-arrow" aria-hidden="true">
-                →
-              </span>
             </a>
 
             <div className="ppd-cta-flow" aria-hidden="true">

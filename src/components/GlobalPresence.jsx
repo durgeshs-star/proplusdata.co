@@ -1,13 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./GlobalPresence.css";
 
-const coverageNodes = [
-  { value: "150+", label: "COUNTRIES", className: "ppd-global-node-countries" },
-  { value: "APAC", label: "", className: "ppd-global-node-apac" },
-  { value: "EMEA", label: "", className: "ppd-global-node-emea" },
-  { value: "NORTH", label: "AMERICA", className: "ppd-global-node-north-america" },
-];
-
 const GlobalPresence = () => {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -92,53 +85,19 @@ const GlobalPresence = () => {
             role="img"
             aria-label="ProPlus Data connects its global intelligence platform to more than 150 countries across APAC, EMEA, and North America, with headquarters in India."
           >
-            <span
-              className="ppd-global-connection ppd-global-connection-countries"
-              aria-hidden="true"
-            />
-            <span
-              className="ppd-global-connection ppd-global-connection-apac"
-              aria-hidden="true"
-            />
-            <span
-              className="ppd-global-connection ppd-global-connection-emea"
-              aria-hidden="true"
-            />
-            <span
-              className="ppd-global-connection ppd-global-connection-north-america"
-              aria-hidden="true"
-            />
-
-            <div className="ppd-global-core">
-              <span className="ppd-global-core-mark" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-              </span>
-              <span className="ppd-global-core-label">PROPLUS DATA</span>
-              <span className="ppd-global-core-caption">
-                Global Intelligence
-              </span>
-            </div>
-
-            {coverageNodes.map((node, index) => (
-              <div
-                className={`ppd-global-node ppd-global-reveal ${node.className}`}
-                key={node.className}
-                style={{ "--ppd-global-order": index }}
-              >
-                <span className="ppd-global-node-indicator" aria-hidden="true" />
-                <span className="ppd-global-node-value">{node.value}</span>
-                {node.label && (
-                  <span className="ppd-global-node-label">{node.label}</span>
-                )}
-              </div>
-            ))}
-
-            <div className="ppd-global-india">
-              <span className="ppd-global-india-dot" aria-hidden="true" />
-              <span className="ppd-global-india-name">INDIA</span>
-              <span className="ppd-global-india-label">HEADQUARTERS</span>
+            <div className="ppd-world-map-container">
+              <img src="/assets/images/map.jpg" alt="" className="ppd-world-map" />
+              <span className="ppd-map-dot ppd-map-dot--na-west" aria-hidden="true" />
+              <span className="ppd-map-dot ppd-map-dot--na-central" aria-hidden="true" />
+              <span className="ppd-map-dot ppd-map-dot--na-east" aria-hidden="true" />
+              <span className="ppd-map-dot ppd-map-dot--emea-west" aria-hidden="true" />
+              <span className="ppd-map-dot ppd-map-dot--emea-east" aria-hidden="true" />
+              <span className="ppd-map-dot ppd-map-dot--emea-south" aria-hidden="true" />
+              <span className="ppd-map-dot ppd-map-dot--emea-middle-east" aria-hidden="true" />
+              <span className="ppd-map-dot ppd-map-dot--apac-china" aria-hidden="true" />
+              <span className="ppd-map-dot ppd-map-dot--apac-sea" aria-hidden="true" />
+              <span className="ppd-map-dot ppd-map-dot--apac-japan" aria-hidden="true" />
+              <span className="ppd-map-dot ppd-map-dot-hq" aria-hidden="true" />
             </div>
           </div>
 

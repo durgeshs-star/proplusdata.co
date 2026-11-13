@@ -41,7 +41,6 @@ export default function CmoLeadershipSummit2026() {
             </div>
             <a href="/cmo-leadership-summit-2026" className="ppd-event-card-link">
               Know More
-              <span>→</span>
             </a>
           </div>
         </div>

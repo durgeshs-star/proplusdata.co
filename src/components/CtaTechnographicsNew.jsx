@@ -1,5 +1,4 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
 
 const CtaTechnographicsNew = () => {
   return (
@@ -22,7 +21,6 @@ const CtaTechnographicsNew = () => {
           </p>
           <a className="ppd-techno-cta-new__button" href="/contact-us">
             Connect With Us
-            <FaArrowRight aria-hidden="true" />
           </a>
         </div>
       </div>

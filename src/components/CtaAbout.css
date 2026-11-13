@@ -4,13 +4,10 @@
   overflow: hidden;
   min-height: 360px;
   padding: clamp(4.5rem, 7.5vw, 6rem) 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: #08142d;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  color: #0f172a;
 }
 
 .ppd-cta-section *,
@@ -19,32 +16,7 @@
   box-sizing: border-box;
 }
 
-.ppd-cta-section::before {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: rgba(8, 20, 45, 0.68);
-  content: "";
-  pointer-events: none;
-}
 
-.ppd-cta-section::after {
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  right: -9rem;
-  width: min(34rem, 72vw);
-  height: min(34rem, 72vw);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(96, 165, 250, 0.16) 0%,
-    rgba(96, 165, 250, 0) 70%
-  );
-  content: "";
-  pointer-events: none;
-  transform: translateY(-50%);
-}
 
 .ppd-cta-container {
   position: relative;
@@ -62,7 +34,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  color: #bfdbfe;
+  color: #475569;
   font-size: 0.7rem;
   font-weight: 650;
   letter-spacing: 0.17em;
@@ -70,31 +42,32 @@
 }
 
 .ppd-cta-eyebrow > span {
-  color: #60a5fa;
+  color: #2563eb;
   font-size: 1rem;
 }
 
 .ppd-cta-accent-line {
   width: 3.6rem;
   height: 1px;
-  background: linear-gradient(90deg, rgba(96, 165, 250, 0.9), transparent);
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.9), transparent);
 }
 
 .ppd-cta-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(230px, 0.85fr);
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: clamp(2.5rem, 6vw, 6rem);
 }
 
 .ppd-cta-content {
   min-width: 0;
+  text-align: center;
 }
 
 .ppd-cta-heading {
   max-width: 900px;
-  margin: 0;
-  color: #ffffff;
+  margin: 0 auto;
+  color: #0f172a;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   font-size: clamp(1.9rem, 4vw, 3.25rem);
   font-weight: 700;
@@ -104,7 +77,7 @@
 
 .ppd-cta-highlight {
   font-family: 'Georgia', 'Times New Roman', serif;
-  color: #133580;
+  color: #2563eb;
   font-style: italic;
   font-weight: 600;
 }
@@ -113,7 +86,7 @@
   display: flex;
   min-width: 0;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.5rem;
 }
 
@@ -124,11 +97,11 @@
   justify-content: center;
   gap: 1.1rem;
   padding: 0 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.72);
+  border: none;
   border-radius: 8px;
-  background: #ffffff;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
-  color: #0f172a;
+  background: #133580;
+  box-shadow: 0 10px 28px rgba(19, 53, 128, 0.25);
+  color: #ffffff;
   font-size: 0.94rem;
   font-weight: 700;
   text-decoration: none;
@@ -139,9 +112,9 @@
 }
 
 .ppd-cta-button:hover {
-  background: #eff6ff;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.22);
-  color: #0f172a;
+  background: #0f2b6e;
+  box-shadow: 0 14px 35px rgba(19, 53, 128, 0.35);
+  color: #ffffff;
   text-decoration: none;
   transform: translateY(-3px);
 }
@@ -152,7 +125,7 @@
 }
 
 .ppd-cta-arrow {
-  color: #2563eb;
+  color: #ffffff;
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1;
@@ -167,7 +140,7 @@
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  color: rgba(219, 234, 254, 0.78);
+  color: rgba(71, 85, 105, 0.78);
   font-size: 0.53rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -178,10 +151,10 @@
   width: 0.36rem;
   height: 0.36rem;
   flex: 0 0 auto;
-  border: 1px solid rgba(147, 197, 253, 0.8);
+  border: 1px solid rgba(37, 99, 235, 0.8);
   border-radius: 50%;
-  background: #60a5fa;
-  box-shadow: 0 0 10px rgba(96, 165, 250, 0.42);
+  background: #2563eb;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.42);
 }
 
 .ppd-cta-flow-line {
@@ -190,7 +163,7 @@
   height: 1px;
   flex: 0 1 auto;
   overflow: hidden;
-  background: rgba(147, 197, 253, 0.45);
+  background: rgba(37, 99, 235, 0.45);
 }
 
 .ppd-cta-flow-line::after {
@@ -200,7 +173,7 @@
   width: 0.3rem;
   height: 3px;
   border-radius: 50%;
-  background: #bfdbfe;
+  background: #2563eb;
   content: "";
   opacity: 0;
 }
@@ -283,12 +256,6 @@
 
   .ppd-cta-button {
     min-height: 52px;
-  }
-
-  .ppd-cta-section::after {
-    right: -15rem;
-    width: 30rem;
-    height: 30rem;
   }
 }
 

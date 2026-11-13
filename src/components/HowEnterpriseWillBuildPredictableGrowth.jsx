@@ -1,20 +1,19 @@
 import React from 'react'
 import "./Article.css"
+import BlogContentAnimation from "./BlogContentAnimation";
 
 export default function HowEnterpriseWillBuildPredictableGrowth() {
   return (
-    <main className="ppd-article-page">
+    <main className="ppd-article-page ppd-article-page--predictable-growth">
       <div className="ppd-article-featured">
-        <a href='https://proplusdata.co/contact-us' target="_blank" rel="noopener noreferrer" className="ppd-article-featured-media">
-          <img src="/assets/images/how-enterprises-will-build-predictable-growth-in-an-uncertain-market.webp" alt="how enterprises will build predictable growth in an uncertain market" />
+        <a href='https://proplusdata.co/contact-us' target="_blank" rel="noopener noreferrer" className="ppd-article-featured-media" data-blog-art="enterprise-featured">
+          <BlogContentAnimation variant="enterprise" />
         </a>
       </div>
 
       <section className="ppd-article-hero">
         <div className="ppd-article-hero-inner">
-          <span className="ppd-article-eyebrow">
-            INSIGHTS & INTELLIGENCE
-          </span>
+           
           <h1 className="ppd-article-title">
             The 2026 GTM Reset: How Enterprises Will Build Predictable Growth in an Uncertain Market
           </h1>
@@ -57,9 +56,9 @@ export default function HowEnterpriseWillBuildPredictableGrowth() {
             <p>Combined, these pillars give organizations a steadier foundation to plan, forecast, and execute in conditions that remain dynamic.</p>
           </section>
 
-          <div className="ppd-article-inline-media">
+          <div className="ppd-article-inline-media" data-blog-art="enterprise-inline">
             <a href='https://proplusdata.co/contact-us' target="_blank" rel="noopener noreferrer">
-              <img src="/assets/images/accelarate-your-2026-gtm.webp" alt="accelerate your 2026 gtm" />
+              <BlogContentAnimation variant="expansion" />
             </a>
           </div>
 

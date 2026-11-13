@@ -53,9 +53,8 @@ const SolutionSection = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <h2 className="ppd-daas-title" id="ppd-daas-title">
-            8 Dimensions of <span>Intelligence.</span>
+            8D's of smartest <span>GTM Intelligence.</span>
           </h2>
-          <p className="ppd-daas-intro">A unified ecosystem of specialized data intelligence solutions.</p>
         </motion.header>
 
         <motion.div

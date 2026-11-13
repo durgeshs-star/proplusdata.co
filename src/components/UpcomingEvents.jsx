@@ -47,7 +47,6 @@ export default function UpcomingEvents() {
             </div>
             <a href="/gartner-marketing-symposium-xpo-2025" className="ppd-event-card-link">
               Know More
-              <span>→</span>
             </a>
           </div>
         </div>

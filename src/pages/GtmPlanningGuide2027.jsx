@@ -32,8 +32,9 @@ export default function GtmPlanningGuide2027() {
         kicker="A PRACTICAL GUIDE FOR B2B LEADERS"
         lead="Before you lock next year's plan, reassess the assumptions behind it—and the market you are actually entering."
         markdown={planningGuideMarkdown}
-        readingTime="8 MIN READ"
+        readingTime="10 MIN READ"
         heroArtwork="planning"
+        showDiscussionCta
       />
       <Footer />
     </div>

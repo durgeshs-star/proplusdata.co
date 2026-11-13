@@ -275,7 +275,6 @@ export default function InteractiveGtmDemo() {
               <div className="ppd-demo-bottom-cta">
                 <a href="#flipbox" className="ppd-demo-card-action-btn">
                   Explore Full Intelligence Suite
-                  <span className="ppd-arrow-move">→</span>
                 </a>
               </div>
             </div>

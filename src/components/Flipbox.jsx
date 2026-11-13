@@ -1,5 +1,8 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAws, faGoogle, faHubspot, faLinux, faMicrosoft, faSalesforce, faShopify, faSlack, faWindows } from "@fortawesome/free-brands-svg-icons";
+import { faAddressCard, faCloud, faSnowflake } from "@fortawesome/free-solid-svg-icons";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "./Flipbox.css";
 
@@ -46,7 +49,7 @@ const flipboxData = [
     label: "04 / BUYING COMMITTEE",
     metric: "Buying stakeholders",
     tags: ["Stakeholders", "Behaviors", "Preferences"],
-    visual: "purchase",
+    visual: "buying-group",
   },
   {
     title: <>Next Tech Purchase<sup>&reg;</sup></>,
@@ -61,16 +64,151 @@ const flipboxData = [
   },
 ];
 
+const technologyLogoColumns = [
+  [
+    { name: "Azure", mark: "A", brand: "azure" },
+    { name: "Linux", icon: faLinux, brand: "linux" },
+    { name: "GCP", icon: faGoogle, brand: "gcp" },
+    { name: "Adobe", src: "/assets/images/brand/Adobe.svg", brand: "adobe" },
+    { name: "ChatGPT", mark: "AI", brand: "chatgpt" },
+    { name: "Shopify", icon: faShopify, brand: "shopify" },
+    { name: "AWS", icon: faAws, brand: "aws" },
+  ],
+  [
+    { name: "Slack", icon: faSlack, brand: "slack" },
+    { name: "Salesforce", icon: faSalesforce, brand: "salesforce" },
+    { name: "Zoom One", mark: "Z", brand: "zoom" },
+    { name: "Lighthouse", mark: "LH", brand: "lighthouse" },
+    { name: "Norton", mark: "N", brand: "norton" },
+    { name: "MongoDB", mark: "M", brand: "mongodb" },
+    { name: "Cloud", icon: faCloud, brand: "cloud" },
+  ],
+  [
+    { name: "Postgres", mark: "PG", brand: "postgres" },
+    { name: "CRM", icon: faAddressCard, brand: "crm" },
+    { name: "Windows", icon: faWindows, brand: "windows" },
+    { name: "SAP", src: "/assets/images/brand/sap.svg", brand: "sap" },
+    { name: "Oracle", mark: "ORACLE", brand: "oracle" },
+    { name: "Cisco", src: "/assets/images/brand/cisco.svg", brand: "cisco" },
+    { name: "Bosch", mark: "BOSCH", brand: "bosch" },
+  ],
+];
+
+const renewalTechStacks = [
+  [
+    { name: "AWS", icon: faAws, brand: "aws" },
+    { name: "Azure", mark: "A", brand: "azure" },
+    { name: "Linux", icon: faLinux, brand: "linux" },
+  ],
+  [
+    { name: "Salesforce", icon: faSalesforce, brand: "salesforce" },
+    { name: "Slack", icon: faSlack, brand: "slack" },
+    { name: "Adobe", src: "/assets/images/brand/Adobe.svg", brand: "adobe" },
+  ],
+  [
+    { name: "SAP", src: "/assets/images/brand/sap.svg", brand: "sap" },
+    { name: "Oracle", mark: "O", brand: "oracle" },
+    { name: "MongoDB", mark: "M", brand: "mongodb" },
+  ],
+];
+
+const purchasePredictionColumns = [
+  [
+    { name: "Microsoft Azure", icon: faMicrosoft, brand: "azure", probability: "71.37%" },
+    { name: "MongoDB", mark: "M", brand: "mongodb", probability: "79.53%" },
+    { name: "AWS", icon: faAws, brand: "aws", probability: "76.91%" },
+  ],
+  [
+    { name: "Xiaomi", mark: "mi", brand: "xiaomi", probability: "74.12%" },
+    { name: "ChatGPT", mark: "✳", brand: "chatgpt", probability: "72.42%" },
+    { name: "Adobe", src: "/assets/images/brand/Adobe.svg", brand: "adobe", probability: "74.56%" },
+  ],
+  [
+    { name: "Samsung", mark: "S", brand: "samsung", probability: "74.32%" },
+    { name: "Snowflake", icon: faSnowflake, brand: "snowflake", probability: "71.08%" },
+    { name: "HubSpot", icon: faHubspot, brand: "hubspot", probability: "72.83%" },
+  ],
+];
+
+const RenewalTechStack = ({ technologies, timing }) => (
+  <div className={`proplus-intelligence-visual__renewal-stack renewal-stack--${timing}`}>
+    <div className="proplus-intelligence-visual__renewal-tech-layers">
+      {technologies.map((technology) => (
+        <div className={`proplus-intelligence-visual__renewal-tech-layer renewal-tech--${technology.brand}`} key={technology.name}>
+          {technology.src ? <img src={technology.src} alt="" /> : technology.icon ? <FontAwesomeIcon icon={technology.icon} aria-hidden="true" /> : <span className="proplus-intelligence-visual__renewal-tech-mark" aria-hidden="true">{technology.mark}</span>}
+          <span>{technology.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const TechnologyLogoStream = ({ variant = "technographics" }) => {
+  const columns = variant === "purchase" ? purchasePredictionColumns : technologyLogoColumns;
+  const accessibleLabel = variant === "purchase"
+    ? "Technology purchase predictions with estimated likelihood percentages"
+    : "Technology logos: Azure, Linux, GCP, Adobe, ChatGPT, Shopify, Slack, Salesforce, Zoom One, Lighthouse, Norton, MongoDB, Postgres, SAP, Oracle, Cisco, Bosch, AWS, Cloud, CRM, and Windows";
+
+  return (
+  <div className={`proplus-intelligence-visual__logo-streams proplus-intelligence-visual__logo-streams--${variant}`} aria-label={accessibleLabel}>
+    {columns.map((column, columnIndex) => (
+      <div className={`proplus-intelligence-visual__logo-column proplus-intelligence-visual__logo-column--${columnIndex + 1}`} key={columnIndex}>
+        <div className="proplus-intelligence-visual__logo-track">
+          {[...column, ...column].map((logo, logoIndex) => (
+            <div className={`proplus-intelligence-visual__logo-chip proplus-intelligence-visual__logo-chip--${logo.brand}`} key={`${logo.name}-${logoIndex}`}>
+              {logo.src ? <img src={logo.src} alt="" /> : logo.icon ? <FontAwesomeIcon icon={logo.icon} aria-hidden="true" /> : <span className="proplus-intelligence-visual__logo-mark" aria-hidden="true">{logo.mark}</span>}
+              <span>{logo.name}</span>
+              {logo.probability && <strong className="proplus-intelligence-visual__logo-probability">{logo.probability}</strong>}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+  );
+};
+
 const IntelligenceVisual = ({ type, color }) => (
   <div className={`proplus-intelligence-visual proplus-intelligence-visual--${type}`} aria-hidden="true">
     <div className="proplus-intelligence-visual__glow" />
+    {type === "intent" || type === "buying-group" ? (
+      <>
+        <img className={`proplus-intelligence-visual__feature-image proplus-intelligence-visual__feature-image--${type}`} src={type === "intent" ? "/assets/images/intent.png" : "/assets/images/BG.png"} alt="" loading="lazy" decoding="async" />
+        {type === "intent" && (
+          <div className="proplus-intelligence-visual__intent-caption">
+            <span className="proplus-intelligence-visual__intent-caption-dot" aria-hidden="true" />
+            <span><strong>Buying signals</strong><small>Search · Content · Product research</small></span>
+          </div>
+        )}
+      </>
+    ) : (
+      <>
     <div className="proplus-intelligence-visual__window">
       <div className="proplus-intelligence-visual__topbar"><i /><i /><i /><span>INTELLIGENCE OVERVIEW</span></div>
       <div className="proplus-intelligence-visual__body">
-        <div className="proplus-intelligence-visual__sidebar"><b /><b /><b /><b /></div>
+        {type !== "renewal" && type !== "purchase" && <div className="proplus-intelligence-visual__sidebar"><b /><b /><b /><b /></div>}
         <div className="proplus-intelligence-visual__chart">
-          <div className="proplus-intelligence-visual__chart-title" style={{ color }}>ACCOUNT SIGNALS <span>↗</span></div>
-          <div className="proplus-intelligence-visual__bars"><i /><i /><i /><i /><i /><i /><i /></div>
+          <div className="proplus-intelligence-visual__chart-title" style={{ color }}>BUYING PROPENSITY <span>↗</span></div>
+          {type === "technographics" ? (
+            <TechnologyLogoStream />
+          ) : type === "purchase" ? (
+            <TechnologyLogoStream variant="purchase" />
+          ) : type === "renewal" ? (
+            <div className="proplus-intelligence-visual__renewal-stacks" aria-label="Existing technology stacks approaching renewal in over 100 days, six months, and multiple years">
+              <div className="proplus-intelligence-visual__renewal-legend" aria-hidden="true">
+                <span><i className="is-blue" /> &gt;100 Days</span>
+                <span><i className="is-orange" /> 6 Months</span>
+                <span><i className="is-cyan" /> Multiyear</span>
+              </div>
+              <div className="proplus-intelligence-visual__renewal-stack-row" aria-hidden="true">
+                <RenewalTechStack technologies={renewalTechStacks[0]} timing="soon" />
+                <RenewalTechStack technologies={renewalTechStacks[1]} timing="six-months" />
+                <RenewalTechStack technologies={renewalTechStacks[2]} timing="multi-year" />
+              </div>
+            </div>
+          ) : (
+            <div className="proplus-intelligence-visual__bars"><i /><i /><i /><i /><i /><i /><i /></div>
+          )}
           <div className="proplus-intelligence-visual__baseline" />
           <div className="proplus-intelligence-visual__chips"><i /><i /><i /></div>
         </div>
@@ -78,6 +216,8 @@ const IntelligenceVisual = ({ type, color }) => (
     </div>
     <div className="proplus-intelligence-visual__orbit proplus-intelligence-visual__orbit--one" />
     <div className="proplus-intelligence-visual__orbit proplus-intelligence-visual__orbit--two" />
+      </>
+    )}
   </div>
 );
 
@@ -173,7 +313,7 @@ const Flipbox = () => {
               {flipboxData.map((item, index) => (
                 <Link
                   to={item.link}
-                  className="proplus-intelligence-card"
+                  className={`proplus-intelligence-card${item.visual === "purchase" ? " proplus-intelligence-card--purchase" : item.visual === "buying-group" ? " proplus-intelligence-card--buying-group" : ""}`}
                   key={item.link}
                   style={{ "--card-color": item.backgroundColor, "--card-ink": item.textColor }}
                 >

@@ -32,7 +32,6 @@ export default function WinterDataSummit() {
             </div>
             <a href="/new-york-winter-data-summit-2025" className="ppd-event-card-link">
               Know More
-              <span>→</span>
             </a>
           </div>
         </div>

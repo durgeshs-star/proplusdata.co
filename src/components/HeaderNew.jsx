@@ -147,7 +147,6 @@ useEffect(() => {
                 <li><Link to="/about-us" onClick={closeMenu}>About Us</Link></li>
                 <li><Link to="/careers" onClick={closeMenu}>Careers</Link></li>
                 <li><Link to="/contact-us" onClick={closeMenu}>Contact Us</Link></li>
-                <li><Link to="/privacy-policy" onClick={closeMenu}>Privacy Policy</Link></li>
                 <li><Link to="/press-releases" onClick={closeMenu}>Press Releases</Link></li>
               </ul>
             </li>

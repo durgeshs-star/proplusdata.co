@@ -12,25 +12,32 @@ html.proplus-intelligence-scroll-lock #flipbox .proplus-intelligence-sticky { po
 .proplus-intelligence-section__intro { max-width: 600px; margin: 1rem auto 0; color: #64748b; font-size: 1rem; line-height: 1.6; }
 .proplus-intelligence-track-viewport { overflow: hidden; }
 .proplus-intelligence-grid { display: flex; width: calc(500% + 96px); gap: 24px; will-change: transform; }
-.proplus-intelligence-card { position: relative; isolation: isolate; display: flex; flex: 0 0 calc((100% - 96px) / 5); min-width: 0; min-height: clamp(300px,40vh,400px); flex-direction: row; overflow: hidden; border-radius: 24px; background: var(--card-color); box-shadow: 0 22px 60px rgba(15,23,42,.14); color: var(--card-ink); text-decoration: none; }
+.proplus-intelligence-card { position: relative; isolation: isolate; display: flex; flex: 0 0 calc((100% - 96px) / 5); min-width: 0; min-height: clamp(300px,40vh,400px); flex-direction: row; overflow: hidden; border-radius: 24px; background: var(--card-color); box-shadow: none; color: var(--card-ink); text-decoration: none; }
 .proplus-intelligence-card__content { z-index: 2; display: flex; width: 52%; flex-direction: column; padding: clamp(1.5rem,3vw,3rem); }
-.proplus-intelligence-card__label { margin-bottom: auto; font-size: .65rem; font-weight: 800; letter-spacing: .14em; opacity: .72; }
+.proplus-intelligence-card__label { margin-bottom: auto; color: var(--card-ink) !important; font-size: .65rem; font-weight: 800; letter-spacing: .14em; opacity: .72; transition: none !important; }
 .proplus-intelligence-card__header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 2.5rem 0 1rem; }
 .proplus-intelligence-card__title { margin: 0; color: var(--card-ink); font-family: 'Inter','DM Sans',sans-serif; font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 700; letter-spacing: -.045em; line-height: 1.08; }
 .proplus-intelligence-card__title sup { font-size: .48em; }
-.proplus-intelligence-card__arrow-icon { position: absolute; top: 24px; right: 24px; display: grid; width: 56px; height: 56px; flex: 0 0 56px; place-items: center; border: 1.5px solid currentColor; border-radius: 50%; font-size: 1.35rem; transition: transform .3s ease,background .3s ease; }
-.proplus-intelligence-card:hover .proplus-intelligence-card__arrow-icon { transform: rotate(45deg); background: rgba(255,255,255,.24); }
+.proplus-intelligence-card__arrow-icon { position: absolute; top: 24px; right: 24px; z-index: 3; display: grid; width: 56px; height: 56px; flex: 0 0 56px; place-items: center; border: 2px solid #fff; border-radius: 50%; background: #fff; box-shadow: 0 5px 16px rgba(14,38,82,.22); color: #173f78 !important; font-size: 1.5rem; font-weight: 700; line-height: 1; }
 .proplus-intelligence-card__description { max-width: 500px; margin: 0; font-size: clamp(.94rem,1.15vw,1.08rem); font-weight: 500; line-height: 1.7; }
 .proplus-intelligence-card__metric { display: flex; flex-direction: column; gap: .35rem; margin-top: 1.4rem; }
+.proplus-intelligence-card__metric span,
+.proplus-intelligence-card__metric strong { color: var(--card-ink) !important; transition: none !important; }
 .proplus-intelligence-card__metric span { font-size: .62rem; font-weight: 800; letter-spacing: .14em; opacity: .68; }
 .proplus-intelligence-card__metric strong { font-size: 1.02rem; }
 .proplus-intelligence-card__tags { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1rem 0 0; padding: 0; list-style: none; }
 .proplus-intelligence-card__tags li { padding: .42rem .68rem; border: 1px solid currentColor; border-radius: 999px; font-size: .68rem; font-weight: 600; opacity: .83; }
-.proplus-intelligence-card__index { position: absolute; right: 1.5rem; bottom: 1rem; z-index: 3; font-size: .7rem; font-weight: 800; letter-spacing: .12em; opacity: .62; }
+.proplus-intelligence-card__index { position: absolute; right: 1.5rem; bottom: 1rem; z-index: 3; color: var(--card-ink) !important; font-size: .7rem; font-weight: 800; letter-spacing: .12em; opacity: .62; transition: none !important; }
 .proplus-intelligence-visual { position: relative; display: grid; width: 48%; min-height: 100%; overflow: hidden; place-items: center; background: radial-gradient(ellipse at 60% 50%,rgba(255,255,255,.4),transparent 65%); }
 .proplus-intelligence-visual__glow { position: absolute; width: 75%; aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,.28); filter: blur(45px); }
+.proplus-intelligence-visual__feature-image { position: relative; z-index: 1; display: block; width: 94%; height: 94%; object-fit: contain; filter: drop-shadow(0 16px 24px rgba(17,49,115,.16)); }
+.proplus-intelligence-visual__feature-image--buying-group { width: 98%; height: 98%; }
+.proplus-intelligence-visual__intent-caption { position: absolute; right: 5%; bottom: 8%; z-index: 2; display: flex; align-items: center; gap: 8px; max-width: 82%; padding: 8px 11px; border: 1px solid rgba(214,226,245,.9); border-radius: 10px; background: rgba(255,255,255,.96); box-shadow: 0 7px 20px rgba(24,54,107,.14); color: #173f78; }
+.proplus-intelligence-visual__intent-caption-dot { width: 8px; height: 8px; flex: 0 0 8px; border-radius: 50%; background: #316cf4; box-shadow: 0 0 0 4px rgba(49,108,244,.12); }
+.proplus-intelligence-visual__intent-caption > span:last-child { display: grid; gap: 2px; }
+.proplus-intelligence-visual__intent-caption strong { color: #173f78; font-size: .68rem; font-weight: 800; line-height: 1.1; }
+.proplus-intelligence-visual__intent-caption small { color: #526681; font-size: .52rem; font-weight: 600; line-height: 1.15; }
 .proplus-intelligence-visual__window { position: relative; z-index: 1; width: 88%; overflow: hidden; border: 1px solid rgba(255,255,255,.7); border-radius: 14px; background: rgba(255,255,255,.92); box-shadow: 0 28px 70px rgba(15,23,42,.2); transform: rotate(-4deg); transition: transform .7s cubic-bezier(.2,.8,.2,1); }
-.proplus-intelligence-card:hover .proplus-intelligence-visual__window { transform: rotate(-1deg) translateY(-5px) scale(1.025); }
 .proplus-intelligence-visual__topbar { display: flex; height: 35px; align-items: center; gap: 5px; padding: 0 12px; border-bottom: 1px solid #e8edf4; color: #7c8ba1; font-size: 6px; font-weight: 800; letter-spacing: .11em; }
 .proplus-intelligence-visual__topbar i { width: 5px; height: 5px; border-radius: 50%; background: #d5deea; }
 .proplus-intelligence-visual__topbar span { margin-left: auto; }
@@ -45,6 +52,67 @@ html.proplus-intelligence-scroll-lock #flipbox .proplus-intelligence-sticky { po
 .proplus-intelligence-visual__bars i { width: 10%; height: 40%; border-radius: 4px 4px 0 0; background: var(--card-color); opacity: .52; }
 .proplus-intelligence-visual__bars i:nth-child(2n) { height: 66%; opacity: .72; }
 .proplus-intelligence-visual__bars i:nth-child(3n) { height: 90%; opacity: .9; }
+.proplus-intelligence-visual__logo-streams { display: grid; height: 126px; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 0; overflow: hidden; mask-image: linear-gradient(to bottom, transparent 0, #000 4%, #000 96%, transparent 100%); }
+.proplus-intelligence-visual__logo-column { min-width: 0; overflow: hidden; }
+.proplus-intelligence-visual__logo-track { display: flex; flex-direction: column; gap: 8px; animation: proplus-logo-scroll-up 18s linear infinite; }
+.proplus-intelligence-visual__logo-column--1 .proplus-intelligence-visual__logo-track,
+.proplus-intelligence-visual__logo-column--3 .proplus-intelligence-visual__logo-track { animation-name: proplus-logo-scroll-down; }
+.proplus-intelligence-visual__logo-column--2 .proplus-intelligence-visual__logo-track { animation-duration: 20s; }
+.proplus-intelligence-visual__logo-column--3 .proplus-intelligence-visual__logo-track { animation-duration: 22s; }
+.proplus-intelligence-visual__logo-chip { display: flex; min-height: 32px; flex: 0 0 32px; align-items: center; gap: 6px; overflow: hidden; padding: 4px 6px; border: 1px solid #dfe7f1; border-radius: 7px; background: rgba(255,255,255,.98); color: #334155; box-shadow: 0 3px 8px rgba(20,54,99,.06); }
+.proplus-intelligence-visual__logo-chip > img,
+.proplus-intelligence-visual__logo-chip > svg,
+.proplus-intelligence-visual__logo-mark { display: grid; width: 20px; height: 20px; flex: 0 0 20px; place-items: center; object-fit: contain; color: #2563a7; font-size: 16px; }
+.proplus-intelligence-visual__logo-mark { border-radius: 4px; background: #e9f1fb; font-size: 9px; font-weight: 800; letter-spacing: -.04em; }
+.proplus-intelligence-visual__logo-chip > span:last-child { overflow: hidden; color: #26364d; font-size: .68rem; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.proplus-intelligence-visual__logo-streams--purchase { height: 148px; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.proplus-intelligence-visual--purchase .proplus-intelligence-visual__chart { padding-left: 7px; }
+.proplus-intelligence-visual__logo-streams--purchase .proplus-intelligence-visual__logo-chip { min-height: 37px; flex-basis: 37px; gap: 5px; padding: 4px 6px; }
+.proplus-intelligence-visual__logo-streams--purchase .proplus-intelligence-visual__logo-chip > img,
+.proplus-intelligence-visual__logo-streams--purchase .proplus-intelligence-visual__logo-chip > svg,
+.proplus-intelligence-visual__logo-streams--purchase .proplus-intelligence-visual__logo-mark { width: 18px; height: 18px; flex-basis: 18px; font-size: 14px; }
+.proplus-intelligence-visual__logo-streams--purchase .proplus-intelligence-visual__logo-chip > span:not(.proplus-intelligence-visual__logo-mark) { flex: 1 1 auto; min-width: 0; font-size: .64rem; }
+.proplus-intelligence-visual__logo-probability { flex: 0 0 auto; padding: 4px 5px; border-radius: 4px; background: #e6f5e9; color: #287a3b; font-size: .54rem; font-weight: 800; letter-spacing: -.025em; }
+.proplus-intelligence-visual__logo-chip--xiaomi .proplus-intelligence-visual__logo-mark { background: #fff0e8; color: #ff6900; }
+.proplus-intelligence-visual__logo-chip--samsung .proplus-intelligence-visual__logo-mark { background: #edf3ff; color: #1428a0; font-size: 8px; }
+.proplus-intelligence-visual__logo-chip--snowflake > svg { color: #29a9e1; }
+.proplus-intelligence-visual__logo-chip--hubspot > svg { color: #ff7a59; }
+.proplus-intelligence-visual__logo-chip--azure .proplus-intelligence-visual__logo-mark { background: #e6f3ff; color: #0078d4; }
+.proplus-intelligence-visual__logo-chip--chatgpt .proplus-intelligence-visual__logo-mark { background: #e6f5f1; color: #12836b; }
+.proplus-intelligence-visual__logo-chip--norton .proplus-intelligence-visual__logo-mark { background: #fff0e7; color: #ef5b25; }
+.proplus-intelligence-visual__logo-chip--mongodb .proplus-intelligence-visual__logo-mark { background: #e7f5e9; color: #159447; }
+.proplus-intelligence-visual__logo-chip--oracle .proplus-intelligence-visual__logo-mark { background: #fff0f0; color: #c74634; font-size: 5px; }
+.proplus-intelligence-visual__logo-chip--bosch .proplus-intelligence-visual__logo-mark { background: #fff0f0; color: #e3000b; font-size: 5px; }
+.proplus-intelligence-visual__renewal-stacks { display: grid; min-height: 112px; grid-template-rows: auto 1fr; gap: 5px; padding: 5px 2px 0; }
+.proplus-intelligence-visual__renewal-legend { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; color: #273b60; font-size: .62rem; font-weight: 750; white-space: nowrap; }
+.proplus-intelligence-visual__renewal-legend span { display: flex; align-items: center; gap: 4px; }
+.proplus-intelligence-visual__renewal-legend i { width: 8px; height: 8px; flex: 0 0 8px; background: #203f96; }
+.proplus-intelligence-visual__renewal-legend i.is-orange { background: #ff741c; }
+.proplus-intelligence-visual__renewal-legend i.is-cyan { background: #08c9d8; }
+.proplus-intelligence-visual__renewal-stack-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: 8px; padding: 3px 2px 0; }
+.proplus-intelligence-visual__renewal-stack { display: flex; min-width: 0; align-items: flex-end; justify-content: center; padding: 0 2px 4px; }
+.proplus-intelligence-visual__renewal-tech-layers { display: flex; width: 100%; flex-direction: column; justify-content: flex-end; gap: 4px; }
+.proplus-intelligence-visual__renewal-tech-layer { position: relative; display: flex; min-width: 0; height: 24px; align-items: center; gap: 6px; padding: 3px 6px; border: 1px solid #dce5f1; border-radius: 5px; background: linear-gradient(180deg,#fff,#f3f7fc); box-shadow: 0 3px 0 #d5e0ee, 0 4px 7px rgba(30,58,100,.08); color: #263952; animation: proplus-renewal-layer-rise 4.8s ease-in-out infinite; }
+.proplus-intelligence-visual__renewal-tech-layer:nth-child(2) { animation-delay: .2s; }
+.proplus-intelligence-visual__renewal-tech-layer:nth-child(3) { animation-delay: .4s; }
+.proplus-intelligence-visual__renewal-tech-layer > img,
+.proplus-intelligence-visual__renewal-tech-layer > svg,
+.proplus-intelligence-visual__renewal-tech-mark { display: grid; width: 17px; height: 17px; flex: 0 0 17px; place-items: center; object-fit: contain; color: #2864a8; font-size: 14px; }
+.proplus-intelligence-visual__renewal-tech-mark { border-radius: 3px; background: #e5effc; color: #1769aa; font-size: 10px; font-weight: 800; }
+.proplus-intelligence-visual__renewal-tech-layer > span:last-child { overflow: hidden; color: #263952; font-size: .65rem; font-weight: 750; text-overflow: ellipsis; white-space: nowrap; }
+.proplus-intelligence-visual--renewal .proplus-intelligence-visual__chart { padding-left: 7px; }
+.renewal-tech--aws > svg { color: #293642; }
+.renewal-tech--azure .proplus-intelligence-visual__renewal-tech-mark { background: #e4f2ff; color: #0078d4; }
+.renewal-tech--linux > svg { color: #df9c29; }
+.renewal-tech--salesforce > svg { color: #159bd7; }
+.renewal-tech--slack > svg { color: #611f69; }
+.renewal-tech--adobe > img { object-fit: contain; }
+.renewal-tech--sap > img { object-fit: contain; }
+.renewal-tech--oracle .proplus-intelligence-visual__renewal-tech-mark { background: #fff0f0; color: #c74634; }
+.renewal-tech--mongodb .proplus-intelligence-visual__renewal-tech-mark { background: #e7f5e9; color: #159447; }
+.renewal-stack--soon { padding-bottom: 4px; }
+.renewal-stack--six-months { padding-bottom: 4px; }
+.renewal-stack--multi-year { padding-bottom: 4px; }
 .proplus-intelligence-visual__baseline { height: 1px; background: #e8edf4; }
 .proplus-intelligence-visual__chips { display: flex; gap: 6px; margin-top: 12px; }
 .proplus-intelligence-visual__chips i { width: 28%; height: 8px; border-radius: 8px; background: #e9eef5; }
@@ -59,15 +127,26 @@ html.proplus-intelligence-scroll-lock #flipbox .proplus-intelligence-sticky { po
 .proplus-intelligence-progress__dot { width: 7px; height: 7px; border-radius: 50%; background: #cbd5e1; }
 .proplus-intelligence-progress__dot.is-active { width: 26px; border-radius: 8px; background: #133580; }
 
-/* Keep card copy legible when site-wide anchor hover colors apply. */
-.proplus-home .proplus-intelligence-card:hover,
-.proplus-home .proplus-intelligence-card:hover .proplus-intelligence-card__content,
-.proplus-home .proplus-intelligence-card:hover .proplus-intelligence-card__content *,
-.proplus-home .proplus-intelligence-card:hover .proplus-intelligence-card__arrow-icon,
-.proplus-home .proplus-intelligence-card:hover .proplus-intelligence-card__index {
+.proplus-home .proplus-intelligence-card--purchase .proplus-intelligence-card__label,
+.proplus-home .proplus-intelligence-card--purchase .proplus-intelligence-card__title,
+.proplus-home .proplus-intelligence-card--purchase .proplus-intelligence-card__metric strong,
+.proplus-home .proplus-intelligence-card--purchase .proplus-intelligence-card__description {
+  transition: none !important;
+}
+.proplus-home .proplus-intelligence-card--purchase .proplus-intelligence-card__label,
+.proplus-home .proplus-intelligence-card--purchase .proplus-intelligence-card__title,
+  .proplus-home .proplus-intelligence-card--purchase .proplus-intelligence-card__metric span,
+.proplus-home .proplus-intelligence-card--purchase .proplus-intelligence-card__metric strong {
   color: #fff !important;
 }
+  .proplus-home .proplus-intelligence-card--purchase .proplus-intelligence-card__description,
+  .proplus-home .proplus-intelligence-card--buying-group .proplus-intelligence-card__description {
+    color: #fff !important;
+  }
 @keyframes proplus-intelligence-pulse { 50% { box-shadow: 0 0 0 7px rgba(59,130,246,.04); } }
+@keyframes proplus-renewal-layer-rise { 0%,100% { transform: translateY(0); filter: brightness(1); } 50% { transform: translateY(-2px); filter: brightness(1.06); } }
+@keyframes proplus-logo-scroll-up { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+@keyframes proplus-logo-scroll-down { from { transform: translateY(-50%); } to { transform: translateY(0); } }
 @media (max-height: 760px) and (min-width: 901px) { .proplus-intelligence-section__header { margin-bottom: 1.4rem; } .proplus-intelligence-card { min-height: 380px; } .proplus-intelligence-card__header { margin-top: 1.5rem; } }
 @media (max-width: 900px) {
   .proplus-intelligence-section { height: auto; margin-bottom: 0; padding: 4rem 0; }
@@ -90,5 +169,11 @@ html.proplus-intelligence-scroll-lock #flipbox .proplus-intelligence-sticky { po
   .proplus-intelligence-card__description { font-size: .92rem; }
   .proplus-intelligence-visual { width: 100%; min-height: 250px; }
   .proplus-intelligence-visual__body { min-height: 160px; }
+  .proplus-intelligence-visual--technographics .proplus-intelligence-visual__logo-streams { height: 118px; }
+  .proplus-intelligence-visual--technographics .proplus-intelligence-visual__logo-chip { min-height: 29px; flex-basis: 29px; gap: 4px; padding: 4px; }
+  .proplus-intelligence-visual--technographics .proplus-intelligence-visual__logo-chip > img,
+  .proplus-intelligence-visual--technographics .proplus-intelligence-visual__logo-chip > svg,
+  .proplus-intelligence-visual--technographics .proplus-intelligence-visual__logo-mark { width: 16px; height: 16px; flex-basis: 16px; font-size: 13px; }
+  .proplus-intelligence-visual--technographics .proplus-intelligence-visual__logo-chip > span:last-child { font-size: .58rem; }
 }
-@media (prefers-reduced-motion: reduce) { .proplus-intelligence-section__status { animation: none; } .proplus-intelligence-card__arrow-icon,.proplus-intelligence-visual__window { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .proplus-intelligence-section__status { animation: none; } .proplus-intelligence-card__arrow-icon,.proplus-intelligence-visual__window { transition: none; } .proplus-intelligence-visual__logo-track,.proplus-intelligence-visual__renewal-tech-layer { animation: none; } }

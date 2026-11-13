@@ -21,7 +21,7 @@ export default function WhenRevenueOpportunityBegins() {
         <link rel="canonical" href="https://proplusdata.co/when-does-a-revenue-opportunity-begin" />
       </Helmet>
       <Header1 />
-      <RevenueOpportunityArticle />
+      <RevenueOpportunityArticle readingTime="12 MIN READ" />
       <Footer />
     </div>
   );

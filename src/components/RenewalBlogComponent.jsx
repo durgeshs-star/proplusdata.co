@@ -1,12 +1,13 @@
 import React from 'react';
 import "./Article.css"
+import BlogContentAnimation from "./BlogContentAnimation";
 
 export default function RenewalBlogComponent() {
   return (
-    <main className="ppd-article-page">
+    <main className="ppd-article-page ppd-article-page--renewal-blog">
       <div className="ppd-article-featured">
-        <div className="ppd-article-featured-media">
-          <img src="assets/images/renewal-timing.webp" alt="" />
+        <div className="ppd-article-featured-media" data-blog-art="renewal-featured">
+          <BlogContentAnimation variant="renewalTiming" />
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaArrowRight, FaCalendarAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaCalendarAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import "./ContactInfo.css";
 
 const ContactInfo = () => {
@@ -151,7 +151,6 @@ const ContactInfo = () => {
                     <span className="ppd-contact-action__label">Calendar</span>
                     <span className="ppd-contact-action__title">Book a Meeting</span>
                   </span>
-                  <FaArrowRight className="ppd-contact-action__arrow" aria-hidden="true" />
                 </a>
 
                 <a className="ppd-contact-action" href="mailto:info@proplusdata.co">
@@ -162,7 +161,6 @@ const ContactInfo = () => {
                     <span className="ppd-contact-action__label">Email</span>
                     <span className="ppd-contact-action__title">info@proplusdata.co</span>
                   </span>
-                  <FaArrowRight className="ppd-contact-action__arrow" aria-hidden="true" />
                 </a>
 
                 <a
@@ -178,7 +176,6 @@ const ContactInfo = () => {
                     <span className="ppd-contact-action__label">WhatsApp</span>
                     <span className="ppd-contact-action__title">Chat With Us!</span>
                   </span>
-                  <FaArrowRight className="ppd-contact-action__arrow" aria-hidden="true" />
                 </a>
               </div>
             </article>

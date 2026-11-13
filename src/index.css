@@ -2,6 +2,26 @@ html {
   scroll-behavior: smooth;
 }
 
+em {
+  font-weight: inherit;
+}
+
+/* Keep italic emphasis as bold as the surrounding heading or paragraph. */
+body em,
+body [style*="font-style: italic"],
+body [style*="font-style:italic"] {
+  font-weight: inherit !important;
+}
+
+body h1 span,
+body h2 span,
+body h3 span,
+body h4 span,
+body h5 span,
+body h6 span {
+  font-weight: inherit !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

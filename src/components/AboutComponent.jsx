@@ -63,7 +63,6 @@ export default function AboutComponent() {
 
             <a href="/contact-us" className="ppd-about-cta">
               <span>Know More</span>
-              <span className="ppd-about-cta-arrow" aria-hidden="true">→</span>
             </a>
           </article>
 

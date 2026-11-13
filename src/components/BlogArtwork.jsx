@@ -24,30 +24,6 @@ const artworkThemes = {
   transformation: ["#f2f1e9", "#3383d2", "#8b6bd0"],
 };
 
-const artworkLabels = {
-  trends: "10 shifts shaping GTM",
-  b2bPlatforms: "Connected GTM intelligence",
-  technographicsTimeline: "Technology in motion",
-  planning: "Plan for what changes",
-  opportunity: "Before the pipeline",
-  predictive: "Demand, anticipated",
-  intent: "In-market signals",
-  expansion: "Growth, unlocked",
-  audience: "Buying groups",
-  forecast: "Predictable growth",
-  stack: "Tech stack clarity",
-  competitiveStack: "Competitive edge",
-  displacement: "Switch opportunity",
-  customerHealth: "Account health",
-  arr: "Recurring growth",
-  timing: "The 100-day window",
-  strategy: "Strategy in motion",
-  connectivity: "Connected markets",
-  industrial: "Industrial GTM",
-  cloud: "Cloud control",
-  transformation: "Global transformation",
-};
-
 function TrendConstellation({ accent, secondary }) {
   const signals = [
     { x: 240, y: 58, color: accent },
@@ -564,7 +540,6 @@ function ArtworkScene({ type, accent, secondary }) {
 
 export default function BlogArtwork({ type, title }) {
   const [background, accent, secondary] = artworkThemes[type] || artworkThemes.strategy;
-  const label = artworkLabels[type] || artworkLabels.strategy;
 
   return (
     <svg
@@ -580,22 +555,6 @@ export default function BlogArtwork({ type, title }) {
       <path d="M-25 164C61 105 93 79 178 98s131 71 225 19 111-40 122-32" fill="none" stroke={secondary} strokeOpacity=".43" strokeWidth="1.5" />
       <path d="M-28 188C62 129 103 107 181 126s129 70 220 20 101-39 121-31" fill="none" stroke={secondary} strokeOpacity=".17" strokeWidth="1" />
       <ArtworkScene type={type} accent={accent} secondary={secondary} />
-      <g className="ppd-blog-artwork__label">
-        <rect x="28" y="239" width="252" height="25" rx="12.5" fill="#152b50" />
-        <circle cx="45" cy="251.5" r="5" fill={accent} />
-        <circle cx="45" cy="251.5" r="9" fill={accent} opacity=".2" />
-        <text
-          x="59"
-          y="256"
-          fill="#fff"
-          fontFamily="Arial, Helvetica, sans-serif"
-          fontSize="14"
-          fontWeight="700"
-          letterSpacing=".15"
-        >
-          {label}
-        </text>
-      </g>
     </svg>
   );
 }

@@ -1,12 +1,13 @@
 import React from 'react';
 import "./Article.css"
+import BlogContentAnimation from "./BlogContentAnimation";
 
 export default function CompetitorsCustomerGrowth() {
   return (
-    <main className="ppd-article-page">
+    <main className="ppd-article-page ppd-article-page--competitors">
       <div className="ppd-article-featured">
-        <div className="ppd-article-featured-media">
-          <img src="assets/images/turning-your-competitors-customers-into-your-growth-engine.webp" alt="" />
+        <div className="ppd-article-featured-media" data-blog-art="competitor-featured">
+          <BlogContentAnimation variant="competitive" />
         </div>
       </div>
 
@@ -73,8 +74,8 @@ export default function CompetitorsCustomerGrowth() {
             <p>If you arrive in this window with a pointed, relevant proposition, you're not another cold email in their inbox. You're a live option in an active buying cycle.</p>
           </section>
 
-          <div className="ppd-article-inline-media">
-            <img src="assets/images/customer-into-your-growth-engine.webp" alt="" />
+          <div className="ppd-article-inline-media" data-blog-art="competitor-inline">
+            <BlogContentAnimation variant="competitive" />
           </div>
 
           <section className="ppd-article-section">

@@ -1,20 +1,19 @@
 import React from 'react';
 import "./Article.css"
+import BlogContentAnimation from "./BlogContentAnimation";
 
 export default function HowTechnographicsDriveSmarter() {
   return (
-    <main className="ppd-article-page">
+    <main className="ppd-article-page ppd-article-page--technographics-growth">
       <div className="ppd-article-featured">
-        <div className="ppd-article-featured-media">
-          <img src="assets/images/technographics-drive-smarter.webp" alt="" />
+        <div className="ppd-article-featured-media" data-blog-art="technographics-featured">
+          <BlogContentAnimation variant="technographics" />
         </div>
       </div>
 
       <section className="ppd-article-hero">
         <div className="ppd-article-hero-inner">
-          <span className="ppd-article-eyebrow">
-            INSIGHTS & INTELLIGENCE
-          </span>
+           
           <h1 className="ppd-article-title">
             How Technographics Drive Smarter GTM, ABM, and Competitive Advantage
           </h1>
@@ -80,8 +79,8 @@ export default function HowTechnographicsDriveSmarter() {
             <p>Unlike static databases, we provide a clear view of current technology environments while enabling organizations to align outreach with market shifts.</p>
           </section>
 
-          <div className="ppd-article-inline-media">
-            <img src="assets/images/gtm-abm-competitive-advantage.webp" alt="" />
+          <div className="ppd-article-inline-media" data-blog-art="technographics-inline">
+            <BlogContentAnimation variant="enterprise" />
           </div>
 
           <section className="ppd-article-section">

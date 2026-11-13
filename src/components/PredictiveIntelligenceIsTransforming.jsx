@@ -1,14 +1,14 @@
 import React from 'react'
 import "./PredictiveIntelligenceIsTransforming.css"
+import "./Article.css"
+import BlogContentAnimation from "./BlogContentAnimation";
 
 export default function PredictiveIntelligenceIsTransforming() {
   return (
-    <main className="ppd-article-page">
+    <main className="ppd-article-page ppd-article-page--predictive">
       <section className="ppd-article-hero">
         <div className="ppd-article-hero-inner">
-          <span className="ppd-article-eyebrow">
-            INSIGHTS & INTELLIGENCE
-          </span>
+           
           <h1 className="ppd-article-title">
             How Predictive Intelligence Is Transforming B2B Demand Generation
           </h1>
@@ -19,8 +19,8 @@ export default function PredictiveIntelligenceIsTransforming() {
       </section>
 
       <div className="ppd-article-featured">
-        <div className="ppd-article-featured-media">
-          <img src="/assets/images/predictive-intelligence-is-transforming-b2b-demand-gen.png" alt="Predictive Intelligence Is Transforming B2B Demand Generation" />
+        <div className="ppd-article-featured-media" data-blog-art="predictive-featured">
+          <BlogContentAnimation variant="predictive" />
         </div>
       </div>
 
@@ -40,8 +40,8 @@ export default function PredictiveIntelligenceIsTransforming() {
             <p>A perfect-fit account that isn't in-market is still a distraction. Predictive approaches focus on readiness, not just fit, which is why they consistently outperform list-based targeting.</p>
           </section>
 
-          <a href='https://nexora.proplusdata.co/' target="_blank" rel="noopener noreferrer" className="ppd-article-inline-media">
-            <img src="/assets/images/right-moment-made-visible.jpg" alt="The Right Moment Made Visible" />
+          <a href='https://nexora.proplusdata.co/' target="_blank" rel="noopener noreferrer" className="ppd-article-inline-media" data-blog-art="predictive-inline">
+            <BlogContentAnimation variant="predictive" />
           </a>
 
           <section className="ppd-article-section">

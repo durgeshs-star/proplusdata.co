@@ -89,10 +89,10 @@ const PrivacyPolicy = () => {
               <h3 className="mb-3" id="contact">Contact Us</h3>
               <p>
                 For questions or concerns about this Privacy Policy, please contact us at:<br />
-                Royal Oak Society Rd, Karpe Nagar, Kemse Vasti, Wakad, Pimpri-Chinchwad, Maharashtra 411057<br />
+                ATC House, 5th Floor, Survey #23/5, Dharamveer Nagar, Baner, Pune, Maharashtra 411045<br />
                 <a href="mailto:info@proplusdata.co">info@proplusdata.co</a>
               </p>
-              <p>Loactions - India | Japan | UK | Singapore | US</p>
+              <p>Loactions - India | Singapore</p>
             </section>
           </div>
         </article>

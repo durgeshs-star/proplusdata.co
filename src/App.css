@@ -6,6 +6,14 @@ body {
   padding-top: 0 !important;
 }
 
+/* Hide the fixed WhatsApp and scroll-to-top widgets sitewide. */
+.btnwhatsapp-sm,
+.ppd-press-whatsapp,
+.ppd-privacy-whatsapp,
+#scrollUp {
+  display: none !important;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -86,6 +94,7 @@ body.proplus-home-page {
 .proplus-home .section_main_title h1 span {
   color: var(--proplus-primary);
   font-style: italic;
+  font-weight: 600;
 }
 
 .proplus-home .em_bar {
@@ -110,8 +119,8 @@ body.proplus-home-page {
 }
 
 .proplus-header {
-  position: fixed;
-  top: 0;
+  position: fixed !important;
+  top: 0 !important;
   left: 0;
   width: 100%;
   z-index: 1000;
@@ -130,8 +139,8 @@ body.proplus-home-page {
 }
 
 .proplus-header--reference {
-  position: fixed;
-  top: 0;
+  position: fixed !important;
+  top: 0 !important;
   left: 0;
   width: 100%;
   height: 90px;
@@ -224,6 +233,7 @@ body.proplus-home-page {
 }
 
 .proplus-header .menu > li > a,
+.proplus-header .menu > li > .nav-dropdown-trigger,
 .proplus-header .menu > li > Link,
 .proplus-header .menu > li > .dtbtn {
   display: inline-flex;
@@ -238,7 +248,15 @@ body.proplus-home-page {
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
+.proplus-header .menu > li > .nav-dropdown-trigger {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
 .proplus-header .menu > li > a:hover,
+.proplus-header .menu > li > .nav-dropdown-trigger:hover,
 .proplus-header .menu > li > Link:hover {
   color: #000000;
 }
@@ -268,8 +286,11 @@ body.proplus-home-page {
   content: "";
 }
 
-.proplus-header .dropdown:hover .dropdown-menu,
-.proplus-header .dropdown:focus-within .dropdown-menu {
+.proplus-header .dropdown-menu[hidden] {
+  display: none !important;
+}
+
+.proplus-header .dropdown.is-open > .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -281,7 +302,7 @@ body.proplus-home-page {
   padding: 0.7rem 0.8rem;
   border-radius: 10px;
   color: #1e293b;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -305,6 +326,18 @@ body.proplus-home-page {
   text-transform: none;
   text-align: center;
   transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.proplus-header .menu > li > a:not(.dtbtn),
+.proplus-header .menu > li > a.dtbtn,
+.proplus-header .menu > li > .nav-dropdown-trigger,
+.proplus-header .proplus-header__trial {
+  font-size: 1rem !important;
+}
+
+.proplus-header .menu > li > a:not(.dtbtn),
+.proplus-header .menu > li > .nav-dropdown-trigger {
+  font-weight: 500 !important;
 }
 
 .proplus-header .dtbtn:hover,
@@ -521,6 +554,7 @@ body.proplus-home-page {
 .ppd-home-hero__title span:last-child {
   color: #133580;
   font-style: italic;
+  font-weight: 600;
 }
 
 .ppd-home-hero .nexora-banner > p {
@@ -671,7 +705,7 @@ body.proplus-home-page {
 .ppd-home-hero__eyebrow span { width: .55rem; height: .55rem; border-radius: 50%; background: #3975d5; box-shadow: 0 0 0 5px rgba(57,117,213,.12); }
 .ppd-home-hero--split .ppd-home-hero__title { display: block; max-width: 650px; margin: 0; color: #0d1b3e; font-family: 'Inter','Segoe UI',sans-serif; font-size: clamp(2.8rem,4.15vw,4.45rem); font-weight: 780; line-height: 1.02; letter-spacing: -.06em; }
 .ppd-home-hero--split .ppd-home-hero__title span { display: block; white-space: normal; }
-.ppd-home-hero--split .ppd-home-hero__title span:last-child { color: #133580; font-style: italic; }
+.ppd-home-hero--split .ppd-home-hero__title span:last-child { color: #133580; font-style: italic; font-weight: 600; }
 .ppd-home-hero--split .ppd-home-hero__copy > p { max-width: 550px; margin: 1.4rem 0 1.8rem; color: #53647d; font-size: clamp(1rem,1.2vw,1.15rem); line-height: 1.75; }
 .ppd-home-hero--split .hero-cta-btn { gap: .65rem; min-height: 52px; padding: .9rem 1.45rem; border-radius: 9px; background: #133580; box-shadow: 0 12px 24px rgba(19,53,128,.16); }
 .ppd-home-hero--split .hero-cta-btn:hover { background: #0d2763; box-shadow: 0 16px 28px rgba(19,53,128,.2); }
@@ -1455,7 +1489,7 @@ body.proplus-home-page {
   font-family: 'Georgia', 'Times New Roman', serif;
   color: #133580;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .proplus-home .proplus-hero-slider .nexora-banner h2 {
@@ -2117,15 +2151,20 @@ body.proplus-home-page {
     right: 0;
     top: 90px;
     bottom: 0;
+    max-height: calc(100vh - 90px);
+    max-height: calc(100dvh - 90px);
     display: none;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.25rem;
+    justify-content: flex-start;
+    gap: 0.15rem;
     overflow-y: auto;
-    padding: 1rem;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.75rem 1.1rem max(1.25rem, env(safe-area-inset-bottom));
     background: #ffffff;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
   }
 
   .proplus-header .menu.open {
@@ -2137,12 +2176,17 @@ body.proplus-home-page {
     width: 100%;
   }
 
+  .proplus-header .menu > li {
+    flex: 0 0 auto;
+  }
+
   .proplus-header .get-started--mobile {
     display: block;
     margin-top: 0.5rem;
   }
 
   .proplus-header .menu > li > a,
+  .proplus-header .menu > li > .nav-dropdown-trigger,
   .proplus-header .menu > li > .dtbtn {
     width: 100%;
     justify-content: space-between;
@@ -2154,10 +2198,20 @@ body.proplus-home-page {
     justify-content: center;
   }
 
-  .proplus-header .menu > li > a:not(.dtbtn) {
+  .proplus-header .menu > li > a:not(.dtbtn),
+  .proplus-header .menu > li > .nav-dropdown-trigger {
     color: #1e293b;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: inherit;
+    text-align: left;
+  }
+
+  .proplus-header .menu > li > .nav-dropdown-trigger {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .proplus-header .menu > li > a:not(.dtbtn):hover {
@@ -2165,20 +2219,50 @@ body.proplus-home-page {
   }
 
   .proplus-header .dropdown-menu {
+    display: none;
     position: static;
-    margin-top: 0.55rem;
+    margin: 0.1rem 0 0.55rem 0.45rem;
     width: 100%;
     opacity: 1;
     visibility: visible;
     transform: none;
     box-shadow: none;
-    background: #ffffff;
-    border-color: rgba(0, 0, 0, 0.1);
+    border: 0;
+    border-left: 2px solid rgba(30, 41, 59, 0.14);
+    border-radius: 0;
+    background: transparent;
+    padding: 0.15rem 0 0.15rem 0.65rem;
+  }
+
+  .proplus-header .dropdown.is-open > .dropdown-menu {
+    display: block;
   }
 
   .proplus-header .dropdown-menu a,
   .proplus-header .dropdown-menu li a {
     color: #1e293b;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .proplus-header .dropdown-menu a:hover,
+  .proplus-header .dropdown-menu a:focus-visible {
+    background: rgba(30, 41, 59, 0.06);
+  }
+
+  .proplus-header .nav-dropdown-trigger svg {
+    transition: transform 0.2s ease;
+  }
+
+  .proplus-header .dropdown.is-open > .nav-dropdown-trigger svg {
+    transform: rotate(180deg);
+  }
+
+  .proplus-header .dropdown.is-open > .dropdown-menu {
+    animation: proplus-mobile-dropdown-in 0.18s ease both;
   }
 
   .proplus-header .social-icons {
@@ -2188,6 +2272,11 @@ body.proplus-home-page {
     padding: 0.3rem 0.3rem 0;
   }
 
+}
+
+@keyframes proplus-mobile-dropdown-in {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 1100px) {

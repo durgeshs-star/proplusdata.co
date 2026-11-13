@@ -11,6 +11,7 @@ import SolutionSection from '../components/SolutionSection';
 import OurProcess from '../components/OurProcess';
 import BrandSection from '../components/BrandSection';
 import WhyProPlusData from '../components/WhyProPlusData';
+import NexoraShowcase from '../components/NexoraShowcase';
 
 export default function Home() {
   useEffect(() => {
@@ -53,6 +54,8 @@ export default function Home() {
       <Hero1 />
 
       <Flipbox />
+
+      <NexoraShowcase />
 
       <WhyProPlusData />
 

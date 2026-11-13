@@ -3,46 +3,42 @@ import "./OurProcess.css";
 
 const processSteps = [
   {
-    title: "Deep Account Analysis",
+    title: "Put Your GTM Focus Where It Matters",
     description: (
       <>
-        We begin with in-depth firmographic insights to understand your target accounts inside out, ensuring precision-driven strategies tailored to your business needs.
+        Cut through the noise and bring your teams closer to the accounts and opportunities with the strongest potential to drive revenue.
       </>
     ),
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=85",
-    alt: "Team reviewing account research together",
-    label: "Account signals",
-    visualHeading: "Account analysis",
-    visualRows: ["Firmographic insights", "Target accounts", "Business needs"],
-    visualFooter: "Precision-driven account strategy",
+    alt: "Team focusing on high-potential accounts and revenue opportunities",
+    label: "Revenue focus",
+    visualHeading: "Where to focus",
+    visualRows: ["Account potential", "Revenue signals", "Priority opportunities"],
+    visualFooter: "Focus on highest-potential accounts",
   },
   {
-    title: "Intelligent Data Insights",
-    description: (
-      <>
-        Harness the power of <a href="https://proplusdata.co/technographics">Technographics</a>  and <a href="https://proplusdata.co/next-tech-purchase">Next Tech Purchase® (NTP)</a>  to uncover key buying signals, track technology adoption, and refine your outreach for maximum impact.
-      </>
-    ),
+    title: "Turn Change Into Opportunity",
+    description: <>Technology shifts, upcoming renewals, and evolving buying behavior can signal what comes next. ProPlus Data helps you spot the moments worth acting on.</>,
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85",
-    alt: "Analytics dashboard on a laptop",
-    label: "Tech intelligence",
-    visualHeading: "Technology insights",
-    visualRows: ["Technographics", "Technology adoption", "Next Tech Purchase®"],
-    visualFooter: "Buying signals and outreach",
+    alt: "Technology signals and account changes surfaced in an analytics dashboard",
+    label: "Change signals",
+    visualHeading: "Signals worth acting on",
+    visualRows: ["Technology shifts", "Upcoming renewals", "Buying behavior"],
+    visualFooter: "Spot the moments that matter",
   },
   {
-    title: "Voice & EDM Engagement",
+    title: "Give Every Revenue Decision More Direction",
     description: (
       <>
-        Through multi-channel EDM and voice verification, we validate interest and deliver personalized, high-impact messages; connecting you directly with decision-makers.
+        Connect market intelligence with action, so your marketing and sales teams can prioritize smarter, engage with greater relevance, and create stronger pipeline outcomes.
       </>
     ),
     image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85",
-    alt: "Colleagues collaborating during a meeting",
-    label: "Buyer engagement",
-    visualHeading: "Buyer engagement",
-    visualRows: ["Voice verification", "EDM engagement", "Decision-makers"],
-    visualFooter: "Personalized buyer outreach",
+    alt: "Marketing and sales teams aligning around market intelligence and pipeline priorities",
+    label: "Revenue direction",
+    visualHeading: "Intelligence into action",
+    visualRows: ["Smarter prioritization", "Relevant engagement", "Stronger pipeline"],
+    visualFooter: "Align teams around revenue outcomes",
   },
 ];
 
@@ -198,7 +194,6 @@ const OurProcess = () => {
           <div className="ppd-process-copy-column">
             <header className="ppd-process-header">
               <h2 className="ppd-process-title" id="ppd-process-title">
-                <span>How it works</span>
                 <span>How ProPlus Data</span>
                 <span>Drives Your Success</span>
               </h2>

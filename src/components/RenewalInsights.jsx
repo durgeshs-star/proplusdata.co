@@ -17,7 +17,7 @@ const RenewalInsights = () => {
               {/* <p className="text-white">Stay informed, stay timely, and stay relevant. With ProPlus Data’s renewal and subscription intelligence, organizations gain a clear advantage in managing client lifecycles, improving retention metrics, and driving sustained business growth. 
               </p> */}
               <div class="button three mt-40">
-                <a href="/contact-us">Connect With Us<i class="fa fa-long-arrow-right"></i></a>
+                <a href="/contact-us">Connect With Us</a>
               </div>
             </div>
           </div>

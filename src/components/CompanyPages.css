@@ -5,6 +5,58 @@
   --company-orange: #ed5b1d;
 }
 
+.ppd-company-page--about .ppd-about-industries-heading {
+  display: grid;
+  justify-items: center;
+  gap: .7rem;
+  padding: clamp(3.5rem, 7vw, 5.5rem) 1.5rem 1rem;
+  background:
+    radial-gradient(ellipse 34rem 15rem at 50% 70%, rgba(96, 165, 250, .1), transparent 72%),
+    #f7faff;
+  text-align: center;
+}
+
+.ppd-company-page--about .ppd-about-industries-heading__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  color: #526d93;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.ppd-company-page--about .ppd-about-industries-heading__eyebrow i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3474c8;
+  box-shadow: 0 0 0 4px rgba(52, 116, 200, .11);
+}
+
+.ppd-company-page--about .ppd-about-industries-heading h2 {
+  margin: 0;
+  color: #102144;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  font-weight: 750;
+  letter-spacing: -.055em;
+  line-height: 1.1;
+}
+
+.ppd-company-page--about .ppd-about-industries-heading h2 em {
+  color: #173f91;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.ppd-company-page--about .ppd-about-industries-heading__rule {
+  width: 3.25rem;
+  height: 3px;
+  margin-top: .25rem;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #3474c8, #10a69b);
+}
+
 .ppd-company-page .ppd-about-section,
 .ppd-company-page .ppd-careers-hero,
 .ppd-company-page .ppd-contact-hero,

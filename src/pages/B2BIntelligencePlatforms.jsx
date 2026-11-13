@@ -11,10 +11,10 @@ export default function B2BIntelligencePlatforms() {
   return (
     <div>
       <Helmet>
-        <title>{b2bIntelligencePlatformsTitle} | ProPlus Data</title>
+        <title>8 B2B Data Vendors Reshaping Modern GTM | ProPlus Data</title>
         <meta
           name="description"
-          content="Compare eight B2B intelligence platforms for contact data, account prioritization, intent, technographics, buying groups, renewal intelligence, and GTM opportunity context."
+          content="Explore 8 B2B Data Vendors and how they support contact data, account intelligence, technographics, intent, buying groups, technology changes, and emerging GTM opportunities."
         />
         <meta
           name="keywords"
@@ -22,10 +22,10 @@ export default function B2BIntelligencePlatforms() {
         />
         <meta name="author" content="ProPlus Data" />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={`${b2bIntelligencePlatformsTitle} | ProPlus Data`} />
+        <meta property="og:title" content="8 B2B Data Vendors Reshaping Modern GTM | ProPlus Data" />
         <meta
           property="og:description"
-          content="Explore eight B2B intelligence platforms and the distinct GTM challenges they are designed to solve."
+          content="Explore 8 B2B Data Vendors and how they support contact data, account intelligence, technographics, intent, buying groups, technology changes, and emerging GTM opportunities."
         />
         <link
           rel="canonical"
@@ -36,11 +36,21 @@ export default function B2BIntelligencePlatforms() {
       <RevenueOpportunityArticle
         title={b2bIntelligencePlatformsTitle}
         kicker="A GUIDE TO THE B2B DATA LANDSCAPE"
-        lead="Compare the intelligence layers behind eight B2B platforms—and understand which GTM problem each is built to solve."
+        lead="Compare the intelligence layers behind 8 B2B data vendors & understand which GTM problem each is built to solve."
         markdown={b2bIntelligencePlatformsMarkdown}
-        readingTime="12 MIN READ"
+        readingTime="17 MIN READ"
         heroArtwork="intelligence"
       />
+      <aside className="ppd-b2b-related" aria-label="Related reading">
+        <div className="ppd-b2b-related__inner">
+          <span>RELATED READING</span>
+          <h2>Want a closer look at technology intelligence?</h2>
+          <p>Learn why technology stacks are better understood as timelines than static snapshots.</p>
+          <a href="/what-if-your-technographic-data-is-already-outdated">
+            What If Your Technographic Data Is Already Outdated? <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </aside>
       <Footer />
     </div>
   );
