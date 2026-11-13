@@ -156,10 +156,6 @@ export default function CloudEnterpriseRedesign() {
         </article>
       </section>
 
-      <section className="ppd-cloud-case-cta">
-        <h2>Curious how it could work for you?</h2>
-        <a href="/contact-us">Let’s Connect</a>
-      </section>
     </main>
   )
 }
