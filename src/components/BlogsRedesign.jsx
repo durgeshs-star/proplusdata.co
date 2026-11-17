@@ -2,7 +2,7 @@ import React from "react";
 import "./BlogsRedesign.css";
 import BlogArtwork from "./BlogArtwork";
 
-const blogs = [
+export const blogs = [
     {
      artwork: "opportunity",
      category: "2027 GTM OUTLOOK",

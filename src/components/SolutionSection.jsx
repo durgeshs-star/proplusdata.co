@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowUpRight,
@@ -37,6 +37,18 @@ const cardVariants = {
 
 const SolutionSection = () => {
   const reduceMotion = useReducedMotion();
+  const carouselRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const moveToCard = (index) => {
+    const cards = carouselRef.current?.children;
+    const card = cards?.[index];
+    if (!card) return;
+    setActiveIndex(index);
+    const container = carouselRef.current;
+    const cardCenter = card.getBoundingClientRect().left + card.clientWidth / 2;
+    const containerCenter = container.getBoundingClientRect().left + container.clientWidth / 2;
+    container.scrollTo({ left: container.scrollLeft + cardCenter - containerCenter, behavior: "smooth" });
+  };
 
   return (
     <motion.section
@@ -59,6 +71,18 @@ const SolutionSection = () => {
 
         <motion.div
           className="ppd-daas-grid"
+          ref={carouselRef}
+          onScroll={(event) => {
+            if (!window.matchMedia("(max-width: 560px)").matches) return;
+            const container = event.currentTarget;
+            const cards = Array.from(container.children);
+            const center = container.scrollLeft + container.clientWidth / 2;
+            const closest = cards.reduce((best, card, index) => {
+              const distance = Math.abs(card.offsetLeft + card.clientWidth / 2 - center);
+              return distance < best.distance ? { index, distance } : best;
+            }, { index: 0, distance: Infinity });
+            setActiveIndex(closest.index);
+          }}
           variants={sectionVariants}
           initial={reduceMotion ? false : "hidden"}
           whileInView="visible"
@@ -93,6 +117,11 @@ const SolutionSection = () => {
             </motion.article>
           ))}
         </motion.div>
+        <div className="ppd-daas-mobile-controls" aria-label="Solution carousel controls">
+          <button type="button" onClick={() => moveToCard(Math.max(0, activeIndex - 1))} disabled={activeIndex === 0} aria-label="Previous solution">←</button>
+          <span>{String(activeIndex + 1).padStart(2, "0")} / {String(solutions.length).padStart(2, "0")}</span>
+          <button type="button" onClick={() => moveToCard(Math.min(solutions.length - 1, activeIndex + 1))} disabled={activeIndex === solutions.length - 1} aria-label="Next solution">→</button>
+        </div>
       </div>
     </motion.section>
   );

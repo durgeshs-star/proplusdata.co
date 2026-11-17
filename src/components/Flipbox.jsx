@@ -227,6 +227,7 @@ const Flipbox = () => {
   const trackRef = useRef(null);
   const [scrollDistance, setScrollDistance] = useState(0);
   const [viewportHeight, setViewportHeight] = useState(0);
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
   const releaseBuffer = Math.max(scrollDistance * 0.02, viewportHeight * 0.75);
 
   useLayoutEffect(() => {
@@ -268,6 +269,16 @@ const Flipbox = () => {
     return -window.innerHeight * ((progress - exitStartAt) / (1 - exitStartAt));
   });
 
+  const moveCard = (direction) => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+    const nextIndex = Math.max(0, Math.min(flipboxData.length - 1, activeCardIndex + direction));
+    const card = trackRef.current?.children[nextIndex];
+    if (!card) return;
+    setActiveCardIndex(nextIndex);
+    viewport.scrollTo({ left: card.offsetLeft - (viewport.clientWidth - card.clientWidth) / 2, behavior: "smooth" });
+  };
+
   useLayoutEffect(() => {
     const root = document.documentElement;
     const updatePin = (progress) => {
@@ -308,7 +319,17 @@ const Flipbox = () => {
             </h2>
           </header>
 
-          <div className="proplus-intelligence-track-viewport" ref={viewportRef}>
+          <div className="proplus-intelligence-track-viewport" ref={viewportRef} onScroll={(event) => {
+            if (window.matchMedia("(max-width: 900px)").matches) {
+              const cards = Array.from(trackRef.current?.children ?? []);
+              const center = event.currentTarget.scrollLeft + event.currentTarget.clientWidth / 2;
+              const nearest = cards.reduce((best, card, index) => {
+                const distance = Math.abs(card.offsetLeft + card.clientWidth / 2 - center);
+                return distance < best.distance ? { index, distance } : best;
+              }, { index: 0, distance: Infinity });
+              setActiveCardIndex(nearest.index);
+            }
+          }}>
             <motion.div className="proplus-intelligence-grid" ref={trackRef} style={{ x: trackX }}>
               {flipboxData.map((item, index) => (
                 <Link
@@ -334,6 +355,11 @@ const Flipbox = () => {
                 </Link>
               ))}
             </motion.div>
+          </div>
+          <div className="proplus-intelligence-mobile-controls" aria-label="Carousel controls">
+            <button type="button" onClick={() => moveCard(-1)} disabled={activeCardIndex === 0} aria-label="Previous card">←</button>
+            <span>{String(activeCardIndex + 1).padStart(2, "0")} / {String(flipboxData.length).padStart(2, "0")}</span>
+            <button type="button" onClick={() => moveCard(1)} disabled={activeCardIndex === flipboxData.length - 1} aria-label="Next card">→</button>
           </div>
         </div>
       </motion.div>

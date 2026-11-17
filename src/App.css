@@ -793,8 +793,7 @@ body.proplus-home-page {
 .ppd-home-hero__trust .hero-logos-marquee { width: 100%; height: 92px; overflow: hidden; white-space: nowrap; -webkit-mask-image: linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent); mask-image: linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent); }
 .ppd-home-hero__trust .hero-logos-track { display: flex; width: max-content; height: 92px; align-items: center; gap: clamp(2.3rem,4.5vw,4.5rem); animation: marquee 64s linear infinite; }
 .ppd-home-hero__trust .hero-logo-item { display: flex; height: 92px; flex: 0 0 auto; align-items: center; justify-content: center; }
-.ppd-home-hero__trust .hero-logo-item img { display: block; width: auto; height: 62px; max-width: 220px; object-fit: contain; opacity: .82; filter: grayscale(1); transition: opacity .2s ease,filter .2s ease; }
-.ppd-home-hero__trust .hero-logo-item img:hover { opacity: 1; filter: grayscale(0); }
+.ppd-home-hero__trust .hero-logo-item img { display: block; width: auto; height: 62px; max-width: 220px; object-fit: contain; opacity: .82; filter: grayscale(1); mix-blend-mode: multiply; transition: opacity .2s ease,filter .2s ease; }
 
 /* Keep the partner strip inside the hero, directly beneath its main content. */
 .ppd-home-hero--split { display: flex; flex-direction: column; align-items: stretch; }
@@ -2279,6 +2278,109 @@ body.proplus-home-page {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@media (max-width: 767px) {
+  .proplus-header--reference,
+  .proplus-header--reference.blue-bg {
+    height: 76px;
+    min-height: 76px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 5px 20px rgba(21, 35, 71, 0.07);
+  }
+
+  .proplus-header .navbar {
+    height: 76px;
+    min-height: 76px;
+    gap: 0.75rem;
+  }
+
+  .proplus-header .logo img {
+    width: clamp(200px, 61vw, 245px);
+    max-height: 68px;
+  }
+
+  .proplus-header .menu-toggle {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border: 1px solid #e3e8f2;
+    border-radius: 13px;
+    background: #f8f9fd;
+    color: #142b66;
+    font-size: 1.15rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .proplus-header .menu-toggle:active {
+    transform: scale(0.96);
+  }
+
+  .proplus-header .menu {
+    top: 76px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-height: calc(100dvh - 76px);
+    padding: 1rem 1.15rem max(1.25rem, env(safe-area-inset-bottom));
+    gap: 0.3rem;
+    border: 0;
+    border-top: 1px solid #edf0f6;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: 0 18px 40px rgba(20, 38, 78, 0.12);
+  }
+
+  .proplus-header .menu > li > a,
+  .proplus-header .menu > li > .nav-dropdown-trigger {
+    min-height: 56px;
+    padding: 0.85rem 0.95rem;
+    border-radius: 12px;
+    font-size: 1.02rem;
+  }
+
+  .proplus-header .menu > li > a:not(.dtbtn):hover,
+  .proplus-header .menu > li > .nav-dropdown-trigger:hover,
+  .proplus-header .menu > li > a:not(.dtbtn):focus-visible,
+  .proplus-header .menu > li > .nav-dropdown-trigger:focus-visible {
+    outline: none;
+    background: #f3f6fc;
+    color: #142b66;
+  }
+
+  .proplus-header .dropdown-menu {
+    margin: 0.15rem 0 0.55rem 0.9rem;
+    width: calc(100% - 0.9rem);
+    border-left: 2px solid #d7e0f2;
+    padding: 0.15rem 0 0.15rem 0.6rem;
+  }
+
+  .proplus-header .dropdown-menu a,
+  .proplus-header .dropdown-menu li a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    border-radius: 9px;
+    padding: 0.6rem 0.75rem;
+    color: #35415b;
+    font-size: 0.98rem;
+  }
+
+  .proplus-header .get-started--mobile {
+    margin-top: auto;
+    padding: 1rem 0.25rem 0.35rem;
+  }
+
+  .proplus-header .menu > li.get-started--mobile > a {
+    min-height: 60px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #11118f, #2525bb);
+    box-shadow: 0 8px 18px rgba(17, 17, 143, 0.18);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .proplus-header-spacer { height: 76px; }
+}
+
 @media (max-width: 1100px) {
   .proplus-home .proplus-hero-slider .slider_area {
     min-height: 560px;
@@ -2545,4 +2647,11 @@ body.proplus-home-page {
   .ppd-trial-phone-input .country-list {
     max-width: calc(100vw - 64px);
   }
+}
+
+@media (max-width: 1100px) {
+  .proplus-header .dropdown-menu a.is-current,
+  .proplus-header .dropdown-menu li a.is-current { background: #f3f6fc; color: #142b66; font-weight: 650; }
+  .proplus-header .dropdown-menu a:hover:not(.is-current),
+  .proplus-header .dropdown-menu li a:hover:not(.is-current) { background: transparent; color: #35415b; }
 }

@@ -87,6 +87,7 @@ import GtmTrends2027 from './pages/GtmTrends2027';
 import B2BIntelligencePlatforms from './pages/B2BIntelligencePlatforms';
 import TechnographicsOutdated from './pages/TechnographicsOutdated';
 import './components/BlogArticleTheme.css';
+import BlogPostNavigation from './components/BlogPostNavigation';
 
 
 
@@ -188,6 +189,7 @@ function App() {
 
 
       </Routes>
+      <BlogPostNavigation />
      </BrowserRouter>
      </HelmetProvider>
     </div>

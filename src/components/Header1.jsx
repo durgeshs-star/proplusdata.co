@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCaretDown,
@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header1() {
+  const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -28,6 +29,7 @@ export default function Header1() {
   const toggleDropdown = (dropdown) => {
     setOpenDropdown((current) => current === dropdown ? null : dropdown);
   };
+  const currentPageClass = (path) => pathname.replace(/\/$/, "") === path ? "is-current" : "";
 
   return (
     <>
@@ -60,14 +62,14 @@ export default function Header1() {
                 GTM Solutions <FontAwesomeIcon icon={faCaretDown} />
               </button>
               <ul className="dropdown-menu" hidden={openDropdown !== "gtm"}>
-                <li><Link to="/technographics" onClick={closeMenu}>Technographics</Link></li>
-                <li><Link to="/renewal-intelligence" onClick={closeMenu}>Renewal Intelligence</Link></li>
-                <li><Link to="/intent-data" onClick={closeMenu}>Intent</Link></li>
-                <li><Link to="/buying-group" onClick={closeMenu}>Buying Groups</Link></li>
-                <li><Link to="/next-tech-purchase" onClick={closeMenu}>Next Tech Purchase<sup>&reg;</sup></Link></li>
-                <li><Link to="/contact-data" onClick={closeMenu}>Contact Data</Link></li>
-                <li><Link to="/demand-gen" onClick={closeMenu}>Demand Gen</Link></li>
-                <li><Link to="/event-audience-acquisition" onClick={closeMenu}>Event Audience Acquisition</Link></li>
+                <li><Link className={currentPageClass("/technographics")} aria-current={currentPageClass("/technographics") ? "page" : undefined} to="/technographics" onClick={closeMenu}>Technographics</Link></li>
+                <li><Link className={currentPageClass("/renewal-intelligence")} aria-current={currentPageClass("/renewal-intelligence") ? "page" : undefined} to="/renewal-intelligence" onClick={closeMenu}>Renewal Intelligence</Link></li>
+                <li><Link className={currentPageClass("/intent-data")} aria-current={currentPageClass("/intent-data") ? "page" : undefined} to="/intent-data" onClick={closeMenu}>Intent</Link></li>
+                <li><Link className={currentPageClass("/buying-group")} aria-current={currentPageClass("/buying-group") ? "page" : undefined} to="/buying-group" onClick={closeMenu}>Buying Groups</Link></li>
+                <li><Link className={currentPageClass("/next-tech-purchase")} aria-current={currentPageClass("/next-tech-purchase") ? "page" : undefined} to="/next-tech-purchase" onClick={closeMenu}>Next Tech Purchase<sup>&reg;</sup></Link></li>
+                <li><Link className={currentPageClass("/contact-data")} aria-current={currentPageClass("/contact-data") ? "page" : undefined} to="/contact-data" onClick={closeMenu}>Contact Data</Link></li>
+                <li><Link className={currentPageClass("/demand-gen")} aria-current={currentPageClass("/demand-gen") ? "page" : undefined} to="/demand-gen" onClick={closeMenu}>Demand Gen</Link></li>
+                <li><Link className={currentPageClass("/event-audience-acquisition")} aria-current={currentPageClass("/event-audience-acquisition") ? "page" : undefined} to="/event-audience-acquisition" onClick={closeMenu}>Event Audience Acquisition</Link></li>
               </ul>
             </li>
 

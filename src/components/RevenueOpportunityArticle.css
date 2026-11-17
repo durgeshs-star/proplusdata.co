@@ -670,6 +670,27 @@
 
 .ppd-b2b-related a:hover { text-decoration: underline; }
 
+.ppd-revenue-faq {
+  margin: 1.5rem 0 0;
+}
+
+.ppd-revenue-faq__item { border-bottom: 1px solid #dce5f0; }
+.ppd-revenue-faq__item:last-child { border-bottom: 0; }
+.ppd-revenue-faq__item summary { position: relative; min-height: 76px; padding: 1.1rem 3.25rem 1.1rem .25rem; color: #142a49; font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 720; line-height: 1.35; cursor: pointer; list-style: none; }
+.ppd-revenue-faq__item summary::-webkit-details-marker { display: none; }
+.ppd-revenue-faq__item summary::marker { content: ""; }
+.ppd-revenue-faq__item summary:focus-visible { outline: 2px solid #3975d5; outline-offset: 3px; }
+.ppd-revenue-faq__item summary > span { position: absolute; top: 50%; right: .25rem; display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid #cbd9ed; border-radius: 50%; color: #2458c6; transform: translateY(-50%); }
+.ppd-revenue-faq__item summary > span::before,
+.ppd-revenue-faq__item summary > span::after { position: absolute; width: 10px; height: 1.5px; border-radius: 2px; background: currentColor; content: ""; transition: transform .2s ease; }
+.ppd-revenue-faq__item summary > span::after { transform: rotate(90deg); }
+.ppd-revenue-faq__item[open] summary > span::after { transform: rotate(0); }
+.ppd-revenue-faq__item > p { margin: 0; padding: 0 .25rem 1.35rem; color: #4a5b70; font-size: 1rem; line-height: 1.75; }
+.ppd-revenue-faq__item > p a,
+.ppd-revenue-faq__item summary a { color: #2458c6; font-weight: 650; text-decoration: underline; text-underline-offset: 3px; }
+.ppd-revenue-faq__item > p a:hover,
+.ppd-revenue-faq__item summary a:hover { color: #133580; }
+
 @media (max-width: 760px) {
   .ppd-revenue-table { font-size: 13px; }
   .ppd-revenue-table th,

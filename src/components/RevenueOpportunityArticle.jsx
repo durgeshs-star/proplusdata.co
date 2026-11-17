@@ -311,6 +311,25 @@ function renderInline(text) {
   });
 }
 
+const faqProductLinks = [
+  { pattern: "technographic data", href: "https://proplusdata.co/technographics" },
+  { pattern: "technographics", href: "https://proplusdata.co/technographics" },
+  { pattern: "buying group", href: "/buying-group" },
+  { pattern: "renewal intelligence", href: "https://proplusdata.co/renewal-intelligence" },
+  { pattern: "next tech purchase", href: "https://proplusdata.co/next-tech-purchase" },
+  { pattern: "contact data", href: "https://proplusdata.co/contact-data" },
+];
+
+function renderFaqText(text) {
+  const pattern = /(technographic data|technographics|buying group|renewal intelligence|next tech purchase(?:Â®|®)?|contact data)/gi;
+  return text.split(pattern).map((part, index) => {
+    const match = faqProductLinks.find((link) => link.pattern === part.replace(/Â®|®/g, "").toLowerCase());
+    if (!match) return part;
+    const label = part.replace("Â®", "®");
+    return <a href={match.href} key={`${match.pattern}-${index}`}>{label}</a>;
+  });
+}
+
 function parseArticle(markdown) {
   const lines = markdown.trim().split(/\r?\n/);
   const blocks = [];
@@ -389,6 +408,23 @@ function parseArticle(markdown) {
     index += 1;
   }
   flushParagraph();
+
+  const faqIndex = blocks.findIndex((block) => block.type === "heading" && /^(frequently asked questions|faqs)$/i.test(block.text.trim()));
+  if (faqIndex >= 0) {
+    const items = [];
+    for (let cursor = faqIndex + 1; cursor < blocks.length - 1;) {
+      const question = blocks[cursor];
+      const answer = blocks[cursor + 1];
+      if (question.type === "heading" && question.level === 2 && answer.type === "paragraph") {
+        items.push({ question: question.text, answer: answer.text });
+        cursor += 2;
+      } else {
+        cursor += 1;
+      }
+    }
+    blocks.splice(faqIndex + 1, blocks.length - faqIndex - 1, { type: "faq", items });
+  }
+
   return blocks;
 }
 
@@ -438,6 +474,18 @@ export default function RevenueOpportunityArticle({
             if (block.type === "paragraph") {
               const isFlowArrow = block.text === "↓";
               return <p className={`ppd-revenue-paragraph${isFlowArrow ? " ppd-revenue-paragraph--flow" : ""}`} key={blockIndex}>{renderInline(block.text)}</p>;
+            }
+            if (block.type === "faq") {
+              return (
+                <div className="ppd-revenue-faq" key={blockIndex}>
+                  {block.items.map((item) => (
+                    <details className="ppd-revenue-faq__item" key={item.question}>
+                      <summary>{item.question}<span aria-hidden="true" /></summary>
+                      <p>{renderFaqText(item.answer)}</p>
+                    </details>
+                  ))}
+                </div>
+              );
             }
             if (block.type === "list") {
               return (

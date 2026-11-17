@@ -38,6 +38,7 @@
 }
 
 .ppd-daas-container { width: min(100%, 1380px); margin: 0 auto; }
+.ppd-daas-mobile-controls { display: none; }
 
 .ppd-daas-header {
   display: grid;
@@ -269,7 +270,29 @@
 }
 
 @media (max-width: 560px) {
-  .ppd-daas-title {
-    font-size: clamp(2rem, 8vw, 2.7rem);
-  }
+  .ppd-daas-section { padding: 2.25rem .9rem 2.5rem; }
+  .ppd-daas-header { margin-bottom: 1.25rem; }
+  .ppd-daas-title { font-size: clamp(2rem, 8vw, 2.65rem); line-height: 1.06; }
+  .ppd-daas-grid { display: flex; gap: .85rem; margin: 0 -.9rem; padding: 0 .9rem 1rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .ppd-daas-grid::-webkit-scrollbar { display: none; }
+  .ppd-daas-card { flex: 0 0 86%; min-height: 340px; scroll-snap-align: center; }
+  .ppd-daas-card-link { min-height: 340px; padding: 1.15rem; }
+  .ppd-daas-card-number { font-size: .78rem; }
+  .ppd-daas-card-identity { align-items: center; flex-direction: row; justify-content: space-between; gap: .7rem; margin: auto 0 1rem; }
+  .ppd-daas-card-icon { width: 2.8rem; height: 2.8rem; align-self: auto; }
+  .ppd-daas-card-icon svg { width: 22px; height: 22px; }
+  .ppd-daas-card-abbreviation { align-self: auto; font-size: clamp(2.4rem, 11vw, 3.4rem); }
+  .ppd-daas-card-bottom { gap: .7rem; padding-top: .9rem; }
+  .ppd-daas-card-title { font-size: 1.05rem; line-height: 1.3; }
+  .ppd-daas-card-description { margin-top: .45rem; font-size: .86rem; line-height: 1.5; -webkit-line-clamp: 3; }
+  .ppd-daas-card-arrow { width: 2rem; height: 2rem; }
+  .ppd-daas-card-arrow svg { width: 19px; height: 19px; }
+  .ppd-daas-mobile-controls { display: flex; align-items: center; justify-content: center; gap: 1.2rem; margin-top: .15rem; color: #bcd3f0; font-size: .76rem; font-weight: 750; letter-spacing: .12em; }
+  .ppd-daas-mobile-controls button { padding: .25rem; border: 0; background: transparent; color: #7dbdff; font: inherit; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+  .ppd-daas-mobile-controls button:disabled { opacity: .35; cursor: default; }
+}
+
+@media (max-width: 360px) {
+  .ppd-daas-card { flex-basis: 90%; }
+  .ppd-daas-card,.ppd-daas-card-link { min-height: 320px; }
 }

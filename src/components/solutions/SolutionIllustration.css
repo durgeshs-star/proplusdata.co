@@ -952,7 +952,7 @@
   .ppd-ntp-flow__body { grid-template-columns: minmax(0,1fr); gap: .55rem; }
   .ppd-ntp-flow__input-list { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .ppd-ntp-flow__input:last-child { grid-column: 1 / -1; }
-  .ppd-ntp-flow__connector { height: 18px; transform: rotate(90deg); }
+  .ppd-ntp-flow__connector { width: 18px; height: 18px; justify-self: center; transform: rotate(90deg); }
   .ppd-ntp-flow__model { min-height: 215px; }
   .ppd-ntp-flow__model-core { width: 104px; height: 104px; }
   .ppd-ntp-flow__model-orbit { width: 132px; }

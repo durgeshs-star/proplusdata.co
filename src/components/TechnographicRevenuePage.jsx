@@ -65,21 +65,32 @@ function Eyebrow({ children }) {
 export default function TechnographicRevenuePage() {
   const [activeStep, setActiveStep] = useState(0);
   const pageRef = useRef(null);
+  const journeyTabsRef = useRef(null);
   const activeJourney = journey[activeStep];
+  const selectJourneyStep = (index) => {
+    setActiveStep(index);
+    if (!window.matchMedia("(max-width: 650px)").matches) return;
+    const tabs = journeyTabsRef.current;
+    const button = tabs?.children[index];
+    if (!tabs || !button) return;
+    const tabsRect = tabs.getBoundingClientRect();
+    const buttonCenter = button.getBoundingClientRect().left + button.clientWidth / 2 - tabsRect.left;
+    tabs.scrollTo({ left: tabs.scrollLeft + buttonCenter - tabs.clientWidth / 2, behavior: "smooth" });
+  };
 
   useEffect(() => {
     const page = pageRef.current;
-    if (!page) return undefined;
+    if (!page || !window.matchMedia("(max-width: 650px)").matches) return undefined;
+    const section = page.querySelector(".ppd-revtech__workflow");
+    if (!section) return undefined;
 
-    const targets = page.querySelectorAll(
-      ".ppd-revtech__hero-copy, .ppd-revtech__dashboard, .ppd-revtech__signal-row > div, .ppd-revtech__signal-row aside, .ppd-revtech__blindspot-layout > div, .ppd-revtech__blindspot-layout > ul > li, .ppd-revtech__workflow-heading, .ppd-revtech__step, .ppd-revtech__opportunities-heading, .ppd-revtech__opportunity, .ppd-revtech__signals-heading, .ppd-revtech__signal-list li, .ppd-revtech__journey-layout > .ppd-revtech__eyebrow, .ppd-revtech__journey-title, .ppd-revtech__journey-intro, .ppd-revtech__journey-board, .ppd-revtech__outcome-grid article, .ppd-revtech__results-layout > div, .ppd-revtech__cta .ppd-revtech__shell"
-    );
-    page.classList.add("ppd-revtech--motion-ready");
+    const targets = Array.from(section.querySelectorAll(".ppd-revtech__workflow-heading, .ppd-revtech__step"));
+    section.classList.add("ppd-revtech--motion-ready");
     targets.forEach((target) => target.setAttribute("data-scroll-reveal", ""));
 
     if (!("IntersectionObserver" in window)) {
       targets.forEach((target) => target.classList.add("is-visible"));
-      return undefined;
+      return () => section.classList.remove("ppd-revtech--motion-ready");
     }
 
     const observer = new IntersectionObserver(
@@ -95,7 +106,10 @@ export default function TechnographicRevenuePage() {
     );
     targets.forEach((target) => observer.observe(target));
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      section.classList.remove("ppd-revtech--motion-ready");
+    };
   }, []);
 
   return (
@@ -202,8 +216,8 @@ export default function TechnographicRevenuePage() {
           <h2 className="ppd-revtech__section-title ppd-revtech__journey-title">Connect technology context to a <em>relevant sales conversation.</em></h2>
           <p className="ppd-revtech__journey-intro">Turn real technology signals into a timely, thoughtful opening for your next conversation.</p>
           <div className="ppd-revtech__journey-board">
-            <div className="ppd-revtech__journey-tabs" role="tablist" aria-label="Technology signal journey">
-              {journey.map(([label], index) => <button key={label} id={`ppd-revtech-journey-tab-${index}`} type="button" role="tab" aria-controls="ppd-revtech-journey-panel" aria-selected={activeStep === index} className={activeStep === index ? "is-active" : ""} onClick={() => setActiveStep(index)}><span>{String(index + 1).padStart(2, "0")}</span>{label}<i aria-hidden="true">↗</i></button>)}
+            <div ref={journeyTabsRef} className="ppd-revtech__journey-tabs" role="tablist" aria-label="Technology signal journey">
+              {journey.map(([label], index) => <button key={label} id={`ppd-revtech-journey-tab-${index}`} type="button" role="tab" aria-controls="ppd-revtech-journey-panel" aria-selected={activeStep === index} className={activeStep === index ? "is-active" : ""} onClick={() => selectJourneyStep(index)}><span>{String(index + 1).padStart(2, "0")}</span>{label}<i aria-hidden="true">↗</i></button>)}
             </div>
             <div id="ppd-revtech-journey-panel" className="ppd-revtech__journey-panel" role="tabpanel" aria-labelledby={`ppd-revtech-journey-tab-${activeStep}`} tabIndex="0">
               <div className="ppd-revtech__journey-panel-content" key={activeStep}>

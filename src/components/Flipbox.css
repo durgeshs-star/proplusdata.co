@@ -126,6 +126,7 @@ html.proplus-intelligence-scroll-lock #flipbox .proplus-intelligence-sticky { po
 .proplus-intelligence-progress { display: flex; justify-content: center; gap: 9px; margin-top: 0.5rem; }
 .proplus-intelligence-progress__dot { width: 7px; height: 7px; border-radius: 50%; background: #cbd5e1; }
 .proplus-intelligence-progress__dot.is-active { width: 26px; border-radius: 8px; background: #133580; }
+.proplus-intelligence-mobile-controls { display: none; }
 
 .proplus-home .proplus-intelligence-card--purchase .proplus-intelligence-card__label,
 .proplus-home .proplus-intelligence-card--purchase .proplus-intelligence-card__title,
@@ -154,9 +155,14 @@ html.proplus-intelligence-scroll-lock #flipbox .proplus-intelligence-sticky { po
   .proplus-intelligence-section__inner { padding: 0 1.25rem; }
   .proplus-intelligence-section__header { margin-bottom: 2rem; }
   .proplus-intelligence-section__title-main { white-space: normal; }
-  .proplus-intelligence-grid { width: 100%; flex-direction: column; gap: 1rem; transform: none !important; }
-  .proplus-intelligence-card { flex-basis: auto; min-height: 400px; }
+  .proplus-intelligence-track-viewport { overflow-x: auto; overflow-y: hidden; padding: 0 0 .75rem; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .proplus-intelligence-track-viewport::-webkit-scrollbar { display: none; }
+  .proplus-intelligence-grid { width: max-content; flex-direction: row; gap: 1rem; transform: none !important; }
+  .proplus-intelligence-card { flex: 0 0 min(84vw, 420px); min-height: 400px; scroll-snap-align: center; }
   .proplus-intelligence-progress { display: none; }
+  .proplus-intelligence-mobile-controls { display: flex; align-items: center; justify-content: center; gap: 1.1rem; margin-top: .7rem; color: #133580; font-size: .75rem; font-weight: 800; letter-spacing: .1em; }
+  .proplus-intelligence-mobile-controls button { display: grid; width: auto; min-width: 1.5rem; height: 2.5rem; place-items: center; padding: 0; border: 0; background: transparent; color: #133580; font: inherit; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+  .proplus-intelligence-mobile-controls button:disabled { opacity: .35; cursor: default; }
 }
 @media (max-width: 600px) {
   .proplus-intelligence-section { padding: 3rem 0; }

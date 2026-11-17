@@ -298,6 +298,7 @@
   box-shadow: none;
   transition: padding .25s ease, background-color .25s ease;
 }
+
 .ppd-revtech__opportunity:hover {
   padding-right: .8rem;
   padding-left: .8rem;
@@ -1366,4 +1367,55 @@
   .ppd-revtech__journey-panel {
     padding: 1.1rem;
   }
+}
+
+@media (max-width: 650px) {
+  .ppd-revtech__hero { padding: 2.25rem 0 2.5rem; }
+  .ppd-revtech__hero-layout { display: grid; width: calc(100% - 2rem); grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .ppd-revtech__hero-copy { width: 100%; max-width: none; min-width: 0; }
+  .ppd-revtech__hero h1 { max-width: 16ch; font-size: clamp(2.25rem, 9vw, 3.2rem); line-height: 1.04; overflow-wrap: normal; }
+  .ppd-revtech__hero-copy > p:not(.ppd-revtech__eyebrow) { margin: 1rem 0 1.25rem; font-size: 1rem; line-height: 1.55; }
+  .ppd-revtech__dashboard { width: 100%; min-width: 0; padding: .75rem; }
+  .ppd-revtech__dashboard-head { gap: .5rem; padding-bottom: .7rem; }
+  .ppd-revtech__dashboard-head span { display: none; }
+  .ppd-revtech__dashboard table { min-width: 570px; }
+}
+
+@media (max-width: 650px) {
+  .ppd-revtech__journey { padding: 2.75rem 0 3rem; }
+  .ppd-revtech__journey-layout { width: calc(100% - 2rem); }
+  .ppd-revtech__journey-title { max-width: 18ch; margin-bottom: .7rem; font-size: clamp(1.9rem, 8vw, 2.45rem); line-height: 1.12; }
+  .ppd-revtech__journey-intro { margin-bottom: 1.15rem; font-size: .95rem; line-height: 1.55; }
+  .ppd-revtech__journey-board { border-radius: 16px; }
+  .ppd-revtech__journey-tabs { display: flex; gap: .55rem; padding: .7rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .ppd-revtech__journey-tabs::-webkit-scrollbar { display: none; }
+  .ppd-revtech__journey-tabs button,
+  .ppd-revtech__journey-tabs button:nth-child(-n+2) { position: relative; display: flex; flex: 0 0 36%; min-height: 112px; flex-direction: column; justify-content: center; gap: .55rem; padding: .75rem .5rem; border: 1px solid #dfe7f4; border-radius: 12px; font-size: .78rem; scroll-snap-align: center; }
+  .ppd-revtech__journey-tabs button > span { width: 31px; height: 31px; flex: 0 0 31px; }
+  .ppd-revtech__journey-tabs button > i { position: absolute; right: .55rem; bottom: .55rem; font-size: .85rem; }
+  .ppd-revtech__journey-panel { min-height: 0; padding: 1rem; }
+  .ppd-revtech__journey-panel-content { grid-template-columns: minmax(0, 1fr); gap: 1.15rem; }
+  .ppd-revtech__journey-step-copy h3 { font-size: 1.45rem; }
+  .ppd-revtech__journey-step-copy > p { font-size: .92rem; line-height: 1.55; }
+  .ppd-revtech__journey-insight { margin-top: .9rem; padding-top: .75rem; }
+  .ppd-revtech__journey-preview { border-radius: 13px; }
+  .ppd-revtech__journey-preview-body { padding: .85rem; }
+  .ppd-revtech__journey-stack { gap: .4rem; }
+  .ppd-revtech__journey-stack > span { padding: .4rem .48rem; font-size: .64rem; }
+  .ppd-revtech__conversation-card { padding: .8rem; }
+  .ppd-revtech__conversation-card p { font-size: .8rem; line-height: 1.5; }
+  .ppd-revtech__journey-preview-footer { padding: .65rem .8rem; }
+}
+
+@media (max-width: 650px) {
+  .ppd-revtech__signals { padding: 2.75rem 0 3rem; }
+  .ppd-revtech__signals-layout { width: calc(100% - 2rem); gap: 1.25rem; }
+  .ppd-revtech__signals-heading .ppd-revtech__section-title { max-width: 18ch; margin-bottom: .8rem; font-size: clamp(1.95rem, 8vw, 2.5rem); line-height: 1.12; }
+  .ppd-revtech__signals-heading .ppd-revtech__section-intro { font-size: .94rem; line-height: 1.55; }
+  .ppd-revtech__signals-caption { margin-top: .9rem; }
+  .ppd-revtech__signals .ppd-revtech__signal-list { display: flex; gap: .7rem; margin-right: -1rem; padding: 0 1rem .85rem 0; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .ppd-revtech__signals .ppd-revtech__signal-list::-webkit-scrollbar { display: none; }
+  .ppd-revtech__signals .ppd-revtech__signal-list li { display: flex; flex: 0 0 86%; min-height: 135px; align-items: center; gap: .9rem; padding: 1rem; border: 1px solid rgba(190, 211, 244, .24); border-radius: 13px; scroll-snap-align: start; }
+  .ppd-revtech__signal-name { font-size: .98rem; line-height: 1.45; }
+  .ppd-revtech__signal-arrow { opacity: .75; transform: none; }
 }

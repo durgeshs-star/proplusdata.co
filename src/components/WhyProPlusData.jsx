@@ -76,6 +76,7 @@ function SignalArtwork({ artwork }) {
 
 export default function WhyProPlusData() {
   const carouselRef = useRef(null);
+  const touchStartX = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const previousIndex = (activeIndex - 1 + carouselItems.length) % carouselItems.length;
   const nextIndex = (activeIndex + 1) % carouselItems.length;
@@ -83,7 +84,7 @@ export default function WhyProPlusData() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
@@ -98,6 +99,17 @@ export default function WhyProPlusData() {
     setActiveIndex(index);
     requestAnimationFrame(() => carouselRef.current?.focus({ preventScroll: true }));
   };
+  const handleTouchStart = (event) => {
+    if (!window.matchMedia("(max-width: 760px)").matches) return;
+    touchStartX.current = event.touches[0]?.clientX ?? null;
+  };
+  const handleTouchEnd = (event) => {
+    if (touchStartX.current === null) return;
+    const deltaX = event.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(deltaX) < 45) return;
+    setActiveIndex((index) => (index + (deltaX < 0 ? 1 : -1) + carouselItems.length) % carouselItems.length);
+  };
 
   return (
     <section className="why-proplus" aria-label="Why ProPlus Data">
@@ -106,7 +118,7 @@ export default function WhyProPlusData() {
           <h2>Why <em>ProPlus Data?</em></h2>
           <p className="why-proplus__section-intro">See the signals earlier, connect them with context, and give every go-to-market team a clearer path to revenue.</p>
         </header>
-        <div ref={carouselRef} className="why-proplus__carousel" role="region" aria-label="Why ProPlus Data carousel" aria-roledescription="carousel" tabIndex={-1} onKeyDown={handleCarouselKeyDown}>
+        <div ref={carouselRef} className="why-proplus__carousel" role="region" aria-label="Why ProPlus Data carousel" aria-roledescription="carousel" tabIndex={-1} onKeyDown={handleCarouselKeyDown} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
           {carouselItems.map((item, index) => {
             const isActive = index === activeIndex;
             const position = isActive ? "active" : index === previousIndex ? "previous" : "next";

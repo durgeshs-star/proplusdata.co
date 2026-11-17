@@ -266,7 +266,7 @@ That may be the next evolution of B2B intelligence. Not simply collecting more d
 
 ## Why does this account matter now?
 
-# Frequently Asked Questions
+# FAQs
 
 ## What is a B2B intelligence platform?
 

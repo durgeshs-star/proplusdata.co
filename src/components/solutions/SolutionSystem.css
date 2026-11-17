@@ -5600,3 +5600,27 @@
 .ppd-solution[class*="ppd-solution--"] .ppd-buyer-matter-title span {
   font-weight: 720 !important;
 }
+
+@media (max-width: 640px) {
+  .ppd-renewal-how-steps { display: flex; gap: .9rem; margin: 0 -.25rem; padding: 0 .25rem 1rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .ppd-renewal-how-steps::-webkit-scrollbar { display: none; }
+  .ppd-renewal-how-step,
+  .ppd-renewal-how-step:last-child { flex: 0 0 88%; min-height: 430px; grid-column: auto; padding: 1.25rem; scroll-snap-align: center; }
+  .ppd-renewal-how-step:hover { transform: none; }
+}
+
+@media (max-width: 767px) {
+  .ppd-solution[class*="ppd-solution--"] > section.ppd-techno-cta h2,
+  .ppd-solution[class*="ppd-solution--"] > section.ppd-ntp-cta .ppd-ntp-cta-title { width: min(100%, 32ch); font-size: clamp(1.25rem, 5.6vw, 1.6rem); line-height: 1.25; }
+}
+
+@media (max-width: 767px) {
+  .ppd-solution.ppd-solution--buying-group > section.ppd-techno-cta h2 { width: min(100%, 32ch); font-size: clamp(1.25rem, 5.8vw, 1.65rem); line-height: 1.25; }
+}
+
+@media (max-width: 520px) {
+  .ppd-solution.ppd-solution--buying-group > section.ppd-buyer-capabilities .ppd-buyer-capabilities-header { margin-bottom: 1.5rem; }
+  .ppd-solution.ppd-solution--buying-group > section.ppd-buyer-capabilities .ppd-buyer-capabilities-grid { display: flex; gap: .9rem; margin: 0 -.5rem; padding: 0 .5rem 1rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .ppd-solution.ppd-solution--buying-group > section.ppd-buyer-capabilities .ppd-buyer-capabilities-grid::-webkit-scrollbar { display: none; }
+  .ppd-solution.ppd-solution--buying-group > section.ppd-buyer-capabilities .ppd-buyer-capability-card { flex: 0 0 88%; min-height: 270px; padding: 1.5rem; scroll-snap-align: center; }
+}
