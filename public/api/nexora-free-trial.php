@@ -3,10 +3,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 header('Content-Type: application/json; charset=UTF-8');
 
-require_once dirname(__DIR__, 2) . '/PHPMailer/Exception.php';
-require_once dirname(__DIR__, 2) . '/PHPMailer/PHPMailer.php';
-require_once dirname(__DIR__, 2) . '/PHPMailer/SMTP.php';
-
 function respond($status, $payload) {
     http_response_code($status);
     echo json_encode($payload);
@@ -35,6 +31,37 @@ if (!$email || $fullName === '' || $jobTitle === '') {
 if (strlen($fullName) > 200 || strlen($jobTitle) > 200 || strlen($phone) > 40) {
     respond(400, ['success' => false, 'message' => 'One or more fields are too long.']);
 }
+
+$phpmailerFiles = ['Exception.php', 'PHPMailer.php', 'SMTP.php'];
+$phpmailerCandidates = [
+    dirname(__DIR__, 2) . '/PHPMailer',
+    dirname(__DIR__) . '/PHPMailer',
+    __DIR__ . '/PHPMailer',
+];
+$phpmailerDirectory = null;
+
+foreach ($phpmailerCandidates as $candidate) {
+    $allFilesExist = true;
+    foreach ($phpmailerFiles as $file) {
+        if (!is_file($candidate . '/' . $file)) {
+            $allFilesExist = false;
+            break;
+        }
+    }
+    if ($allFilesExist) {
+        $phpmailerDirectory = $candidate;
+        break;
+    }
+}
+
+if ($phpmailerDirectory === null) {
+    error_log('Free trial email not sent: PHPMailer files were not found in the expected deployment locations.');
+    respond(500, ['success' => false, 'message' => 'Email service is temporarily unavailable. Please try again later.']);
+}
+
+require_once $phpmailerDirectory . '/Exception.php';
+require_once $phpmailerDirectory . '/PHPMailer.php';
+require_once $phpmailerDirectory . '/SMTP.php';
 
 $escape = function ($value) {
     return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');

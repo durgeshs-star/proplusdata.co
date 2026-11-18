@@ -64,23 +64,19 @@ const Hero1 = () => {
 
     setTrialLoading(true);
     try {
-      const response = await fetch("/api/nexora-free-trial.php", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
+          access_key: "9df4c372-c813-4806-97bb-685a8358a058",
+          name: trialData.fullName.trim(),
           email: trialData.email.trim(),
-          fullName: trialData.fullName.trim(),
           phone: trialData.phone.trim(),
-          jobTitle: trialData.jobTitle.trim(),
+          job_title: trialData.jobTitle.trim(),
+          subject: "New ProPlus Data free trial request",
         }),
       });
-      const responseText = await response.text();
-      let result;
-      try {
-        result = JSON.parse(responseText);
-      } catch {
-        throw new Error("The PHP form endpoint returned a webpage instead of JSON. Confirm /api/nexora-free-trial.php is deployed and PHP is enabled on the web server.");
-      }
+      const result = await response.json();
       if (!response.ok || !result.success) throw new Error(result.message || "We couldn’t submit your request. Please try again.");
       setTrialData({ email: "", fullName: "", phone: "", jobTitle: "" });
       setTrialExpanded(false);
