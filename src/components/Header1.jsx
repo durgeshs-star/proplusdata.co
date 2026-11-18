@@ -7,7 +7,7 @@ import {
   faTimes
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Header1() {
+export default function Header1({ darkMode = false }) {
   const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,7 +40,7 @@ export default function Header1() {
 
           {/* Logo */}
           <Link to="/" className="logo" onClick={closeMenu}>
-            <img src="/assets/images/logo.png" alt="Logo" />
+            <img src={darkMode ? "/assets/images/white-logo.png" : "/assets/images/logo.png"} alt="Logo" />
           </Link>
 
           {/* Hamburger */}
