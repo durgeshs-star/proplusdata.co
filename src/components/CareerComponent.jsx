@@ -38,7 +38,7 @@ export default function CareerComponent() {
       <div className="ppd-careers-grid" aria-hidden="true" />
       <div className="ppd-careers-container container">
         <div className="ppd-careers-row row align-items-center">
-          <article className="ppd-careers-copy col-lg-7 col-md-6">
+          <article className="ppd-careers-copy col-lg-7 col-md-7">
             <div className="ppd-careers-eyebrow">
               <span className="ppd-careers-eyebrow-dot" aria-hidden="true" />
               <span>JOIN OUR TEAM</span>
@@ -67,6 +67,24 @@ export default function CareerComponent() {
             </div>
           </article>
 
+          <aside className="ppd-careers-visual-column col-lg-5 col-md-5" aria-label="A collaborative team using data intelligence">
+            <div className="ppd-careers-visual">
+              <div className="ppd-careers-visual-glow" aria-hidden="true" />
+              <div className="ppd-careers-orbit ppd-careers-orbit-one" aria-hidden="true" />
+              <div className="ppd-careers-orbit ppd-careers-orbit-two" aria-hidden="true" />
+              <div className="ppd-careers-connection" aria-hidden="true"><span className="ppd-careers-connection-pulse" /></div>
+              <span className="ppd-careers-data-tag ppd-careers-data-tag-one"><span /> IDEAS IN MOTION</span>
+              <figure className="ppd-careers-image-frame">
+                <img
+                  src="/assets/images/career-img.png"
+                  alt="Colleagues sharing ideas and working together around a laptop."
+                  width="1680"
+                  height="900"
+                />
+              </figure>
+              <span className="ppd-careers-data-tag ppd-careers-data-tag-two"><span /> INSIGHT INTO IMPACT</span>
+            </div>
+          </aside>
         </div>
       </div>
     </section>

@@ -2517,6 +2517,13 @@ body.proplus-home-page {
 .ppd-trial-form__message { min-height: 1.3em; margin: 3px 10px 0; color: #ad3028; font-size: .82rem; }
 .ppd-trial-form__message:empty { display: none; }
 .ppd-trial-form__sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.ppd-trial-success-toast { position: fixed; z-index: 2000; top: 108px; right: clamp(16px,4vw,52px); display: flex; width: min(410px,calc(100vw - 32px)); align-items: center; gap: 13px; padding: 15px 16px; border: 1px solid #b6ead8; border-radius: 13px; background: #f2fff9; color: #153c32; box-shadow: 0 16px 40px rgba(11,38,63,.2); animation: ppd-trial-toast-in .22s ease-out both; }
+.ppd-trial-success-toast__icon { display: grid; width: 34px; height: 34px; flex: 0 0 34px; place-items: center; border-radius: 50%; background: #15956e; color: #fff; font-size: 19px; font-weight: 800; }
+.ppd-trial-success-toast > span:nth-child(2) { display: grid; gap: 3px; }
+.ppd-trial-success-toast strong { font-size: 14px; }
+.ppd-trial-success-toast small { color: #557368; font-size: 12px; line-height: 1.45; }
+.ppd-trial-success-toast button { align-self: flex-start; margin: -5px -4px 0 auto; padding: 0 3px; border: 0; background: transparent; color: #557368; font-size: 23px; line-height: 1; cursor: pointer; }
+@keyframes ppd-trial-toast-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes ppd-trial-field-in { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 900px) {
   .ppd-trial-form.is-expanded .ppd-trial-form__fields { grid-template-columns: repeat(2,minmax(0,1fr)); }

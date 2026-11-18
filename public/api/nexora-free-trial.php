@@ -1,5 +1,11 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+
 header('Content-Type: application/json; charset=UTF-8');
+
+require_once dirname(__DIR__, 2) . '/PHPMailer/Exception.php';
+require_once dirname(__DIR__, 2) . '/PHPMailer/PHPMailer.php';
+require_once dirname(__DIR__, 2) . '/PHPMailer/SMTP.php';
 
 function respond($status, $payload) {
     http_response_code($status);
@@ -47,15 +53,41 @@ $message = "<!doctype html><html><body>"
     . "<p>Submitted from the ProPlus Data homepage.</p>"
     . "</body></html>";
 
-$headers = [
-    'MIME-Version: 1.0',
-    'Content-Type: text/html; charset=UTF-8',
-    'From: ProPlus Data <noreply@proplusdata.co>',
-    'Reply-To: ' . $email,
-];
+$smtpHost = getenv('SMTP_HOST');
+$smtpUsername = getenv('SMTP_USERNAME');
+$smtpPassword = getenv('SMTP_PASSWORD');
+$smtpPort = (int) (getenv('SMTP_PORT') ?: 587);
 
-if (mail('info@proplusdata.co', $subject, $message, implode("\r\n", $headers))) {
-    respond(200, ['success' => true, 'message' => 'Form submitted successfully']);
+if (!$smtpHost || !$smtpUsername || !$smtpPassword) {
+    error_log('Free trial email not sent: SMTP_HOST, SMTP_USERNAME, or SMTP_PASSWORD is not configured.');
+    respond(503, ['success' => false, 'message' => 'Email service is temporarily unavailable. Please try again later.']);
 }
 
-respond(500, ['success' => false, 'message' => 'Email delivery failed. Please try again later.']);
+try {
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = $smtpHost;
+    $mail->SMTPAuth = true;
+    $mail->Username = $smtpUsername;
+    $mail->Password = $smtpPassword;
+    $mail->Port = $smtpPort;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->CharSet = 'UTF-8';
+    $mail->setFrom($smtpUsername, 'ProPlus Data');
+    $mail->addAddress('info@proplusdata.co');
+    $mail->addReplyTo($email, $fullName);
+    $mail->isHTML(true);
+    $mail->Subject = $subject;
+    $mail->Body = $message;
+    $mail->AltBody = "New ProPlus Data free trial request\n"
+        . "Work email: {$email}\n"
+        . "Full name: {$fullName}\n"
+        . "Phone: " . ($phone === '' ? 'Not provided' : $phone) . "\n"
+        . "Job title: {$jobTitle}";
+    $mail->send();
+
+    respond(200, ['success' => true, 'message' => 'Form submitted successfully']);
+} catch (Throwable $error) {
+    error_log('Free trial SMTP send failed: ' . $error->getMessage());
+    respond(500, ['success' => false, 'message' => 'Email delivery failed. Please try again later.']);
+}

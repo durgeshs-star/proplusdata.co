@@ -24,10 +24,17 @@ const Hero1 = () => {
   const [trialError, setTrialError] = useState("");
   const [trialStatus, setTrialStatus] = useState("");
   const [trialLoading, setTrialLoading] = useState(false);
+  const [trialSuccessVisible, setTrialSuccessVisible] = useState(false);
 
   useEffect(() => {
     if (window.scrollCue) window.scrollCue.init();
   }, []);
+
+  useEffect(() => {
+    if (!trialSuccessVisible) return undefined;
+    const timeout = window.setTimeout(() => setTrialSuccessVisible(false), 4000);
+    return () => window.clearTimeout(timeout);
+  }, [trialSuccessVisible]);
 
   const updateTrialField = (event) => {
     setTrialData((current) => ({ ...current, [event.target.name]: event.target.value }));
@@ -75,7 +82,11 @@ const Hero1 = () => {
         throw new Error("The PHP form endpoint returned a webpage instead of JSON. Confirm /api/nexora-free-trial.php is deployed and PHP is enabled on the web server.");
       }
       if (!response.ok || !result.success) throw new Error(result.message || "We couldn’t submit your request. Please try again.");
-      setTrialStatus("Thanks! Your free trial request has been submitted.");
+      setTrialData({ email: "", fullName: "", phone: "", jobTitle: "" });
+      setTrialExpanded(false);
+      setTrialStatus("");
+      setTrialError("");
+      setTrialSuccessVisible(true);
     } catch (error) {
       setTrialError(error.message || "Submission failed. Please try again.");
     } finally {
@@ -85,6 +96,13 @@ const Hero1 = () => {
 
   return (
     <>
+      {trialSuccessVisible && (
+        <div className="ppd-trial-success-toast" role="status" aria-live="polite">
+          <span className="ppd-trial-success-toast__icon" aria-hidden="true">✓</span>
+          <span><strong>Request submitted</strong><small>Thanks! Your free trial request has been received.</small></span>
+          <button type="button" aria-label="Dismiss success message" onClick={() => setTrialSuccessVisible(false)}>×</button>
+        </div>
+      )}
       <section className="ppd-home-hero ppd-home-hero--split">
         <div className="ppd-home-hero__background" aria-hidden="true" />
         <div className="ppd-home-hero__layout">

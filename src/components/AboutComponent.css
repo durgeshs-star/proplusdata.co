@@ -2,7 +2,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(4.5rem, 8vw, 7rem) 0;
+  padding: clamp(2rem, 3vw, 3.5rem) 0 clamp(4rem, 7vw, 6rem);
   background:
     radial-gradient(ellipse 33rem 26rem at 78% 46%, rgba(59, 130, 246, 0.09), transparent 72%),
     #f7faff;
@@ -358,7 +358,7 @@
 
 @media (max-width: 991.98px) {
   .ppd-about-section {
-    padding: 4.5rem 0;
+    padding: 3rem 0 4.5rem;
   }
 
   .ppd-about-row {
@@ -393,7 +393,7 @@
 
 @media (max-width: 767.98px) {
   .ppd-about-section {
-    padding: 4rem 0 4.5rem;
+    padding: 3rem 0 4.5rem;
   }
 
   .ppd-about-row {
@@ -438,6 +438,7 @@
 
 @media (max-width: 420px) {
   .ppd-about-section {
+    padding-top: 2.5rem;
     padding-right: 0.25rem;
     padding-left: 0.25rem;
   }
