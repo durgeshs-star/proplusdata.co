@@ -16,6 +16,8 @@ export default function ContactUs() {
       __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "ContactPage",
+        "@id": "https://proplusdata.co/contact-us#webpage",
+        "url": "https://proplusdata.co/contact-us",
         "name": "Contact Us - ProPlus Data",
         "description": "Get in touch with ProPlus Data for B2B contact data, intent intelligence, and more. Let us help your outreach strategy."
       })

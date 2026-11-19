@@ -5,7 +5,7 @@ export default function IntentComponent() {
   return (
     <SolutionHero
       eyebrow="Intent Data"
-      title={<>Unlock the Power of <span>Intent with Precision</span></>}
+      title={<>Identify High-Intent Accounts with <span>B2B Intent Data</span></>}
     >
       <p>
         When prospects start researching solutions, they leave clues, digital footprints that show they’re ready to buy. ProPlus Data’s Intent Intelligence reads these signals and turns them into clear, actionable steps to help you make smarter business moves.

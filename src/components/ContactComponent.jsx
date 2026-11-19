@@ -5,7 +5,7 @@ export default function ContactComponent() {
   return (
     <SolutionHero
       eyebrow="Contact Data"
-      title={<>Empower Your Business Strategy with <span>Contact Data</span></>}
+      title={<>Connect with the Right Decision-Makers Through <span>B2B Contact Data</span></>}
     >
       <p>
         Behind every successful engagement is verified, high-quality contact data. At ProPlus Data, we don’t just serve up names and numbers; we deliver a game-changing trifecta of precision, relevance, and pinpoint accuracy. The holistic edge ensures you’re not just reaching out, but connecting with the right players, supercharging your odds of impactful interactions and sealed deals.

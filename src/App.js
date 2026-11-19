@@ -88,6 +88,7 @@ import B2BIntelligencePlatforms from './pages/B2BIntelligencePlatforms';
 import TechnographicsOutdated from './pages/TechnographicsOutdated';
 import './components/BlogArticleTheme.css';
 import BlogPostNavigation from './components/BlogPostNavigation';
+import RouteSeo from './components/RouteSeo';
 
 
 
@@ -189,6 +190,7 @@ function App() {
 
 
       </Routes>
+      <RouteSeo />
       <BlogPostNavigation />
      </BrowserRouter>
      </HelmetProvider>

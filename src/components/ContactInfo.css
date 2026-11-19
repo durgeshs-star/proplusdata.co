@@ -25,6 +25,10 @@
   background-color: #f1f6ff;
 }
 
+.ppd-company-page--contact .ppd-contact-hero {
+  padding-top: clamp(1rem, 1.5vw, 1.5rem);
+}
+
 .ppd-contact-grid {
   position: absolute;
   z-index: -1;
@@ -94,10 +98,10 @@
   margin: 0;
   color: #0f1f3d;
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  font-size: clamp(3rem, 6vw, 4.9rem);
+  font-size: clamp(2.7rem, 4vw, 3.55rem);
   font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
 }
 
 .ppd-contact-title span {
@@ -105,6 +109,7 @@
   color: #133580;
   font-style: italic;
   font-weight: 600;
+  letter-spacing: -0.055em;
 }
 
 .ppd-contact-accent {
@@ -154,8 +159,14 @@
 
 .ppd-contact-actions {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 36px rgba(15, 35, 69, 0.055);
 }
 
 .ppd-contact-action {
@@ -176,6 +187,10 @@
     border-color 250ms ease,
     box-shadow 250ms ease,
     transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ppd-contact-action[href^="mailto:"] {
+  order: -1;
 }
 
 .ppd-contact-action:hover {
@@ -431,7 +446,7 @@
   }
 
   .ppd-contact-title {
-    font-size: clamp(2.8rem, 6vw, 4rem);
+    font-size: clamp(2.5rem, 4.7vw, 3.1rem);
   }
 
   .ppd-contact-lead {
@@ -456,8 +471,14 @@
     row-gap: 2.5rem;
   }
 
+  .ppd-contact-actions {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
   .ppd-contact-title {
-    font-size: clamp(2.75rem, 10vw, 3rem);
+    font-size: clamp(2.15rem, 7.5vw, 2.65rem);
   }
 
   .ppd-contact-lead {
@@ -496,7 +517,7 @@
 
 @media (max-width: 420px) {
   .ppd-contact-hero {
-    padding-top: 2.5rem;
+    padding-top: 1rem;
     padding-right: 0.25rem;
     padding-left: 0.25rem;
   }

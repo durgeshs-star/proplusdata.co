@@ -167,6 +167,9 @@ const BlogsRedesign = () => {
     <main className="ppd-blogs-page">
 
       <section className="ppd-blogs-body-section">
+        <h1 className="ppd-blogs-list-title">
+          B2B Data <span>Intelligence Insights</span> and Resources
+        </h1>
         <div className="ppd-blogs-grid">
           {blogs.map((blog, index) => (
             <article className="ppd-blog-card" key={index}>

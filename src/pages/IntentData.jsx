@@ -15,36 +15,6 @@ export default function IntentData() {
   return (
     <div className="ppd-solutions-page">
        <Helmet>
-        {typeof window !== 'undefined' && (
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is intent data?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Intent data identifies companies showing interest in specific solutions by analyzing their online behavior and content consumption."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How can intent data boost lead generation?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "It lets you prioritize high-intent accounts that are actively researching topics relevant to your product or service."
-            }
-          }
-        ]
-      })
-    }}
-  />
-)}
-
                 <title>Intent Data for B2B Growth & Leads | ProPlus Data Solutions!</title>
                 <meta name="description" content="Get intent data for B2B SaaS in the US, intent-based tools in Japan, and buyer intent insights for Indian companies to boost your sales pipeline."/>
                 <meta name="keywords" content="intent data providers, B2B intent data platform, best B2B intent data providers for enterprise sales, how to use buyer intent data for lead generation,intent-based marketing tools in Japan, intent intelligence for sales "/>

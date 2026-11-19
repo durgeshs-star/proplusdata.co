@@ -119,7 +119,7 @@ export default function TechnographicRevenuePage() {
         <div className="ppd-revtech__shell ppd-revtech__hero-layout">
           <div className="ppd-revtech__hero-copy ppd-revtech__reveal">
             <Eyebrow>Technographics</Eyebrow>
-            <h1>Your <em>next revenue opportunity</em> is already in their tech stack.</h1>
+            <h1>B2B Technographic Data for <em>Smarter Account Intelligence</em></h1>
             <p>See the technologies your target accounts use, how their stacks change, and where those signals can open a revenue conversation.</p>
             <a className="ppd-revtech__button" href="/contact-us">Get started</a>
           </div>

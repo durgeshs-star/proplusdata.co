@@ -21,13 +21,13 @@ export default function BuyingGroup() {
       __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Service",
+        "@id": "https://proplusdata.co/buying-group#service",
         "name": "Buying Group",
         "description":
           "Leverage the power of collective purchasing decisions with ProPlus Data. Get insights into buying behaviors and preferences to enhance your B2B sales and marketing strategies.",
-        "provider": {
-          "@type": "Organization",
-          "name": "ProPlus Data"
-        }
+        "serviceType": "B2B buying group intelligence",
+        "url": "https://proplusdata.co/buying-group",
+        "provider": { "@id": "https://proplusdata.co/#organization" }
       })
     }}
   />
