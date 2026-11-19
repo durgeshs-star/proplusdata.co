@@ -2112,6 +2112,11 @@ body.proplus-home-page {
 }
 
 @media (max-width: 1199px) {
+  /* Keep the header CTA out of the compact navigation layout. */
+  .proplus-header .navbar > .proplus-header__trial {
+    display: none;
+  }
+
   .proplus-header--reference .proplus-navbar-shell {
     padding-right: 1rem;
     padding-left: 1rem;

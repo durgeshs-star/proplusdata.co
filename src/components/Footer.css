@@ -27,7 +27,7 @@
 
 .ppd-footer-grid {
   display: grid;
-  grid-template-columns: minmax(200px, 1.3fr) repeat(3, minmax(130px, 0.85fr)) minmax(175px, 1fr);
+  grid-template-columns: minmax(200px, 1.3fr) repeat(4, minmax(130px, 0.85fr)) minmax(175px, 1fr);
   gap: clamp(1.5rem, 2.5vw, 2.5rem);
   align-items: start;
 }
@@ -66,7 +66,7 @@
 }
 
 .ppd-footer-heading {
-  margin: 0 0 1.1rem;
+  margin: 0 0 0.6rem;
   color: #93c5fd;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   font-size: 0.85rem;

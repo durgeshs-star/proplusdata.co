@@ -236,7 +236,7 @@
 @media (max-width: 768px) {
   .ppd-marketplace-title {
     width: 100%;
-    font-size: clamp(1.25rem, 5.2vw, 2.1rem);
+    font-size: clamp(1.6rem, 7vw, 2.25rem);
     white-space: normal;
     text-wrap: balance;
   }

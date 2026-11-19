@@ -106,22 +106,22 @@ export default function AboutComponent() {
                   </g>
                   <rect x="38" y="71" width="143" height="74" rx="12" fill="#fff" stroke="#dce7f7" />
                   <circle cx="59" cy="95" r="7" fill="#f3a332" />
-                  <rect x="76" y="90" width="81" height="8" rx="4" fill="#243d68" opacity=".8" />
+                  <text x="76" y="98" fill="#243d68" fontSize="10" fontWeight="700">TECH STACK</text>
                   <rect x="53" y="112" width="102" height="6" rx="3" fill="#c4d2e8" />
                   <rect x="53" y="125" width="72" height="6" rx="3" fill="#e1e9f4" />
                   <rect x="379" y="73" width="143" height="74" rx="12" fill="#fff" stroke="#dce7f7" />
                   <circle cx="400" cy="96" r="7" fill="#26aa94" />
-                  <rect x="417" y="91" width="81" height="8" rx="4" fill="#243d68" opacity=".8" />
+                  <text x="417" y="99" fill="#243d68" fontSize="10" fontWeight="700">RENEWAL TIMING</text>
                   <rect x="394" y="113" width="102" height="6" rx="3" fill="#c4d2e8" />
                   <rect x="394" y="126" width="72" height="6" rx="3" fill="#e1e9f4" />
                   <rect x="40" y="253" width="143" height="74" rx="12" fill="#fff" stroke="#dce7f7" />
                   <circle cx="61" cy="276" r="7" fill="#916cda" />
-                  <rect x="78" y="271" width="81" height="8" rx="4" fill="#243d68" opacity=".8" />
+                  <text x="78" y="279" fill="#243d68" fontSize="10" fontWeight="700">BUYING INTENT</text>
                   <rect x="55" y="293" width="102" height="6" rx="3" fill="#c4d2e8" />
                   <rect x="55" y="306" width="72" height="6" rx="3" fill="#e1e9f4" />
                   <rect x="377" y="251" width="143" height="74" rx="12" fill="#fff" stroke="#dce7f7" />
                   <circle cx="398" cy="274" r="7" fill="#18a9b5" />
-                  <rect x="415" y="269" width="81" height="8" rx="4" fill="#243d68" opacity=".8" />
+                  <text x="415" y="277" fill="#243d68" fontSize="10" fontWeight="700">BUYING GROUP</text>
                   <rect x="392" y="291" width="102" height="6" rx="3" fill="#c4d2e8" />
                   <rect x="392" y="304" width="72" height="6" rx="3" fill="#e1e9f4" />
                   <circle cx="280" cy="190" r="69" fill="#c8d9f6" opacity=".42" />
@@ -138,7 +138,7 @@ export default function AboutComponent() {
               </div>
               <div className="ppd-about-data-tag ppd-about-data-tag-two">
                 <span aria-hidden="true" />
-                GTM INTELLIGENCE
+                REVENUE OPPORTUNITIES
               </div>
             </div>
           </div>

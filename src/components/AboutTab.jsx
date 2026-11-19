@@ -261,7 +261,7 @@ export default function AboutTab() {
                 <span className="ppd-about-tabs-node" />
               </span>
               <span className="ppd-about-tabs-short-label">{tab.shortLabel}</span>
-              <span className="ppd-about-tabs-full-label">{tab.label}</span>
+              <span className="ppd-about-tabs-full-label">{tab.label}<span className="ppd-about-tabs-nav-arrow" aria-hidden="true">→</span></span>
             </button>
           ))}
         </div>

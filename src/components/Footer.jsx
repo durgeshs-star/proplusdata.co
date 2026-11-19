@@ -47,6 +47,15 @@ const Footer = () => (
           </ul>
         </nav>
 
+        <nav className="ppd-footer-column" aria-label="Resources">
+          <h2 className="ppd-footer-heading">Resources</h2>
+          <ul className="ppd-footer-links">
+            <li><Link className="ppd-footer-link" to="/blogs">Blogs</Link></li>
+            <li><Link className="ppd-footer-link" to="/conferences">Conferences</Link></li>
+            <li><Link className="ppd-footer-link" to="/see-your-gtm-truth-in-60-sec">GTM Assessment Tool</Link></li>
+          </ul>
+        </nav>
+
         <nav className="ppd-footer-column" aria-label="Legal">
           <h2 className="ppd-footer-heading">Legal</h2>
           <ul className="ppd-footer-links">

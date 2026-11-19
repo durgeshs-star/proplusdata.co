@@ -84,7 +84,7 @@ export default function WhyProPlusData() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
-    }, 10000);
+    }, 15000);
 
     return () => clearInterval(interval);
   }, []);

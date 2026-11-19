@@ -53,7 +53,7 @@
 .ppd-revtech__stat { display: block; color: var(--rt-blue); font-size: clamp(5rem, 10vw, 8.2rem); font-weight: 750; letter-spacing: -.08em; line-height: .95; }
 .ppd-revtech__stat-caption { max-width: 300px; margin: .6rem 0 0; color: #758db5; font-size: .76rem; font-weight: 700; letter-spacing: .17em; line-height: 1.55; text-transform: uppercase; }
 .ppd-revtech__blindspot ul { display: grid; gap: 1.1rem; margin: 0; padding: 0; list-style: none; color: var(--rt-mid); font-size: 1rem; }
-.ppd-revtech__blindspot li { position: relative; padding-left: 1.2rem; }
+.ppd-revtech__blindspot li { position: relative; padding-left: 1.2rem; font-size: 1rem; line-height: 1.7; }
 .ppd-revtech__blindspot li::before { position: absolute; left: 0; top: .55em; width: 6px; height: 6px; background: var(--rt-teal); content: ""; }
 .ppd-revtech__workflow { background: #fff; }
 .ppd-revtech__workflow-panel { padding: clamp(1.5rem, 4vw, 3.5rem); border: 1px solid #e0e7f2; box-shadow: 0 20px 65px #132b580b; }
@@ -114,7 +114,7 @@
 .ppd-revtech__cta .ppd-revtech__eyebrow { justify-content: center; }
 .ppd-revtech__cta h2 { margin: 0 auto 1.7rem; color: var(--rt-navy); font-size: clamp(2rem, 4vw, 3.4rem); letter-spacing: -.045em; }
 @media (max-width: 1000px) { .ppd-revtech__hero-layout { grid-template-columns: 1fr; } .ppd-revtech__hero-copy { max-width: 780px; } .ppd-revtech__dashboard { transform: none; } .ppd-revtech__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ppd-revtech__outcome-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 650px) { .ppd-revtech__shell { width: min(100% - 2rem, 1420px); } .ppd-revtech__hero { padding-top: 6.5rem; } .ppd-revtech__hero-layout { gap: 2.2rem; } .ppd-revtech__dashboard { padding: .55rem; } .ppd-revtech__dashboard-foot span:last-child { display: none; } .ppd-revtech__dashboard table { min-width: 570px; } .ppd-revtech__signal-row, .ppd-revtech__blindspot-layout, .ppd-revtech__results-layout { grid-template-columns: 1fr; } .ppd-revtech__steps, .ppd-revtech__opportunity-grid, .ppd-revtech__outcome-grid { grid-template-columns: 1fr; } .ppd-revtech__step-preview { min-height: 150px; } .ppd-revtech__signal-list { grid-template-columns: 1fr; gap: .8rem; } .ppd-revtech__journey-tabs { grid-template-columns: repeat(2, 1fr); } .ppd-revtech__journey-tabs button:nth-child(2) { border-right: 0; } .ppd-revtech__journey-tabs button:nth-child(-n+2) { border-bottom: 1px solid #dce6f4; } .ppd-revtech__results-stat { border-top: 1px solid #ffffff2b; border-left: 0; padding-top: 1.5rem; } }
+@media (max-width: 650px) { .ppd-revtech__shell { width: min(100% - 2rem, 1420px); } .ppd-revtech__hero { padding-top: 6.5rem; } .ppd-revtech__hero-layout { gap: 2.2rem; } .ppd-revtech__dashboard { padding: .55rem; } .ppd-revtech__dashboard-foot span:last-child { display: none; } .ppd-revtech__dashboard table { min-width: 570px; } .ppd-revtech__signal-row, .ppd-revtech__blindspot-layout, .ppd-revtech__results-layout { grid-template-columns: 1fr; } .ppd-revtech__blindspot-layout { gap: 1.5rem; } .ppd-revtech__steps, .ppd-revtech__opportunity-grid, .ppd-revtech__outcome-grid { grid-template-columns: 1fr; } .ppd-revtech__step-preview { min-height: 150px; } .ppd-revtech__signal-list { grid-template-columns: 1fr; gap: .8rem; } .ppd-revtech__journey-tabs { grid-template-columns: repeat(2, 1fr); } .ppd-revtech__journey-tabs button:nth-child(2) { border-right: 0; } .ppd-revtech__journey-tabs button:nth-child(-n+2) { border-bottom: 1px solid #dce6f4; } .ppd-revtech__results-stat { border-top: 1px solid #ffffff2b; border-left: 0; padding-top: 1.5rem; } }
 @media (prefers-reduced-motion: reduce) { .ppd-revtech *, .ppd-revtech *::before, .ppd-revtech *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
 
 /* Bring the page in line with the homepage's navy and blue visual system. */
@@ -1393,18 +1393,19 @@
   .ppd-revtech__journey-tabs button:nth-child(-n+2) { position: relative; display: flex; flex: 0 0 36%; min-height: 112px; flex-direction: column; justify-content: center; gap: .55rem; padding: .75rem .5rem; border: 1px solid #dfe7f4; border-radius: 12px; font-size: .78rem; scroll-snap-align: center; }
   .ppd-revtech__journey-tabs button > span { width: 31px; height: 31px; flex: 0 0 31px; }
   .ppd-revtech__journey-tabs button > i { position: absolute; right: .55rem; bottom: .55rem; font-size: .85rem; }
-  .ppd-revtech__journey-panel { min-height: 0; padding: 1rem; }
-  .ppd-revtech__journey-panel-content { grid-template-columns: minmax(0, 1fr); gap: 1.15rem; }
-  .ppd-revtech__journey-step-copy h3 { font-size: 1.45rem; }
-  .ppd-revtech__journey-step-copy > p { font-size: .92rem; line-height: 1.55; }
-  .ppd-revtech__journey-insight { margin-top: .9rem; padding-top: .75rem; }
+  .ppd-revtech__journey-panel { min-height: 0; padding: 1.15rem; }
+  .ppd-revtech__journey-panel-content { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .ppd-revtech__journey-step-copy h3 { margin-bottom: .75rem; font-size: 1.5rem; }
+  .ppd-revtech__journey-step-copy > p { font-size: 1rem; line-height: 1.65; }
+  .ppd-revtech__journey-insight { margin-top: 1rem; padding: .9rem; line-height: 1.6; }
   .ppd-revtech__journey-preview { border-radius: 13px; }
-  .ppd-revtech__journey-preview-body { padding: .85rem; }
-  .ppd-revtech__journey-stack { gap: .4rem; }
-  .ppd-revtech__journey-stack > span { padding: .4rem .48rem; font-size: .64rem; }
-  .ppd-revtech__conversation-card { padding: .8rem; }
-  .ppd-revtech__conversation-card p { font-size: .8rem; line-height: 1.5; }
-  .ppd-revtech__journey-preview-footer { padding: .65rem .8rem; }
+  .ppd-revtech__journey-preview-body { padding: 1rem; }
+  .ppd-revtech__journey-stack { gap: .55rem; margin-bottom: 1.15rem; }
+  .ppd-revtech__journey-stack > span { padding: .5rem .6rem; font-size: .7rem; }
+  .ppd-revtech__conversation-card { padding: 1rem; }
+  .ppd-revtech__conversation-card > span { font-size: .68rem; line-height: 1.5; }
+  .ppd-revtech__conversation-card p { margin-top: .75rem; font-size: .9rem; line-height: 1.65; }
+  .ppd-revtech__journey-preview-footer { flex-wrap: wrap; padding: .75rem 1rem; font-size: .68rem; }
 }
 
 @media (max-width: 650px) {

@@ -282,6 +282,19 @@
   line-height: 1.4;
 }
 
+.ppd-about-tabs-nav-arrow {
+  display: inline-block;
+  margin-left: 0.45rem;
+  color: var(--ppd-tabs-blue);
+  font-size: 1.1em;
+  transition: transform 220ms ease;
+}
+
+.ppd-about-tabs-nav-item:hover .ppd-about-tabs-nav-arrow,
+.ppd-about-tabs-nav-item.is-active .ppd-about-tabs-nav-arrow {
+  transform: translateX(3px);
+}
+
 .ppd-about-tabs-nav-item::after {
   position: absolute;
   right: 30%;
@@ -821,6 +834,8 @@
     gap: 0.4rem;
     max-width: 100%;
     margin-bottom: 1.7rem;
+    padding: 0;
+    overflow: visible;
   }
 
   .ppd-about-tabs-track {

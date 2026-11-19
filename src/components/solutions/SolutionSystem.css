@@ -1501,6 +1501,10 @@
     padding: 3.75rem 0;
   }
 
+  .ppd-renewal-forecast-media {
+    display: none;
+  }
+
   .ppd-renewal-forecast-inner {
     grid-template-columns: minmax(0, 1fr);
     gap: 1.75rem;
