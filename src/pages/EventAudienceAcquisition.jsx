@@ -19,12 +19,12 @@ export default function EventAudienceAcquisition() {
       __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Service",
+        "@id": "https://proplusdata.co/event-audience-acquisition#service",
         "name": "Event Audience Acquisition",
         "description": "ProPlus Data helps event marketers acquire high-quality B2B audiences that match event themes, ensuring greater engagement and ROI.",
-        "provider": {
-          "@type": "Organization",
-          "name": "ProPlus Data"
-        }
+        "serviceType": "B2B event audience acquisition",
+        "url": "https://proplusdata.co/event-audience-acquisition",
+        "provider": { "@id": "https://proplusdata.co/#organization" }
       })
     }}
   />

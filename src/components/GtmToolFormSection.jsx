@@ -115,7 +115,7 @@ const GtmToolFormSection = () => {
                 GTM ASSESSMENT
               </span>
               <h1 className="ppd-gtm-assessment-title">
-                See Your GTM Truth in <span>60 Seconds.</span>
+                See Your GTM Truth in 60 Seconds.
               </h1>
               <p className="ppd-gtm-assessment-intro">
                 Your GTM data is talking,

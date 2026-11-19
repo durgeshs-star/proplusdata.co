@@ -20,13 +20,13 @@ export default function ContactData() {
       __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Service",
+        "@id": "https://proplusdata.co/contact-data#service",
         "name": "Contact Data",
         "description":
           "Access verified B2B contact data of decision-makers to enhance your outreach, personalize campaigns, and boost conversions.",
-        "provider": {
-          "@type": "Organization",
-          "name": "ProPlus Data"
-        }
+        "serviceType": "B2B contact data",
+        "url": "https://proplusdata.co/contact-data",
+        "provider": { "@id": "https://proplusdata.co/#organization" }
       })
     }}
   />

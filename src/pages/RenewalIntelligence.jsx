@@ -21,12 +21,12 @@ export default function RenewalIntelligence() {
       __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Service",
+        "@id": "https://proplusdata.co/renewal-intelligence#service",
         "name": "Renewal Intelligence",
         "description": "Identify competitor product renewals with ProPlus Data's Renewal Intelligence. Leverage technographic account intelligence for proactive engagement and reduce churn.",
-        "provider": {
-          "@type": "Organization",
-          "name": "ProPlus Data"
-        }
+        "serviceType": "Technology contract renewal intelligence",
+        "url": "https://proplusdata.co/renewal-intelligence",
+        "provider": { "@id": "https://proplusdata.co/#organization" }
       })
     }}
   />

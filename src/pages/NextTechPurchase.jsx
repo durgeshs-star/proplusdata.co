@@ -21,20 +21,16 @@ export default function NextTechPurchase() {
       __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Service",
-        "name": "Next Tech Purchase Signals",
+        "@id": "https://proplusdata.co/next-tech-purchase#service",
+        "name": "Next Tech Purchase",
         "description": "Identify high-intent B2B accounts ready for their next technology investment. ProPlus Data helps you time your outreach based on buying signals.",
-        "provider": {
-          "@type": "Organization",
-          "name": "ProPlus Data",
-          "url": "https://proplusdata.co",
-          "logo": "https://proplusdata.co/logo.png"
-        },
+        "provider": { "@id": "https://proplusdata.co/#organization" },
         "url": "https://proplusdata.co/next-tech-purchase",
         "areaServed": {
           "@type": "Place",
           "name": "Global"
         },
-        "serviceType": "B2B Intent Signals"
+        "serviceType": "Technology purchase intelligence"
       })
     }}
   />

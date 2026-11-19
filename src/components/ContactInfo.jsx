@@ -112,7 +112,7 @@ const ContactInfo = () => {
       >
         <div className="ppd-contact-grid" aria-hidden="true" />
         <div className="ppd-contact-container container">
-          <div className="ppd-contact-row row align-items-center">
+          <div className="ppd-contact-row row align-items-start">
             <article className="ppd-contact-copy col-lg-6 col-md-6">
               <div className="ppd-contact-eyebrow">
                 <span className="ppd-contact-eyebrow-dot" aria-hidden="true" />
@@ -120,7 +120,7 @@ const ContactInfo = () => {
               </div>
 
               <h1 className="ppd-contact-title" id="ppd-contact-title">
-                Let's <span>Connect</span>
+                Let's Build Smarter <span>B2B Growth Opportunities</span>
               </h1>
 
               <div className="ppd-contact-accent" aria-hidden="true">
@@ -137,47 +137,6 @@ const ContactInfo = () => {
                 </p>
               </div>
 
-              <div className="ppd-contact-actions" aria-label="Contact options">
-                <a
-                  className="ppd-contact-action"
-                  href="https://calendly.com/amit-chatterjee_proplus"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span className="ppd-contact-action__icon" aria-hidden="true">
-                    <FaCalendarAlt />
-                  </span>
-                  <span className="ppd-contact-action__copy">
-                    <span className="ppd-contact-action__label">Calendar</span>
-                    <span className="ppd-contact-action__title">Book a Meeting</span>
-                  </span>
-                </a>
-
-                <a className="ppd-contact-action" href="mailto:info@proplusdata.co">
-                  <span className="ppd-contact-action__icon" aria-hidden="true">
-                    <FaEnvelope />
-                  </span>
-                  <span className="ppd-contact-action__copy">
-                    <span className="ppd-contact-action__label">Email</span>
-                    <span className="ppd-contact-action__title">info@proplusdata.co</span>
-                  </span>
-                </a>
-
-                <a
-                  className="ppd-contact-action"
-                  href="https://wa.me/+919112110691"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span className="ppd-contact-action__icon" aria-hidden="true">
-                    <FaWhatsapp />
-                  </span>
-                  <span className="ppd-contact-action__copy">
-                    <span className="ppd-contact-action__label">WhatsApp</span>
-                    <span className="ppd-contact-action__title">Chat With Us!</span>
-                  </span>
-                </a>
-              </div>
             </article>
 
             <div className="ppd-contact-form-column col-lg-6 col-md-6">
@@ -261,6 +220,47 @@ const ContactInfo = () => {
                 )}
               </div>
             </div>
+          </div>
+          <div className="ppd-contact-actions" aria-label="Contact options">
+            <a
+              className="ppd-contact-action"
+              href="https://calendly.com/amit-chatterjee_proplus"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="ppd-contact-action__icon" aria-hidden="true">
+                <FaCalendarAlt />
+              </span>
+              <span className="ppd-contact-action__copy">
+                <span className="ppd-contact-action__label">Calendar</span>
+                <span className="ppd-contact-action__title">Book a Meeting</span>
+              </span>
+            </a>
+
+            <a className="ppd-contact-action" href="mailto:info@proplusdata.co">
+              <span className="ppd-contact-action__icon" aria-hidden="true">
+                <FaEnvelope />
+              </span>
+              <span className="ppd-contact-action__copy">
+                <span className="ppd-contact-action__label">Email</span>
+                <span className="ppd-contact-action__title">info@proplusdata.co</span>
+              </span>
+            </a>
+
+            <a
+              className="ppd-contact-action"
+              href="https://wa.me/+919112110691"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="ppd-contact-action__icon" aria-hidden="true">
+                <FaWhatsapp />
+              </span>
+              <span className="ppd-contact-action__copy">
+                <span className="ppd-contact-action__label">WhatsApp</span>
+                <span className="ppd-contact-action__title">Chat With Us!</span>
+              </span>
+            </a>
           </div>
         </div>
       </section>

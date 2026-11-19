@@ -33,12 +33,41 @@ export default function Home() {
     <div className="proplus-home">
 
       <Helmet>
-        <title>ProPlus Data | B2B Data Solutions | Intent & Buying Signals</title>
+        <title>B2B Data Intelligence &amp; GTM Solutions | ProPlus Data</title>
 
         <meta
           name="description"
-          content="Identify in-market and renewal accounts using verified B2B contacts, intent data, and technographics to help sales and marketing teams drive smarter outreach."
+          content="Accelerate B2B growth with ProPlus Data's technographics, intent, contact, and renewal intelligence. Identify high-value accounts and buying opportunities."
         />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://proplusdata.co/#organization",
+                name: "ProPlus Data",
+                url: "https://proplusdata.co/",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://proplusdata.co/assets/images/logo.png",
+                },
+                email: "info@proplusdata.co",
+                telephone: "+919112110691",
+                sameAs: ["https://www.linkedin.com/company/proplus-data/"],
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://proplusdata.co/#website",
+                url: "https://proplusdata.co/",
+                name: "ProPlus Data",
+                publisher: { "@id": "https://proplusdata.co/#organization" },
+                inLanguage: "en",
+              },
+            ],
+          })}
+        </script>
 
         <meta
           name="keywords"

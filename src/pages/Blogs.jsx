@@ -11,21 +11,10 @@ export default function Blogs() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Article",
-            headline: "Unlocking the Full Potential of Data-Driven Business Strategies",
-            author: {
-              "@type": "Organization",
-              name: "ProPlus Data",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "ProPlus Data",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://proplusdata.co/logo.png",
-              },
-            },
-            datePublished: "2024-08-07",
+            "@type": "CollectionPage",
+            name: "B2B Data Intelligence Insights and Resources",
+            url: "https://proplusdata.co/blogs",
+            isPartOf: { "@id": "https://proplusdata.co/#website" },
           })}
 </script>
 

@@ -60,6 +60,37 @@
   padding: clamp(60px, 10vw, 100px) 0;
 }
 
+.ppd-blogs-list-title {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto 2.25rem;
+  padding: 0 20px 0.85rem;
+  color: #142a49;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+
+.ppd-blogs-list-title span {
+  color: #000080;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.ppd-blogs-list-title::after {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 4rem;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ed5b1d, rgba(237, 91, 29, 0.18));
+  content: '';
+}
+
 .ppd-blogs-grid {
   max-width: 1200px;
   margin: 0 auto;

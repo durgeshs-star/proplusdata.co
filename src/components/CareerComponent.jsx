@@ -37,8 +37,8 @@ export default function CareerComponent() {
     >
       <div className="ppd-careers-grid" aria-hidden="true" />
       <div className="ppd-careers-container container">
-        <div className="ppd-careers-row row align-items-center">
-          <article className="ppd-careers-copy col-lg-7 col-md-7">
+        <div className="ppd-careers-row row align-items-start">
+          <article className="ppd-careers-copy col-lg-6 col-md-6">
             <div className="ppd-careers-eyebrow">
               <span className="ppd-careers-eyebrow-dot" aria-hidden="true" />
               <span>JOIN OUR TEAM</span>
@@ -56,18 +56,10 @@ export default function CareerComponent() {
               <p className="ppd-careers-lead">
                 At ProPlus Data, we build teams the same way we build our solutions, with precision, intelligence, and a focus on outcomes. Our people work across disciplines to power solutions like <Link to="/technographics">Technographics</Link>, <Link to="/next-tech-purchase">Next Tech Purchase®</Link>, and <Link to="/renewal-intelligence">Renewal Intelligence</Link>, turning complex data into decisive advantage for global businesses.
               </p>
-
-              <p className="ppd-careers-detail">
-                Whether you're diving into tech research, shaping digital campaigns, or streamlining operations, every role here contributes to innovations that matter. If you bring expertise, curiosity, and the drive to turn insight into impact, you'll find a workplace that values fresh ideas, encourages growth, and celebrates collaboration. Join us in shaping the future of data intelligence.
-              </p>
-
-              <p className="ppd-careers-email">
-                Please share your CV on <a href="mailto:careers@proplusdata.co">careers@proplusdata.co</a>
-              </p>
             </div>
           </article>
 
-          <aside className="ppd-careers-visual-column col-lg-5 col-md-5" aria-label="A collaborative team using data intelligence">
+          <aside className="ppd-careers-visual-column col-lg-6 col-md-6" aria-label="A collaborative team using data intelligence">
             <div className="ppd-careers-visual">
               <div className="ppd-careers-visual-glow" aria-hidden="true" />
               <div className="ppd-careers-orbit ppd-careers-orbit-one" aria-hidden="true" />
@@ -85,6 +77,14 @@ export default function CareerComponent() {
               <span className="ppd-careers-data-tag ppd-careers-data-tag-two"><span /> INSIGHT INTO IMPACT</span>
             </div>
           </aside>
+        </div>
+        <div className="ppd-careers-support-card">
+          <p className="ppd-careers-email">
+            Please share your CV on <a href="mailto:careers@proplusdata.co">careers@proplusdata.co</a>
+          </p>
+          <p className="ppd-careers-detail">
+            Whether you’re diving into tech research, shaping digital campaigns, or streamlining operations, every role here contributes to innovations that matter. If you bring expertise, curiosity, and the drive to turn insight into impact, you’ll find a workplace that values fresh ideas, encourages growth, and celebrates collaboration. Join us in shaping the future of data intelligence.
+          </p>
         </div>
       </div>
     </section>

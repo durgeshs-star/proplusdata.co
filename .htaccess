@@ -1,6 +1,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Normalize the public hostname to the canonical apex domain.
+  RewriteCond %{HTTP_HOST} ^www\.proplusdata\.co$ [NC]
+  RewriteRule ^ https://proplusdata.co%{REQUEST_URI} [L,R=301,NE]
+
   # --- Redirect HTTP to HTTPS ---
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
